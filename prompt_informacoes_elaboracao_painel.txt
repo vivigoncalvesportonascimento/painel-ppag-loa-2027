@@ -1,0 +1,61 @@
+Painel PPAG-LOA 2027
+
+Obs: Para uso dos dados lembrar do que esta escrito no documento docs\premissas.md.
+
+1) Pagina 1 
+Titulo: O Painel
+Do que se trata: Explicação do que consiste o painel
+Incluir o texto:
+
+* **O que é a ferramenta:** Consiste num painel criado pela Subsecretaria de Planeamento e Orçamento (SPLOR) que agrega informações relativas ao PPAG 2024-2027 (com revisão para 2027) e à Lei Orçamentária Anual (LOA) de 2027.
+* **Finalidade:** O seu objetivo principal é proporcionar aos cidadãos uma forma mais visual, dinâmica e prática de aceder e interagir com os dados do orçamento do Estado de Minas Gerais, através da utilização de tabelas, mapas e gráficos.
+* **Componentes do Sistema de Planeamento e Orçamento:** O documento enumera e explica quatro instrumentos essenciais, que surgem igualmente ilustrados num esquema com quatro blocos azuis dispostos em forma de losango:
+1. **PMDI** (Plano Mineiro de Desenvolvimento Integrado): Consiste no planeamento estratégico de longo prazo focado em criar condições para o desenvolvimento sustentável do estado.
+2. **PPAG** (Plano Plurianual de Ação Governamental): Estipula as metas, ações e programas da administração estadual com uma duração de quatro anos.
+3. **LDO** (Lei de Diretrizes Orçamentárias): Funciona como uma ponte de ligação entre o PPAG e a LOA, regulando a elaboração do orçamento e fixando as prioridades para o ano seguinte.
+4. **LOA** (Lei Orçamentária Anual): Tem como função prever as receitas e estabelecer os limites de despesas para o próximo ano financeiro.
+
+2) Pagina 2
+Titulo: Visão Geral
+Do que se trata: Aborda dados mais gerais do orçamento 2027
+
+Incluir:
+Card 1
+Título: Previsão 2027 - Orçamento Fiscal
+Dado: Traz o somatório do XXX
+Fonte de dados:
+
+Card 2
+Título: Previsão 2027 - Orçamento de Investimentos
+Dado: Traz o somatório do XXX
+Fonte de dados:
+
+Card 3
+Título: Quantidade de Programas
+Dado: Contar de forma distinta a quantidade de programas por meio dos códigos na coluna Código do Programa. A contagem deve ser distinta.Exemplo o programa 705 deve contar apenas 01 vez.
+Fonte de dados:data\programas_planejamento.txt
+
+
+Card 4
+Título: Quantidade de Ações
+Dado:  Contar as ações orçamentárias a partir dos códigos da coluna Código da Ação. A contagem NÃO deve ser distinta. Ou seja no caso de ações como a 7004 e 2500 por exemplo podem ser contadas mais de uma vez, pois são vinculadas a unidades orçamentária distintas (Código da Unidade Orçamentária Responsável pela Ação distintos para cada linha da mesma ação).
+Fonte de dados:data\acoes_planejamento.txt
+
+Card 5
+Título: Projetos Estratégicos
+Dado: Filtrar apenas as linhas cujo dado da coluna Código do Identificador de Ação Governamental (IAG) == 1. Contar as ações orçamentárias a partir dos códigos da coluna Código da Ação. A contagem NÃO deve ser distinta. Ou seja no caso de ações como a 7004 e 2500 por exemplo podem ser contadas mais de uma vez, pois são vinculadas a unidades orçamentária distintas (Código da Unidade Orçamentária Responsável pela Ação distintos para cada linha da mesma ação).
+Fonte de dados:data\acoes_planejamento.txt
+
+Gráfico 1
+Título: Previsão 2027 por Área Temática
+Fonte de dados:data\acoes_planejamento.txt
+Construir um gráfico de barras horizontais, no qual no eixo X deverão estar em termos percentuais (%) do total relativo aos valores da coluna Previsão Orçamentária 2027, segregados (eixo Y - categorias) pelo que dispõe a coluna Área Temática. Ou seja deve ter uma barra com o % previsto em relação ao total de recursos para a Area Temática Planejamento e Gestão, outro para Saúde, Fazenda e assim por diante.
+
+Gráfico 2
+Título: Previsão 2027 por Setor de Governo
+Fonte de dados:data\acoes_planejamento.txt
+Construir um gráfico de barras horizontais, no qual no eixo X deverão estar em termos percentuais (%) do total relativo aos valores da coluna Previsão Orçamentária 2027, segregados (eixo Y - categorias) pelo que dispõe a coluna Setor de Governo. Ou seja deve ter uma barra com o % previsto em relação ao total de recursos para o Setor de Governo, CULTURA E TURISMO, outro para TRIBUNAL DE JUSTIÇA e assim por diante.
+
+
+
+
