@@ -180,6 +180,9 @@ h1 {
 
 .grafico-card {
   min-width: 0;
+  height: 360px;
+  overflow-y: auto;
+  overflow-x: hidden;
   background: var(--cor-fundo-card);
   border-radius: 8px;
   box-shadow: var(--sombra-card);
@@ -189,7 +192,6 @@ h1 {
 .grafico {
   min-width: 0;
   width: 100%;
-  min-height: 340px;
 }
 
 @media (max-width: 900px) {

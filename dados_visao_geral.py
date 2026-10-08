@@ -70,16 +70,19 @@ def _grafico_percentual_por_categoria(
         labels={"percentual": "% do total", coluna_categoria: ""},
         color_discrete_sequence=["#0047AB"],
     )
-    fig.update_traces(textfont_size=13, textposition="outside")
+
+    altura = max(340, 32 * len(percentual_df) + 90)
+
+    fig.update_traces(textfont_size=15, textposition="outside")
     fig.update_layout(
         showlegend=False,
-        height=340,
+        height=altura,
         font=dict(family="system-ui, -apple-system, Segoe UI, Arial, sans-serif", color="#1f2933"),
-        title=dict(font=dict(size=15, color="#1f2933")),
+        title=dict(font=dict(size=16, color="#1f2933")),
         paper_bgcolor="rgba(0,0,0,0)",
         plot_bgcolor="rgba(0,0,0,0)",
         margin=dict(l=10, r=30, t=40, b=10),
-        yaxis=dict(tickfont=dict(size=11), automargin=True),
+        yaxis=dict(tickfont=dict(size=14), automargin=True),
         xaxis=dict(gridcolor="#eef1f4"),
     )
     return fig
