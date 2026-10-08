@@ -1,0 +1,28 @@
+[tool.poetry]
+package-mode = false
+
+[project]
+name = "painel-ppag-loa-2027"
+version = "0.1.0"
+description = "Painel de dados do PPAG/LOA 2027"
+authors = [
+    {name = "vivigoncalvesportonascimento"}
+]
+readme = "README.md"
+requires-python = "^3.11"
+dependencies = [
+    "pandas (>=3.0.6,<4.0.0)",
+    "openpyxl (>=3.1.5,<4.0.0)",
+    "streamlit (>=1.65.0,<2.0.0)",
+    "plotly (>=7.1.0,<8.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "ruff (>=0.16.10,<0.17.0)"
+]
