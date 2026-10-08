@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Painel PPAG-LOA 2027</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2/plotly.min.js"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <header class="topo">
+      <div class="topo-conteudo">
+        <span class="marca">Painel PPAG-LOA 2027</span>
+        <nav class="menu" role="tablist">
+          <button class="menu-item ativo" data-pagina="o-painel" role="tab" aria-selected="true">
+            O Painel
+          </button>
+          <button class="menu-item" data-pagina="visao-geral" role="tab" aria-selected="false">
+            Visão Geral
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="conteudo">
+      <section id="o-painel" class="pagina ativa">
+        <h1>O Painel</h1>
+        <p>
+          <strong>O que é a ferramenta:</strong> Consiste num painel criado pela
+          Subsecretaria de Planeamento e Orçamento (SPLOR) que agrega informações
+          relativas ao PPAG 2024-2027 (com revisão para 2027) e à Lei Orçamentária
+          Anual (LOA) de 2027.
+        </p>
+        <p>
+          <strong>Finalidade:</strong> O seu objetivo principal é proporcionar aos
+          cidadãos uma forma mais visual, dinâmica e prática de aceder e interagir
+          com os dados do orçamento do Estado de Minas Gerais, através da
+          utilização de tabelas, mapas e gráficos.
+        </p>
+        <p><strong>Componentes do Sistema de Planeamento e Orçamento:</strong></p>
+
+        <div class="grade-blocos">
+          <div class="bloco">
+            <h3>PMDI</h3>
+            <p>
+              Plano Mineiro de Desenvolvimento Integrado: planeamento estratégico
+              de longo prazo focado em criar condições para o desenvolvimento
+              sustentável do estado.
+            </p>
+          </div>
+          <div class="bloco">
+            <h3>PPAG</h3>
+            <p>
+              Plano Plurianual de Ação Governamental: estipula as metas, ações e
+              programas da administração estadual com uma duração de quatro anos.
+            </p>
+          </div>
+          <div class="bloco">
+            <h3>LDO</h3>
+            <p>
+              Lei de Diretrizes Orçamentárias: funciona como uma ponte de ligação
+              entre o PPAG e a LOA, regulando a elaboração do orçamento e fixando
+              as prioridades para o ano seguinte.
+            </p>
+          </div>
+          <div class="bloco">
+            <h3>LOA</h3>
+            <p>
+              Lei Orçamentária Anual: tem como função prever as receitas e
+              estabelecer os limites de despesas para o próximo ano financeiro.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="visao-geral" class="pagina">
+        <h1>Visão Geral</h1>
+        <p class="subtitulo">Dados gerais do orçamento 2027</p>
+
+        <div id="cards" class="grade-cards">
+          <p class="carregando">Carregando dados...</p>
+        </div>
+
+        <div class="grade-graficos">
+          <div id="grafico-area-tematica" class="grafico"></div>
+          <div id="grafico-setor-governo" class="grafico"></div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

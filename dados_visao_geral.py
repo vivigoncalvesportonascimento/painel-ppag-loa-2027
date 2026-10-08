@@ -1,0 +1,75 @@
+"""Cálculos da página "Visão Geral", compartilhados entre o app Streamlit
+e o gerador do site estático (GitHub Pages).
+"""
+
+import pandas as pd
+import plotly.express as px
+
+from etl.limpeza_inicial import carregar_acoes, carregar_programas
+from etl.orcamento import carregar_qdd_fiscal, carregar_qdd_investimento
+
+COLUNA_PREVISAO_2027 = "Previsão Orçamentária 2027"
+COLUNA_IAG = "Código do Identificador de Ação Governamental (IAG)"
+
+
+def calcular_cards() -> dict:
+    total_fiscal = carregar_qdd_fiscal()["VALOR FINAL (R$)"].sum()
+    total_investimento = carregar_qdd_investimento()["VALOR (R$)"].sum()
+    qtd_programas = carregar_programas()["Código do Programa"].nunique()
+
+    acoes = carregar_acoes()
+    qtd_acoes = len(acoes)
+    qtd_projetos_estrategicos = len(acoes[acoes[COLUNA_IAG] == "1"])
+
+    return {
+        "total_fiscal": total_fiscal,
+        "total_investimento": total_investimento,
+        "qtd_programas": qtd_programas,
+        "qtd_acoes": qtd_acoes,
+        "qtd_projetos_estrategicos": qtd_projetos_estrategicos,
+    }
+
+
+def construir_grafico_area_tematica() -> "px.Figure":
+    return _grafico_percentual_por_categoria(
+        _carregar_acoes_numericas(), "Área Temática", "Previsão 2027 por Área Temática"
+    )
+
+
+def construir_grafico_setor_governo() -> "px.Figure":
+    return _grafico_percentual_por_categoria(
+        _carregar_acoes_numericas(), "Setor de Governo", "Previsão 2027 por Setor de Governo"
+    )
+
+
+def _carregar_acoes_numericas() -> pd.DataFrame:
+    acoes = carregar_acoes().copy()
+    acoes[COLUNA_PREVISAO_2027] = pd.to_numeric(acoes[COLUNA_PREVISAO_2027])
+    return acoes
+
+
+def _grafico_percentual_por_categoria(
+    df: pd.DataFrame, coluna_categoria: str, titulo: str
+) -> "px.Figure":
+    categorias = df[coluna_categoria].str.strip()
+    agrupado = df.groupby(categorias)[COLUNA_PREVISAO_2027].sum()
+    percentual = (agrupado / agrupado.sum() * 100).sort_values(ascending=True)
+
+    percentual_df = percentual.reset_index()
+    percentual_df.columns = [coluna_categoria, "percentual"]
+
+    fig = px.bar(
+        percentual_df,
+        x="percentual",
+        y=coluna_categoria,
+        orientation="h",
+        title=titulo,
+        text=percentual_df["percentual"].map(lambda v: f"{v:.1f}%"),
+        labels={"percentual": "% do total", coluna_categoria: ""},
+    )
+    fig.update_traces(textfont_size=16, textposition="outside")
+    fig.update_layout(
+        showlegend=False,
+        yaxis=dict(tickfont=dict(size=14)),
+    )
+    return fig
