@@ -2,11 +2,11 @@
   "cards": [
     {
       "titulo": "Previsão 2027 - Orçamento Fiscal",
-      "valor": "R$ 153,8 bilhões"
+      "valor": "R$ 153,8 bi"
     },
     {
       "titulo": "Previsão 2027 - Orçamento de Investimentos",
-      "valor": "R$ 9,2 bilhões"
+      "valor": "R$ 9,2 bi"
     },
     {
       "titulo": "Quantidade de Programas",
@@ -27,7 +27,7 @@
         "hovertemplate": "% do total=%{x}<br>=%{y}<br>text=%{text}<extra></extra>",
         "legendgroup": "",
         "marker": {
-          "color": "#2f6fed",
+          "color": "#0047AB",
           "pattern": {
             "shape": ""
           }
@@ -59,26 +59,26 @@
         },
         "xaxis": "x",
         "y": [
-          "Advocacia-Geral",
-          "Agricultura, Pecuária e Abastecimento",
-          "Cultura e Turismo",
-          "Fazenda",
-          "Desenvolvimento Social",
-          "Meio Ambiente",
-          "Governo e Gabinete Militar",
-          "Infraestrutura e Mobilidade",
-          "Transparência, Combate à Corrupção, Integridade e Ouvidoria",
-          "Desenvolvimento Econômico",
-          "Segurança Pública",
-          "Saúde",
-          "Outros Poderes",
-          "Educação",
-          "Planejamento e Gestão"
+          "ADVOCACIA-GERAL",
+          "AGRICULTURA, PECUÁRIA E ABASTECIMENTO",
+          "CULTURA E TURISMO",
+          "FAZENDA",
+          "DESENVOLVIMENTO SOCIAL",
+          "MEIO AMBIENTE",
+          "GOVERNO E GABINETE MILITAR",
+          "INFRAESTRUTURA E MOBILIDADE",
+          "TRANSPARÊNCIA, COMBATE À CORRUPÇÃO, INTEGRIDADE E OUVIDORIA",
+          "DESENVOLVIMENTO ECONÔMICO",
+          "SEGURANÇA PÚBLICA",
+          "SAÚDE",
+          "OUTROS PODERES",
+          "EDUCAÇÃO",
+          "PLANEJAMENTO E GESTÃO"
         ],
         "yaxis": "y",
         "type": "bar",
         "textfont": {
-          "size": 16
+          "size": 13
         }
       }
     ],
@@ -866,16 +866,17 @@
           "text": ""
         },
         "tickfont": {
-          "size": 14
-        }
+          "size": 11
+        },
+        "automargin": true
       },
       "legend": {
         "tracegroupgap": 0
       },
       "title": {
-        "text": "Previsão 2027 por Área Temática",
+        "text": "<b>Previsão 2027 por Área Temática</b>",
         "font": {
-          "size": 16,
+          "size": 15,
           "color": "#1f2933"
         }
       },
@@ -887,10 +888,11 @@
       "margin": {
         "l": 10,
         "r": 30,
-        "t": 50,
+        "t": 40,
         "b": 10
       },
       "showlegend": false,
+      "height": 340,
       "paper_bgcolor": "rgba(0,0,0,0)",
       "plot_bgcolor": "rgba(0,0,0,0)"
     }
@@ -901,7 +903,7 @@
         "hovertemplate": "% do total=%{x}<br>=%{y}<br>text=%{text}<extra></extra>",
         "legendgroup": "",
         "marker": {
-          "color": "#2f6fed",
+          "color": "#0047AB",
           "pattern": {
             "shape": ""
           }
@@ -982,7 +984,7 @@
         "yaxis": "y",
         "type": "bar",
         "textfont": {
-          "size": 16
+          "size": 13
         }
       }
     ],
@@ -1770,16 +1772,17 @@
           "text": ""
         },
         "tickfont": {
-          "size": 14
-        }
+          "size": 11
+        },
+        "automargin": true
       },
       "legend": {
         "tracegroupgap": 0
       },
       "title": {
-        "text": "Previsão 2027 por Setor de Governo",
+        "text": "<b>Previsão 2027 por Setor de Governo</b>",
         "font": {
-          "size": 16,
+          "size": 15,
           "color": "#1f2933"
         }
       },
@@ -1791,10 +1794,11 @@
       "margin": {
         "l": 10,
         "r": 30,
-        "t": 50,
+        "t": 40,
         "b": 10
       },
       "showlegend": false,
+      "height": 340,
       "paper_bgcolor": "rgba(0,0,0,0)",
       "plot_bgcolor": "rgba(0,0,0,0)"
     }

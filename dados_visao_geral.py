@@ -31,8 +31,10 @@ def calcular_cards() -> dict:
 
 
 def construir_grafico_area_tematica() -> "px.Figure":
+    df = _carregar_acoes_numericas()
+    df["Área Temática"] = df["Área Temática"].str.upper()
     return _grafico_percentual_por_categoria(
-        _carregar_acoes_numericas(), "Área Temática", "Previsão 2027 por Área Temática"
+        df, "Área Temática", "Previsão 2027 por Área Temática"
     )
 
 
@@ -63,20 +65,21 @@ def _grafico_percentual_por_categoria(
         x="percentual",
         y=coluna_categoria,
         orientation="h",
-        title=titulo,
+        title=f"<b>{titulo}</b>",
         text=percentual_df["percentual"].map(lambda v: f"{v:.1f}%"),
         labels={"percentual": "% do total", coluna_categoria: ""},
-        color_discrete_sequence=["#2f6fed"],
+        color_discrete_sequence=["#0047AB"],
     )
-    fig.update_traces(textfont_size=16, textposition="outside")
+    fig.update_traces(textfont_size=13, textposition="outside")
     fig.update_layout(
         showlegend=False,
+        height=340,
         font=dict(family="system-ui, -apple-system, Segoe UI, Arial, sans-serif", color="#1f2933"),
-        title=dict(font=dict(size=16, color="#1f2933")),
+        title=dict(font=dict(size=15, color="#1f2933")),
         paper_bgcolor="rgba(0,0,0,0)",
         plot_bgcolor="rgba(0,0,0,0)",
-        margin=dict(l=10, r=30, t=50, b=10),
-        yaxis=dict(tickfont=dict(size=14)),
+        margin=dict(l=10, r=30, t=40, b=10),
+        yaxis=dict(tickfont=dict(size=11), automargin=True),
         xaxis=dict(gridcolor="#eef1f4"),
     )
     return fig

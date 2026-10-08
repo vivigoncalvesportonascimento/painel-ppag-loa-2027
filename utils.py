@@ -13,4 +13,4 @@ def formatar_bilhoes(valor: float) -> str:
     bilhoes = valor / 1_000_000_000
     truncado = math.floor(bilhoes * 10) / 10
     texto = f"{truncado:.1f}".replace(".", ",")
-    return f"R$ {texto} bilhões"
+    return f"R$ {texto} bi"
