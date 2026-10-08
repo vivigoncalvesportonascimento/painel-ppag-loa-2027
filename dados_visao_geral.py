@@ -66,10 +66,17 @@ def _grafico_percentual_por_categoria(
         title=titulo,
         text=percentual_df["percentual"].map(lambda v: f"{v:.1f}%"),
         labels={"percentual": "% do total", coluna_categoria: ""},
+        color_discrete_sequence=["#2f6fed"],
     )
     fig.update_traces(textfont_size=16, textposition="outside")
     fig.update_layout(
         showlegend=False,
+        font=dict(family="system-ui, -apple-system, Segoe UI, Arial, sans-serif", color="#1f2933"),
+        title=dict(font=dict(size=16, color="#1f2933")),
+        paper_bgcolor="rgba(0,0,0,0)",
+        plot_bgcolor="rgba(0,0,0,0)",
+        margin=dict(l=10, r=30, t=50, b=10),
         yaxis=dict(tickfont=dict(size=14)),
+        xaxis=dict(gridcolor="#eef1f4"),
     )
     return fig

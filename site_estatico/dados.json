@@ -27,7 +27,7 @@
         "hovertemplate": "% do total=%{x}<br>=%{y}<br>text=%{text}<extra></extra>",
         "legendgroup": "",
         "marker": {
-          "color": "#636efa",
+          "color": "#2f6fed",
           "pattern": {
             "shape": ""
           }
@@ -853,7 +853,8 @@
         ],
         "title": {
           "text": "% do total"
-        }
+        },
+        "gridcolor": "#eef1f4"
       },
       "yaxis": {
         "anchor": "x",
@@ -872,10 +873,26 @@
         "tracegroupgap": 0
       },
       "title": {
-        "text": "Previsão 2027 por Área Temática"
+        "text": "Previsão 2027 por Área Temática",
+        "font": {
+          "size": 16,
+          "color": "#1f2933"
+        }
       },
       "barmode": "relative",
-      "showlegend": false
+      "font": {
+        "family": "system-ui, -apple-system, Segoe UI, Arial, sans-serif",
+        "color": "#1f2933"
+      },
+      "margin": {
+        "l": 10,
+        "r": 30,
+        "t": 50,
+        "b": 10
+      },
+      "showlegend": false,
+      "paper_bgcolor": "rgba(0,0,0,0)",
+      "plot_bgcolor": "rgba(0,0,0,0)"
     }
   },
   "grafico_setor_governo": {
@@ -884,7 +901,7 @@
         "hovertemplate": "% do total=%{x}<br>=%{y}<br>text=%{text}<extra></extra>",
         "legendgroup": "",
         "marker": {
-          "color": "#636efa",
+          "color": "#2f6fed",
           "pattern": {
             "shape": ""
           }
@@ -1740,7 +1757,8 @@
         ],
         "title": {
           "text": "% do total"
-        }
+        },
+        "gridcolor": "#eef1f4"
       },
       "yaxis": {
         "anchor": "x",
@@ -1759,10 +1777,26 @@
         "tracegroupgap": 0
       },
       "title": {
-        "text": "Previsão 2027 por Setor de Governo"
+        "text": "Previsão 2027 por Setor de Governo",
+        "font": {
+          "size": 16,
+          "color": "#1f2933"
+        }
       },
       "barmode": "relative",
-      "showlegend": false
+      "font": {
+        "family": "system-ui, -apple-system, Segoe UI, Arial, sans-serif",
+        "color": "#1f2933"
+      },
+      "margin": {
+        "l": 10,
+        "r": 30,
+        "t": 50,
+        "b": 10
+      },
+      "showlegend": false,
+      "paper_bgcolor": "rgba(0,0,0,0)",
+      "plot_bgcolor": "rgba(0,0,0,0)"
     }
   }
 }
