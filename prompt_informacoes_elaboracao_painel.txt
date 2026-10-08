@@ -22,13 +22,13 @@ Do que se trata: Aborda dados mais gerais do orçamento 2027
 Incluir:
 Card 1
 Título: Previsão 2027 - Orçamento Fiscal
-Dado: Traz o somatório do XXX
-Fonte de dados:
+Dado: Traz o somatório dos dados da coluna VALOR FINAL (R$) da base data\BASE_QDD_FISCAL.xlsx
+Fonte de dados: data\BASE_QDD_FISCAL.xlsx
 
 Card 2
 Título: Previsão 2027 - Orçamento de Investimentos
-Dado: Traz o somatório do XXX
-Fonte de dados:
+Dado: Traz o somatório dos dados da coluna VALOR (R$) da base data\BASE_QDD_INVESTIMENTO.xlsx
+Fonte de dados: data\BASE_QDD_INVESTIMENTO.xlsx
 
 Card 3
 Título: Quantidade de Programas

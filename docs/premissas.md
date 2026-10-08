@@ -24,3 +24,18 @@ Observação: o formato do indicador de exclusão varia entre bases (texto
 `False`/`True` em `localizadores_todos_planejamento.txt` e
 `indicadores_planejamento.txt`). As funções de carregamento tratam cada base
 de acordo com seu próprio formato.
+
+## 2. Fonte dos cards "Previsão 2027 - Orçamento Fiscal / Investimentos"
+
+O documento `prompt_informacoes_elaboracao_painel.txt` não especificava a base
+de origem desses dois cards. Como premissa, foram usadas as bases QDD
+(Quadro de Detalhamento da Despesa), filtradas por `ANO == 2027`:
+
+- Orçamento Fiscal: soma de `VALOR FINAL (R$)` em `data/BASE_QDD_FISCAL.xlsx`.
+- Orçamento de Investimentos: soma de `VALOR (R$)` em
+  `data/BASE_QDD_INVESTIMENTO.xlsx`.
+
+Essa escolha foi validada comparando o total com as bases
+`BASE_ORCAM_DESPESA_ITEM_FISCAL.xlsx` e `BASE_ORCAM_DESPESA_INVESTIMENTO.xlsx`,
+que chegam exatamente ao mesmo valor somado (R$ 153.868.051.650 fiscal e
+R$ 9.290.788.295 investimento).
