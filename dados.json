@@ -78,7 +78,7 @@
         "yaxis": "y",
         "type": "bar",
         "textfont": {
-          "size": 13
+          "size": 15
         }
       }
     ],
@@ -866,7 +866,7 @@
           "text": ""
         },
         "tickfont": {
-          "size": 11
+          "size": 14
         },
         "automargin": true
       },
@@ -876,7 +876,7 @@
       "title": {
         "text": "<b>Previsão 2027 por Área Temática</b>",
         "font": {
-          "size": 15,
+          "size": 16,
           "color": "#1f2933"
         }
       },
@@ -892,7 +892,7 @@
         "b": 10
       },
       "showlegend": false,
-      "height": 340,
+      "height": 570,
       "paper_bgcolor": "rgba(0,0,0,0)",
       "plot_bgcolor": "rgba(0,0,0,0)"
     }
@@ -984,7 +984,7 @@
         "yaxis": "y",
         "type": "bar",
         "textfont": {
-          "size": 13
+          "size": 15
         }
       }
     ],
@@ -1772,7 +1772,7 @@
           "text": ""
         },
         "tickfont": {
-          "size": 11
+          "size": 14
         },
         "automargin": true
       },
@@ -1782,7 +1782,7 @@
       "title": {
         "text": "<b>Previsão 2027 por Setor de Governo</b>",
         "font": {
-          "size": 15,
+          "size": 16,
           "color": "#1f2933"
         }
       },
@@ -1798,7 +1798,7 @@
         "b": 10
       },
       "showlegend": false,
-      "height": 340,
+      "height": 1050,
       "paper_bgcolor": "rgba(0,0,0,0)",
       "plot_bgcolor": "rgba(0,0,0,0)"
     }
