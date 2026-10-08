@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Painel PPAG-LOA 2027</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@stlite/browser@0.85.1/build/stlite.css"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module">
+      import { mount } from "https://cdn.jsdelivr.net/npm/@stlite/browser@0.85.1/build/stlite.js";
+
+      mount(
+        {
+          entrypoint: "app.py",
+          requirements: ["pandas", "openpyxl", "plotly"],
+          files: {
+            "app.py": { url: "./app.py" },
+            "utils.py": { url: "./utils.py" },
+            "etl/__init__.py": { url: "./etl/__init__.py" },
+            "etl/limpeza_inicial.py": { url: "./etl/limpeza_inicial.py" },
+            "etl/orcamento.py": { url: "./etl/orcamento.py" },
+            "paginas/__init__.py": { url: "./paginas/__init__.py" },
+            "paginas/o_painel.py": { url: "./paginas/o_painel.py" },
+            "paginas/visao_geral.py": { url: "./paginas/visao_geral.py" },
+            "data/programas_planejamento.txt": { url: "./data/programas_planejamento.txt" },
+            "data/acoes_planejamento.txt": { url: "./data/acoes_planejamento.txt" },
+            "data/BASE_QDD_FISCAL.xlsx": { url: "./data/BASE_QDD_FISCAL.xlsx" },
+            "data/BASE_QDD_INVESTIMENTO.xlsx": { url: "./data/BASE_QDD_INVESTIMENTO.xlsx" },
+            ".streamlit/config.toml": "[client]\ntoolbarMode = \"viewer\"\n",
+          },
+        },
+        document.getElementById("root")
+      );
+    </script>
+  </body>
+</html>
