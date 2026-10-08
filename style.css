@@ -18,7 +18,8 @@ body {
   background: var(--cor-fundo);
   color: var(--cor-texto);
   font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
-  line-height: 1.55;
+  line-height: 1.45;
+  overflow-x: hidden;
 }
 
 .topo {
@@ -42,8 +43,8 @@ body {
 
 .marca {
   font-weight: 700;
-  font-size: 1.1rem;
-  padding: 18px 0;
+  font-size: 1rem;
+  padding: 12px 0;
   color: var(--cor-texto);
 }
 
@@ -56,7 +57,7 @@ body {
   appearance: none;
   background: none;
   border: none;
-  padding: 0.6rem 1rem;
+  padding: 0.4rem 1rem;
   font-size: 0.9rem;
   font-weight: 600;
   color: var(--cor-texto-suave);
@@ -78,7 +79,7 @@ body {
 .conteudo {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 28px 24px 64px;
+  padding: 16px 24px 24px;
 }
 
 .pagina {
@@ -90,14 +91,14 @@ body {
 }
 
 h1 {
-  font-size: 1.5rem;
-  margin: 0 0 4px;
+  font-size: 1.3rem;
+  margin: 0 0 2px;
 }
 
 .subtitulo {
   color: var(--cor-texto-suave);
-  font-size: 0.85rem;
-  margin: 0 0 24px;
+  font-size: 0.82rem;
+  margin: 0 0 14px;
 }
 
 .grade-blocos {
@@ -129,26 +130,26 @@ h1 {
 .grade-cards {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 1rem;
-  margin-bottom: 1.5rem;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
 }
 
 .card {
   background: var(--cor-fundo-card);
   border-radius: 8px;
   box-shadow: var(--sombra-card);
-  padding: 1rem 1.1rem;
+  padding: 0.85rem 0.9rem;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.4rem;
+  gap: 0.35rem;
 }
 
 .card .valor {
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-size: 1.65rem;
+  font-weight: 700;
   color: var(--cor-texto);
 }
 
@@ -180,7 +181,7 @@ h1 {
 }
 
 .grafico {
-  min-height: 420px;
+  min-height: 340px;
 }
 
 @media (max-width: 900px) {
