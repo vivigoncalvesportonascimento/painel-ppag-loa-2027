@@ -242,6 +242,24 @@ h1 {
   background: var(--cor-fundo-card);
 }
 
+.botao-secundario {
+  appearance: none;
+  border: 1px solid var(--cor-borda);
+  border-radius: 6px;
+  background: var(--cor-fundo-card);
+  color: var(--cor-texto);
+  padding: 0.5rem 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.botao-secundario:hover {
+  background: var(--cor-divisor-suave);
+  border-color: var(--cor-accent);
+}
+
 .tabela-card {
   min-width: 0;
   background: var(--cor-fundo-card);

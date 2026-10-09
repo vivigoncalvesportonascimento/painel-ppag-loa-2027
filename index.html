@@ -101,16 +101,6 @@
       <section id="receita-fiscal" class="pagina">
         <h1>Receita Fiscal</h1>
 
-        <div class="linha-card-grafico">
-          <div class="card">
-            <div class="valor" id="receita-total-valor">—</div>
-            <div class="titulo">Receita Total (R$) - 2027</div>
-          </div>
-          <div class="grafico-card">
-            <div id="grafico-receita-categoria" class="grafico"></div>
-          </div>
-        </div>
-
         <div class="filtros">
           <div class="filtro-campo">
             <label for="filtro-uo">UO</label>
@@ -123,6 +113,19 @@
             <select id="filtro-fonte">
               <option value="">Todas</option>
             </select>
+          </div>
+          <button id="limpar-filtros" class="botao-secundario" type="button">
+            Limpar filtros
+          </button>
+        </div>
+
+        <div class="linha-card-grafico">
+          <div class="card">
+            <div class="valor" id="receita-total-valor">—</div>
+            <div class="titulo">Receita Total (R$) - 2027</div>
+          </div>
+          <div class="grafico-card">
+            <div id="grafico-receita-categoria" class="grafico"></div>
           </div>
         </div>
 
