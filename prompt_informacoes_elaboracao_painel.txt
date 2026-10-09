@@ -115,3 +115,5 @@ Obs: colocar uma barra vertical de rolagem no gráfico dado que são muitas barr
 Fonte:data\BASE_QDD_FISCAL.xlsx e auxiliares\auxiliar_funcao.csv
 
 
+ajuste nos gráficos:
+esta acontecendo tanto na pagina Visão Geral quanto na pagina Despesa Fiscal, nos gráficos horizontais que não esta mostrando o numero completo com o % da primeira e sa segunda barra, parece que esta cortado. Exemplo no grafico Previsão 2027 por Área Temática, na categoria PLANEJAMENTO E GESTÃO O dado exibido é só 4, e deveria exibir 45,3%, na categoria seguinte EDUCAÇÃO aparece normal 13,5%. No gráfico Dspesa por Grupo, na primeira categoria PESSOAL E ENCARGOS SOCIAIS aparece de dado apenas 61. e deveria ser 61.2%. Consertar este problema.
