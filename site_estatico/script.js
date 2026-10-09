@@ -73,6 +73,13 @@ function inicializarReceitaFiscal(linhas) {
 
   selectUo.addEventListener("change", atualizar);
   selectFonte.addEventListener("change", atualizar);
+
+  document.getElementById("limpar-filtros").addEventListener("click", () => {
+    selectUo.value = "";
+    selectFonte.value = "";
+    atualizar();
+  });
+
   atualizar();
 }
 
