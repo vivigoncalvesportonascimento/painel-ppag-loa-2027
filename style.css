@@ -205,6 +205,43 @@ h1 {
   height: 100%;
 }
 
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-end;
+  background: var(--cor-fundo-card);
+  border-radius: 8px;
+  box-shadow: var(--sombra-card);
+  padding: 0.9rem 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.filtro-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.85rem;
+  min-width: 220px;
+}
+
+.filtro-campo label {
+  color: var(--cor-texto-suave);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.filtro-campo select {
+  padding: 0.45rem 0.6rem;
+  border: 1px solid var(--cor-borda);
+  border-radius: 6px;
+  font-size: 0.9rem;
+  color: var(--cor-texto);
+  background: var(--cor-fundo-card);
+}
+
 .tabela-card {
   min-width: 0;
   background: var(--cor-fundo-card);
