@@ -866,7 +866,7 @@
           "text": ""
         },
         "tickfont": {
-          "size": 14
+          "size": 11
         },
         "automargin": true
       },
@@ -1772,7 +1772,7 @@
           "text": ""
         },
         "tickfont": {
-          "size": 14
+          "size": 11
         },
         "automargin": true
       },
