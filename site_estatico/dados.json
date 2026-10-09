@@ -1802,5 +1802,2306 @@
       "paper_bgcolor": "rgba(0,0,0,0)",
       "plot_bgcolor": "rgba(0,0,0,0)"
     }
+  },
+  "receita_fiscal": {
+    "card_receita_total": "R$ 144,9 bi",
+    "grafico_categoria": {
+      "data": [
+        {
+          "hovertemplate": "Valor (R$)=%{x}<br>=%{y}<br>text=%{text}<extra></extra>",
+          "legendgroup": "",
+          "marker": {
+            "color": "#0047AB",
+            "pattern": {
+              "shape": ""
+            }
+          },
+          "name": "",
+          "orientation": "h",
+          "showlegend": false,
+          "text": [
+            "-50 bi",
+            "3 bi",
+            "16 bi",
+            "177 bi"
+          ],
+          "textposition": "outside",
+          "x": [
+            -50108630884,
+            2647831232,
+            15898800562,
+            176560954311
+          ],
+          "xaxis": "x",
+          "y": [
+            "Dedução de Receitas",
+            "Receitas de Capital",
+            "Receita Intraorçamentária",
+            "Receitas Correntes"
+          ],
+          "yaxis": "y",
+          "type": "bar",
+          "textfont": {
+            "size": 15
+          }
+        }
+      ],
+      "layout": {
+        "template": {
+          "data": {
+            "histogram2dcontour": [
+              {
+                "type": "histogram2dcontour",
+                "colorbar": {
+                  "outlinewidth": 0,
+                  "ticks": ""
+                },
+                "colorscale": [
+                  [
+                    0.0,
+                    "#0d0887"
+                  ],
+                  [
+                    0.1111111111111111,
+                    "#46039f"
+                  ],
+                  [
+                    0.2222222222222222,
+                    "#7201a8"
+                  ],
+                  [
+                    0.3333333333333333,
+                    "#9c179e"
+                  ],
+                  [
+                    0.4444444444444444,
+                    "#bd3786"
+                  ],
+                  [
+                    0.5555555555555556,
+                    "#d8576b"
+                  ],
+                  [
+                    0.6666666666666666,
+                    "#ed7953"
+                  ],
+                  [
+                    0.7777777777777778,
+                    "#fb9f3a"
+                  ],
+                  [
+                    0.8888888888888888,
+                    "#fdca26"
+                  ],
+                  [
+                    1.0,
+                    "#f0f921"
+                  ]
+                ]
+              }
+            ],
+            "choropleth": [
+              {
+                "type": "choropleth",
+                "colorbar": {
+                  "outlinewidth": 0,
+                  "ticks": ""
+                }
+              }
+            ],
+            "histogram2d": [
+              {
+                "type": "histogram2d",
+                "colorbar": {
+                  "outlinewidth": 0,
+                  "ticks": ""
+                },
+                "colorscale": [
+                  [
+                    0.0,
+                    "#0d0887"
+                  ],
+                  [
+                    0.1111111111111111,
+                    "#46039f"
+                  ],
+                  [
+                    0.2222222222222222,
+                    "#7201a8"
+                  ],
+                  [
+                    0.3333333333333333,
+                    "#9c179e"
+                  ],
+                  [
+                    0.4444444444444444,
+                    "#bd3786"
+                  ],
+                  [
+                    0.5555555555555556,
+                    "#d8576b"
+                  ],
+                  [
+                    0.6666666666666666,
+                    "#ed7953"
+                  ],
+                  [
+                    0.7777777777777778,
+                    "#fb9f3a"
+                  ],
+                  [
+                    0.8888888888888888,
+                    "#fdca26"
+                  ],
+                  [
+                    1.0,
+                    "#f0f921"
+                  ]
+                ]
+              }
+            ],
+            "heatmap": [
+              {
+                "type": "heatmap",
+                "colorbar": {
+                  "outlinewidth": 0,
+                  "ticks": ""
+                },
+                "colorscale": [
+                  [
+                    0.0,
+                    "#0d0887"
+                  ],
+                  [
+                    0.1111111111111111,
+                    "#46039f"
+                  ],
+                  [
+                    0.2222222222222222,
+                    "#7201a8"
+                  ],
+                  [
+                    0.3333333333333333,
+                    "#9c179e"
+                  ],
+                  [
+                    0.4444444444444444,
+                    "#bd3786"
+                  ],
+                  [
+                    0.5555555555555556,
+                    "#d8576b"
+                  ],
+                  [
+                    0.6666666666666666,
+                    "#ed7953"
+                  ],
+                  [
+                    0.7777777777777778,
+                    "#fb9f3a"
+                  ],
+                  [
+                    0.8888888888888888,
+                    "#fdca26"
+                  ],
+                  [
+                    1.0,
+                    "#f0f921"
+                  ]
+                ]
+              }
+            ],
+            "contourcarpet": [
+              {
+                "type": "contourcarpet",
+                "colorbar": {
+                  "outlinewidth": 0,
+                  "ticks": ""
+                }
+              }
+            ],
+            "contour": [
+              {
+                "type": "contour",
+                "colorbar": {
+                  "outlinewidth": 0,
+                  "ticks": ""
+                },
+                "colorscale": [
+                  [
+                    0.0,
+                    "#0d0887"
+                  ],
+                  [
+                    0.1111111111111111,
+                    "#46039f"
+                  ],
+                  [
+                    0.2222222222222222,
+                    "#7201a8"
+                  ],
+                  [
+                    0.3333333333333333,
+                    "#9c179e"
+                  ],
+                  [
+                    0.4444444444444444,
+                    "#bd3786"
+                  ],
+                  [
+                    0.5555555555555556,
+                    "#d8576b"
+                  ],
+                  [
+                    0.6666666666666666,
+                    "#ed7953"
+                  ],
+                  [
+                    0.7777777777777778,
+                    "#fb9f3a"
+                  ],
+                  [
+                    0.8888888888888888,
+                    "#fdca26"
+                  ],
+                  [
+                    1.0,
+                    "#f0f921"
+                  ]
+                ]
+              }
+            ],
+            "surface": [
+              {
+                "type": "surface",
+                "colorbar": {
+                  "outlinewidth": 0,
+                  "ticks": ""
+                },
+                "colorscale": [
+                  [
+                    0.0,
+                    "#0d0887"
+                  ],
+                  [
+                    0.1111111111111111,
+                    "#46039f"
+                  ],
+                  [
+                    0.2222222222222222,
+                    "#7201a8"
+                  ],
+                  [
+                    0.3333333333333333,
+                    "#9c179e"
+                  ],
+                  [
+                    0.4444444444444444,
+                    "#bd3786"
+                  ],
+                  [
+                    0.5555555555555556,
+                    "#d8576b"
+                  ],
+                  [
+                    0.6666666666666666,
+                    "#ed7953"
+                  ],
+                  [
+                    0.7777777777777778,
+                    "#fb9f3a"
+                  ],
+                  [
+                    0.8888888888888888,
+                    "#fdca26"
+                  ],
+                  [
+                    1.0,
+                    "#f0f921"
+                  ]
+                ]
+              }
+            ],
+            "mesh3d": [
+              {
+                "type": "mesh3d",
+                "colorbar": {
+                  "outlinewidth": 0,
+                  "ticks": ""
+                }
+              }
+            ],
+            "scatter": [
+              {
+                "fillpattern": {
+                  "fillmode": "overlay",
+                  "size": 10,
+                  "solidity": 0.2
+                },
+                "type": "scatter"
+              }
+            ],
+            "parcoords": [
+              {
+                "type": "parcoords",
+                "line": {
+                  "colorbar": {
+                    "outlinewidth": 0,
+                    "ticks": ""
+                  }
+                }
+              }
+            ],
+            "scatterpolargl": [
+              {
+                "type": "scatterpolargl",
+                "marker": {
+                  "colorbar": {
+                    "outlinewidth": 0,
+                    "ticks": ""
+                  }
+                }
+              }
+            ],
+            "bar": [
+              {
+                "error_x": {
+                  "color": "#2a3f5f"
+                },
+                "error_y": {
+                  "color": "#2a3f5f"
+                },
+                "marker": {
+                  "line": {
+                    "color": "#E5ECF6",
+                    "width": 0.5
+                  },
+                  "pattern": {
+                    "fillmode": "overlay",
+                    "size": 10,
+                    "solidity": 0.2
+                  }
+                },
+                "type": "bar"
+              }
+            ],
+            "scattergeo": [
+              {
+                "type": "scattergeo",
+                "marker": {
+                  "colorbar": {
+                    "outlinewidth": 0,
+                    "ticks": ""
+                  }
+                }
+              }
+            ],
+            "scatterpolar": [
+              {
+                "type": "scatterpolar",
+                "marker": {
+                  "colorbar": {
+                    "outlinewidth": 0,
+                    "ticks": ""
+                  }
+                }
+              }
+            ],
+            "histogram": [
+              {
+                "marker": {
+                  "pattern": {
+                    "fillmode": "overlay",
+                    "size": 10,
+                    "solidity": 0.2
+                  }
+                },
+                "type": "histogram"
+              }
+            ],
+            "scattergl": [
+              {
+                "type": "scattergl",
+                "marker": {
+                  "colorbar": {
+                    "outlinewidth": 0,
+                    "ticks": ""
+                  }
+                }
+              }
+            ],
+            "scatter3d": [
+              {
+                "type": "scatter3d",
+                "line": {
+                  "colorbar": {
+                    "outlinewidth": 0,
+                    "ticks": ""
+                  }
+                },
+                "marker": {
+                  "colorbar": {
+                    "outlinewidth": 0,
+                    "ticks": ""
+                  }
+                }
+              }
+            ],
+            "scattermap": [
+              {
+                "type": "scattermap",
+                "marker": {
+                  "colorbar": {
+                    "outlinewidth": 0,
+                    "ticks": ""
+                  }
+                }
+              }
+            ],
+            "scatterternary": [
+              {
+                "type": "scatterternary",
+                "marker": {
+                  "colorbar": {
+                    "outlinewidth": 0,
+                    "ticks": ""
+                  }
+                }
+              }
+            ],
+            "scattercarpet": [
+              {
+                "type": "scattercarpet",
+                "marker": {
+                  "colorbar": {
+                    "outlinewidth": 0,
+                    "ticks": ""
+                  }
+                }
+              }
+            ],
+            "carpet": [
+              {
+                "aaxis": {
+                  "endlinecolor": "#2a3f5f",
+                  "gridcolor": "white",
+                  "linecolor": "white",
+                  "minorgridcolor": "white",
+                  "startlinecolor": "#2a3f5f"
+                },
+                "baxis": {
+                  "endlinecolor": "#2a3f5f",
+                  "gridcolor": "white",
+                  "linecolor": "white",
+                  "minorgridcolor": "white",
+                  "startlinecolor": "#2a3f5f"
+                },
+                "type": "carpet"
+              }
+            ],
+            "table": [
+              {
+                "cells": {
+                  "fill": {
+                    "color": "#EBF0F8"
+                  },
+                  "line": {
+                    "color": "white"
+                  }
+                },
+                "header": {
+                  "fill": {
+                    "color": "#C8D4E3"
+                  },
+                  "line": {
+                    "color": "white"
+                  }
+                },
+                "type": "table"
+              }
+            ],
+            "barpolar": [
+              {
+                "marker": {
+                  "line": {
+                    "color": "#E5ECF6",
+                    "width": 0.5
+                  },
+                  "pattern": {
+                    "fillmode": "overlay",
+                    "size": 10,
+                    "solidity": 0.2
+                  }
+                },
+                "type": "barpolar"
+              }
+            ],
+            "pie": [
+              {
+                "automargin": true,
+                "type": "pie"
+              }
+            ]
+          },
+          "layout": {
+            "autotypenumbers": "strict",
+            "colorway": [
+              "#636efa",
+              "#EF553B",
+              "#00cc96",
+              "#ab63fa",
+              "#FFA15A",
+              "#19d3f3",
+              "#FF6692",
+              "#B6E880",
+              "#FF97FF",
+              "#FECB52"
+            ],
+            "font": {
+              "color": "#2a3f5f"
+            },
+            "hovermode": "closest",
+            "hoverlabel": {
+              "align": "left"
+            },
+            "paper_bgcolor": "white",
+            "plot_bgcolor": "#E5ECF6",
+            "polar": {
+              "bgcolor": "#E5ECF6",
+              "angularaxis": {
+                "gridcolor": "white",
+                "linecolor": "white",
+                "ticks": ""
+              },
+              "radialaxis": {
+                "gridcolor": "white",
+                "linecolor": "white",
+                "ticks": ""
+              }
+            },
+            "ternary": {
+              "bgcolor": "#E5ECF6",
+              "aaxis": {
+                "gridcolor": "white",
+                "linecolor": "white",
+                "ticks": ""
+              },
+              "baxis": {
+                "gridcolor": "white",
+                "linecolor": "white",
+                "ticks": ""
+              },
+              "caxis": {
+                "gridcolor": "white",
+                "linecolor": "white",
+                "ticks": ""
+              }
+            },
+            "coloraxis": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "colorscale": {
+              "sequential": [
+                [
+                  0.0,
+                  "#0d0887"
+                ],
+                [
+                  0.1111111111111111,
+                  "#46039f"
+                ],
+                [
+                  0.2222222222222222,
+                  "#7201a8"
+                ],
+                [
+                  0.3333333333333333,
+                  "#9c179e"
+                ],
+                [
+                  0.4444444444444444,
+                  "#bd3786"
+                ],
+                [
+                  0.5555555555555556,
+                  "#d8576b"
+                ],
+                [
+                  0.6666666666666666,
+                  "#ed7953"
+                ],
+                [
+                  0.7777777777777778,
+                  "#fb9f3a"
+                ],
+                [
+                  0.8888888888888888,
+                  "#fdca26"
+                ],
+                [
+                  1.0,
+                  "#f0f921"
+                ]
+              ],
+              "sequentialminus": [
+                [
+                  0.0,
+                  "#0d0887"
+                ],
+                [
+                  0.1111111111111111,
+                  "#46039f"
+                ],
+                [
+                  0.2222222222222222,
+                  "#7201a8"
+                ],
+                [
+                  0.3333333333333333,
+                  "#9c179e"
+                ],
+                [
+                  0.4444444444444444,
+                  "#bd3786"
+                ],
+                [
+                  0.5555555555555556,
+                  "#d8576b"
+                ],
+                [
+                  0.6666666666666666,
+                  "#ed7953"
+                ],
+                [
+                  0.7777777777777778,
+                  "#fb9f3a"
+                ],
+                [
+                  0.8888888888888888,
+                  "#fdca26"
+                ],
+                [
+                  1.0,
+                  "#f0f921"
+                ]
+              ],
+              "diverging": [
+                [
+                  0,
+                  "#8e0152"
+                ],
+                [
+                  0.1,
+                  "#c51b7d"
+                ],
+                [
+                  0.2,
+                  "#de77ae"
+                ],
+                [
+                  0.3,
+                  "#f1b6da"
+                ],
+                [
+                  0.4,
+                  "#fde0ef"
+                ],
+                [
+                  0.5,
+                  "#f7f7f7"
+                ],
+                [
+                  0.6,
+                  "#e6f5d0"
+                ],
+                [
+                  0.7,
+                  "#b8e186"
+                ],
+                [
+                  0.8,
+                  "#7fbc41"
+                ],
+                [
+                  0.9,
+                  "#4d9221"
+                ],
+                [
+                  1,
+                  "#276419"
+                ]
+              ]
+            },
+            "xaxis": {
+              "gridcolor": "white",
+              "linecolor": "white",
+              "ticks": "",
+              "title": {
+                "standoff": 15
+              },
+              "zerolinecolor": "white",
+              "automargin": true,
+              "zerolinewidth": 2
+            },
+            "yaxis": {
+              "gridcolor": "white",
+              "linecolor": "white",
+              "ticks": "",
+              "title": {
+                "standoff": 15
+              },
+              "zerolinecolor": "white",
+              "automargin": true,
+              "zerolinewidth": 2
+            },
+            "scene": {
+              "xaxis": {
+                "backgroundcolor": "#E5ECF6",
+                "gridcolor": "white",
+                "linecolor": "white",
+                "showbackground": true,
+                "ticks": "",
+                "zerolinecolor": "white",
+                "gridwidth": 2
+              },
+              "yaxis": {
+                "backgroundcolor": "#E5ECF6",
+                "gridcolor": "white",
+                "linecolor": "white",
+                "showbackground": true,
+                "ticks": "",
+                "zerolinecolor": "white",
+                "gridwidth": 2
+              },
+              "zaxis": {
+                "backgroundcolor": "#E5ECF6",
+                "gridcolor": "white",
+                "linecolor": "white",
+                "showbackground": true,
+                "ticks": "",
+                "zerolinecolor": "white",
+                "gridwidth": 2
+              }
+            },
+            "shapedefaults": {
+              "line": {
+                "color": "#2a3f5f"
+              }
+            },
+            "annotationdefaults": {
+              "arrowcolor": "#2a3f5f",
+              "arrowhead": 0,
+              "arrowwidth": 1
+            },
+            "geo": {
+              "bgcolor": "white",
+              "landcolor": "#E5ECF6",
+              "subunitcolor": "white",
+              "showland": true,
+              "showlakes": true,
+              "lakecolor": "white"
+            },
+            "title": {
+              "x": 0.05
+            }
+          }
+        },
+        "xaxis": {
+          "anchor": "y",
+          "domain": [
+            0.0,
+            1.0
+          ],
+          "title": {
+            "text": "Valor (R$)"
+          },
+          "gridcolor": "#eef1f4"
+        },
+        "yaxis": {
+          "anchor": "x",
+          "domain": [
+            0.0,
+            1.0
+          ],
+          "title": {
+            "text": ""
+          },
+          "tickfont": {
+            "size": 12
+          },
+          "automargin": true
+        },
+        "legend": {
+          "tracegroupgap": 0
+        },
+        "title": {
+          "text": "<b>Receitas por Categoria Econômica</b>",
+          "font": {
+            "size": 16,
+            "color": "#1f2933"
+          }
+        },
+        "barmode": "relative",
+        "font": {
+          "family": "system-ui, -apple-system, Segoe UI, Arial, sans-serif",
+          "color": "#1f2933"
+        },
+        "margin": {
+          "l": 10,
+          "r": 30,
+          "t": 40,
+          "b": 10
+        },
+        "showlegend": false,
+        "height": 280,
+        "paper_bgcolor": "rgba(0,0,0,0)",
+        "plot_bgcolor": "rgba(0,0,0,0)"
+      }
+    },
+    "tabela_uo_fonte": [
+      {
+        "UO": "RGE",
+        "Fonte de Recursos": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "LOA 2027 (R$)": "R$ 82.677.917.371,00"
+      },
+      {
+        "UO": "SEE",
+        "Fonte de Recursos": "23 - FUNDO DE MANUTENCAO E DESENVOLVIMENTO DA EDUCACAO BASICA - FUNDEB",
+        "LOA 2027 (R$)": "R$ 14.008.935.319,00"
+      },
+      {
+        "UO": "FFP - MG ",
+        "Fonte de Recursos": "42 - CONTRIBUIÇÃO PATRONAL PARA O RPPS",
+        "LOA 2027 (R$)": "R$ 7.976.443.576,00"
+      },
+      {
+        "UO": "RGE",
+        "Fonte de Recursos": "15 - RECURSOS ORDINÁRIOS - OUTROS RECURSOS NÃO VINCULADOS",
+        "LOA 2027 (R$)": "R$ 4.501.588.976,00"
+      },
+      {
+        "UO": "FFP - MG ",
+        "Fonte de Recursos": "43 - CONTRIBUIÇÃO DO SERVIDOR PARA O RPPS",
+        "LOA 2027 (R$)": "R$ 4.247.405.731,00"
+      },
+      {
+        "UO": "FHEMIG",
+        "Fonte de Recursos": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "LOA 2027 (R$)": "R$ 2.669.971.285,00"
+      },
+      {
+        "UO": "FEPJ",
+        "Fonte de Recursos": "77 - TAXA DE FISCALIZAÇÃO JUDICIÁRIA E TAXAS E MULTAS JUDICIAIS",
+        "LOA 2027 (R$)": "R$ 2.584.034.404,00"
+      },
+      {
+        "UO": "IPSM",
+        "Fonte de Recursos": "49 - CONTRIBUIÇÃO PATRONAL DO ESTADO AOS INSTITUTOS DE PREVIDÊNCIA",
+        "LOA 2027 (R$)": "R$ 2.365.081.209,00"
+      },
+      {
+        "UO": "FEPJ",
+        "Fonte de Recursos": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "LOA 2027 (R$)": "R$ 2.087.847.214,00"
+      },
+      {
+        "UO": "RGE",
+        "Fonte de Recursos": "11 - RECURSOS DE DESVINCULAÇÃO DE RECEITAS - EC 93/2016",
+        "LOA 2027 (R$)": "R$ 1.700.010.861,00"
+      },
+      {
+        "UO": "IPSEMG",
+        "Fonte de Recursos": "50 - CONTRIBUIÇÃO DO SERVIDOR DO ESTADO AOS INSTITUTOS DE PREVIDÊNCIA",
+        "LOA 2027 (R$)": "R$ 1.403.380.074,00"
+      },
+      {
+        "UO": "RGE",
+        "Fonte de Recursos": "95 - RECURSOS RECEBIDOS POR DANOS ADVINDOS DE DESASTRES SOCIOAMBIENTAIS",
+        "LOA 2027 (R$)": "R$ 1.312.851.799,00"
+      },
+      {
+        "UO": "RGE",
+        "Fonte de Recursos": "27 - TAXA DE SEGURANÇA PÚBLICA",
+        "LOA 2027 (R$)": "R$ 1.275.413.271,00"
+      },
+      {
+        "UO": "IPSM",
+        "Fonte de Recursos": "50 - CONTRIBUIÇÃO DO SERVIDOR DO ESTADO AOS INSTITUTOS DE PREVIDÊNCIA",
+        "LOA 2027 (R$)": "R$ 1.134.218.661,00"
+      },
+      {
+        "UO": "SEE",
+        "Fonte de Recursos": "21 - COTA ESTADUAL DO SALÁRIO EDUCAÇÃO - QESE",
+        "LOA 2027 (R$)": "R$ 1.033.190.840,00"
+      },
+      {
+        "UO": "RGE",
+        "Fonte de Recursos": "80 - RECURSOS DO ACORDO DE REPACTUAÇÃO DO RIO DOCE",
+        "LOA 2027 (R$)": "R$ 1.019.599.103,00"
+      },
+      {
+        "UO": "FES",
+        "Fonte de Recursos": "92 - TRANSFERÊNCIAS DA UNIÃO VINCULADAS À SAÚDE - BLOCO MANUTENÇÃO - EXCETO EMENDAS INDIV. E DE BANCADA",
+        "LOA 2027 (R$)": "R$ 686.946.287,00"
+      },
+      {
+        "UO": "FUNED",
+        "Fonte de Recursos": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "LOA 2027 (R$)": "R$ 660.793.564,00"
+      },
+      {
+        "UO": "RGE",
+        "Fonte de Recursos": "75 - CONTRIBUICAO PATRONAL PARA CUSTEIO DOS PROVENTOS DOS MILITARES",
+        "LOA 2027 (R$)": "R$ 648.489.316,00"
+      },
+      {
+        "UO": "RGE",
+        "Fonte de Recursos": "71 - RECURSOS DO FUNDO ESTADUAL DE ERRADICACAO DA MISERIA",
+        "LOA 2027 (R$)": "R$ 627.431.448,00"
+      },
+      {
+        "UO": "IPSEMG",
+        "Fonte de Recursos": "49 - CONTRIBUIÇÃO PATRONAL DO ESTADO AOS INSTITUTOS DE PREVIDÊNCIA",
+        "LOA 2027 (R$)": "R$ 617.805.672,00"
+      },
+      {
+        "UO": "FUNED",
+        "Fonte de Recursos": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "LOA 2027 (R$)": "R$ 617.296.839,00"
+      },
+      {
+        "UO": "FFP - MG ",
+        "Fonte de Recursos": "44 - COMPENSAÇÃO FINANCEIRA ENTRE REGIMES DE PREVIDÊNCIA",
+        "LOA 2027 (R$)": "R$ 500.000.000,00"
+      },
+      {
+        "UO": "RGE",
+        "Fonte de Recursos": "72 - TAXA DE FISCALIZACAO DE RECURSOS MINERARIOS",
+        "LOA 2027 (R$)": "R$ 470.959.523,00"
+      },
+      {
+        "UO": "HEMOMINAS",
+        "Fonte de Recursos": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "LOA 2027 (R$)": "R$ 432.540.335,00"
+      },
+      {
+        "UO": "SEE",
+        "Fonte de Recursos": "36 - TRANSFERÊNCIAS DO FNDE VINCULADOS À EDUCAÇÃO - EXCETO EMENDAS INDIVIDUAIS E DE BANCADA",
+        "LOA 2027 (R$)": "R$ 416.432.871,00"
+      },
+      {
+        "UO": "TJMG",
+        "Fonte de Recursos": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "LOA 2027 (R$)": "R$ 399.038.512,00"
+      },
+      {
+        "UO": "RGE",
+        "Fonte de Recursos": "32 - EXPLORAÇÃO DE RECURSOS MINERAIS",
+        "LOA 2027 (R$)": "R$ 396.632.374,00"
+      },
+      {
+        "UO": "RGE",
+        "Fonte de Recursos": "89 - RECURSOS DO FUNDO DE EQUALIZAÇÃO FEDERATIVA – FEF",
+        "LOA 2027 (R$)": "R$ 392.359.389,00"
+      },
+      {
+        "UO": "SEINFRA",
+        "Fonte de Recursos": "24 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EXCETO EMENDAS INDIVIDUAIS E DE BANCADA",
+        "LOA 2027 (R$)": "R$ 341.391.162,00"
+      },
+      {
+        "UO": "RGE",
+        "Fonte de Recursos": "48 - ALIENAÇÃO DE BENS DO TESOURO ESTADUAL ",
+        "LOA 2027 (R$)": "R$ 327.327.763,00"
+      },
+      {
+        "UO": "FUNTRANS",
+        "Fonte de Recursos": "83 - NOTIFICACAO DE INFRACAO DE TRANSITO FUNTRANS",
+        "LOA 2027 (R$)": "R$ 274.554.027,00"
+      },
+      {
+        "UO": "SEJUSP",
+        "Fonte de Recursos": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "LOA 2027 (R$)": "R$ 273.050.387,00"
+      },
+      {
+        "UO": "IPSM",
+        "Fonte de Recursos": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "LOA 2027 (R$)": "R$ 260.157.990,00"
+      },
+      {
+        "UO": "RGE",
+        "Fonte de Recursos": "30 - CONTRIBUIÇÃO À APOSENTADORIA",
+        "LOA 2027 (R$)": "R$ 204.135.476,00"
+      },
+      {
+        "UO": "IGAM",
+        "Fonte de Recursos": "61 - RECURSOS DIRETAMENTE ARRECADADOS COM VINCULAÇÃO ESPECÍFICA",
+        "LOA 2027 (R$)": "R$ 202.814.436,00"
+      },
+      {
+        "UO": "RGE",
+        "Fonte de Recursos": "82 - NOTIFICACAO DE INFRACAO DE TRANSITO ESTADO",
+        "LOA 2027 (R$)": "R$ 155.647.413,00"
+      },
+      {
+        "UO": "PMMG",
+        "Fonte de Recursos": "73 - ACORDOS E AJUSTES DE COOPERAÇÃO MÚTUA COM A UNIÃO E SUAS ENTIDADES. ",
+        "LOA 2027 (R$)": "R$ 144.220.688,00"
+      },
+      {
+        "UO": "FEC",
+        "Fonte de Recursos": "16 - DEMAIS TRANSFERÊNCIAS VINCULADAS DA UNIÃO",
+        "LOA 2027 (R$)": "R$ 130.000.000,00"
+      },
+      {
+        "UO": "FDMP",
+        "Fonte de Recursos": "59 - OUTROS RECURSOS VINCULADOS",
+        "LOA 2027 (R$)": "R$ 116.000.000,00"
+      },
+      {
+        "UO": "IEF",
+        "Fonte de Recursos": "26 - TAXA FLORESTAL - ADMINISTRAÇÃO INDIRETA",
+        "LOA 2027 (R$)": "R$ 115.202.000,00"
+      },
+      {
+        "UO": "JUCEMG",
+        "Fonte de Recursos": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "LOA 2027 (R$)": "R$ 113.067.490,00"
+      },
+      {
+        "UO": "EMATER",
+        "Fonte de Recursos": "67 - ACORDOS E AJUSTES DE COOPERAÇÃO MÚTUA COM OS MUNICÍPIOS E SUAS ENTIDADES",
+        "LOA 2027 (R$)": "R$ 110.002.000,00"
+      },
+      {
+        "UO": "IPLEMG",
+        "Fonte de Recursos": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "LOA 2027 (R$)": "R$ 109.514.500,00"
+      },
+      {
+        "UO": "FEGAJ",
+        "Fonte de Recursos": "59 - OUTROS RECURSOS VINCULADOS",
+        "LOA 2027 (R$)": "R$ 106.189.000,00"
+      },
+      {
+        "UO": "FEPJ",
+        "Fonte de Recursos": "61 - RECURSOS DIRETAMENTE ARRECADADOS COM VINCULAÇÃO ESPECÍFICA",
+        "LOA 2027 (R$)": "R$ 91.724.664,00"
+      },
+      {
+        "UO": "RGE",
+        "Fonte de Recursos": "51 - CONTRIBUIÇÃO DE INTERVENÇÃO NO DOMÍNIO ECONÔMICO/COMBUSTÍVEIS-CIDE",
+        "LOA 2027 (R$)": "R$ 88.171.783,00"
+      },
+      {
+        "UO": "RGE",
+        "Fonte de Recursos": "31 - UTILIZAÇÃO DE RECURSOS HÍDRICOS",
+        "LOA 2027 (R$)": "R$ 87.761.794,00"
+      },
+      {
+        "UO": "FUNAPEC",
+        "Fonte de Recursos": "59 - OUTROS RECURSOS VINCULADOS",
+        "LOA 2027 (R$)": "R$ 86.727.590,00"
+      },
+      {
+        "UO": "HEMOMINAS",
+        "Fonte de Recursos": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "LOA 2027 (R$)": "R$ 83.873.957,00"
+      },
+      {
+        "UO": "IPSEMG",
+        "Fonte de Recursos": "61 - RECURSOS DIRETAMENTE ARRECADADOS COM VINCULAÇÃO ESPECÍFICA",
+        "LOA 2027 (R$)": "R$ 83.389.802,00"
+      },
+      {
+        "UO": "IMA",
+        "Fonte de Recursos": "91 - TAXA DE EXPEDIENTE - ADMINISTRAÇÃO INDIRETA",
+        "LOA 2027 (R$)": "R$ 83.055.263,00"
+      },
+      {
+        "UO": "SEJUSP",
+        "Fonte de Recursos": "24 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EXCETO EMENDAS INDIVIDUAIS E DE BANCADA",
+        "LOA 2027 (R$)": "R$ 79.111.449,00"
+      },
+      {
+        "UO": "SEE",
+        "Fonte de Recursos": "4 - TRANSFERÊNCIAS DO FNDE VINCULADAS À EDUCAÇÃO - EMENDAS DE BANCADA",
+        "LOA 2027 (R$)": "R$ 74.088.748,00"
+      },
+      {
+        "UO": "FEPDC",
+        "Fonte de Recursos": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "LOA 2027 (R$)": "R$ 73.053.000,00"
+      },
+      {
+        "UO": "FFP - MG ",
+        "Fonte de Recursos": "61 - RECURSOS DIRETAMENTE ARRECADADOS COM VINCULAÇÃO ESPECÍFICA",
+        "LOA 2027 (R$)": "R$ 71.912.016,00"
+      },
+      {
+        "UO": "ARSAE -MG",
+        "Fonte de Recursos": "59 - OUTROS RECURSOS VINCULADOS",
+        "LOA 2027 (R$)": "R$ 68.653.812,00"
+      },
+      {
+        "UO": "PGJ",
+        "Fonte de Recursos": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "LOA 2027 (R$)": "R$ 67.913.000,00"
+      },
+      {
+        "UO": "FUNEMP",
+        "Fonte de Recursos": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "LOA 2027 (R$)": "R$ 67.901.000,00"
+      },
+      {
+        "UO": "SEMAD",
+        "Fonte de Recursos": "24 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EXCETO EMENDAS INDIVIDUAIS E DE BANCADA",
+        "LOA 2027 (R$)": "R$ 66.885.585,00"
+      },
+      {
+        "UO": "UNIMONTES",
+        "Fonte de Recursos": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "LOA 2027 (R$)": "R$ 65.003.000,00"
+      },
+      {
+        "UO": "FES",
+        "Fonte de Recursos": "57 - TRANSFERÊNCIAS DA UNIÃO POR MEIO DE PORTARIA - EXCETO EMENDAS INDIVIDUAIS E DE BANCADA",
+        "LOA 2027 (R$)": "R$ 64.327.459,00"
+      },
+      {
+        "UO": "EMATER",
+        "Fonte de Recursos": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "LOA 2027 (R$)": "R$ 64.002.000,00"
+      },
+      {
+        "UO": "IPSEMG",
+        "Fonte de Recursos": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "LOA 2027 (R$)": "R$ 63.296.266,00"
+      },
+      {
+        "UO": "IEF",
+        "Fonte de Recursos": "61 - RECURSOS DIRETAMENTE ARRECADADOS COM VINCULAÇÃO ESPECÍFICA",
+        "LOA 2027 (R$)": "R$ 60.506.000,00"
+      },
+      {
+        "UO": "PMMG",
+        "Fonte de Recursos": "70 - CONVÊNIOS COM OS MUNICÍPIOS E SUAS ENTIDADES",
+        "LOA 2027 (R$)": "R$ 59.053.438,00"
+      },
+      {
+        "UO": "TCEMG",
+        "Fonte de Recursos": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "LOA 2027 (R$)": "R$ 58.781.073,00"
+      },
+      {
+        "UO": "FEAM",
+        "Fonte de Recursos": "52 - TAXA DE CONTROLE E FISCALIZAÇÃO AMBIENTAL",
+        "LOA 2027 (R$)": "R$ 51.152.000,00"
+      },
+      {
+        "UO": "FESP-MG",
+        "Fonte de Recursos": "57 - TRANSFERÊNCIAS DA UNIÃO POR MEIO DE PORTARIA - EXCETO EMENDAS INDIVIDUAIS E DE BANCADA",
+        "LOA 2027 (R$)": "R$ 50.138.066,00"
+      },
+      {
+        "UO": "FUNTRANS",
+        "Fonte de Recursos": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "LOA 2027 (R$)": "R$ 49.378.529,00"
+      },
+      {
+        "UO": "IPEMMG",
+        "Fonte de Recursos": "73 - ACORDOS E AJUSTES DE COOPERAÇÃO MÚTUA COM A UNIÃO E SUAS ENTIDADES. ",
+        "LOA 2027 (R$)": "R$ 47.500.000,00"
+      },
+      {
+        "UO": "IDENE",
+        "Fonte de Recursos": "24 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EXCETO EMENDAS INDIVIDUAIS E DE BANCADA",
+        "LOA 2027 (R$)": "R$ 45.328.000,00"
+      },
+      {
+        "UO": "RGE",
+        "Fonte de Recursos": "33 - EXPLORAÇÃO E PRODUÇÃO DE PETRÓLEO  E GÁS NATURAL",
+        "LOA 2027 (R$)": "R$ 43.343.915,00"
+      },
+      {
+        "UO": "SECULT",
+        "Fonte de Recursos": "24 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EXCETO EMENDAS INDIVIDUAIS E DE BANCADA",
+        "LOA 2027 (R$)": "R$ 42.068.581,00"
+      },
+      {
+        "UO": "FES",
+        "Fonte de Recursos": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "LOA 2027 (R$)": "R$ 42.000.000,00"
+      },
+      {
+        "UO": "FEH",
+        "Fonte de Recursos": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "LOA 2027 (R$)": "R$ 41.571.088,00"
+      },
+      {
+        "UO": "ESP MG",
+        "Fonte de Recursos": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "LOA 2027 (R$)": "R$ 32.456.131,00"
+      },
+      {
+        "UO": "FEC",
+        "Fonte de Recursos": "59 - OUTROS RECURSOS VINCULADOS",
+        "LOA 2027 (R$)": "R$ 32.000.000,00"
+      },
+      {
+        "UO": "PMMG",
+        "Fonte de Recursos": "24 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EXCETO EMENDAS INDIVIDUAIS E DE BANCADA",
+        "LOA 2027 (R$)": "R$ 30.737.196,00"
+      },
+      {
+        "UO": "IPSM",
+        "Fonte de Recursos": "47 - ALIENAÇÃO DE BENS DE ENTIDADES ESTADUAIS",
+        "LOA 2027 (R$)": "R$ 29.750.066,00"
+      },
+      {
+        "UO": "RGE",
+        "Fonte de Recursos": "29 - TAXA DE EXPEDIENTE - ADMINISTRAÇÃO DIRETA",
+        "LOA 2027 (R$)": "R$ 29.424.208,00"
+      },
+      {
+        "UO": "FAHMEMG",
+        "Fonte de Recursos": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "LOA 2027 (R$)": "R$ 27.423.572,00"
+      },
+      {
+        "UO": "SEDE",
+        "Fonte de Recursos": "24 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EXCETO EMENDAS INDIVIDUAIS E DE BANCADA",
+        "LOA 2027 (R$)": "R$ 27.201.952,00"
+      },
+      {
+        "UO": "FPE",
+        "Fonte de Recursos": "57 - TRANSFERÊNCIAS DA UNIÃO POR MEIO DE PORTARIA - EXCETO EMENDAS INDIVIDUAIS E DE BANCADA",
+        "LOA 2027 (R$)": "R$ 26.003.205,00"
+      },
+      {
+        "UO": "SEDESE",
+        "Fonte de Recursos": "57 - TRANSFERÊNCIAS DA UNIÃO POR MEIO DE PORTARIA - EXCETO EMENDAS INDIVIDUAIS E DE BANCADA",
+        "LOA 2027 (R$)": "R$ 25.322.569,00"
+      },
+      {
+        "UO": "FAPEMIG",
+        "Fonte de Recursos": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "LOA 2027 (R$)": "R$ 25.081.000,00"
+      },
+      {
+        "UO": "ALMG",
+        "Fonte de Recursos": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "LOA 2027 (R$)": "R$ 25.000.000,00"
+      },
+      {
+        "UO": "FEAM",
+        "Fonte de Recursos": "91 - TAXA DE EXPEDIENTE - ADMINISTRAÇÃO INDIRETA",
+        "LOA 2027 (R$)": "R$ 24.750.000,00"
+      },
+      {
+        "UO": "EMATER",
+        "Fonte de Recursos": "2 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EMENDAS DE BANCADA",
+        "LOA 2027 (R$)": "R$ 24.284.700,00"
+      },
+      {
+        "UO": "IEF",
+        "Fonte de Recursos": "91 - TAXA DE EXPEDIENTE - ADMINISTRAÇÃO INDIRETA",
+        "LOA 2027 (R$)": "R$ 23.601.000,00"
+      },
+      {
+        "UO": "EPAMIG",
+        "Fonte de Recursos": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "LOA 2027 (R$)": "R$ 23.328.473,00"
+      },
+      {
+        "UO": "FEAM",
+        "Fonte de Recursos": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "LOA 2027 (R$)": "R$ 22.794.000,00"
+      },
+      {
+        "UO": "DER-MG",
+        "Fonte de Recursos": "70 - CONVÊNIOS COM OS MUNICÍPIOS E SUAS ENTIDADES",
+        "LOA 2027 (R$)": "R$ 22.100.000,00"
+      },
+      {
+        "UO": "IMA",
+        "Fonte de Recursos": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "LOA 2027 (R$)": "R$ 20.802.401,00"
+      },
+      {
+        "UO": "UNIMONTES",
+        "Fonte de Recursos": "70 - CONVÊNIOS COM OS MUNICÍPIOS E SUAS ENTIDADES",
+        "LOA 2027 (R$)": "R$ 20.639.853,00"
+      },
+      {
+        "UO": "IEF",
+        "Fonte de Recursos": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "LOA 2027 (R$)": "R$ 20.151.000,00"
+      },
+      {
+        "UO": "FUNDALEMG",
+        "Fonte de Recursos": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "LOA 2027 (R$)": "R$ 20.000.000,00"
+      },
+      {
+        "UO": "PCMG",
+        "Fonte de Recursos": "24 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EXCETO EMENDAS INDIVIDUAIS E DE BANCADA",
+        "LOA 2027 (R$)": "R$ 19.641.768,00"
+      },
+      {
+        "UO": "RGE",
+        "Fonte de Recursos": "25 - OPERAÇÕES DE CRÉDITO CONTRATUAIS",
+        "LOA 2027 (R$)": "R$ 19.563.672,00"
+      },
+      {
+        "UO": "PMMG",
+        "Fonte de Recursos": "2 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EMENDAS DE BANCADA",
+        "LOA 2027 (R$)": "R$ 18.073.692,00"
+      },
+      {
+        "UO": "LEMG",
+        "Fonte de Recursos": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "LOA 2027 (R$)": "R$ 18.060.450,00"
+      },
+      {
+        "UO": "SEF",
+        "Fonte de Recursos": "74 - ACORDOS E AJUSTES DE COOPERAÇÃO MÚTUA COM AS INSTITUIÇÕES PRIVADAS E OS ORGANISMOS DO EXTERIOR",
+        "LOA 2027 (R$)": "R$ 17.902.000,00"
+      },
+      {
+        "UO": "FEAM",
+        "Fonte de Recursos": "59 - OUTROS RECURSOS VINCULADOS",
+        "LOA 2027 (R$)": "R$ 17.200.000,00"
+      },
+      {
+        "UO": "FEAGE",
+        "Fonte de Recursos": "59 - OUTROS RECURSOS VINCULADOS",
+        "LOA 2027 (R$)": "R$ 17.000.000,00"
+      },
+      {
+        "UO": "DEF PUB",
+        "Fonte de Recursos": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "LOA 2027 (R$)": "R$ 15.138.090,00"
+      },
+      {
+        "UO": "SEMAD",
+        "Fonte de Recursos": "79 - RECURSOS DECORRENTES DA CONVERSÃO DE MULTAS AMBIENTAIS",
+        "LOA 2027 (R$)": "R$ 14.685.491,00"
+      },
+      {
+        "UO": "FUNCONTAS",
+        "Fonte de Recursos": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "LOA 2027 (R$)": "R$ 14.245.944,00"
+      },
+      {
+        "UO": "MG INVESTE",
+        "Fonte de Recursos": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "LOA 2027 (R$)": "R$ 13.238.000,00"
+      },
+      {
+        "UO": "IGAM",
+        "Fonte de Recursos": "91 - TAXA DE EXPEDIENTE - ADMINISTRAÇÃO INDIRETA",
+        "LOA 2027 (R$)": "R$ 13.021.000,00"
+      },
+      {
+        "UO": "FAPEMIG",
+        "Fonte de Recursos": "24 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EXCETO EMENDAS INDIVIDUAIS E DE BANCADA",
+        "LOA 2027 (R$)": "R$ 13.009.300,00"
+      },
+      {
+        "UO": "SEINFRA",
+        "Fonte de Recursos": "70 - CONVÊNIOS COM OS MUNICÍPIOS E SUAS ENTIDADES",
+        "LOA 2027 (R$)": "R$ 12.555.549,00"
+      },
+      {
+        "UO": "UNIMONTES",
+        "Fonte de Recursos": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "LOA 2027 (R$)": "R$ 12.482.659,00"
+      },
+      {
+        "UO": "IEPHA",
+        "Fonte de Recursos": "9 - TERMOS DE AJUSTAMENTO, DOAÇÕES CONTROLADAS POR INSTRUMENTO JURÍDICO E CONGÊNERES",
+        "LOA 2027 (R$)": "R$ 12.092.367,00"
+      },
+      {
+        "UO": "PMMG",
+        "Fonte de Recursos": "98 - TRANSFERÊNCIAS ESPECIAIS DE RECURSOS DA UNIÃO",
+        "LOA 2027 (R$)": "R$ 12.001.000,00"
+      },
+      {
+        "UO": "SEDESE",
+        "Fonte de Recursos": "24 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EXCETO EMENDAS INDIVIDUAIS E DE BANCADA",
+        "LOA 2027 (R$)": "R$ 11.044.323,00"
+      },
+      {
+        "UO": "RGE",
+        "Fonte de Recursos": "94 - TAXA FLORESTAL - ADMINISTRAÇÃO DIRETA",
+        "LOA 2027 (R$)": "R$ 10.873.232,00"
+      },
+      {
+        "UO": "PMMG",
+        "Fonte de Recursos": "9 - TERMOS DE AJUSTAMENTO, DOAÇÕES CONTROLADAS POR INSTRUMENTO JURÍDICO E CONGÊNERES",
+        "LOA 2027 (R$)": "R$ 10.002.000,00"
+      },
+      {
+        "UO": "SEJUSP",
+        "Fonte de Recursos": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "LOA 2027 (R$)": "R$ 9.768.850,00"
+      },
+      {
+        "UO": "FEAS",
+        "Fonte de Recursos": "56 - TRANSFERÊNCIAS DA UNIÃO VINCULADAS À ASSISTÊNCIA SOCIAL - EXCETO EMENDAS INDIVIDUAIS E DE BANCADA",
+        "LOA 2027 (R$)": "R$ 9.273.091,00"
+      },
+      {
+        "UO": "PMMG",
+        "Fonte de Recursos": "69 - CONVÊNIOS COM OS ESTADOS E O DISTRITO FEDERAL E SUAS ENTIDADES",
+        "LOA 2027 (R$)": "R$ 8.981.787,00"
+      },
+      {
+        "UO": "FUNDIF",
+        "Fonte de Recursos": "39 - MULTAS PECUNIÁRIAS E JUROS DE MORA FIXADOS EM SENTENÇAS JUDICIAIS",
+        "LOA 2027 (R$)": "R$ 8.906.618,00"
+      },
+      {
+        "UO": "SEMAD",
+        "Fonte de Recursos": "9 - TERMOS DE AJUSTAMENTO, DOAÇÕES CONTROLADAS POR INSTRUMENTO JURÍDICO E CONGÊNERES",
+        "LOA 2027 (R$)": "R$ 8.602.000,00"
+      },
+      {
+        "UO": "FHEMIG",
+        "Fonte de Recursos": "68 - CONVÊNIOS COM AS INSTITUIÇÕES PRIVADAS E OS ORGANISMOS DO EXTERIOR",
+        "LOA 2027 (R$)": "R$ 8.562.881,00"
+      },
+      {
+        "UO": "SEE",
+        "Fonte de Recursos": "3 - TRANSFERÊNCIAS DO FNDE VINCULADAS À EDUCAÇÃO - EMENDAS INDIVIDUAIS",
+        "LOA 2027 (R$)": "R$ 8.123.427,00"
+      },
+      {
+        "UO": "EMATER",
+        "Fonte de Recursos": "24 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EXCETO EMENDAS INDIVIDUAIS E DE BANCADA",
+        "LOA 2027 (R$)": "R$ 8.119.500,00"
+      },
+      {
+        "UO": "FUNED",
+        "Fonte de Recursos": "24 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EXCETO EMENDAS INDIVIDUAIS E DE BANCADA",
+        "LOA 2027 (R$)": "R$ 8.111.890,00"
+      },
+      {
+        "UO": "DER-MG",
+        "Fonte de Recursos": "68 - CONVÊNIOS COM AS INSTITUIÇÕES PRIVADAS E OS ORGANISMOS DO EXTERIOR",
+        "LOA 2027 (R$)": "R$ 8.100.000,00"
+      },
+      {
+        "UO": "CBMMG",
+        "Fonte de Recursos": "98 - TRANSFERÊNCIAS ESPECIAIS DE RECURSOS DA UNIÃO",
+        "LOA 2027 (R$)": "R$ 7.502.020,00"
+      },
+      {
+        "UO": "SEE",
+        "Fonte de Recursos": "13 - FUNDO DE MANUTENCAO E DESENVOLVIMENTO DA EDUCACAO BÁSICA - FUNDEB - REGULARIZAÇÃO DE EXERCÍCIOS ANTERIORES",
+        "LOA 2027 (R$)": "R$ 7.188.933,00"
+      },
+      {
+        "UO": "FEGAJ",
+        "Fonte de Recursos": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "LOA 2027 (R$)": "R$ 7.000.503,00"
+      },
+      {
+        "UO": "SEJUSP",
+        "Fonte de Recursos": "2 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EMENDAS DE BANCADA",
+        "LOA 2027 (R$)": "R$ 6.902.955,00"
+      },
+      {
+        "UO": "DER-MG",
+        "Fonte de Recursos": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "LOA 2027 (R$)": "R$ 6.568.053,00"
+      },
+      {
+        "UO": "FUNTRANS",
+        "Fonte de Recursos": "54 - TAXA DE LICENCIAMENTO DA FAIXA DE DOMÍNIO DAS RODOVIAS",
+        "LOA 2027 (R$)": "R$ 6.535.553,00"
+      },
+      {
+        "UO": "PGJ",
+        "Fonte de Recursos": "70 - CONVÊNIOS COM OS MUNICÍPIOS E SUAS ENTIDADES",
+        "LOA 2027 (R$)": "R$ 6.500.000,00"
+      },
+      {
+        "UO": "FES",
+        "Fonte de Recursos": "37 - TRANSFERÊNCIAS DA UNIÃO VINCULADOS À SAÚDE",
+        "LOA 2027 (R$)": "R$ 6.000.000,00"
+      },
+      {
+        "UO": "FPE",
+        "Fonte de Recursos": "39 - MULTAS PECUNIÁRIAS E JUROS DE MORA FIXADOS EM SENTENÇAS JUDICIAIS",
+        "LOA 2027 (R$)": "R$ 5.900.000,00"
+      },
+      {
+        "UO": "UNIMONTES",
+        "Fonte de Recursos": "24 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EXCETO EMENDAS INDIVIDUAIS E DE BANCADA",
+        "LOA 2027 (R$)": "R$ 5.721.075,00"
+      },
+      {
+        "UO": "DER-MG",
+        "Fonte de Recursos": "91 - TAXA DE EXPEDIENTE - ADMINISTRAÇÃO INDIRETA",
+        "LOA 2027 (R$)": "R$ 5.487.492,00"
+      },
+      {
+        "UO": "FET-MG",
+        "Fonte de Recursos": "57 - TRANSFERÊNCIAS DA UNIÃO POR MEIO DE PORTARIA - EXCETO EMENDAS INDIVIDUAIS E DE BANCADA",
+        "LOA 2027 (R$)": "R$ 5.433.372,00"
+      },
+      {
+        "UO": "PCMG",
+        "Fonte de Recursos": "98 - TRANSFERÊNCIAS ESPECIAIS DE RECURSOS DA UNIÃO",
+        "LOA 2027 (R$)": "R$ 5.333.160,00"
+      },
+      {
+        "UO": "FHEMIG",
+        "Fonte de Recursos": "70 - CONVÊNIOS COM OS MUNICÍPIOS E SUAS ENTIDADES",
+        "LOA 2027 (R$)": "R$ 5.002.000,00"
+      },
+      {
+        "UO": "SEAPA",
+        "Fonte de Recursos": "59 - OUTROS RECURSOS VINCULADOS",
+        "LOA 2027 (R$)": "R$ 5.000.000,00"
+      },
+      {
+        "UO": "IEF",
+        "Fonte de Recursos": "52 - TAXA DE CONTROLE E FISCALIZAÇÃO AMBIENTAL",
+        "LOA 2027 (R$)": "R$ 4.602.000,00"
+      },
+      {
+        "UO": "CBMMG",
+        "Fonte de Recursos": "2 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EMENDAS DE BANCADA",
+        "LOA 2027 (R$)": "R$ 4.498.246,00"
+      },
+      {
+        "UO": "AGE",
+        "Fonte de Recursos": "9 - TERMOS DE AJUSTAMENTO, DOAÇÕES CONTROLADAS POR INSTRUMENTO JURÍDICO E CONGÊNERES",
+        "LOA 2027 (R$)": "R$ 4.497.454,00"
+      },
+      {
+        "UO": "TJMMG",
+        "Fonte de Recursos": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "LOA 2027 (R$)": "R$ 4.010.000,00"
+      },
+      {
+        "UO": "RGE",
+        "Fonte de Recursos": "97 - TRANSFERÊNCIAS ESPECIAIS DE RECURSOS DA UNIÃO - RECURSOS RECEBIDOS ATÉ 2023",
+        "LOA 2027 (R$)": "R$ 4.009.139,00"
+      },
+      {
+        "UO": "FDM",
+        "Fonte de Recursos": "59 - OUTROS RECURSOS VINCULADOS",
+        "LOA 2027 (R$)": "R$ 3.914.680,00"
+      },
+      {
+        "UO": "CBMMG",
+        "Fonte de Recursos": "70 - CONVÊNIOS COM OS MUNICÍPIOS E SUAS ENTIDADES",
+        "LOA 2027 (R$)": "R$ 3.902.091,00"
+      },
+      {
+        "UO": "TV MINAS",
+        "Fonte de Recursos": "47 - ALIENAÇÃO DE BENS DE ENTIDADES ESTADUAIS",
+        "LOA 2027 (R$)": "R$ 3.800.000,00"
+      },
+      {
+        "UO": "PMMG",
+        "Fonte de Recursos": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "LOA 2027 (R$)": "R$ 3.781.144,00"
+      },
+      {
+        "UO": "FCS",
+        "Fonte de Recursos": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "LOA 2027 (R$)": "R$ 3.709.975,00"
+      },
+      {
+        "UO": "FJP",
+        "Fonte de Recursos": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "LOA 2027 (R$)": "R$ 3.413.000,00"
+      },
+      {
+        "UO": "IEPHA",
+        "Fonte de Recursos": "24 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EXCETO EMENDAS INDIVIDUAIS E DE BANCADA",
+        "LOA 2027 (R$)": "R$ 3.212.950,00"
+      },
+      {
+        "UO": "CBMMG",
+        "Fonte de Recursos": "24 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EXCETO EMENDAS INDIVIDUAIS E DE BANCADA",
+        "LOA 2027 (R$)": "R$ 3.183.726,00"
+      },
+      {
+        "UO": "GABINETE MILITAR",
+        "Fonte de Recursos": "57 - TRANSFERÊNCIAS DA UNIÃO POR MEIO DE PORTARIA - EXCETO EMENDAS INDIVIDUAIS E DE BANCADA",
+        "LOA 2027 (R$)": "R$ 3.002.000,00"
+      },
+      {
+        "UO": "SEE",
+        "Fonte de Recursos": "98 - TRANSFERÊNCIAS ESPECIAIS DE RECURSOS DA UNIÃO",
+        "LOA 2027 (R$)": "R$ 2.710.000,00"
+      },
+      {
+        "UO": "UNIMONTES",
+        "Fonte de Recursos": "1 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EMENDAS INDIVIDUAIS",
+        "LOA 2027 (R$)": "R$ 2.595.967,00"
+      },
+      {
+        "UO": "SEAPA",
+        "Fonte de Recursos": "69 - CONVÊNIOS COM OS ESTADOS E O DISTRITO FEDERAL E SUAS ENTIDADES",
+        "LOA 2027 (R$)": "R$ 2.514.437,00"
+      },
+      {
+        "UO": "EMC",
+        "Fonte de Recursos": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "LOA 2027 (R$)": "R$ 2.500.000,00"
+      },
+      {
+        "UO": "UEMG",
+        "Fonte de Recursos": "1 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EMENDAS INDIVIDUAIS",
+        "LOA 2027 (R$)": "R$ 2.380.400,00"
+      },
+      {
+        "UO": "HEMOMINAS",
+        "Fonte de Recursos": "24 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EXCETO EMENDAS INDIVIDUAIS E DE BANCADA",
+        "LOA 2027 (R$)": "R$ 2.237.541,00"
+      },
+      {
+        "UO": "PMMG",
+        "Fonte de Recursos": "1 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EMENDAS INDIVIDUAIS",
+        "LOA 2027 (R$)": "R$ 2.232.252,00"
+      },
+      {
+        "UO": "UEMG",
+        "Fonte de Recursos": "24 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EXCETO EMENDAS INDIVIDUAIS E DE BANCADA",
+        "LOA 2027 (R$)": "R$ 2.224.000,00"
+      },
+      {
+        "UO": "SEDESE",
+        "Fonte de Recursos": "59 - OUTROS RECURSOS VINCULADOS",
+        "LOA 2027 (R$)": "R$ 2.209.055,00"
+      },
+      {
+        "UO": "PGJ",
+        "Fonte de Recursos": "24 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EXCETO EMENDAS INDIVIDUAIS E DE BANCADA",
+        "LOA 2027 (R$)": "R$ 1.915.000,00"
+      },
+      {
+        "UO": "FES",
+        "Fonte de Recursos": "62 - TRANSFERÊNCIAS DA UNIÃO VINCULADAS À SAÚDE - BLOCO MANUTENÇÃO - EMENDAS INDIVIDUAIS",
+        "LOA 2027 (R$)": "R$ 1.901.000,00"
+      },
+      {
+        "UO": "SEE",
+        "Fonte de Recursos": "24 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EXCETO EMENDAS INDIVIDUAIS E DE BANCADA",
+        "LOA 2027 (R$)": "R$ 1.821.318,00"
+      },
+      {
+        "UO": "CBMMG",
+        "Fonte de Recursos": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "LOA 2027 (R$)": "R$ 1.733.261,00"
+      },
+      {
+        "UO": "AGE",
+        "Fonte de Recursos": "57 - TRANSFERÊNCIAS DA UNIÃO POR MEIO DE PORTARIA - EXCETO EMENDAS INDIVIDUAIS E DE BANCADA",
+        "LOA 2027 (R$)": "R$ 1.602.000,00"
+      },
+      {
+        "UO": "EMATER",
+        "Fonte de Recursos": "1 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EMENDAS INDIVIDUAIS",
+        "LOA 2027 (R$)": "R$ 1.577.750,00"
+      },
+      {
+        "UO": "PCMG",
+        "Fonte de Recursos": "70 - CONVÊNIOS COM OS MUNICÍPIOS E SUAS ENTIDADES",
+        "LOA 2027 (R$)": "R$ 1.496.027,00"
+      },
+      {
+        "UO": "AGÊNCIA RMBH",
+        "Fonte de Recursos": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "LOA 2027 (R$)": "R$ 1.404.353,00"
+      },
+      {
+        "UO": "IGAM",
+        "Fonte de Recursos": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "LOA 2027 (R$)": "R$ 1.345.000,00"
+      },
+      {
+        "UO": "SEAPA",
+        "Fonte de Recursos": "1 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EMENDAS INDIVIDUAIS",
+        "LOA 2027 (R$)": "R$ 1.339.000,00"
+      },
+      {
+        "UO": "UEMG",
+        "Fonte de Recursos": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "LOA 2027 (R$)": "R$ 1.331.000,00"
+      },
+      {
+        "UO": "FEI",
+        "Fonte de Recursos": "45 - DOAÇÕES DE PESSOAS FÍSICAS OU JURÍDICAS, DE INSTITUIÇÕES PRIVADAS OU DO EXTERIOR A ÓRGÃO E ENTIDADES DO ESTADO",
+        "LOA 2027 (R$)": "R$ 1.312.610,00"
+      },
+      {
+        "UO": "IEF",
+        "Fonte de Recursos": "79 - RECURSOS DECORRENTES DA CONVERSÃO DE MULTAS AMBIENTAIS",
+        "LOA 2027 (R$)": "R$ 1.300.000,00"
+      },
+      {
+        "UO": "TV MINAS",
+        "Fonte de Recursos": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "LOA 2027 (R$)": "R$ 1.300.000,00"
+      },
+      {
+        "UO": "IGAM",
+        "Fonte de Recursos": "24 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EXCETO EMENDAS INDIVIDUAIS E DE BANCADA",
+        "LOA 2027 (R$)": "R$ 1.282.000,00"
+      },
+      {
+        "UO": "FEAM",
+        "Fonte de Recursos": "9 - TERMOS DE AJUSTAMENTO, DOAÇÕES CONTROLADAS POR INSTRUMENTO JURÍDICO E CONGÊNERES",
+        "LOA 2027 (R$)": "R$ 1.268.785,00"
+      },
+      {
+        "UO": "FAPEMIG",
+        "Fonte de Recursos": "68 - CONVÊNIOS COM AS INSTITUIÇÕES PRIVADAS E OS ORGANISMOS DO EXTERIOR",
+        "LOA 2027 (R$)": "R$ 1.200.000,00"
+      },
+      {
+        "UO": "EPAMIG",
+        "Fonte de Recursos": "24 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EXCETO EMENDAS INDIVIDUAIS E DE BANCADA",
+        "LOA 2027 (R$)": "R$ 1.159.753,00"
+      },
+      {
+        "UO": "FHEMIG",
+        "Fonte de Recursos": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "LOA 2027 (R$)": "R$ 1.148.881,00"
+      },
+      {
+        "UO": "IGAM",
+        "Fonte de Recursos": "73 - ACORDOS E AJUSTES DE COOPERAÇÃO MÚTUA COM A UNIÃO E SUAS ENTIDADES. ",
+        "LOA 2027 (R$)": "R$ 1.108.600,00"
+      },
+      {
+        "UO": "FEPJ",
+        "Fonte de Recursos": "70 - CONVÊNIOS COM OS MUNICÍPIOS E SUAS ENTIDADES",
+        "LOA 2027 (R$)": "R$ 1.030.341,00"
+      },
+      {
+        "UO": "FES",
+        "Fonte de Recursos": "93 - TRANSFERÊNCIAS DA UNIÃO VINCULADAS À SAÚDE - BLOCO ESTRUTURAÇÃO - EXCETO EMENDAS INDIV. E DE BANCADA",
+        "LOA 2027 (R$)": "R$ 1.001.000,00"
+      },
+      {
+        "UO": "SEINFRA",
+        "Fonte de Recursos": "74 - ACORDOS E AJUSTES DE COOPERAÇÃO MÚTUA COM AS INSTITUIÇÕES PRIVADAS E OS ORGANISMOS DO EXTERIOR",
+        "LOA 2027 (R$)": "R$ 1.000.000,00"
+      },
+      {
+        "UO": "FPP - MG",
+        "Fonte de Recursos": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "LOA 2027 (R$)": "R$ 986.428,00"
+      },
+      {
+        "UO": "IDENE",
+        "Fonte de Recursos": "1 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EMENDAS INDIVIDUAIS",
+        "LOA 2027 (R$)": "R$ 959.500,00"
+      },
+      {
+        "UO": "IMA",
+        "Fonte de Recursos": "1 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EMENDAS INDIVIDUAIS",
+        "LOA 2027 (R$)": "R$ 939.200,00"
+      },
+      {
+        "UO": "FES",
+        "Fonte de Recursos": "63 - TRANSFERÊNCIAS DA UNIÃO VINCULADAS À SAÚDE - BLOCO MANUTENÇÃO - EMENDAS DE BANCADA",
+        "LOA 2027 (R$)": "R$ 901.000,00"
+      },
+      {
+        "UO": "FAPEMIG",
+        "Fonte de Recursos": "69 - CONVÊNIOS COM OS ESTADOS E O DISTRITO FEDERAL E SUAS ENTIDADES",
+        "LOA 2027 (R$)": "R$ 900.000,00"
+      },
+      {
+        "UO": "IEPHA",
+        "Fonte de Recursos": "45 - DOAÇÕES DE PESSOAS FÍSICAS OU JURÍDICAS, DE INSTITUIÇÕES PRIVADAS OU DO EXTERIOR A ÓRGÃO E ENTIDADES DO ESTADO",
+        "LOA 2027 (R$)": "R$ 891.654,00"
+      },
+      {
+        "UO": "SECULT",
+        "Fonte de Recursos": "69 - CONVÊNIOS COM OS ESTADOS E O DISTRITO FEDERAL E SUAS ENTIDADES",
+        "LOA 2027 (R$)": "R$ 745.037,00"
+      },
+      {
+        "UO": "SEINFRA",
+        "Fonte de Recursos": "59 - OUTROS RECURSOS VINCULADOS",
+        "LOA 2027 (R$)": "R$ 727.000,00"
+      },
+      {
+        "UO": "FUNDESE",
+        "Fonte de Recursos": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "LOA 2027 (R$)": "R$ 726.000,00"
+      },
+      {
+        "UO": "FES",
+        "Fonte de Recursos": "24 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EXCETO EMENDAS INDIVIDUAIS E DE BANCADA",
+        "LOA 2027 (R$)": "R$ 700.000,00"
+      },
+      {
+        "UO": "PCMG",
+        "Fonte de Recursos": "2 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EMENDAS DE BANCADA",
+        "LOA 2027 (R$)": "R$ 697.543,00"
+      },
+      {
+        "UO": "CBMMG",
+        "Fonte de Recursos": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "LOA 2027 (R$)": "R$ 683.000,00"
+      },
+      {
+        "UO": "PGJ",
+        "Fonte de Recursos": "47 - ALIENAÇÃO DE BENS DE ENTIDADES ESTADUAIS",
+        "LOA 2027 (R$)": "R$ 645.000,00"
+      },
+      {
+        "UO": "SEDESE",
+        "Fonte de Recursos": "1 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EMENDAS INDIVIDUAIS",
+        "LOA 2027 (R$)": "R$ 597.840,00"
+      },
+      {
+        "UO": "FIA",
+        "Fonte de Recursos": "45 - DOAÇÕES DE PESSOAS FÍSICAS OU JURÍDICAS, DE INSTITUIÇÕES PRIVADAS OU DO EXTERIOR A ÓRGÃO E ENTIDADES DO ESTADO",
+        "LOA 2027 (R$)": "R$ 596.280,00"
+      },
+      {
+        "UO": "FEPJ",
+        "Fonte de Recursos": "47 - ALIENAÇÃO DE BENS DE ENTIDADES ESTADUAIS",
+        "LOA 2027 (R$)": "R$ 496.692,00"
+      },
+      {
+        "UO": "SEDESE",
+        "Fonte de Recursos": "2 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EMENDAS DE BANCADA",
+        "LOA 2027 (R$)": "R$ 490.000,00"
+      },
+      {
+        "UO": "FES",
+        "Fonte de Recursos": "64 - TRANSFERÊNCIAS DA UNIÃO VINCULADAS À SAÚDE - BLOCO ESTRUTURAÇÃO - EMENDAS INDIVIDUAIS",
+        "LOA 2027 (R$)": "R$ 451.000,00"
+      },
+      {
+        "UO": "EPAMIG",
+        "Fonte de Recursos": "70 - CONVÊNIOS COM OS MUNICÍPIOS E SUAS ENTIDADES",
+        "LOA 2027 (R$)": "R$ 431.315,00"
+      },
+      {
+        "UO": "UTRAMIG",
+        "Fonte de Recursos": "36 - TRANSFERÊNCIAS DO FNDE VINCULADOS À EDUCAÇÃO - EXCETO EMENDAS INDIVIDUAIS E DE BANCADA",
+        "LOA 2027 (R$)": "R$ 417.443,00"
+      },
+      {
+        "UO": "SEJUSP",
+        "Fonte de Recursos": "9 - TERMOS DE AJUSTAMENTO, DOAÇÕES CONTROLADAS POR INSTRUMENTO JURÍDICO E CONGÊNERES",
+        "LOA 2027 (R$)": "R$ 402.000,00"
+      },
+      {
+        "UO": "FES",
+        "Fonte de Recursos": "65 - TRANSFERÊNCIAS DA UNIÃO VINCULADAS À SAÚDE - BLOCO ESTRUTURAÇÃO - EMENDAS DE BANCADA",
+        "LOA 2027 (R$)": "R$ 402.000,00"
+      },
+      {
+        "UO": "FFP - MG ",
+        "Fonte de Recursos": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "LOA 2027 (R$)": "R$ 330.736,00"
+      },
+      {
+        "UO": "SEDE",
+        "Fonte de Recursos": "98 - TRANSFERÊNCIAS ESPECIAIS DE RECURSOS DA UNIÃO",
+        "LOA 2027 (R$)": "R$ 330.376,00"
+      },
+      {
+        "UO": "PMMG",
+        "Fonte de Recursos": "45 - DOAÇÕES DE PESSOAS FÍSICAS OU JURÍDICAS, DE INSTITUIÇÕES PRIVADAS OU DO EXTERIOR A ÓRGÃO E ENTIDADES DO ESTADO",
+        "LOA 2027 (R$)": "R$ 279.433,00"
+      },
+      {
+        "UO": "HEMOMINAS",
+        "Fonte de Recursos": "1 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EMENDAS INDIVIDUAIS",
+        "LOA 2027 (R$)": "R$ 265.810,00"
+      },
+      {
+        "UO": "FJP",
+        "Fonte de Recursos": "24 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EXCETO EMENDAS INDIVIDUAIS E DE BANCADA",
+        "LOA 2027 (R$)": "R$ 261.000,00"
+      },
+      {
+        "UO": "FHIDRO",
+        "Fonte de Recursos": "61 - RECURSOS DIRETAMENTE ARRECADADOS COM VINCULAÇÃO ESPECÍFICA",
+        "LOA 2027 (R$)": "R$ 253.551,00"
+      },
+      {
+        "UO": "FHA",
+        "Fonte de Recursos": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "LOA 2027 (R$)": "R$ 253.000,00"
+      },
+      {
+        "UO": "SEJUSP",
+        "Fonte de Recursos": "1 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EMENDAS INDIVIDUAIS",
+        "LOA 2027 (R$)": "R$ 252.000,00"
+      },
+      {
+        "UO": "FEAM",
+        "Fonte de Recursos": "45 - DOAÇÕES DE PESSOAS FÍSICAS OU JURÍDICAS, DE INSTITUIÇÕES PRIVADAS OU DO EXTERIOR A ÓRGÃO E ENTIDADES DO ESTADO",
+        "LOA 2027 (R$)": "R$ 215.000,00"
+      },
+      {
+        "UO": "RGE",
+        "Fonte de Recursos": "40 - RECURSOS FUNDOS EXTINTOS-LEI Nº 13.848/2001",
+        "LOA 2027 (R$)": "R$ 203.859,00"
+      },
+      {
+        "UO": "IMA",
+        "Fonte de Recursos": "47 - ALIENAÇÃO DE BENS DE ENTIDADES ESTADUAIS",
+        "LOA 2027 (R$)": "R$ 180.000,00"
+      },
+      {
+        "UO": "FHEMIG",
+        "Fonte de Recursos": "47 - ALIENAÇÃO DE BENS DE ENTIDADES ESTADUAIS",
+        "LOA 2027 (R$)": "R$ 164.358,00"
+      },
+      {
+        "UO": "IEF",
+        "Fonte de Recursos": "47 - ALIENAÇÃO DE BENS DE ENTIDADES ESTADUAIS",
+        "LOA 2027 (R$)": "R$ 130.000,00"
+      },
+      {
+        "UO": "SEDESE",
+        "Fonte de Recursos": "98 - TRANSFERÊNCIAS ESPECIAIS DE RECURSOS DA UNIÃO",
+        "LOA 2027 (R$)": "R$ 111.000,00"
+      },
+      {
+        "UO": "IEF",
+        "Fonte de Recursos": "9 - TERMOS DE AJUSTAMENTO, DOAÇÕES CONTROLADAS POR INSTRUMENTO JURÍDICO E CONGÊNERES",
+        "LOA 2027 (R$)": "R$ 102.000,00"
+      },
+      {
+        "UO": "FAOP",
+        "Fonte de Recursos": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "LOA 2027 (R$)": "R$ 100.000,00"
+      },
+      {
+        "UO": "FEAM",
+        "Fonte de Recursos": "79 - RECURSOS DECORRENTES DA CONVERSÃO DE MULTAS AMBIENTAIS",
+        "LOA 2027 (R$)": "R$ 100.000,00"
+      },
+      {
+        "UO": "FEAS",
+        "Fonte de Recursos": "5 - TRANSFERÊNCIAS DA UNIÃO VINCULADAS À ASSISTÊNCIA SOCIAL - EMENDAS INDIVIDUAIS",
+        "LOA 2027 (R$)": "R$ 100.000,00"
+      },
+      {
+        "UO": "FEAS",
+        "Fonte de Recursos": "6 - TRANSFERÊNCIAS DA UNIÃO VINCULADAS À ASSISTÊNCIA SOCIAL - EMENDAS DE BANCADA",
+        "LOA 2027 (R$)": "R$ 100.000,00"
+      },
+      {
+        "UO": "FUNDESE",
+        "Fonte de Recursos": "61 - RECURSOS DIRETAMENTE ARRECADADOS COM VINCULAÇÃO ESPECÍFICA",
+        "LOA 2027 (R$)": "R$ 98.000,00"
+      },
+      {
+        "UO": "PMMG",
+        "Fonte de Recursos": "68 - CONVÊNIOS COM AS INSTITUIÇÕES PRIVADAS E OS ORGANISMOS DO EXTERIOR",
+        "LOA 2027 (R$)": "R$ 75.981,00"
+      },
+      {
+        "UO": "IGAM",
+        "Fonte de Recursos": "79 - RECURSOS DECORRENTES DA CONVERSÃO DE MULTAS AMBIENTAIS",
+        "LOA 2027 (R$)": "R$ 75.000,00"
+      },
+      {
+        "UO": "FIA",
+        "Fonte de Recursos": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "LOA 2027 (R$)": "R$ 63.815,00"
+      },
+      {
+        "UO": "SEJUSP",
+        "Fonte de Recursos": "61 - RECURSOS DIRETAMENTE ARRECADADOS COM VINCULAÇÃO ESPECÍFICA",
+        "LOA 2027 (R$)": "R$ 61.000,00"
+      },
+      {
+        "UO": "IEF",
+        "Fonte de Recursos": "69 - CONVÊNIOS COM OS ESTADOS E O DISTRITO FEDERAL E SUAS ENTIDADES",
+        "LOA 2027 (R$)": "R$ 60.100,00"
+      },
+      {
+        "UO": "ARMVA",
+        "Fonte de Recursos": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "LOA 2027 (R$)": "R$ 51.000,00"
+      },
+      {
+        "UO": "HEMOMINAS",
+        "Fonte de Recursos": "47 - ALIENAÇÃO DE BENS DE ENTIDADES ESTADUAIS",
+        "LOA 2027 (R$)": "R$ 40.000,00"
+      },
+      {
+        "UO": "CBMMG",
+        "Fonte de Recursos": "66 - ACORDOS E AJUSTES DE COOPERAÇÃO MÚTUA COM OS ESTADOS E O DISTRITO FEDERAL E SUAS ENTIDADES",
+        "LOA 2027 (R$)": "R$ 39.744,00"
+      },
+      {
+        "UO": "FES",
+        "Fonte de Recursos": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "LOA 2027 (R$)": "R$ 35.000,00"
+      },
+      {
+        "UO": "DETRANMG",
+        "Fonte de Recursos": "74 - ACORDOS E AJUSTES DE COOPERAÇÃO MÚTUA COM AS INSTITUIÇÕES PRIVADAS E OS ORGANISMOS DO EXTERIOR",
+        "LOA 2027 (R$)": "R$ 31.000,00"
+      },
+      {
+        "UO": "UEMG",
+        "Fonte de Recursos": "70 - CONVÊNIOS COM OS MUNICÍPIOS E SUAS ENTIDADES",
+        "LOA 2027 (R$)": "R$ 30.400,00"
+      },
+      {
+        "UO": "PCMG",
+        "Fonte de Recursos": "1 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EMENDAS INDIVIDUAIS",
+        "LOA 2027 (R$)": "R$ 26.707,00"
+      },
+      {
+        "UO": "UEMG",
+        "Fonte de Recursos": "3 - TRANSFERÊNCIAS DO FNDE VINCULADAS À EDUCAÇÃO - EMENDAS INDIVIDUAIS",
+        "LOA 2027 (R$)": "R$ 20.000,00"
+      },
+      {
+        "UO": "IEPHA",
+        "Fonte de Recursos": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "LOA 2027 (R$)": "R$ 17.072,00"
+      },
+      {
+        "UO": "FAPEMIG",
+        "Fonte de Recursos": "47 - ALIENAÇÃO DE BENS DE ENTIDADES ESTADUAIS",
+        "LOA 2027 (R$)": "R$ 15.000,00"
+      },
+      {
+        "UO": "UEMG",
+        "Fonte de Recursos": "36 - TRANSFERÊNCIAS DO FNDE VINCULADOS À EDUCAÇÃO - EXCETO EMENDAS INDIVIDUAIS E DE BANCADA",
+        "LOA 2027 (R$)": "R$ 10.000,00"
+      },
+      {
+        "UO": "ARMVA",
+        "Fonte de Recursos": "24 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EXCETO EMENDAS INDIVIDUAIS E DE BANCADA",
+        "LOA 2027 (R$)": "R$ 8.000,00"
+      },
+      {
+        "UO": "FHEMIG",
+        "Fonte de Recursos": "45 - DOAÇÕES DE PESSOAS FÍSICAS OU JURÍDICAS, DE INSTITUIÇÕES PRIVADAS OU DO EXTERIOR A ÓRGÃO E ENTIDADES DO ESTADO",
+        "LOA 2027 (R$)": "R$ 7.653,00"
+      },
+      {
+        "UO": "IEF",
+        "Fonte de Recursos": "74 - ACORDOS E AJUSTES DE COOPERAÇÃO MÚTUA COM AS INSTITUIÇÕES PRIVADAS E OS ORGANISMOS DO EXTERIOR",
+        "LOA 2027 (R$)": "R$ 6.100,00"
+      },
+      {
+        "UO": "FHA",
+        "Fonte de Recursos": "47 - ALIENAÇÃO DE BENS DE ENTIDADES ESTADUAIS",
+        "LOA 2027 (R$)": "R$ 5.000,00"
+      },
+      {
+        "UO": "FJP",
+        "Fonte de Recursos": "47 - ALIENAÇÃO DE BENS DE ENTIDADES ESTADUAIS",
+        "LOA 2027 (R$)": "R$ 5.000,00"
+      },
+      {
+        "UO": "FCS",
+        "Fonte de Recursos": "47 - ALIENAÇÃO DE BENS DE ENTIDADES ESTADUAIS",
+        "LOA 2027 (R$)": "R$ 5.000,00"
+      },
+      {
+        "UO": "SEF",
+        "Fonte de Recursos": "9 - TERMOS DE AJUSTAMENTO, DOAÇÕES CONTROLADAS POR INSTRUMENTO JURÍDICO E CONGÊNERES",
+        "LOA 2027 (R$)": "R$ 4.000,00"
+      },
+      {
+        "UO": "SEAPA",
+        "Fonte de Recursos": "98 - TRANSFERÊNCIAS ESPECIAIS DE RECURSOS DA UNIÃO",
+        "LOA 2027 (R$)": "R$ 4.000,00"
+      },
+      {
+        "UO": "FES",
+        "Fonte de Recursos": "98 - TRANSFERÊNCIAS ESPECIAIS DE RECURSOS DA UNIÃO",
+        "LOA 2027 (R$)": "R$ 4.000,00"
+      },
+      {
+        "UO": "GABINETE MILITAR",
+        "Fonte de Recursos": "98 - TRANSFERÊNCIAS ESPECIAIS DE RECURSOS DA UNIÃO",
+        "LOA 2027 (R$)": "R$ 3.000,00"
+      },
+      {
+        "UO": "SEMAD",
+        "Fonte de Recursos": "98 - TRANSFERÊNCIAS ESPECIAIS DE RECURSOS DA UNIÃO",
+        "LOA 2027 (R$)": "R$ 3.000,00"
+      },
+      {
+        "UO": "SEJUSP",
+        "Fonte de Recursos": "70 - CONVÊNIOS COM OS MUNICÍPIOS E SUAS ENTIDADES",
+        "LOA 2027 (R$)": "R$ 3.000,00"
+      },
+      {
+        "UO": "SECULT",
+        "Fonte de Recursos": "16 - DEMAIS TRANSFERÊNCIAS VINCULADAS DA UNIÃO",
+        "LOA 2027 (R$)": "R$ 3.000,00"
+      },
+      {
+        "UO": "SEJUSP",
+        "Fonte de Recursos": "98 - TRANSFERÊNCIAS ESPECIAIS DE RECURSOS DA UNIÃO",
+        "LOA 2027 (R$)": "R$ 3.000,00"
+      },
+      {
+        "UO": "SEINFRA",
+        "Fonte de Recursos": "98 - TRANSFERÊNCIAS ESPECIAIS DE RECURSOS DA UNIÃO",
+        "LOA 2027 (R$)": "R$ 3.000,00"
+      },
+      {
+        "UO": "RGE",
+        "Fonte de Recursos": "46 - DOAÇÕES DE PESSOAS FÍSICAS OU JURÍDICAS, DE INSTITUIÇÕES PRIVADAS OU DO EXTERIOR AO TESOURO ESTADUAL",
+        "LOA 2027 (R$)": "R$ 2.901,00"
+      },
+      {
+        "UO": "IEF",
+        "Fonte de Recursos": "68 - CONVÊNIOS COM AS INSTITUIÇÕES PRIVADAS E OS ORGANISMOS DO EXTERIOR",
+        "LOA 2027 (R$)": "R$ 2.900,00"
+      },
+      {
+        "UO": "RGE",
+        "Fonte de Recursos": "53 - TAXA DE INCÊNDIO",
+        "LOA 2027 (R$)": "R$ 2.000,00"
+      },
+      {
+        "UO": "FHEMIG",
+        "Fonte de Recursos": "57 - TRANSFERÊNCIAS DA UNIÃO POR MEIO DE PORTARIA - EXCETO EMENDAS INDIVIDUAIS E DE BANCADA",
+        "LOA 2027 (R$)": "R$ 2.000,00"
+      },
+      {
+        "UO": "UNIMONTES",
+        "Fonte de Recursos": "57 - TRANSFERÊNCIAS DA UNIÃO POR MEIO DE PORTARIA - EXCETO EMENDAS INDIVIDUAIS E DE BANCADA",
+        "LOA 2027 (R$)": "R$ 2.000,00"
+      },
+      {
+        "UO": "SEJUSP",
+        "Fonte de Recursos": "57 - TRANSFERÊNCIAS DA UNIÃO POR MEIO DE PORTARIA - EXCETO EMENDAS INDIVIDUAIS E DE BANCADA",
+        "LOA 2027 (R$)": "R$ 2.000,00"
+      },
+      {
+        "UO": "EPAMIG",
+        "Fonte de Recursos": "2 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EMENDAS DE BANCADA",
+        "LOA 2027 (R$)": "R$ 2.000,00"
+      },
+      {
+        "UO": "IMA",
+        "Fonte de Recursos": "24 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EXCETO EMENDAS INDIVIDUAIS E DE BANCADA",
+        "LOA 2027 (R$)": "R$ 2.000,00"
+      },
+      {
+        "UO": "IGAM",
+        "Fonte de Recursos": "47 - ALIENAÇÃO DE BENS DE ENTIDADES ESTADUAIS",
+        "LOA 2027 (R$)": "R$ 2.000,00"
+      },
+      {
+        "UO": "FUNED",
+        "Fonte de Recursos": "57 - TRANSFERÊNCIAS DA UNIÃO POR MEIO DE PORTARIA - EXCETO EMENDAS INDIVIDUAIS E DE BANCADA",
+        "LOA 2027 (R$)": "R$ 2.000,00"
+      },
+      {
+        "UO": "HEMOMINAS",
+        "Fonte de Recursos": "57 - TRANSFERÊNCIAS DA UNIÃO POR MEIO DE PORTARIA - EXCETO EMENDAS INDIVIDUAIS E DE BANCADA",
+        "LOA 2027 (R$)": "R$ 2.000,00"
+      },
+      {
+        "UO": "SEAPA",
+        "Fonte de Recursos": "24 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EXCETO EMENDAS INDIVIDUAIS E DE BANCADA",
+        "LOA 2027 (R$)": "R$ 2.000,00"
+      },
+      {
+        "UO": "IPSEMG",
+        "Fonte de Recursos": "47 - ALIENAÇÃO DE BENS DE ENTIDADES ESTADUAIS",
+        "LOA 2027 (R$)": "R$ 2.000,00"
+      },
+      {
+        "UO": "JUCEMG",
+        "Fonte de Recursos": "47 - ALIENAÇÃO DE BENS DE ENTIDADES ESTADUAIS",
+        "LOA 2027 (R$)": "R$ 2.000,00"
+      },
+      {
+        "UO": "RGE",
+        "Fonte de Recursos": "12 - OPERAÇÕES DE CRÉDITO CONTRATUAIS - SWAP",
+        "LOA 2027 (R$)": "R$ 1.000,00"
+      },
+      {
+        "UO": "FFP - MG ",
+        "Fonte de Recursos": "15 - RECURSOS ORDINÁRIOS - OUTROS RECURSOS NÃO VINCULADOS",
+        "LOA 2027 (R$)": "R$ 1.000,00"
+      },
+      {
+        "UO": "FFP - MG ",
+        "Fonte de Recursos": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "LOA 2027 (R$)": "R$ 1.000,00"
+      },
+      {
+        "UO": "CGE",
+        "Fonte de Recursos": "9 - TERMOS DE AJUSTAMENTO, DOAÇÕES CONTROLADAS POR INSTRUMENTO JURÍDICO E CONGÊNERES",
+        "LOA 2027 (R$)": "R$ 0,00"
+      },
+      {
+        "UO": "FUNDERUR",
+        "Fonte de Recursos": "16 - DEMAIS TRANSFERÊNCIAS VINCULADAS DA UNIÃO",
+        "LOA 2027 (R$)": "R$ 0,00"
+      },
+      {
+        "UO": "IDENE",
+        "Fonte de Recursos": "71 - RECURSOS DO FUNDO ESTADUAL DE ERRADICACAO DA MISERIA",
+        "LOA 2027 (R$)": "R$ 0,00"
+      },
+      {
+        "UO": "IDENE",
+        "Fonte de Recursos": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "LOA 2027 (R$)": "R$ 0,00"
+      },
+      {
+        "UO": "RGE",
+        "Fonte de Recursos": "20 - RECURSOS CONSTITUC.VINCULADOS AOS MUNICÍPIOS",
+        "LOA 2027 (R$)": "R$ 0,00"
+      },
+      {
+        "UO": "RGE",
+        "Fonte de Recursos": "23 - FUNDO DE MANUTENCAO E DESENVOLVIMENTO DA EDUCACAO BASICA - FUNDEB",
+        "LOA 2027 (R$)": "R$ 0,00"
+      },
+      {
+        "UO": "SEDE",
+        "Fonte de Recursos": "80 - RECURSOS DO ACORDO DE REPACTUAÇÃO DO RIO DOCE",
+        "LOA 2027 (R$)": "R$ 0,00"
+      },
+      {
+        "UO": "SECOM",
+        "Fonte de Recursos": "69 - CONVÊNIOS COM OS ESTADOS E O DISTRITO FEDERAL E SUAS ENTIDADES",
+        "LOA 2027 (R$)": "R$ 0,00"
+      },
+      {
+        "UO": "SEDE",
+        "Fonte de Recursos": "95 - RECURSOS RECEBIDOS POR DANOS ADVINDOS DE DESASTRES SOCIOAMBIENTAIS",
+        "LOA 2027 (R$)": "R$ 0,00"
+      },
+      {
+        "UO": "SEPLAG",
+        "Fonte de Recursos": "74 - ACORDOS E AJUSTES DE COOPERAÇÃO MÚTUA COM AS INSTITUIÇÕES PRIVADAS E OS ORGANISMOS DO EXTERIOR",
+        "LOA 2027 (R$)": "R$ 0,00"
+      }
+    ]
   }
 }

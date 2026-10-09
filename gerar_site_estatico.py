@@ -7,6 +7,11 @@ publicar a branch gh-pages.
 import json
 from pathlib import Path
 
+from dados_receita_fiscal import (
+    calcular_card_receita_total,
+    construir_grafico_receita_por_categoria,
+    construir_tabela_uo_fonte,
+)
 from dados_visao_geral import (
     calcular_cards,
     construir_grafico_area_tematica,
@@ -45,6 +50,13 @@ def gerar() -> None:
         ],
         "grafico_area_tematica": json.loads(construir_grafico_area_tematica().to_json()),
         "grafico_setor_governo": json.loads(construir_grafico_setor_governo().to_json()),
+        "receita_fiscal": {
+            "card_receita_total": formatar_bilhoes(calcular_card_receita_total()),
+            "grafico_categoria": json.loads(
+                construir_grafico_receita_por_categoria().to_json()
+            ),
+            "tabela_uo_fonte": construir_tabela_uo_fonte().to_dict(orient="records"),
+        },
     }
 
     SAIDA.write_text(json.dumps(dados, ensure_ascii=False, indent=2), encoding="utf-8")

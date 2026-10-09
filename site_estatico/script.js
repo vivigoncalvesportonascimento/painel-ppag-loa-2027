@@ -24,6 +24,16 @@ fetch("dados.json")
       responsive: true,
       displayModeBar: false,
     });
+
+    document.getElementById("receita-total-valor").textContent =
+      dados.receita_fiscal.card_receita_total;
+    Plotly.newPlot(
+      "grafico-receita-categoria",
+      dados.receita_fiscal.grafico_categoria.data,
+      dados.receita_fiscal.grafico_categoria.layout,
+      { responsive: true, displayModeBar: false }
+    );
+    renderizarTabelaUoFonte(dados.receita_fiscal.tabela_uo_fonte);
   })
   .catch((erro) => {
     document.getElementById("cards").innerHTML =
@@ -48,5 +58,20 @@ function renderizarCards(cards) {
 
     elemento.append(valor, titulo);
     container.appendChild(elemento);
+  });
+}
+
+function renderizarTabelaUoFonte(linhas) {
+  const corpo = document.getElementById("tabela-uo-fonte-corpo");
+  corpo.replaceChildren();
+
+  linhas.forEach((linha) => {
+    const tr = document.createElement("tr");
+    ["UO", "Fonte de Recursos", "LOA 2027 (R$)"].forEach((coluna) => {
+      const td = document.createElement("td");
+      td.textContent = linha[coluna];
+      tr.appendChild(td);
+    });
+    corpo.appendChild(tr);
   });
 }
