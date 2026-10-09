@@ -82,7 +82,7 @@ def _grafico_percentual_por_categoria(
         paper_bgcolor="rgba(0,0,0,0)",
         plot_bgcolor="rgba(0,0,0,0)",
         margin=dict(l=10, r=30, t=40, b=10),
-        yaxis=dict(tickfont=dict(size=14), automargin=True),
+        yaxis=dict(tickfont=dict(size=11), automargin=True),
         xaxis=dict(gridcolor="#eef1f4"),
     )
     return fig
