@@ -83,6 +83,35 @@ Colunas:
 Fonte: data\BASE_ORCAM_RECEITA_FISCAL.xlsx e auxiliares\auxiliar_fonte.csv 
 
 
+4) Pagina 4
+Título: Despesa Fiscal
 
+Incluir:
+
+Card 1
+Título: Despesa Total (R$) - 2027
+Dado: Traz o somatório dos dados da coluna VALOR FINAL (R$) da base data\BASE_QDD_FISCAL.xlsx
+Fonte de dados: data\BASE_ORCAM_RECEITA_FISCAL.xlsx
+
+Gráfico 1 - colocar logo ao lado do card 1
+Título: Despesa por Poder e Reserva de Contingência
+Tipo de gráfico: Grafico de colunas verticais
+Dados: Construir um gráfico de colunas verticais, no qual no eixo Y deverão estar o somatório dos valores da coluna VALOR FINAL (R$) da base data\BASE_QDD_FISCAL.xlsx, segregado de acordo com as categorias que vão estar no eixo x. Para as categorias é preciso combinar as duas bases data\BASE_QDD_FISCAL.xlsx e auxiliares\auxiliar_poder.csv, por meio das colunas COD_ORGAO da base data\BASE_QDD_FISCAL.xlsx e da coluna uo_cod da base auxiliares\auxiliar_poder.csv, que são códigos. Mas o que deve ser exibido no gráfico é o conteúdo da coluna uo_poder da base auxiliares\auxiliar_poder.csv. Assim, no gráfico devera ter como categoria o Poder Executivo, que devera trazer o somatório dos valores de todas as linhas da coluna ALOR FINAL (R$) da base data\BASE_QDD_FISCAL.xlsx, cujo dado na coluna COD_ORGAO da base data\BASE_QDD_FISCAL.xlsx e da coluna uo_cod da base auxiliares\auxiliar_poder.csv forem coincidentes. Em termos de exibição do dado no gráfico devera ficar no formato 15 bi, por exemplo. Ou seja numero em bilhões arredondado com a expressão Bi.
+Fonte:data\BASE_QDD_FISCAL.xlsx e auxiliares\auxiliar_poder.csv
+
+Gráfico 2 - colocar logo abaixo do Card 1 + Gráfico 1
+Título: Despesa por Grupo
+Tipo de Gráfico: Gráfico de barras horizontais
+Dados: Construir um gráfico de barras horizontais, no qual no eixo X deverão estar o somatório dos valores da coluna VVALOR FINAL (R$) da base data\BASE_QDD_FISCAL.xlsx (exibido em termos percentuais em relação ao total), segregado de acordo com as categorias que vão estar no eixo y. Para as categorias é preciso combinar as duas bases data\BASE_QDD_FISCAL.xlsx e auxiliares\auxiliar_grupo_despesa.csv, por meio das colunas GRUPO_DESPESA da basedata\BASE_QDD_FISCAL.xlsxe a coluna grupo_despesa_cod da base auxiliares\auxiliar_grupo_despesa.csv, que são códigos, mas o que deve ser exibido no gráfico é o conteúdo da coluna grupo_despesa_descricao da base auxiliares\auxiliar_grupo_despesa.csv. Assim, no gráfico devera ter, por exemplo, a categoria relativa ao Grupo de Despesa a categoria PESSOAL E ENCARGOS SOCIAIS, que trazer o somatório dos valores de todas as linhas da coluna VALOR FINAL (R$) da base data\BASE_QDD_FISCAL.xlsx, cujo dado na coluna GRUPO_DESPESA da basedata\BASE_QDD_FISCAL.xlsx  == 1, por exemplo e assim por diante. Em termos de exibição do dado no gráfico dever ser exibido em termos percentuais e não nominais, ou seja o percentual em relação ao total.
+
+Fonte:data\BASE_QDD_FISCAL.xlsx e auxiliares\auxiliar_grupo_despesa.csv
+
+Gráfico 3 - colocar logo abaixo do gráfico 2
+Título: Despesa por Função
+Tipo de Gráfico: Gráfico de barras horizontais
+Dados: Construir um gráfico de barras horizontais, no qual no eixo X deverão estar o somatório dos valores da coluna VVALOR FINAL (R$) da base data\BASE_QDD_FISCAL.xlsx (exibido em termos percentuais em relação ao total), segregado de acordo com as categorias que vão estar no eixo y. Para as categorias é preciso combinar as duas bases data\BASE_QDD_FISCAL.xlsx e auxiliares\auxiliar_funcao.csv, por meio das colunas FUNCAO da basedata\BASE_QDD_FISCAL.xlsxe a coluna funcao_cod da base auxiliares\auxiliar_funcao.csv, que são códigos, mas o que deve ser exibido no gráfico é o conteúdo da coluna funcao_descricao da base auxiliares\auxiliar_funcao.csv. Assim, no gráfico devera ter, por exemplo, a categoria relativa a Função a categoria LEGISLATIVA, que trazer o somatório dos valores de todas as linhas da coluna VALOR FINAL (R$) da base data\BASE_QDD_FISCAL.xlsx, cujo dado na coluna FUNCAO da basedata\BASE_QDD_FISCAL.xlsx  == 1, por exemplo e assim por diante. Em termos de exibição do dado no gráfico dever ser exibido em termos percentuais e não nominais, ou seja o percentual em relação ao total.
+Obs: colocar uma barra vertical de rolagem no gráfico dado que são muitas barras horizontais.
+
+Fonte:data\BASE_QDD_FISCAL.xlsx e auxiliares\auxiliar_funcao.csv
 
 
