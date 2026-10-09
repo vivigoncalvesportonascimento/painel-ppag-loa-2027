@@ -57,5 +57,32 @@ Fonte de dados:data\acoes_planejamento.txt
 Construir um gráfico de barras horizontais, no qual no eixo X deverão estar em termos percentuais (%) do total relativo aos valores da coluna Previsão Orçamentária 2027, segregados (eixo Y - categorias) pelo que dispõe a coluna Setor de Governo. Ou seja deve ter uma barra com o % previsto em relação ao total de recursos para o Setor de Governo, CULTURA E TURISMO, outro para TRIBUNAL DE JUSTIÇA e assim por diante.
 
 
+3) Pagina 3
+Título: Receita Fiscal
+
+Incluir:
+
+Card 1
+Título: Receita Total (R$) - 2027
+Dado: Traz o somatório dos dados da coluna VALOR FINAL (R$) da base data\BASE_ORCAM_RECEITA_FISCAL.xlsx
+Fonte de dados: data\BASE_ORCAM_RECEITA_FISCAL.xlsx
+
+Gráfico 1 - colocar logo ao lado do card 1
+Título: Receitas por Categoria Econômica
+Tipo de gráfico: Grafico de barras horizontais
+Dados:Construir um gráfico de barras horizontais, no qual no eixo X deverão estar o somatório dos valores da coluna VALOR FINAL (R$) da base data\BASE_ORCAM_RECEITA_FISCAL.xlsx, segregado de acordo com as categorias que vão estar no eixo y. Para as categorias é preciso combinar as duas bases data\BASE_ORCAM_RECEITA_FISCAL.xlsx e auxiliares\auxiliar_receita_categoria.csv, por meio das colunas CATEGORIA da base data\BASE_ORCAM_RECEITA_FISCAL.xlsx e a coluna categoria_receita_cod da base auxiliares\auxiliar_receita_categoria.csv, que são códigos, mas o que deve ser exibido no gráfico é o conteúdo da coluna categoria_receita_desc da base auxiliares\auxiliar_receita_categoria.csv. Assim, no gráfico devera ter a categoria Receitas Correntes, que devera trazer o somatório dos valores de todas as linhas da coluna VALOR FINAL (R$) da base data\BASE_ORCAM_RECEITA_FISCAL.xlsx, cujo dado na coluna CATEGORIA da base data\BASE_ORCAM_RECEITA_FISCAL.xlsx  == 1, por exemplo e assim por diante. Em termos de exibição do dado no gráfico devera ficar no formato 15 bi, por exemplo. Ou seja numero em bilhões arredondado com a expressão Bi.
+
+Fonte:data\BASE_ORCAM_RECEITA_FISCAL.xlsx e auxiliares\auxiliar_receita_categoria.csv
+
+Tabela 1 - colocar logo abaixo do Card 1 + Gráfico 1
+Colunas: 
+1 - UO - SIGLA_UO da base data\BASE_ORCAM_RECEITA_FISCAL.xlsx
+2 - Fonte de Recursos - Para montar esta coluna primeiro deve ser combinado informações das bases data\BASE_ORCAM_RECEITA_FISCAL.xlsx e auxiliares\auxiliar_fonte.csv. Esta coluna deve conter a combinação COD_FONTE da base data\BASE_ORCAM_RECEITA_FISCAL.xlsx + "-" + fonte_descricao da base base auxiliares\auxiliar_fonte.csv. Para saber qual a descrição pegar da base fonte_descricao da base base auxiliares\auxiliar_fonte.csv, deverá ser verificada a correspondência do dado (código) presente na coluna   COD_FONTE da base data\BASE_ORCAM_RECEITA_FISCAL.xlsx com o dado da coluna fonte_cod da base auxiliares\auxiliar_fonte.csv.
+3 - LOA 2027 (R$) - Traz o somatório dos dados da coluna VALOR FINAL (R$) da base data\BASE_ORCAM_RECEITA_FISCAL.xlsx. Exemplo, na fonte código 57. Deverá trazer 57 - TRANSFERÊNCIAS DA UNIÃO POR MEIO DE PORTARIA - EXCETO EMENDAS INDIVIDUAIS E DE BANCADA
+
+Fonte: data\BASE_ORCAM_RECEITA_FISCAL.xlsx e auxiliares\auxiliar_fonte.csv 
+
+
+
 
 
