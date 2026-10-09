@@ -14,3 +14,7 @@ def formatar_bilhoes(valor: float) -> str:
     truncado = math.floor(bilhoes * 10) / 10
     texto = f"{truncado:.1f}".replace(".", ",")
     return f"R$ {texto} bi"
+
+
+def formatar_bi_arredondado(valor: float) -> str:
+    return f"{round(valor / 1_000_000_000)} bi"

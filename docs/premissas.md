@@ -39,3 +39,21 @@ Essa escolha foi validada comparando o total com as bases
 `BASE_ORCAM_DESPESA_ITEM_FISCAL.xlsx` e `BASE_ORCAM_DESPESA_INVESTIMENTO.xlsx`,
 que chegam exatamente ao mesmo valor somado (R$ 153.868.051.650 fiscal e
 R$ 9.290.788.295 investimento).
+
+## 3. Página Despesa Fiscal: fonte do card e chave do cruzamento com auxiliar_poder
+
+O documento pedia o card "Despesa Total" com `Fonte de dados` apontando para
+`BASE_ORCAM_RECEITA_FISCAL.xlsx` (claramente um resquício de copiar/colar da
+página de Receita Fiscal, já que o campo "Dado" do mesmo card e o nome do
+card ambos se referem a despesa). Foi usada a base indicada no campo "Dado":
+soma de `VALOR FINAL (R$)` em `data/BASE_QDD_FISCAL.xlsx` — o mesmo valor do
+card "Previsão 2027 - Orçamento Fiscal" da Visão Geral (R$ 153,8 bi), o que
+faz sentido: é a mesma despesa fiscal vista por duas páginas diferentes.
+
+Para o gráfico "Despesa por Poder e Reserva de Contingência", o documento
+pedia cruzar `COD_ORGAO` de `BASE_QDD_FISCAL.xlsx` com `uo_cod` de
+`auxiliar_poder.csv`. Esse cruzamento deixa 33 códigos de `COD_ORGAO` sem
+correspondência. `COD_UO` (não `COD_ORGAO`) é a coluna que corresponde a
+`uo_cod` sem nenhuma lacuna — faz sentido, já que `auxiliar_poder.csv` é uma
+tabela de Unidades Orçamentárias (coluna `uo_cod`), não de Órgãos. O
+cruzamento foi feito por `COD_UO`.

@@ -7,6 +7,12 @@ publicar a branch gh-pages.
 import json
 from pathlib import Path
 
+from dados_despesa_fiscal import (
+    calcular_card_despesa_total,
+    construir_grafico_despesa_por_funcao,
+    construir_grafico_despesa_por_grupo,
+    construir_grafico_despesa_por_poder,
+)
 from dados_receita_fiscal import COLUNA_VALOR, construir_base_enriquecida
 from dados_visao_geral import (
     calcular_cards,
@@ -50,6 +56,12 @@ def gerar() -> None:
             "linhas": construir_base_enriquecida().rename(
                 columns={COLUNA_VALOR: "valor"}
             ).to_dict(orient="records"),
+        },
+        "despesa_fiscal": {
+            "card_despesa_total": formatar_bilhoes(calcular_card_despesa_total()),
+            "grafico_poder": json.loads(construir_grafico_despesa_por_poder().to_json()),
+            "grafico_grupo": json.loads(construir_grafico_despesa_por_grupo().to_json()),
+            "grafico_funcao": json.loads(construir_grafico_despesa_por_funcao().to_json()),
         },
     }
 

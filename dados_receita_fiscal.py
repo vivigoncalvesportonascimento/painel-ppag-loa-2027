@@ -16,7 +16,7 @@ from etl.receita import (
     carregar_auxiliar_receita_categoria,
     carregar_receita_fiscal,
 )
-from utils import formatar_moeda
+from utils import formatar_bi_arredondado, formatar_moeda
 
 COLUNA_VALOR = "VALOR FINAL (R$)"
 
@@ -54,7 +54,7 @@ def construir_grafico_receita_por_categoria(base: pd.DataFrame) -> "px.Figure":
         y="categoria_receita_desc",
         orientation="h",
         title="<b>Receitas por Categoria Econômica</b>",
-        text=agrupado[COLUNA_VALOR].map(_formatar_bi_arredondado),
+        text=agrupado[COLUNA_VALOR].map(formatar_bi_arredondado),
         labels={COLUNA_VALOR: "Valor (R$)", "categoria_receita_desc": ""},
         color_discrete_sequence=["#0047AB"],
     )
@@ -86,7 +86,3 @@ def construir_tabela_uo_fonte(base: pd.DataFrame) -> pd.DataFrame:
     )
     tabela = tabela.sort_values("_ordenacao", ascending=False).drop(columns="_ordenacao")
     return tabela.reset_index(drop=True)
-
-
-def _formatar_bi_arredondado(valor: float) -> str:
-    return f"{round(valor / 1_000_000_000)} bi"
