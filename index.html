@@ -22,6 +22,9 @@
           <button class="menu-item" data-pagina="visao-geral" role="tab" aria-selected="false">
             Visão Geral
           </button>
+          <button class="menu-item" data-pagina="receita-fiscal" role="tab" aria-selected="false">
+            Receita Fiscal
+          </button>
         </nav>
       </div>
     </header>
@@ -91,6 +94,39 @@
           </div>
           <div class="grafico-card">
             <div id="grafico-setor-governo" class="grafico"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="receita-fiscal" class="pagina">
+        <h1>Receita Fiscal</h1>
+
+        <div class="linha-card-grafico">
+          <div class="card">
+            <div class="valor" id="receita-total-valor">—</div>
+            <div class="titulo">Receita Total (R$) - 2027</div>
+          </div>
+          <div class="grafico-card">
+            <div id="grafico-receita-categoria" class="grafico"></div>
+          </div>
+        </div>
+
+        <div class="tabela-card">
+          <div class="tabela-scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th>UO</th>
+                  <th>Fonte de Recursos</th>
+                  <th>LOA 2027 (R$)</th>
+                </tr>
+              </thead>
+              <tbody id="tabela-uo-fonte-corpo">
+                <tr>
+                  <td colspan="3" class="carregando">Carregando dados...</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
