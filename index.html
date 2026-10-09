@@ -25,6 +25,9 @@
           <button class="menu-item" data-pagina="receita-fiscal" role="tab" aria-selected="false">
             Receita Fiscal
           </button>
+          <button class="menu-item" data-pagina="despesa-fiscal" role="tab" aria-selected="false">
+            Despesa Fiscal
+          </button>
         </nav>
       </div>
     </header>
@@ -145,6 +148,29 @@
                 </tr>
               </tbody>
             </table>
+          </div>
+        </div>
+      </section>
+
+      <section id="despesa-fiscal" class="pagina">
+        <h1>Despesa Fiscal</h1>
+
+        <div class="linha-card-grafico">
+          <div class="card">
+            <div class="valor" id="despesa-total-valor">—</div>
+            <div class="titulo">Despesa Total (R$) - 2027</div>
+          </div>
+          <div class="grafico-card">
+            <div id="grafico-despesa-poder" class="grafico"></div>
+          </div>
+        </div>
+
+        <div class="grade-graficos">
+          <div class="grafico-card">
+            <div id="grafico-despesa-grupo" class="grafico"></div>
+          </div>
+          <div class="grafico-card">
+            <div id="grafico-despesa-funcao" class="grafico"></div>
           </div>
         </div>
       </section>

@@ -26,6 +26,27 @@ fetch("dados.json")
     });
 
     inicializarReceitaFiscal(dados.receita_fiscal.linhas);
+
+    document.getElementById("despesa-total-valor").textContent =
+      dados.despesa_fiscal.card_despesa_total;
+    Plotly.newPlot(
+      "grafico-despesa-poder",
+      dados.despesa_fiscal.grafico_poder.data,
+      dados.despesa_fiscal.grafico_poder.layout,
+      { responsive: true, displayModeBar: false }
+    );
+    Plotly.newPlot(
+      "grafico-despesa-grupo",
+      dados.despesa_fiscal.grafico_grupo.data,
+      dados.despesa_fiscal.grafico_grupo.layout,
+      { responsive: true, displayModeBar: false }
+    );
+    Plotly.newPlot(
+      "grafico-despesa-funcao",
+      dados.despesa_fiscal.grafico_funcao.data,
+      dados.despesa_fiscal.grafico_funcao.layout,
+      { responsive: true, displayModeBar: false }
+    );
   })
   .catch((erro) => {
     document.getElementById("cards").innerHTML =
