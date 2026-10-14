@@ -134,6 +134,27 @@ function formatarBiArredondado(valor) {
   return `${Math.round(valor / 1_000_000_000)} bi`;
 }
 
+function quebrarRotulo(texto, largura = 14) {
+  const palavras = texto.split(" ");
+  const linhas = [];
+  let linhaAtual = "";
+
+  palavras.forEach((palavra) => {
+    const candidata = linhaAtual ? `${linhaAtual} ${palavra}` : palavra;
+    if (candidata.length > largura && linhaAtual) {
+      linhas.push(linhaAtual);
+      linhaAtual = palavra;
+    } else {
+      linhaAtual = candidata;
+    }
+  });
+  if (linhaAtual) {
+    linhas.push(linhaAtual);
+  }
+
+  return linhas.join("<br>");
+}
+
 function formatarMoeda(valor) {
   return `R$ ${valor.toLocaleString("pt-BR", {
     minimumFractionDigits: 2,
@@ -329,7 +350,7 @@ function atualizarGraficoDespesaOrgaoGrupo(linhas) {
   const data = [
     {
       type: "bar",
-      x: categorias.map((c) => c[0]),
+      x: categorias.map((c) => quebrarRotulo(c[0])),
       y: valores,
       text: categorias.map((c) => formatarBiArredondado(c[1])),
       textposition: "outside",
@@ -346,7 +367,7 @@ function atualizarGraficoDespesaOrgaoGrupo(linhas) {
     font: { family: "system-ui, -apple-system, Segoe UI, Arial, sans-serif", color: "#1f2933" },
     paper_bgcolor: "rgba(0,0,0,0)",
     plot_bgcolor: "rgba(0,0,0,0)",
-    margin: { l: 10, r: 10, t: 50, b: 50 },
+    margin: { l: 10, r: 10, t: 50, b: 70 },
     xaxis: { tickfont: { size: 10 }, tickangle: 0, automargin: true },
     yaxis: { gridcolor: "#eef1f4", range: [0, valorMax * 1.18] },
   };

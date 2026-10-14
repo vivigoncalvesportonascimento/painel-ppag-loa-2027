@@ -9122,13 +9122,13 @@
           ],
           "textposition": "outside",
           "x": [
-            "Poder Executivo",
-            "Poder Judiciário",
-            "Ministério Público",
-            "Poder Legislativo",
-            "Tribunal de Contas",
-            "Defensoria Pública",
-            "Reserva de Contingência"
+            "Poder<br>Executivo",
+            "Poder<br>Judiciário",
+            "Ministério<br>Público",
+            "Poder<br>Legislativo",
+            "Tribunal de<br>Contas",
+            "Defensoria<br>Pública",
+            "Reserva de<br>Contingência"
           ],
           "xaxis": "x",
           "y": [
@@ -9960,7 +9960,7 @@
           "l": 10,
           "r": 10,
           "t": 50,
-          "b": 50
+          "b": 70
         },
         "showlegend": false,
         "height": 340,
