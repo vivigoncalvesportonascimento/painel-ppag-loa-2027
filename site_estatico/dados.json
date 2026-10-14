@@ -9921,9 +9921,9 @@
             "text": ""
           },
           "tickfont": {
-            "size": 11
+            "size": 10
           },
-          "tickangle": -25,
+          "tickangle": 0,
           "automargin": true
         },
         "yaxis": {
@@ -9960,7 +9960,7 @@
           "l": 10,
           "r": 10,
           "t": 50,
-          "b": 90
+          "b": 50
         },
         "showlegend": false,
         "height": 340,

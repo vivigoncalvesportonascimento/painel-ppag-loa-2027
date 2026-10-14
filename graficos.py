@@ -79,8 +79,8 @@ def grafico_absoluto_vertical(
         title=dict(font=dict(size=16, color="#1f2933")),
         paper_bgcolor="rgba(0,0,0,0)",
         plot_bgcolor="rgba(0,0,0,0)",
-        margin=dict(l=10, r=10, t=50, b=90),
-        xaxis=dict(tickfont=dict(size=11), tickangle=-25, automargin=True),
+        margin=dict(l=10, r=10, t=50, b=50),
+        xaxis=dict(tickfont=dict(size=10), tickangle=0, automargin=True),
         yaxis=dict(gridcolor="#eef1f4", range=[0, valor_max * 1.18]),
     )
     return fig
