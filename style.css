@@ -309,6 +309,35 @@ tbody tr:hover {
   background: #fafbfc;
 }
 
+.tabela-redimensionavel {
+  table-layout: fixed;
+}
+
+.tabela-redimensionavel th {
+  overflow: auto;
+  resize: horizontal;
+  white-space: normal;
+  min-width: 70px;
+}
+
+.tabela-redimensionavel th:nth-child(1) {
+  width: 18%;
+}
+
+.tabela-redimensionavel th:nth-child(2) {
+  width: 62%;
+}
+
+.tabela-redimensionavel th:nth-child(3) {
+  width: 20%;
+}
+
+.tabela-redimensionavel td {
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
 .linha-cartoes {
   display: grid;
   grid-template-columns: 1fr 1fr;
