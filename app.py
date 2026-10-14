@@ -3,6 +3,7 @@ import streamlit as st
 from paginas import (
     despesa_fiscal,
     despesa_orgao,
+    links_uteis,
     loa_investimentos,
     o_painel,
     receita_fiscal,
@@ -18,6 +19,7 @@ st.set_page_config(page_title="Painel PPAG-LOA 2027", layout="wide")
     aba_despesa_fiscal,
     aba_despesa_orgao,
     aba_loa_investimentos,
+    aba_links_uteis,
 ) = st.tabs(
     [
         "O Painel",
@@ -26,6 +28,7 @@ st.set_page_config(page_title="Painel PPAG-LOA 2027", layout="wide")
         "Despesa Fiscal",
         "Despesa por Órgão",
         "LOA Investimentos",
+        "Links Úteis",
     ]
 )
 
@@ -46,3 +49,6 @@ with aba_despesa_orgao:
 
 with aba_loa_investimentos:
     loa_investimentos.renderizar()
+
+with aba_links_uteis:
+    links_uteis.renderizar()

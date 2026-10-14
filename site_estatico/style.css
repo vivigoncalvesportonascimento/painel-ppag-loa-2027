@@ -360,9 +360,51 @@ tbody tr:hover {
   white-space: nowrap;
 }
 
+.grade-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.link-card {
+  min-width: 0;
+  background: var(--cor-fundo-card);
+  border-radius: 8px;
+  box-shadow: var(--sombra-card);
+  padding: 1.1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.link-card h4 {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--cor-texto);
+}
+
+.link-card p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--cor-texto-suave);
+  flex-grow: 1;
+}
+
+.link-card a {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #0047ab;
+  text-decoration: none;
+}
+
+.link-card a:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 900px) {
   .grade-blocos,
-  .grade-cards {
+  .grade-cards,
+  .grade-links {
     grid-template-columns: repeat(2, 1fr);
   }
   .grade-graficos {
@@ -376,7 +418,8 @@ tbody tr:hover {
 
 @media (max-width: 520px) {
   .grade-blocos,
-  .grade-cards {
+  .grade-cards,
+  .grade-links {
     grid-template-columns: 1fr;
   }
 }
