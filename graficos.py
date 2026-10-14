@@ -3,7 +3,7 @@
 import pandas as pd
 import plotly.express as px
 
-from utils import formatar_bi_arredondado
+from utils import formatar_bi_arredondado, quebrar_rotulo
 
 
 def grafico_percentual_horizontal(
@@ -59,6 +59,7 @@ def grafico_absoluto_vertical(
     """
     agrupado = df.groupby(coluna_categoria)[coluna_valor].sum().reset_index()
     agrupado = agrupado.sort_values(coluna_valor, ascending=False)
+    agrupado[coluna_categoria] = agrupado[coluna_categoria].map(quebrar_rotulo)
 
     fig = px.bar(
         agrupado,
@@ -79,7 +80,7 @@ def grafico_absoluto_vertical(
         title=dict(font=dict(size=16, color="#1f2933")),
         paper_bgcolor="rgba(0,0,0,0)",
         plot_bgcolor="rgba(0,0,0,0)",
-        margin=dict(l=10, r=10, t=50, b=50),
+        margin=dict(l=10, r=10, t=50, b=70),
         xaxis=dict(tickfont=dict(size=10), tickangle=0, automargin=True),
         yaxis=dict(gridcolor="#eef1f4", range=[0, valor_max * 1.18]),
     )

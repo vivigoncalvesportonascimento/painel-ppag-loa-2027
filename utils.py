@@ -1,6 +1,7 @@
 """Utilidades de formatação compartilhadas entre as páginas do painel."""
 
 import math
+import textwrap
 
 
 def formatar_moeda(valor: float) -> str:
@@ -24,3 +25,10 @@ def formatar_bilhoes(valor: float) -> str:
 
 def formatar_bi_arredondado(valor: float) -> str:
     return f"{round(valor / 1_000_000_000)} bi"
+
+
+def quebrar_rotulo(texto: str, largura: int = 14) -> str:
+    """Quebra um rótulo longo em várias linhas (separadas por <br>, para o
+    Plotly), para caber em categorias estreitas de gráficos de coluna.
+    """
+    return "<br>".join(textwrap.wrap(texto, largura))
