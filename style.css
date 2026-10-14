@@ -309,6 +309,57 @@ tbody tr:hover {
   background: #fafbfc;
 }
 
+.linha-cartoes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.lista-cartao {
+  min-width: 0;
+  background: var(--cor-fundo-card);
+  border-radius: 8px;
+  box-shadow: var(--sombra-card);
+  padding: 0.9rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.lista-cartao-titulo {
+  margin: 0 0 0.5rem;
+  font-size: 0.95rem;
+}
+
+.lista-cartao-corpo {
+  overflow-y: auto;
+  max-height: 320px;
+}
+
+.lista-cartao-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  border-top: 1px solid var(--cor-divisor-suave);
+}
+
+.lista-cartao-item:first-child {
+  border-top: none;
+}
+
+.lista-cartao-item .label {
+  font-size: 0.82rem;
+  color: var(--cor-texto);
+}
+
+.lista-cartao-item .valor {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #0047ab;
+  white-space: nowrap;
+}
+
 @media (max-width: 900px) {
   .grade-blocos,
   .grade-cards {
@@ -317,7 +368,8 @@ tbody tr:hover {
   .grade-graficos {
     grid-template-columns: 1fr;
   }
-  .linha-card-grafico {
+  .linha-card-grafico,
+  .linha-cartoes {
     grid-template-columns: 1fr;
   }
 }
