@@ -9,6 +9,10 @@ document.querySelectorAll(".menu-item").forEach((botao) => {
     botao.classList.add("ativo");
     botao.setAttribute("aria-selected", "true");
     document.getElementById(botao.dataset.pagina).classList.add("ativa");
+
+    if (botao.dataset.pagina === "regionalizacao") {
+      carregarRegionalizacao();
+    }
   });
 });
 
@@ -453,4 +457,237 @@ function atualizarTabelaInvestimentos(linhas) {
     });
     corpo.appendChild(tr);
   });
+}
+
+let _regionalizacaoCarregada = false;
+let _regionalizacaoLinhas = null;
+let _regionalizacaoGeojson = null;
+let _regionalizacaoUniverso = null;
+let _regionalizacaoNomeParaIbge = null;
+let _regionalizacaoIbgeParaNome = null;
+
+const LIMITE_TABELA_REGIONALIZACAO = 2000;
+
+function carregarRegionalizacao() {
+  if (_regionalizacaoCarregada) {
+    return;
+  }
+  _regionalizacaoCarregada = true;
+
+  Promise.all([
+    fetch("dados_regionalizacao.json").then((r) => r.json()),
+    fetch("mg_municipios.geojson").then((r) => r.json()),
+  ])
+    .then(([dadosReg, geojson]) => {
+      _regionalizacaoLinhas = dadosReg.linhas;
+      _regionalizacaoGeojson = geojson;
+      _regionalizacaoUniverso = geojson.features.map((f) => ({
+        municipio_ibge: f.properties.id,
+        municipio_geo: f.properties.name,
+      }));
+
+      _regionalizacaoNomeParaIbge = new Map();
+      _regionalizacaoIbgeParaNome = new Map();
+      _regionalizacaoLinhas.forEach((l) => {
+        _regionalizacaoNomeParaIbge.set(l.municipio, l.municipio_ibge);
+        _regionalizacaoIbgeParaNome.set(l.municipio_ibge, l.municipio);
+      });
+      _regionalizacaoUniverso.forEach((u) => {
+        if (!_regionalizacaoIbgeParaNome.has(u.municipio_ibge)) {
+          _regionalizacaoIbgeParaNome.set(u.municipio_ibge, u.municipio_geo);
+        }
+      });
+
+      inicializarFiltrosRegionalizacao();
+    })
+    .catch((erro) => {
+      document.getElementById("tabela-regionalizacao-corpo").innerHTML =
+        '<tr><td colspan="7" class="carregando">Não foi possível carregar os dados.</td></tr>';
+      console.error(erro);
+    });
+}
+
+function inicializarFiltrosRegionalizacao() {
+  const selectUo = document.getElementById("filtro-regionalizacao-uo");
+  const selectAcao = document.getElementById("filtro-regionalizacao-acao");
+  const selectRegiao = document.getElementById("filtro-regionalizacao-regiao");
+  const selectMunicipio = document.getElementById("filtro-regionalizacao-municipio");
+  const selectProduto = document.getElementById("filtro-regionalizacao-produto");
+
+  popularOpcoes(selectUo, [...new Set(_regionalizacaoLinhas.map((l) => l.uo_label))].sort());
+  popularOpcoes(selectAcao, [...new Set(_regionalizacaoLinhas.map((l) => l.acao_label))].sort());
+  popularOpcoes(selectRegiao, [...new Set(_regionalizacaoLinhas.map((l) => l.regiao))].sort());
+  popularOpcoes(
+    selectMunicipio,
+    [...new Set(_regionalizacaoLinhas.map((l) => l.municipio))].sort()
+  );
+  popularOpcoes(
+    selectProduto,
+    [...new Set(_regionalizacaoLinhas.map((l) => l.produto).filter(Boolean))].sort()
+  );
+
+  const selects = [selectUo, selectAcao, selectRegiao, selectMunicipio, selectProduto];
+
+  const atualizar = () => {
+    const filtros = {
+      uo: selectUo.value,
+      acao: selectAcao.value,
+      regiao: selectRegiao.value,
+      municipio: selectMunicipio.value,
+      produto: selectProduto.value,
+    };
+
+    const baseSemMunicipio = aplicarFiltrosRegionalizacao(_regionalizacaoLinhas, filtros, true);
+    const baseTabela = aplicarFiltrosRegionalizacao(_regionalizacaoLinhas, filtros, false);
+
+    atualizarMapaRegionalizacao(baseSemMunicipio, filtros.municipio);
+    atualizarTabelaRegionalizacao(baseTabela);
+  };
+
+  selects.forEach((select) => select.addEventListener("change", atualizar));
+
+  document.getElementById("limpar-filtros-regionalizacao").addEventListener("click", () => {
+    selects.forEach((select) => {
+      select.value = "";
+    });
+    atualizar();
+  });
+
+  atualizar();
+}
+
+function aplicarFiltrosRegionalizacao(linhas, filtros, ignorarMunicipio) {
+  return linhas.filter(
+    (l) =>
+      (!filtros.uo || l.uo_label === filtros.uo) &&
+      (!filtros.acao || l.acao_label === filtros.acao) &&
+      (!filtros.regiao || l.regiao === filtros.regiao) &&
+      (!filtros.produto || l.produto === filtros.produto) &&
+      (ignorarMunicipio || !filtros.municipio || l.municipio === filtros.municipio)
+  );
+}
+
+function atualizarMapaRegionalizacao(linhas, municipioSelecionado) {
+  const valoresPorIbge = new Map();
+  linhas.forEach((l) => {
+    valoresPorIbge.set(l.municipio_ibge, (valoresPorIbge.get(l.municipio_ibge) || 0) + l.valor);
+  });
+
+  const ibgeSelecionado = municipioSelecionado
+    ? _regionalizacaoNomeParaIbge.get(municipioSelecionado)
+    : null;
+
+  const locations = _regionalizacaoUniverso.map((u) => u.municipio_ibge);
+  const z = locations.map((ibge) => (ibge === ibgeSelecionado ? 1 : 0));
+  const customdata = locations.map((ibge) => [
+    _regionalizacaoIbgeParaNome.get(ibge),
+    formatarMoeda(valoresPorIbge.get(ibge) || 0),
+  ]);
+
+  const data = [
+    {
+      type: "choropleth",
+      geojson: _regionalizacaoGeojson,
+      featureidkey: "properties.id",
+      locations,
+      z,
+      zmin: 0,
+      zmax: 1,
+      colorscale: [
+        [0, "#cbd2d9"],
+        [1, "#0047AB"],
+      ],
+      showscale: false,
+      marker: { line: { color: "#ffffff", width: 0.4 } },
+      customdata,
+      hovertemplate:
+        "<b>%{customdata[0]}</b><br>Previsão Orçamentária 2027: %{customdata[1]}<extra></extra>",
+    },
+  ];
+
+  const layout = {
+    height: 540,
+    margin: { l: 0, r: 0, t: 10, b: 0 },
+    paper_bgcolor: "rgba(0,0,0,0)",
+    plot_bgcolor: "rgba(0,0,0,0)",
+    font: { family: "system-ui, -apple-system, Segoe UI, Arial, sans-serif", color: "#1f2933" },
+    geo: { fitbounds: "locations", visible: false },
+  };
+
+  Plotly.newPlot("mapa-regionalizacao", data, layout, {
+    responsive: true,
+    displayModeBar: false,
+  });
+}
+
+function formatarNumero(valor) {
+  return valor.toLocaleString("pt-BR", { maximumFractionDigits: 0 });
+}
+
+function atualizarTabelaRegionalizacao(linhas) {
+  const totais = new Map();
+  linhas.forEach((l) => {
+    const chave = `${l.acao_label}|${l.produto}|${l.unidade_medida}|${l.regiao}|${l.municipio}`;
+    const atual = totais.get(chave);
+    if (atual) {
+      atual.fisica += l.fisica;
+      atual.valor += l.valor;
+    } else {
+      totais.set(chave, {
+        acao_label: l.acao_label,
+        produto: l.produto,
+        unidade_medida: l.unidade_medida,
+        regiao: l.regiao,
+        municipio: l.municipio,
+        fisica: l.fisica,
+        valor: l.valor,
+      });
+    }
+  });
+
+  const linhasOrdenadas = [...totais.values()].sort((a, b) => b.valor - a.valor);
+
+  const corpo = document.getElementById("tabela-regionalizacao-corpo");
+  corpo.replaceChildren();
+
+  if (linhasOrdenadas.length === 0) {
+    const tr = document.createElement("tr");
+    const td = document.createElement("td");
+    td.colSpan = 7;
+    td.className = "carregando";
+    td.textContent = "Nenhum dado para os filtros selecionados.";
+    tr.appendChild(td);
+    corpo.appendChild(tr);
+    return;
+  }
+
+  const exibir = linhasOrdenadas.slice(0, LIMITE_TABELA_REGIONALIZACAO);
+
+  exibir.forEach((linha) => {
+    const tr = document.createElement("tr");
+    [
+      linha.acao_label,
+      linha.produto,
+      linha.unidade_medida,
+      linha.regiao,
+      linha.municipio,
+      formatarNumero(linha.fisica),
+      formatarMoeda(linha.valor),
+    ].forEach((valor) => {
+      const td = document.createElement("td");
+      td.textContent = valor;
+      tr.appendChild(td);
+    });
+    corpo.appendChild(tr);
+  });
+
+  if (linhasOrdenadas.length > LIMITE_TABELA_REGIONALIZACAO) {
+    const tr = document.createElement("tr");
+    const td = document.createElement("td");
+    td.colSpan = 7;
+    td.className = "carregando";
+    td.textContent = `Mostrando as ${LIMITE_TABELA_REGIONALIZACAO} linhas de maior valor, de um total de ${linhasOrdenadas.length}. Use os filtros para refinar.`;
+    tr.appendChild(td);
+    corpo.appendChild(tr);
+  }
 }

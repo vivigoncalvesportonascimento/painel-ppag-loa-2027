@@ -320,22 +320,67 @@ tbody tr:hover {
   min-width: 70px;
 }
 
-.tabela-redimensionavel th:nth-child(1) {
-  width: 18%;
-}
-
-.tabela-redimensionavel th:nth-child(2) {
-  width: 62%;
-}
-
-.tabela-redimensionavel th:nth-child(3) {
-  width: 20%;
-}
-
 .tabela-redimensionavel td {
   white-space: normal;
   overflow-wrap: break-word;
   word-break: break-word;
+}
+
+.tabela-investimentos th:nth-child(1) {
+  width: 18%;
+}
+
+.tabela-investimentos th:nth-child(2) {
+  width: 62%;
+}
+
+.tabela-investimentos th:nth-child(3) {
+  width: 20%;
+}
+
+.tabela-regionalizacao th:nth-child(1) {
+  width: 20%;
+}
+
+.tabela-regionalizacao th:nth-child(2) {
+  width: 14%;
+}
+
+.tabela-regionalizacao th:nth-child(3) {
+  width: 10%;
+}
+
+.tabela-regionalizacao th:nth-child(4) {
+  width: 14%;
+}
+
+.tabela-regionalizacao th:nth-child(5) {
+  width: 14%;
+}
+
+.tabela-regionalizacao th:nth-child(6) {
+  width: 12%;
+}
+
+.tabela-regionalizacao th:nth-child(7) {
+  width: 16%;
+}
+
+.tabela-regionalizacao td:nth-last-child(1),
+.tabela-regionalizacao td:nth-last-child(2) {
+  text-align: right;
+  font-weight: 600;
+}
+
+.mapa-card {
+  min-width: 0;
+  height: 560px;
+  overflow: hidden;
+  background: var(--cor-fundo-card);
+  border-radius: 8px;
+  box-shadow: var(--sombra-card);
+  padding: 0.5rem;
+  margin-bottom: 1.25rem;
 }
 
 .linha-cartoes {

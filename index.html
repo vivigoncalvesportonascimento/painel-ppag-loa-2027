@@ -37,6 +37,9 @@
           <button class="menu-item" data-pagina="links-uteis" role="tab" aria-selected="false">
             Links Úteis
           </button>
+          <button class="menu-item" data-pagina="regionalizacao" role="tab" aria-selected="false">
+            Regionalização
+          </button>
         </nav>
       </div>
     </header>
@@ -249,7 +252,7 @@
 
         <div class="tabela-card">
           <div class="tabela-scroll">
-            <table class="tabela-redimensionavel">
+            <table class="tabela-redimensionavel tabela-investimentos">
               <thead>
                 <tr>
                   <th>Unidade Orçamentária</th>
@@ -385,6 +388,73 @@
               rel="noopener noreferrer"
               >Acessar página →</a
             >
+          </div>
+        </div>
+      </section>
+
+      <section id="regionalizacao" class="pagina">
+        <h1>Regionalização</h1>
+
+        <div class="filtros">
+          <div class="filtro-campo">
+            <label for="filtro-regionalizacao-uo">Unidade Orçamentária</label>
+            <select id="filtro-regionalizacao-uo">
+              <option value="">Todas</option>
+            </select>
+          </div>
+          <div class="filtro-campo">
+            <label for="filtro-regionalizacao-acao">Ação Orçamentária</label>
+            <select id="filtro-regionalizacao-acao">
+              <option value="">Todas</option>
+            </select>
+          </div>
+          <div class="filtro-campo">
+            <label for="filtro-regionalizacao-regiao">Região Geográfica Intermediária</label>
+            <select id="filtro-regionalizacao-regiao">
+              <option value="">Todas</option>
+            </select>
+          </div>
+          <div class="filtro-campo">
+            <label for="filtro-regionalizacao-municipio">Município</label>
+            <select id="filtro-regionalizacao-municipio">
+              <option value="">Todos</option>
+            </select>
+          </div>
+          <div class="filtro-campo">
+            <label for="filtro-regionalizacao-produto">Produto</label>
+            <select id="filtro-regionalizacao-produto">
+              <option value="">Todos</option>
+            </select>
+          </div>
+          <button id="limpar-filtros-regionalizacao" class="botao-secundario" type="button">
+            Limpar filtros
+          </button>
+        </div>
+
+        <div class="mapa-card">
+          <div id="mapa-regionalizacao" class="grafico"></div>
+        </div>
+
+        <div class="tabela-card">
+          <div class="tabela-scroll">
+            <table class="tabela-redimensionavel tabela-regionalizacao">
+              <thead>
+                <tr>
+                  <th>Ação Orçamentária</th>
+                  <th>Produto</th>
+                  <th>Unidade de Medida</th>
+                  <th>Região Geográfica Intermediária</th>
+                  <th>Município</th>
+                  <th>Previsão Física 2027</th>
+                  <th>Previsão Orçamentária 2027</th>
+                </tr>
+              </thead>
+              <tbody id="tabela-regionalizacao-corpo">
+                <tr>
+                  <td colspan="7" class="carregando">Carregando dados...</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
