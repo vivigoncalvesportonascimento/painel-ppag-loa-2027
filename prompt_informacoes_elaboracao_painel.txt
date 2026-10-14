@@ -186,4 +186,69 @@ Colunas:
 
 Fonte: data\BASE_QDD_INVESTIMENTO.xlsx e auxiliares\auxiliar_uo.csv
 
+7) Página 7
+Título: Links úteis
+
+Incluir conforme abaixo:
+
+```text
+Atue como um Desenvolvedor Front-end especialista em Python (Streamlit) e em documentação estática (MkDocs Material / GitHub Pages). 
+
+Preciso que você crie o código para uma nova página chamada "Links Úteis". O objetivo desta página é listar links importantes sobre o orçamento público em um formato de cards ou grid (preferencialmente 3 colunas), replicando um layout visual limpo e organizado.
+
+Para cada item, o card deve conter exatamente a seguinte estrutura:
+1. **Título** (em destaque/negrito)
+2. **Descrição breve** (texto explicativo)
+3. **Link clicável** (você pode colocar o próprio link estético ou um botão/texto clicável como "Acessar página")
+
+Aqui estão os dados estruturados de todos os links que devem compor a página:
+
+[
+  {
+    "titulo": "Plano Plurianual de Ação Governamental - PPAG",
+    "descricao": "Apresenta no site da Secretaria de Estado de Planejamento e Gestão - SEPLAG, um breve resumo do que é o PPAG e inclui os documentos do PPAG vigente e dos exercícios anteriores. Também inclui os relatórios bimestrais de monitoramento do plano, o relatório anual de avaliação, os balanços sociais e materiais de apoio (manuais, treinamentos, conceitos e formulários).",
+    "link": "https://www.mg.gov.br/planejamento/pagina/planejamento-e-orcamento/plano-plurianual-de-acao-governamental-ppag/plano-plurianual-de-acao"
+  },
+  {
+    "titulo": "Lei de Diretrizes Orçamentárias - LDO",
+    "descricao": "Apresenta no site da Secretaria de Estado de Planejamento e Gestão - SEPLAG, um breve resumo do que é a LDO e inclui os documentos da LDO vigente e dos exercícios anteriores. Traz também alguns materiais de apoio, tais como, a base de execução histórica das receitas e as regras e diretrizes gerais para a estimativa de receita.",
+    "link": "https://www.mg.gov.br/planejamento/pagina/planejamento-e-orcamento/lei-de-diretrizes-orcamentarias-ldo/lei-de-diretrizes-orcamentarias"
+  },
+  {
+    "titulo": "Lei Orçamentária Anual - LOA",
+    "descricao": "Apresenta no site da Secretaria de Estado de Planejamento e Gestão - SEPLAG, um breve resumo do que é a LOA e inclui os documentos da LOA vigente e dos exercícios anteriores. Além disso, traz o Decreto de Programação Orçamentária, o Classificador Econômico da Despesa, o Ementário da Receita e a relação de receitas que são desvinculadas por meio da Emenda nº 93/2016 (DREM).",
+    "link": "https://www.mg.gov.br/planejamento/pagina/planejamento-e-orcamento/lei-orcamentaria-anual-loa/lei-orcamentaria-anual-loa"
+  },
+  {
+    "titulo": "ALMG - Leis que compõem o Sistema Orçamentário",
+    "descricao": "Página no site da Assembleia Legislativa do Estado de Minas Gerais, que contém as leis do sistema orçamentário estadual, a saber: PMDI, PPAG, LDO e LOA. Nesta página é possível consultar o andamento, as discussões e as emendas relativo as leis em questão.",
+    "link": "https://www.almg.gov.br/atividade-parlamentar/orcamento-do-estado/inicial/"
+  },
+  {
+    "titulo": "Portal da Transparência - MG",
+    "descricao": "O Portal da Transparência de MG apresenta uma série de informações e consultas sobre despesas, receitas, incluindo algumas bases em formato de dados abertos.",
+    "link": "https://www.transparencia.mg.gov.br/"
+  },
+  {
+    "titulo": "Legislação de Finanças Públicas - Lei nº 4.320, de 17 de março de 1964",
+    "descricao": "A Lei Federal nº 4.320, de 17 de março de 1964, dispõe sobre as normas gerais de Direito Financeiro para a elaboração e controle dos orçamentos e balanços da União, dos Estados, dos Municípios e do Distrito Federal.",
+    "link": "https://www.planalto.gov.br/ccivil_03/leis/l4320.htm"
+  },
+  {
+    "titulo": "Legislação de Finanças Públicas - Lei Complementar nº 101, de 04 de maio de 2000",
+    "descricao": "A Lei Federal Complementar nº 101, de 04 de maio de 2000, conhecida como Lei de Responsabilidade Fiscal (LRF), estabelece as normas de finanças públicas voltadas para a responsabilidade na gestão fiscal e dá outras providências.",
+    "link": "https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp101.htm"
+  }
+]
+
+Tarefas a serem entregues:
+
+1. **Para o Painel em Streamlit:** 
+Me entregue o código em Python criando essa página. Use `st.columns(3)` para criar o grid e utilize `st.container()` ou `st.markdown` com CSS/HTML simples para que fiquem com aparência de "cards" (com uma borda sutil, se possível), garantindo que o texto descritivo fique alinhado e o link clicável abaixo dele.
+
+2. **Para o GitHub Pages (MkDocs):** 
+Me entregue o código em Markdown (arquivo `links-uteis.md`). Como o MkDocs Material suporta HTML e extensões de grid, utilize tags HTML `<div class="grid cards">` (se aplicável na configuração) ou construa em formato de tabela/grid HTML/Markdown para manter os 3 itens por linha com um visual organizado.
+
+```
+
 
