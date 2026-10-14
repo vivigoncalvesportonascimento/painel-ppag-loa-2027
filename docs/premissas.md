@@ -72,3 +72,32 @@ UOs). Com UO selecionada, a base já fica restrita a essa UO antes de
 agrupar — o que automaticamente equivale a agrupar pela combinação
 COD_UO + AÇÃO mencionada no documento, sem precisar expor COD_UO na lista
 nem fragmentar a visão geral (sem filtro) em uma linha por UO.
+
+## 5. Página Regionalização: zero à esquerda no código da UO, mapa e GeoJSON
+
+O cruzamento entre `localizadores_todos_planejamento.txt` e
+`acoes_planejamento.txt` (para trazer Produto/Unidade de Medida) é pela
+combinação `Código da Unidade Orçamentária Responsável pela Ação` +
+`Código da Ação`. Direto, esse cruzamento não casava nenhuma linha: em
+`localizadores` o código da UO vem com zero à esquerda (`"01261"`), e em
+`acoes_planejamento` sem (`"1261"`). Normalizando ambos para inteiro antes
+de montar a chave, o cruzamento passa a casar ~98,7% das linhas (as
+~1,3% restantes são ações excluídas no nível de ação, presentes em
+`localizadores` mas fora do `carregar_acoes()` já filtrado).
+
+Catorze códigos de "Município" em `localizadores` (`3199901`...`3199913`,
+`3199999`) são agregados "DIVERSOS MUNICÍPIOS" (por região ou estadual),
+não municípios reais — aparecem na tabela e no filtro normalmente, mas
+não têm polígono no mapa (são ignorados na pintura do choropleth).
+
+O mapa usa um GeoJSON de municípios de MG (853 municípios, chave
+`properties.id` = código IBGE de 7 dígitos) salvo em
+`assets/mg_municipios.geojson` (fonte: tbrugz/geodata-br, domínio
+público/IBGE). No site estático, esse arquivo (3,4 MB) e os dados da
+página (~14 MB, base em nível de linha para permitir os 5 filtros no
+navegador) são carregados em `dados_regionalizacao.json`, separado do
+`dados.json` principal e buscado só quando a aba Regionalização é aberta
+— para não pesar o carregamento inicial do site. A tabela (Streamlit e
+site estático) mostra no máximo as 2.000 linhas de maior valor, com
+aviso, para não travar o navegador quando nenhum filtro estiver ativo
+(~40 mil linhas agrupadas sem filtro).

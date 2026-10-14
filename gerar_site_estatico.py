@@ -23,6 +23,7 @@ from dados_loa_investimentos import (
 )
 from dados_loa_investimentos import construir_lista_uo as construir_lista_uo_investimentos
 from dados_receita_fiscal import COLUNA_VALOR, construir_base_enriquecida
+from dados_regionalizacao import construir_base_enriquecida as construir_base_regionalizacao
 from dados_visao_geral import (
     calcular_cards,
     construir_grafico_area_tematica,
@@ -30,7 +31,9 @@ from dados_visao_geral import (
 )
 from utils import formatar_bilhoes
 
-SAIDA = Path(__file__).resolve().parent / "site_estatico" / "dados.json"
+PASTA_SAIDA = Path(__file__).resolve().parent / "site_estatico"
+SAIDA = PASTA_SAIDA / "dados.json"
+SAIDA_REGIONALIZACAO = PASTA_SAIDA / "dados_regionalizacao.json"
 
 
 def gerar() -> None:
@@ -86,6 +89,21 @@ def gerar() -> None:
 
     SAIDA.write_text(json.dumps(dados, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"Gerado: {SAIDA}")
+
+    # Arquivo separado (carregado só quando a aba Regionalização é aberta):
+    # a base tem ~40 mil linhas e deixaria o carregamento inicial do site
+    # mais pesado se fosse embutida em dados.json.
+    regionalizacao = construir_base_regionalizacao().rename(
+        columns={
+            "Previsão Física 2027": "fisica",
+            "Previsão Orçamentária 2027": "valor",
+        }
+    )
+    SAIDA_REGIONALIZACAO.write_text(
+        json.dumps({"linhas": regionalizacao.to_dict(orient="records")}, ensure_ascii=False),
+        encoding="utf-8",
+    )
+    print(f"Gerado: {SAIDA_REGIONALIZACAO}")
 
 
 if __name__ == "__main__":

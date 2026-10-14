@@ -7,6 +7,7 @@ from paginas import (
     loa_investimentos,
     o_painel,
     receita_fiscal,
+    regionalizacao,
     visao_geral,
 )
 
@@ -20,6 +21,7 @@ st.set_page_config(page_title="Painel PPAG-LOA 2027", layout="wide")
     aba_despesa_orgao,
     aba_loa_investimentos,
     aba_links_uteis,
+    aba_regionalizacao,
 ) = st.tabs(
     [
         "O Painel",
@@ -29,6 +31,7 @@ st.set_page_config(page_title="Painel PPAG-LOA 2027", layout="wide")
         "Despesa por Órgão",
         "LOA Investimentos",
         "Links Úteis",
+        "Regionalização",
     ]
 )
 
@@ -52,3 +55,6 @@ with aba_loa_investimentos:
 
 with aba_links_uteis:
     links_uteis.renderizar()
+
+with aba_regionalizacao:
+    regionalizacao.renderizar()
