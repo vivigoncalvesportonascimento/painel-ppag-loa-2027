@@ -91,7 +91,7 @@ Incluir:
 Card 1
 Título: Despesa Total (R$) - 2027
 Dado: Traz o somatório dos dados da coluna VALOR FINAL (R$) da base data\BASE_QDD_FISCAL.xlsx
-Fonte de dados: data\BASE_ORCAM_RECEITA_FISCAL.xlsx
+Fonte de dados: data\BASE_QDD_FISCAL.xlsx
 
 Gráfico 1 - colocar logo ao lado do card 1
 Título: Despesa por Poder e Reserva de Contingência
@@ -115,5 +115,37 @@ Obs: colocar uma barra vertical de rolagem no gráfico dado que são muitas barr
 Fonte:data\BASE_QDD_FISCAL.xlsx e auxiliares\auxiliar_funcao.csv
 
 
-ajuste nos gráficos:
-esta acontecendo tanto na pagina Visão Geral quanto na pagina Despesa Fiscal, nos gráficos horizontais que não esta mostrando o numero completo com o % da primeira e sa segunda barra, parece que esta cortado. Exemplo no grafico Previsão 2027 por Área Temática, na categoria PLANEJAMENTO E GESTÃO O dado exibido é só 4, e deveria exibir 45,3%, na categoria seguinte EDUCAÇÃO aparece normal 13,5%. No gráfico Dspesa por Grupo, na primeira categoria PESSOAL E ENCARGOS SOCIAIS aparece de dado apenas 61. e deveria ser 61.2%. Consertar este problema.
+5) Pagina 5
+Título: Despesa por órgão
+
+Filtro da pagina:
+Título: Unidade Orçamentária
+O filtro deverá trazer como dados para a seleção os valores da combinação dos campos COD_UO + "-" + UO da base data\BASE_QDD_FISCAL.xlsx. Assim, devera aparecer por exemplo 1071 - GABINETE MILITAR DO GOVERNADOR DO ESTADO DE MINAS GERAIS - GABINETE MILITAR
+Quando não for selecionado nenhum dado no filtro deverão aparecer todas as informações gerais de valores nos cards e gráficos. Quando for selecionado mostra em cada gráfico e card apenas os dados relativos a UO selecionada.
+
+Incluir um botão de limpar filtros assim como foi feito na aba Receita Fiscal, mantendo sempre o padrão estético tanto dos filtros quanto dos botões.
+
+Incluir:
+
+Card 1
+Título: Despesa Total (R$) - 2027
+Dado: Traz o somatório dos dados da coluna VALOR FINAL (R$) da base data\BASE_QDD_FISCAL.xlsx
+Fonte de dados: data\BASE_QDD_FISCAL.xlsx
+
+Gráfico 1 - colocar logo ao lado do card 1
+Título: Despesa por por Grupo
+Tipo de gráfico: Grafico de colunas verticais
+Dados: Construir um gráfico de colunas verticais, no qual no eixo Y deverão estar o somatório dos valores da coluna VALOR FINAL (R$) da base data\BASE_QDD_FISCAL.xlsx, segregado de acordo com as categorias que vão estar no eixo x. Para as categorias é preciso combinar as duas bases data\BASE_QDD_FISCAL.xlsx e auxiliares\auxiliar_grupo_despesa.csv, por meio das colunas GRUPO_DESPESA da basedata\BASE_QDD_FISCAL.xlsxe a coluna grupo_despesa_cod da base auxiliares\auxiliar_grupo_despesa.csv, que são códigos, mas o que deve ser exibido no gráfico é o conteúdo da coluna grupo_despesa_descricao da base auxiliares\auxiliar_grupo_despesa.csv. Assim, no gráfico devera ter, por exemplo, a categoria relativa ao Grupo de Despesa a categoria PESSOAL E ENCARGOS SOCIAIS, que trazer o somatório dos valores de todas as linhas da coluna VALOR FINAL (R$) da base data\BASE_QDD_FISCAL.xlsx, cujo dado na coluna GRUPO_DESPESA da base data\BASE_QDD_FISCAL.xlsx  == 1, por exemplo e assim por diante. Em termos de exibição do dado no gráfico devera ficar no formato 15 bi, por exemplo. Ou seja numero em bilhões arredondado com a expressão Bi.
+Fonte:data\BASE_QDD_FISCAL.xlsx e auxiliares\auxiliar_grupo_despesa.csv
+
+Card 2 (Múltiplas linhas, estilo power bi - Multi-row card) - "visual é utilizado para apresentar múltiplos pontos de dados ou categorias num formato de lista com valores associados. Pode notar-se a presença de barras de deslocamento laterais, o que permite aos utilizadores percorrer a lista de itens"
+Título: Despesa por Ação Orçamentária
+Dados: Construir um card no estilo do multi-row card do power bi, no qual são listadas como itens as ações orçamentárias e logo abaixo os valores correspondentes de cada ação orçamentária. Para identificar a ação orçamentária deverá ser usada a base data\BASE_QDD_FISCAL.xlsx. A ação orçamentária a ser descrita no card deverá conter os dados da coluna  AÇÃO + "-" + NOME_ACAO, de modo que o resultado por exemplo da combinação da linha 2 seja 4239 - ELABORAÇÃO LEGISLATIVA E ACOMPANHAMENTO DAS POLÍTICAS PÚBLICAS e esta seja a ação orçamentária. Para os valores de cada ação deverão ser usados os dados da coluna VALOR FINAL (R$), mostrando o total de cada ação. Assim, se temos 20 linhas com valores para a ação 4239, por exemplo, deverão ser somados os valores de todas estas linhas que tem como dado na coluna AÇÃO o código 4239 e assim por diante (digo isso porque a base tem um detalhamento mais extenso que ação orçamentaria então irá haver múltiplas linhas com o mesmo código). Ponto de atenção: Existem ações padronizadas como a ação 2500, 7004, que são ações que existem em varias unidades orçamentárias (COD_UO). Logo para somar os valores, deverá sempre ser analisada a combinação COD_UO + AÇÃO como se fosse uma chave para identificar o valor. Logo os valores da combinação COD_UO == 1071 & AÇÃO == 2500 é um dado e outro dado seria a combinação COD_UO == 1081 & AÇÃO == 2500. Isso é importante senão o valor da ação 2500 irá aparecer sempre o mesmo independente do filtro por UO que eu faça na pagina.
+
+Fonte:data\BASE_QDD_FISCAL.xlsx
+
+Card 3 (Múltiplas linhas, estilo power bi - Multi-row card) - "visual é utilizado para apresentar múltiplos pontos de dados ou categorias num formato de lista com valores associados. Pode notar-se a presença de barras de deslocamento laterais, o que permite aos utilizadores percorrer a lista de itens"
+Título: Despesa por Fonte de Recursos
+Dados: Construir um card no estilo do multi-row card do power bi, no qual são listadas como itens as fontes de recursos e logo abaixo os valores correspondentes previsto em cada fonte de recursos, em formato percentual em relação ao total. Para identificar a fonte de recursos  deverá ser usada a combinação das bases data\BASE_QDD_FISCAL.xlsx e auxiliares\auxiliar_fonte.csv. A fonte de recursos a ser descrita no card deverá conter os dados da coluna  FONTE + "-" + fonte_descricao (a ligação entre as bases é pela correspondência dos dados das colunas FONTE da base data\BASE_QDD_FISCAL.xlsx e  fonte_cod da base auxiliares\auxiliar_fonte.csv). Assim, quando o código na coluna FONTE for 10 deverá ficar 10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS. Para os valores de cada fonte deverão ser usados os dados da coluna VALOR FINAL (R$), mostrando o percentual em relação ao total de cada fonte.
+
+Fonte:data\BASE_QDD_FISCAL.xlsx e auxiliares\auxiliar_fonte.csv
