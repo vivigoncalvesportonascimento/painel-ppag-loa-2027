@@ -31,6 +31,9 @@
           <button class="menu-item" data-pagina="despesa-orgao" role="tab" aria-selected="false">
             Despesa por Órgão
           </button>
+          <button class="menu-item" data-pagina="loa-investimentos" role="tab" aria-selected="false">
+            LOA Investimentos
+          </button>
         </nav>
       </div>
     </header>
@@ -211,6 +214,52 @@
           <div class="lista-cartao">
             <h3 class="lista-cartao-titulo">Despesa por Fonte de Recursos</h3>
             <div id="lista-fonte" class="lista-cartao-corpo"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="loa-investimentos" class="pagina">
+        <h1>LOA Investimentos</h1>
+
+        <div class="filtros">
+          <div class="filtro-campo">
+            <label for="filtro-uo-investimentos">Unidade Orçamentária</label>
+            <select id="filtro-uo-investimentos">
+              <option value="">Todas</option>
+            </select>
+          </div>
+          <button id="limpar-filtros-investimentos" class="botao-secundario" type="button">
+            Limpar filtros
+          </button>
+        </div>
+
+        <div class="linha-cartoes">
+          <div class="card">
+            <div class="valor" id="investimentos-receita-valor">—</div>
+            <div class="titulo">Receita Total (R$) - 2027</div>
+          </div>
+          <div class="card">
+            <div class="valor" id="investimentos-despesa-valor">—</div>
+            <div class="titulo">Despesa Total (R$) - 2027</div>
+          </div>
+        </div>
+
+        <div class="tabela-card">
+          <div class="tabela-scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th>Unidade Orçamentária</th>
+                  <th>Ação Orçamentária</th>
+                  <th>LOA 2027 (R$)</th>
+                </tr>
+              </thead>
+              <tbody id="tabela-investimentos-corpo">
+                <tr>
+                  <td colspan="3" class="carregando">Carregando dados...</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </section>

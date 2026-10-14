@@ -15,6 +15,13 @@ from dados_despesa_fiscal import (
 )
 from dados_despesa_orgao import COLUNA_VALOR as COLUNA_VALOR_DESPESA
 from dados_despesa_orgao import construir_base_enriquecida as construir_base_despesa_orgao
+from dados_loa_investimentos import (
+    construir_base_despesa as construir_base_investimentos_despesa,
+)
+from dados_loa_investimentos import (
+    construir_base_receita as construir_base_investimentos_receita,
+)
+from dados_loa_investimentos import construir_lista_uo as construir_lista_uo_investimentos
 from dados_receita_fiscal import COLUNA_VALOR, construir_base_enriquecida
 from dados_visao_geral import (
     calcular_cards,
@@ -69,6 +76,11 @@ def gerar() -> None:
             "linhas": construir_base_despesa_orgao()
             .rename(columns={COLUNA_VALOR_DESPESA: "valor"})
             .to_dict(orient="records"),
+        },
+        "loa_investimentos": {
+            "uo_opcoes": construir_lista_uo_investimentos(),
+            "linhas_receita": construir_base_investimentos_receita().to_dict(orient="records"),
+            "linhas_despesa": construir_base_investimentos_despesa().to_dict(orient="records"),
         },
     }
 
