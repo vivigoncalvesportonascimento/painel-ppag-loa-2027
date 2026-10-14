@@ -251,4 +251,33 @@ Me entregue o código em Markdown (arquivo `links-uteis.md`). Como o MkDocs Mate
 
 ```
 
+8) Pagina 8
+Titulo: Regionalização
+
+Filtros da pagina
+1) Unidade Orçamentária - O filtro deverá trazer como dados para a seleção os valores da combinação dos campos Código da Unidade Orçamentária Responsável pela Ação + "-" + Unidade Orçamentária Responsável pela Ação da base data\localizadores_todos_planejamento.txt. Assim, devera aparecer por exemplo 1261 - SECRETARIA DE ESTADO DE EDUCAÇÃO
+2) Ação Orçamentária - O filtro deverá trazer como dados para a seleção os valores da combinação dos campos Código da Ação + "-" + Título da Ação da base data\localizadores_todos_planejamento.txt. Assim, devera aparecer por exemplo 4547 - PROGRAMA ESTADUAL DO TRANSPORTE ESCOLAR - PTE/MG
+3) Região Geográfica Intermediária  - O filtro deverá trazer como dados para a seleção os valores da coluna Região Geográfica Intermediária da base data\localizadores_todos_planejamento.txt. 
+4) Município  - O filtro deverá trazer como dados para a seleção os valores da coluna Município da base data\localizadores_todos_planejamento.txt. 
+5) Produto - O filtro deverá trazer como dados para a seleção os valores da coluna Produto da base data\acoes_planejamento.txt
+
+As bases data\acoes_planejamento.txt e data\localizadores_todos_planejamento.txt conversam através da combinação das colunas Código da Unidade Orçamentária Responsável pela Ação & Código da Ação da base data\localizadores_todos_planejamento.txt. com a combinação das colunas Código da Unidade Orçamentária Responsável pela Ação & Código da Ação da base data\acoes_planejamento.txt. O que ocorre é que ambas são bases baseadas nas ações orçamentárias, mas como temos ações padronizadas como a 2500 e 7004 que repetem em unidades orçamentarias distintas precisamos criar esta "chave combinada" entre uo e ação para identificar de forma distinta o que é a ação 2500 da uo 1301 e o que é a ação 2500 da uo 1081 por exemplo.
+Como eu não tenho informação do produto de cada ação na base localizadores preciso recorrer a base ação para trazer esta informação tanto para o filtro quanto para a tabela.
+
+Mapa
+Criar um mapa de Minas Gerais (Estado Brasileiro) segregado por municípios, de modo a pintar de cor distinta os municípios que forem selecionados no filtro Municipio. Alem disso quando passar o mouse por cima do município deverão ser mostradas informações sobre a Previsão orçamentária total de recursos destinados a este município. Para se ter esta informação deve ser buscar os dados nas colunas Município da base data\localizadores_todos_planejamento.txt e os valores na coluna Previsão Orçamentária 2027 da base data\localizadores_todos_planejamento.txt.
+Na base data\localizadores_todos_planejamento.txt temos a coluna Código do Município IBGE, que é uma coluna de código, verificar se ela pode ser útil para identificar no mapa qual o município que esta sendo selecionado e "pintar" no mapa o município corretamente. Exemplo se selecionar no filtro o Municipio Abre Campo preciso que no mapa só ele esteja colorido e quando passar o mouse que apareçam as informações de valores previstos para este municipo. Lembrando que se além do município selecionar outros filtros como Ação Orçamentária devera retornar valor previsto apenas da ação orçamentaria selecionada daquele município. Assim de forma dinâmica.
+
+Tabela 1
+Colunas: 
+1 - Ação Orçamentária - Traz a combinação das colunas Código da Ação + "-" + Título da Ação da base data\localizadores_todos_planejamento.txt. Assim, devera aparecer por exemplo 4547 - PROGRAMA ESTADUAL DO TRANSPORTE ESCOLAR - PTE/MG
+2 - Produto - Retorna os dados da coluna Produto da base data\acoes_planejamento.txt
+3 - Unidade de Medida - Retorna os dados da coluna Unidade de Medida do Produto da base data\acoes_planejamento.txt
+4 - Região Geográfica Intermediária - Retorna os dados da coluna Região Geográfica Intermediária da base data\localizadores_todos_planejamento.txt
+5 - Município - Retorna os dados da coluna Município da base data\localizadores_todos_planejamento.txt
+6 - Previsão Física 2027 - Traz o somatório dos dados da coluna Previsão Física 2027 da base data\localizadores_todos_planejamento.txt
+7 - Previsão Orçamentária 2027 - Traz o somatório dos dados da coluna Previsão Orçamentária 2027 da base data\localizadores_todos_planejamento.txt
+
+
+
 
