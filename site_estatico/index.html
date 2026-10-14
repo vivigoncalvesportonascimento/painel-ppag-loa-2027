@@ -28,6 +28,9 @@
           <button class="menu-item" data-pagina="despesa-fiscal" role="tab" aria-selected="false">
             Despesa Fiscal
           </button>
+          <button class="menu-item" data-pagina="despesa-orgao" role="tab" aria-selected="false">
+            Despesa por Órgão
+          </button>
         </nav>
       </div>
     </header>
@@ -171,6 +174,43 @@
           </div>
           <div class="grafico-card">
             <div id="grafico-despesa-funcao" class="grafico"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="despesa-orgao" class="pagina">
+        <h1>Despesa por Órgão</h1>
+
+        <div class="filtros">
+          <div class="filtro-campo">
+            <label for="filtro-uo-orgao">Unidade Orçamentária</label>
+            <select id="filtro-uo-orgao">
+              <option value="">Todas</option>
+            </select>
+          </div>
+          <button id="limpar-filtros-orgao" class="botao-secundario" type="button">
+            Limpar filtros
+          </button>
+        </div>
+
+        <div class="linha-card-grafico">
+          <div class="card">
+            <div class="valor" id="despesa-orgao-total-valor">—</div>
+            <div class="titulo">Despesa Total (R$) - 2027</div>
+          </div>
+          <div class="grafico-card">
+            <div id="grafico-despesa-orgao-grupo" class="grafico"></div>
+          </div>
+        </div>
+
+        <div class="linha-cartoes">
+          <div class="lista-cartao">
+            <h3 class="lista-cartao-titulo">Despesa por Ação Orçamentária</h3>
+            <div id="lista-acao" class="lista-cartao-corpo"></div>
+          </div>
+          <div class="lista-cartao">
+            <h3 class="lista-cartao-titulo">Despesa por Fonte de Recursos</h3>
+            <div id="lista-fonte" class="lista-cartao-corpo"></div>
           </div>
         </div>
       </section>

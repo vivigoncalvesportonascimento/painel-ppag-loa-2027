@@ -47,6 +47,8 @@ fetch("dados.json")
       dados.despesa_fiscal.grafico_funcao.layout,
       { responsive: true, displayModeBar: false }
     );
+
+    inicializarDespesaOrgao(dados.despesa_orgao.linhas);
   })
   .catch((erro) => {
     document.getElementById("cards").innerHTML =
@@ -221,5 +223,131 @@ function atualizarTabelaUoFonte(linhas) {
       tr.appendChild(td);
     });
     corpo.appendChild(tr);
+  });
+}
+
+function inicializarDespesaOrgao(linhas) {
+  const selectUo = document.getElementById("filtro-uo-orgao");
+  popularOpcoes(selectUo, [...new Set(linhas.map((l) => l.uo_label))].sort());
+
+  const atualizar = () => {
+    const uo = selectUo.value;
+    const filtradas = linhas.filter((l) => !uo || l.uo_label === uo);
+
+    document.getElementById("despesa-orgao-total-valor").textContent = formatarBi(
+      somar(filtradas)
+    );
+    atualizarGraficoDespesaOrgaoGrupo(filtradas);
+    renderizarListaCartao("lista-acao", agruparEOrdenar(filtradas, "acao_label", formatarMoeda));
+    renderizarListaCartao(
+      "lista-fonte",
+      agruparEOrdenarPercentual(filtradas, "fonte_label")
+    );
+  };
+
+  selectUo.addEventListener("change", atualizar);
+
+  document.getElementById("limpar-filtros-orgao").addEventListener("click", () => {
+    selectUo.value = "";
+    atualizar();
+  });
+
+  atualizar();
+}
+
+function agruparEOrdenar(linhas, coluna, formatar) {
+  const totais = new Map();
+  linhas.forEach((linha) => {
+    totais.set(linha[coluna], (totais.get(linha[coluna]) || 0) + linha.valor);
+  });
+  return [...totais.entries()]
+    .sort((a, b) => b[1] - a[1])
+    .map(([label, valor]) => ({ label, valor: formatar(valor) }));
+}
+
+function agruparEOrdenarPercentual(linhas, coluna) {
+  const totais = new Map();
+  linhas.forEach((linha) => {
+    totais.set(linha[coluna], (totais.get(linha[coluna]) || 0) + linha.valor);
+  });
+  const total = [...totais.values()].reduce((soma, v) => soma + v, 0);
+  return [...totais.entries()]
+    .sort((a, b) => b[1] - a[1])
+    .map(([label, valor]) => ({
+      label,
+      valor: `${((valor / total) * 100).toFixed(1)}%`,
+    }));
+}
+
+function renderizarListaCartao(elementId, itens) {
+  const container = document.getElementById(elementId);
+  container.replaceChildren();
+
+  if (itens.length === 0) {
+    const vazio = document.createElement("p");
+    vazio.className = "carregando";
+    vazio.textContent = "Nenhum dado para os filtros selecionados.";
+    container.appendChild(vazio);
+    return;
+  }
+
+  itens.forEach((item) => {
+    const linha = document.createElement("div");
+    linha.className = "lista-cartao-item";
+
+    const label = document.createElement("div");
+    label.className = "label";
+    label.textContent = item.label;
+
+    const valor = document.createElement("div");
+    valor.className = "valor";
+    valor.textContent = item.valor;
+
+    linha.append(label, valor);
+    container.appendChild(linha);
+  });
+}
+
+function atualizarGraficoDespesaOrgaoGrupo(linhas) {
+  const totais = new Map();
+  linhas.forEach((linha) => {
+    totais.set(
+      linha.grupo_despesa_descricao,
+      (totais.get(linha.grupo_despesa_descricao) || 0) + linha.valor
+    );
+  });
+
+  const categorias = [...totais.entries()].sort((a, b) => b[1] - a[1]);
+  const valores = categorias.map((c) => c[1]);
+  const valorMax = Math.max(...valores, 0);
+
+  const data = [
+    {
+      type: "bar",
+      x: categorias.map((c) => c[0]),
+      y: valores,
+      text: categorias.map((c) => formatarBiArredondado(c[1])),
+      textposition: "outside",
+      textfont: { size: 13 },
+      cliponaxis: false,
+      marker: { color: "#0047AB" },
+    },
+  ];
+
+  const layout = {
+    title: { text: "<b>Despesa por Grupo</b>", font: { size: 16, color: "#1f2933" } },
+    showlegend: false,
+    height: 340,
+    font: { family: "system-ui, -apple-system, Segoe UI, Arial, sans-serif", color: "#1f2933" },
+    paper_bgcolor: "rgba(0,0,0,0)",
+    plot_bgcolor: "rgba(0,0,0,0)",
+    margin: { l: 10, r: 10, t: 50, b: 90 },
+    xaxis: { tickfont: { size: 11 }, tickangle: -25, automargin: true },
+    yaxis: { gridcolor: "#eef1f4", range: [0, valorMax * 1.18] },
+  };
+
+  Plotly.newPlot("grafico-despesa-orgao-grupo", data, layout, {
+    responsive: true,
+    displayModeBar: false,
   });
 }

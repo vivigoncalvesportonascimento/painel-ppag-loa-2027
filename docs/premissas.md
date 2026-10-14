@@ -57,3 +57,18 @@ correspondência. `COD_UO` (não `COD_ORGAO`) é a coluna que corresponde a
 `uo_cod` sem nenhuma lacuna — faz sentido, já que `auxiliar_poder.csv` é uma
 tabela de Unidades Orçamentárias (coluna `uo_cod`), não de Órgãos. O
 cruzamento foi feito por `COD_UO`.
+
+## 4. Página Despesa por Órgão: ordem filtro → agrupamento
+
+O documento alerta que ações orçamentárias padronizadas (ex.: 2500, 7004)
+existem em várias Unidades Orçamentárias, então somar apenas por `AÇÃO`
+sem considerar a UO faria o valor de uma ação "vazar" entre UOs diferentes
+ao aplicar o filtro.
+
+A regra adotada: o filtro por UO sempre é aplicado **antes** de qualquer
+agrupamento (por Grupo, Ação ou Fonte). Sem filtro, os cards/gráficos/listas
+agregam a base inteira (uma linha por Ação, por exemplo, somando todas as
+UOs). Com UO selecionada, a base já fica restrita a essa UO antes de
+agrupar — o que automaticamente equivale a agrupar pela combinação
+COD_UO + AÇÃO mencionada no documento, sem precisar expor COD_UO na lista
+nem fragmentar a visão geral (sem filtro) em uma linha por UO.

@@ -14,8 +14,7 @@ from etl.despesa import (
     carregar_auxiliar_poder,
 )
 from etl.orcamento import carregar_qdd_fiscal
-from graficos import grafico_percentual_horizontal
-from utils import formatar_bi_arredondado
+from graficos import grafico_absoluto_vertical, grafico_percentual_horizontal
 
 COLUNA_VALOR = "VALOR FINAL (R$)"
 
@@ -27,35 +26,10 @@ def calcular_card_despesa_total() -> float:
 def construir_grafico_despesa_por_poder() -> "px.Figure":
     despesa = carregar_qdd_fiscal()
     poder = carregar_auxiliar_poder()
-
     combinado = despesa.merge(poder, left_on="COD_UO", right_on="uo_cod")
-    agrupado = combinado.groupby("uo_poder")[COLUNA_VALOR].sum().reset_index()
-    agrupado = agrupado.sort_values(COLUNA_VALOR, ascending=False)
-
-    fig = px.bar(
-        agrupado,
-        x="uo_poder",
-        y=COLUNA_VALOR,
-        title="<b>Despesa por Poder e Reserva de Contingência</b>",
-        text=agrupado[COLUNA_VALOR].map(formatar_bi_arredondado),
-        labels={COLUNA_VALOR: "Valor (R$)", "uo_poder": ""},
-        color_discrete_sequence=["#0047AB"],
+    return grafico_absoluto_vertical(
+        combinado, "uo_poder", COLUNA_VALOR, "Despesa por Poder e Reserva de Contingência"
     )
-    valor_max = agrupado[COLUNA_VALOR].max()
-
-    fig.update_traces(textfont_size=13, textposition="outside", cliponaxis=False)
-    fig.update_layout(
-        showlegend=False,
-        height=340,
-        font=dict(family="system-ui, -apple-system, Segoe UI, Arial, sans-serif", color="#1f2933"),
-        title=dict(font=dict(size=16, color="#1f2933")),
-        paper_bgcolor="rgba(0,0,0,0)",
-        plot_bgcolor="rgba(0,0,0,0)",
-        margin=dict(l=10, r=10, t=50, b=90),
-        xaxis=dict(tickfont=dict(size=11), tickangle=-25, automargin=True),
-        yaxis=dict(gridcolor="#eef1f4", range=[0, valor_max * 1.18]),
-    )
-    return fig
 
 
 def construir_grafico_despesa_por_grupo() -> "px.Figure":

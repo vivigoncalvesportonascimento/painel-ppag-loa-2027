@@ -13,6 +13,8 @@ from dados_despesa_fiscal import (
     construir_grafico_despesa_por_grupo,
     construir_grafico_despesa_por_poder,
 )
+from dados_despesa_orgao import COLUNA_VALOR as COLUNA_VALOR_DESPESA
+from dados_despesa_orgao import construir_base_enriquecida as construir_base_despesa_orgao
 from dados_receita_fiscal import COLUNA_VALOR, construir_base_enriquecida
 from dados_visao_geral import (
     calcular_cards,
@@ -62,6 +64,11 @@ def gerar() -> None:
             "grafico_poder": json.loads(construir_grafico_despesa_por_poder().to_json()),
             "grafico_grupo": json.loads(construir_grafico_despesa_por_grupo().to_json()),
             "grafico_funcao": json.loads(construir_grafico_despesa_por_funcao().to_json()),
+        },
+        "despesa_orgao": {
+            "linhas": construir_base_despesa_orgao()
+            .rename(columns={COLUNA_VALOR_DESPESA: "valor"})
+            .to_dict(orient="records"),
         },
     }
 
