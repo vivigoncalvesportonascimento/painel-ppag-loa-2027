@@ -120,9 +120,14 @@ function somar(linhas) {
 }
 
 function formatarBi(valor) {
-  const bilhoes = valor / 1_000_000_000;
-  const truncado = Math.floor(bilhoes * 10) / 10;
-  return `R$ ${truncado.toFixed(1).replace(".", ",")} bi`;
+  if (Math.abs(valor) >= 1_000_000_000) {
+    const bilhoes = valor / 1_000_000_000;
+    const truncado = Math.floor(bilhoes * 10) / 10;
+    return `R$ ${truncado.toFixed(1).replace(".", ",")} bi`;
+  }
+
+  const milhoes = valor / 1_000_000;
+  return `R$ ${milhoes.toFixed(2).replace(".", ",")} Mi`;
 }
 
 function formatarBiArredondado(valor) {
@@ -341,8 +346,8 @@ function atualizarGraficoDespesaOrgaoGrupo(linhas) {
     font: { family: "system-ui, -apple-system, Segoe UI, Arial, sans-serif", color: "#1f2933" },
     paper_bgcolor: "rgba(0,0,0,0)",
     plot_bgcolor: "rgba(0,0,0,0)",
-    margin: { l: 10, r: 10, t: 50, b: 90 },
-    xaxis: { tickfont: { size: 11 }, tickangle: -25, automargin: true },
+    margin: { l: 10, r: 10, t: 50, b: 50 },
+    xaxis: { tickfont: { size: 10 }, tickangle: 0, automargin: true },
     yaxis: { gridcolor: "#eef1f4", range: [0, valorMax * 1.18] },
   };
 
