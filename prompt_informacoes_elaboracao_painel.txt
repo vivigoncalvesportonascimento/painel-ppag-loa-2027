@@ -149,3 +149,41 @@ Título: Despesa por Fonte de Recursos
 Dados: Construir um card no estilo do multi-row card do power bi, no qual são listadas como itens as fontes de recursos e logo abaixo os valores correspondentes previsto em cada fonte de recursos, em formato percentual em relação ao total. Para identificar a fonte de recursos  deverá ser usada a combinação das bases data\BASE_QDD_FISCAL.xlsx e auxiliares\auxiliar_fonte.csv. A fonte de recursos a ser descrita no card deverá conter os dados da coluna  FONTE + "-" + fonte_descricao (a ligação entre as bases é pela correspondência dos dados das colunas FONTE da base data\BASE_QDD_FISCAL.xlsx e  fonte_cod da base auxiliares\auxiliar_fonte.csv). Assim, quando o código na coluna FONTE for 10 deverá ficar 10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS. Para os valores de cada fonte deverão ser usados os dados da coluna VALOR FINAL (R$), mostrando o percentual em relação ao total de cada fonte.
 
 Fonte:data\BASE_QDD_FISCAL.xlsx e auxiliares\auxiliar_fonte.csv
+
+6) Pagina 6
+Título: LOA Investimentos
+
+Filtro da pagina:
+Título: Unidade Orçamentária
+O filtro deverá trazer como dados para a seleção os valores da combinação dos campos uo_cod + "-" + uo_descricao da base auxiliares\auxiliar_uo.csv, mas apenas das unidades orçamentarias (linhas) cujo tipo loa == loa_investimentos. Assim, devera aparecer por exemplo 5121 - COMPANHIA ENERGÉTICA DE MINAS GERAIS - CEMIG HOLDING
+Quando não for selecionado nenhum dado no filtro deverão aparecer todas as informações gerais de valores nos cards e gráficos. Quando for selecionado mostra em cada gráfico e card apenas os dados relativos a UO selecionada.
+Esta é uma base auxiliar ela irá conversar com as bases de dados data\BASE_QDD_INVESTIMENTO.xlsx e data\BASE_ORCAM_RECEITA_INVESTIMENTO.xlsx por meio das seguintes colunas:
+- uo_cod da base auxiliares\auxiliar_uo.cs e COD_UO da base  data\BASE_ORCAM_RECEITA_INVESTIMENTO.xlsx
+- uo_cod da base auxiliares\auxiliar_uo.cs e COD_UO da base  data\BASE_QDD_INVESTIMENTO.xlsx
+
+Assim, se o card ou gráfico trouxer dados da base data\BASE_QDD_INVESTIMENTO.xlsx, quando eu fizer o filtro da UO mesmo que o filtro seja construído a partir da tabela auxiliar ela deverá conversar com a tabela de dados para trazer as informações da UO filtrada.
+
+Incluir um botão de limpar filtros assim como foi feito na aba Receita Fiscal, mantendo sempre o padrão estético tanto dos filtros quanto dos botões.
+
+Incluir:
+
+Card 1
+Título: Receita Total (R$) - 2027
+Dado: Traz o somatório dos dados da coluna VALOR FINAL (R$) da base data\BASE_ORCAM_RECEITA_INVESTIMENTO.xlsx
+Fonte de dados: data\BASE_ORCAM_RECEITA_INVESTIMENTO.xlsx
+
+Card 2 - alinhado com o Card 1 (lado a lado na mesma proporção de tamanho)
+Título: Despesa Total (R$) - 2027
+Dado: Traz o somatório dos dados da coluna VALOR (R$) da base data\BASE_QDD_INVESTIMENTO.xlsx
+Fonte de dados: data\BASE_QDD_INVESTIMENTO.xlsx
+
+
+Tabela 1 - colocar logo abaixo do Card 1 + Card 2
+Colunas: 
+1 - Unidade Orçamentária - Traz o dado da coluna uo_sigla da base base auxiliares\auxiliar_uo.csv, apenas das linhas onde houver correspondência dos códigos das colunas uo_sigla da base auxiliares\auxiliar_uo.csv com a coluna COD_UO da base data\BASE_QDD_INVESTIMENTO.xlsx. Isto é importante pois só quero as informações das unidades orçamentárias que estão na base de dados data\BASE_QDD_INVESTIMENTO.xlsx, estou usando a base auxiliar auxiliares\auxiliar_uo.csv  porque é nela que tem uma coluna de sigla e quero usar a sigla de cada UO para a minha tabela, a auxiliar é como se fosse uma tabela dimensão no qual tenho informações que se liga a minha tabela fato que é de dados.
+2 - Ação Orçamentária - Traz a combinação das colunas AÇÃO + '-' + NOME_ACAO da base data\BASE_QDD_INVESTIMENTO.xlsx. Assim, teremos por exemplo a combinação 3017 -  MANUTENÇÃO E AQUISIÇÕES DA CODEMIG
+3 - LOA 2027 (R$) - Traz o somatório dos dados da coluna VALOR (R$) da base data\BASE_QDD_INVESTIMENTO.xlsx
+
+Fonte: data\BASE_QDD_INVESTIMENTO.xlsx e auxiliares\auxiliar_uo.csv
+
+
