@@ -92,7 +92,11 @@ def gerar() -> None:
 
     # Arquivo separado (carregado só quando a aba Regionalização é aberta):
     # a base tem ~40 mil linhas e deixaria o carregamento inicial do site
-    # mais pesado se fosse embutida em dados.json.
+    # mais pesado se fosse embutida em dados.json. Os textos (UO, Ação,
+    # Região, Produto, Unidade) se repetem muito entre as 40 mil linhas, por
+    # isso são codificados por dicionário (cada valor distinto guardado uma
+    # única vez, e as linhas referenciam só o índice) — isso sozinho reduz o
+    # arquivo de ~14 MB para ~2 MB.
     regionalizacao = construir_base_regionalizacao().rename(
         columns={
             "Previsão Física 2027": "fisica",
@@ -100,10 +104,49 @@ def gerar() -> None:
         }
     )
     SAIDA_REGIONALIZACAO.write_text(
-        json.dumps({"linhas": regionalizacao.to_dict(orient="records")}, ensure_ascii=False),
+        json.dumps(_codificar_regionalizacao(regionalizacao), ensure_ascii=False),
         encoding="utf-8",
     )
     print(f"Gerado: {SAIDA_REGIONALIZACAO}")
+
+
+def _codificar_regionalizacao(df) -> dict:
+    def dicionario(coluna: str) -> tuple[list[str], dict[str, int]]:
+        valores = sorted(df[coluna].unique())
+        return valores, {valor: indice for indice, valor in enumerate(valores)}
+
+    uo_valores, uo_idx = dicionario("uo_label")
+    acao_valores, acao_idx = dicionario("acao_label")
+    regiao_valores, regiao_idx = dicionario("regiao")
+    produto_valores, produto_idx = dicionario("produto")
+    unidade_valores, unidade_idx = dicionario("unidade_medida")
+
+    municipios = (
+        df[["municipio", "municipio_ibge"]].drop_duplicates().sort_values("municipio")
+    )
+    municipio_idx = {nome: indice for indice, nome in enumerate(municipios["municipio"])}
+
+    return {
+        "uo": uo_valores,
+        "acao": acao_valores,
+        "regiao": regiao_valores,
+        "produto": produto_valores,
+        "unidade": unidade_valores,
+        "municipios": [
+            {"nome": nome, "ibge": ibge}
+            for nome, ibge in zip(municipios["municipio"], municipios["municipio_ibge"])
+        ],
+        "linhas": {
+            "uo": df["uo_label"].map(uo_idx).tolist(),
+            "acao": df["acao_label"].map(acao_idx).tolist(),
+            "regiao": df["regiao"].map(regiao_idx).tolist(),
+            "produto": df["produto"].map(produto_idx).tolist(),
+            "unidade": df["unidade_medida"].map(unidade_idx).tolist(),
+            "municipio": df["municipio"].map(municipio_idx).tolist(),
+            "fisica": df["fisica"].tolist(),
+            "valor": df["valor"].tolist(),
+        },
+    }
 
 
 if __name__ == "__main__":

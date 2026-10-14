@@ -468,6 +468,29 @@ let _regionalizacaoIbgeParaNome = null;
 
 const LIMITE_TABELA_REGIONALIZACAO = 2000;
 
+function decodificarLinhasRegionalizacao(dadosReg) {
+  const { uo, acao, regiao, produto, unidade, municipios, linhas } = dadosReg;
+  const total = linhas.valor.length;
+  const resultado = new Array(total);
+
+  for (let i = 0; i < total; i += 1) {
+    const municipio = municipios[linhas.municipio[i]];
+    resultado[i] = {
+      uo_label: uo[linhas.uo[i]],
+      acao_label: acao[linhas.acao[i]],
+      regiao: regiao[linhas.regiao[i]],
+      produto: produto[linhas.produto[i]],
+      unidade_medida: unidade[linhas.unidade[i]],
+      municipio: municipio.nome,
+      municipio_ibge: municipio.ibge,
+      fisica: linhas.fisica[i],
+      valor: linhas.valor[i],
+    };
+  }
+
+  return resultado;
+}
+
 function carregarRegionalizacao() {
   if (_regionalizacaoCarregada) {
     return;
@@ -479,7 +502,7 @@ function carregarRegionalizacao() {
     fetch("mg_municipios.geojson").then((r) => r.json()),
   ])
     .then(([dadosReg, geojson]) => {
-      _regionalizacaoLinhas = dadosReg.linhas;
+      _regionalizacaoLinhas = decodificarLinhasRegionalizacao(dadosReg);
       _regionalizacaoGeojson = geojson;
       _regionalizacaoUniverso = geojson.features.map((f) => ({
         municipio_ibge: f.properties.id,
