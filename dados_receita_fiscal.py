@@ -58,7 +58,11 @@ def construir_grafico_receita_por_categoria(base: pd.DataFrame) -> "px.Figure":
         labels={COLUNA_VALOR: "Valor (R$)", "categoria_receita_desc": ""},
         color_discrete_sequence=["#0047AB"],
     )
-    fig.update_traces(textfont_size=15, textposition="outside")
+    valor_min = min(0, agrupado[COLUNA_VALOR].min())
+    valor_max = agrupado[COLUNA_VALOR].max()
+    margem = (valor_max - valor_min) * 0.15
+
+    fig.update_traces(textfont_size=15, textposition="outside", cliponaxis=False)
     fig.update_layout(
         showlegend=False,
         height=280,
@@ -66,9 +70,9 @@ def construir_grafico_receita_por_categoria(base: pd.DataFrame) -> "px.Figure":
         title=dict(font=dict(size=16, color="#1f2933")),
         paper_bgcolor="rgba(0,0,0,0)",
         plot_bgcolor="rgba(0,0,0,0)",
-        margin=dict(l=10, r=30, t=40, b=10),
+        margin=dict(l=10, r=40, t=40, b=10),
         yaxis=dict(tickfont=dict(size=12), automargin=True),
-        xaxis=dict(gridcolor="#eef1f4"),
+        xaxis=dict(gridcolor="#eef1f4", range=[valor_min - margem, valor_max + margem]),
     )
     return fig
 

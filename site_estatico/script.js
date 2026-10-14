@@ -148,16 +148,21 @@ function atualizarGraficoReceitaCategoria(linhas) {
   });
 
   const categorias = [...totais.entries()].sort((a, b) => a[1] - b[1]);
+  const valores = categorias.map((c) => c[1]);
+  const valorMin = Math.min(0, ...valores);
+  const valorMax = Math.max(...valores);
+  const margem = (valorMax - valorMin) * 0.15;
 
   const data = [
     {
       type: "bar",
       orientation: "h",
-      x: categorias.map((c) => c[1]),
+      x: valores,
       y: categorias.map((c) => c[0]),
       text: categorias.map((c) => formatarBiArredondado(c[1])),
       textposition: "outside",
       textfont: { size: 15 },
+      cliponaxis: false,
       marker: { color: "#0047AB" },
     },
   ];
@@ -169,9 +174,9 @@ function atualizarGraficoReceitaCategoria(linhas) {
     font: { family: "system-ui, -apple-system, Segoe UI, Arial, sans-serif", color: "#1f2933" },
     paper_bgcolor: "rgba(0,0,0,0)",
     plot_bgcolor: "rgba(0,0,0,0)",
-    margin: { l: 10, r: 30, t: 40, b: 10 },
+    margin: { l: 10, r: 40, t: 40, b: 10 },
     yaxis: { tickfont: { size: 12 }, automargin: true },
-    xaxis: { gridcolor: "#eef1f4" },
+    xaxis: { gridcolor: "#eef1f4", range: [valorMin - margem, valorMax + margem] },
   };
 
   Plotly.newPlot("grafico-receita-categoria", data, layout, {
