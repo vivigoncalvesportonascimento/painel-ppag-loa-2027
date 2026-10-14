@@ -43438,5 +43438,290 @@
         "valor": 1667002
       }
     ]
+  },
+  "loa_investimentos": {
+    "uo_opcoes": [
+      "5011 - COMPANHIA DE DESENVOLVIMENTO ECONÔMICO DE MINAS GERAIS - CODEMIG",
+      "5031 - COMPANHIA DE DESENVOLVIMENTO DE MINAS GERAIS - CODEMGE",
+      "5071 - COMPANHIA DE HABITAÇÃO DO ESTADO DE MINAS GERAIS - COHAB",
+      "5121 - COMPANHIA ENERGÉTICA DE MINAS GERAIS - CEMIG HOLDING",
+      "5131 - AGÊNCIA DE PROMOÇÃO DE INVESTIMENTOS DE MINAS GERAIS - INVEST MINAS",
+      "5141 - COMPANHIA DE TECNOLOGIA DA INFORMAÇÃO DO ESTADO DE MINAS GERAIS - PRODEMGE",
+      "5191 - MINAS GERAIS PARTICIPAÇÕES S.A - MGI",
+      "5201 - BANCO DE DESENVOLVIMENTO DE MINAS GERAIS S.A - BDMG",
+      "5251 - COMPANHIA DE GÁS DE MINAS GERAIS - GASMIG",
+      "5261 - TREM METROPOLITANO DE BELO HORIZONTE S.A - TREM METROPOLITANO",
+      "5381 - MINAS GERAIS ADMINISTRAÇÃO E SERVIÇOS S.A - MGS",
+      "5391 - CEMIG GERAÇÃO E TRANSMISSÃO S.A - CEMIG GERAÇÃO E TRANSMISSÃO",
+      "5401 - CEMIG DISTRIBUIÇÃO S.A - CEMIG DISTRIBUIDORA"
+    ],
+    "linhas_receita": [
+      {
+        "uo_label": "5251 - COMPANHIA DE GÁS DE MINAS GERAIS - GASMIG",
+        "valor": 457766318
+      },
+      {
+        "uo_label": "5401 - CEMIG DISTRIBUIÇÃO S.A - CEMIG DISTRIBUIDORA",
+        "valor": 5570404894
+      },
+      {
+        "uo_label": "5121 - COMPANHIA ENERGÉTICA DE MINAS GERAIS - CEMIG HOLDING",
+        "valor": 5283465
+      },
+      {
+        "uo_label": "5201 - BANCO DE DESENVOLVIMENTO DE MINAS GERAIS S.A - BDMG",
+        "valor": 1123941920
+      },
+      {
+        "uo_label": "5191 - MINAS GERAIS PARTICIPAÇÕES S.A - MGI",
+        "valor": 1220500
+      },
+      {
+        "uo_label": "5131 - AGÊNCIA DE PROMOÇÃO DE INVESTIMENTOS DE MINAS GERAIS - INVEST MINAS",
+        "valor": 323000
+      },
+      {
+        "uo_label": "5191 - MINAS GERAIS PARTICIPAÇÕES S.A - MGI",
+        "valor": 2000
+      },
+      {
+        "uo_label": "5141 - COMPANHIA DE TECNOLOGIA DA INFORMAÇÃO DO ESTADO DE MINAS GERAIS - PRODEMGE",
+        "valor": 74348446
+      },
+      {
+        "uo_label": "5011 - COMPANHIA DE DESENVOLVIMENTO ECONÔMICO DE MINAS GERAIS - CODEMIG",
+        "valor": 1600000
+      },
+      {
+        "uo_label": "5031 - COMPANHIA DE DESENVOLVIMENTO DE MINAS GERAIS - CODEMGE",
+        "valor": 26830404
+      },
+      {
+        "uo_label": "5381 - MINAS GERAIS ADMINISTRAÇÃO E SERVIÇOS S.A - MGS",
+        "valor": 1000
+      },
+      {
+        "uo_label": "5381 - MINAS GERAIS ADMINISTRAÇÃO E SERVIÇOS S.A - MGS",
+        "valor": 18017430
+      },
+      {
+        "uo_label": "5391 - CEMIG GERAÇÃO E TRANSMISSÃO S.A - CEMIG GERAÇÃO E TRANSMISSÃO",
+        "valor": 1974439120
+      },
+      {
+        "uo_label": "5261 - TREM METROPOLITANO DE BELO HORIZONTE S.A - TREM METROPOLITANO",
+        "valor": 1000
+      },
+      {
+        "uo_label": "5071 - COMPANHIA DE HABITAÇÃO DO ESTADO DE MINAS GERAIS - COHAB",
+        "valor": 36608798
+      }
+    ],
+    "linhas_despesa": [
+      {
+        "uo_label": "5011 - COMPANHIA DE DESENVOLVIMENTO ECONÔMICO DE MINAS GERAIS - CODEMIG",
+        "uo_sigla": "CODEMIG",
+        "acao_label": "3017 -  MANUTENÇÃO E AQUISIÇÕES DA CODEMIG",
+        "valor": 800000
+      },
+      {
+        "uo_label": "5011 - COMPANHIA DE DESENVOLVIMENTO ECONÔMICO DE MINAS GERAIS - CODEMIG",
+        "uo_sigla": "CODEMIG",
+        "acao_label": "3017 -  MANUTENÇÃO E AQUISIÇÕES DA CODEMIG",
+        "valor": 800000
+      },
+      {
+        "uo_label": "5031 - COMPANHIA DE DESENVOLVIMENTO DE MINAS GERAIS - CODEMGE",
+        "uo_sigla": "CODEMGE",
+        "acao_label": "3015 - GESTÃO DE INFRAESTRUTURA, CONSÓRCIOS E EQUIPAMENTOS CULTURAIS E TURÍSTICOS",
+        "valor": 4782988
+      },
+      {
+        "uo_label": "5031 - COMPANHIA DE DESENVOLVIMENTO DE MINAS GERAIS - CODEMGE",
+        "uo_sigla": "CODEMGE",
+        "acao_label": "3015 - GESTÃO DE INFRAESTRUTURA, CONSÓRCIOS E EQUIPAMENTOS CULTURAIS E TURÍSTICOS",
+        "valor": 22047416
+      },
+      {
+        "uo_label": "5071 - COMPANHIA DE HABITAÇÃO DO ESTADO DE MINAS GERAIS - COHAB",
+        "uo_sigla": "COHAB",
+        "acao_label": "6010 - MANUTENÇÃO E ADEQUAÇÃO DA INFRAESTRUTURA ADMINISTRATIVA - COHAB",
+        "valor": 36608798
+      },
+      {
+        "uo_label": "5121 - COMPANHIA ENERGÉTICA DE MINAS GERAIS - CEMIG HOLDING",
+        "uo_sigla": "CEMIG HOLDING",
+        "acao_label": "3010 -  INVESTIMENTOS EM PARTICIPAÇÕES SOCIETÁRIAS CEMIG HOLDING",
+        "valor": 1000
+      },
+      {
+        "uo_label": "5121 - COMPANHIA ENERGÉTICA DE MINAS GERAIS - CEMIG HOLDING",
+        "uo_sigla": "CEMIG HOLDING",
+        "acao_label": "3011 -  MANUTENÇÃO DA INFRAESTRUTURA DA CEMIG HOLDING",
+        "valor": 5282465
+      },
+      {
+        "uo_label": "5131 - AGÊNCIA DE PROMOÇÃO DE INVESTIMENTOS DE MINAS GERAIS - INVEST MINAS",
+        "uo_sigla": "INVEST MINAS",
+        "acao_label": "6008 - MANUTENÇÃO DA INFRAESTRUTURA ADMINISTRATIVA E OPERACIONAL DA INVEST MINAS",
+        "valor": 323000
+      },
+      {
+        "uo_label": "5141 - COMPANHIA DE TECNOLOGIA DA INFORMAÇÃO DO ESTADO DE MINAS GERAIS - PRODEMGE",
+        "uo_sigla": "PRODEMGE",
+        "acao_label": "6006 - MANUTENÇÃO DAS UNIDADES PREDIAIS",
+        "valor": 16317109
+      },
+      {
+        "uo_label": "5141 - COMPANHIA DE TECNOLOGIA DA INFORMAÇÃO DO ESTADO DE MINAS GERAIS - PRODEMGE",
+        "uo_sigla": "PRODEMGE",
+        "acao_label": "8001 - AQUISIÇÃO DE HARDWARES E SOFTWARES PARA PRESTAÇÃO DE SERVIÇOS EM TECNOLOGIA DA INFORMAÇÃO E COMUNICAÇÃO",
+        "valor": 58031337
+      },
+      {
+        "uo_label": "5191 - MINAS GERAIS PARTICIPAÇÕES S.A - MGI",
+        "uo_sigla": "MGI",
+        "acao_label": "6001 - INVESTIMENTOS VIA PARTICIPAÇÃO SOCIETÁRIA",
+        "valor": 1000
+      },
+      {
+        "uo_label": "5191 - MINAS GERAIS PARTICIPAÇÕES S.A - MGI",
+        "uo_sigla": "MGI",
+        "acao_label": "6001 - INVESTIMENTOS VIA PARTICIPAÇÃO SOCIETÁRIA",
+        "valor": 1000
+      },
+      {
+        "uo_label": "5191 - MINAS GERAIS PARTICIPAÇÕES S.A - MGI",
+        "uo_sigla": "MGI",
+        "acao_label": "6011 - MANUTENÇÃO E ADEQUAÇÃO DA INFRAESTRUTURA DA MGI",
+        "valor": 555000
+      },
+      {
+        "uo_label": "5191 - MINAS GERAIS PARTICIPAÇÕES S.A - MGI",
+        "uo_sigla": "MGI",
+        "acao_label": "6003 - SUPORTE AO DESENVOLVIMENTO ESTADUAL",
+        "valor": 1000
+      },
+      {
+        "uo_label": "5191 - MINAS GERAIS PARTICIPAÇÕES S.A - MGI",
+        "uo_sigla": "MGI",
+        "acao_label": "6003 - SUPORTE AO DESENVOLVIMENTO ESTADUAL",
+        "valor": 664500
+      },
+      {
+        "uo_label": "5201 - BANCO DE DESENVOLVIMENTO DE MINAS GERAIS S.A - BDMG",
+        "uo_sigla": "BDMG",
+        "acao_label": "8003 - FINANCIAMENTO À DESCARBONIZAÇÃO E RESILIÊNCIA CLIMÁTICA ENTRE BDMG E BANCO INTERAMERICANO DE DESENVOLVIMENTO (BDMG PBR)",
+        "valor": 260000000
+      },
+      {
+        "uo_label": "5201 - BANCO DE DESENVOLVIMENTO DE MINAS GERAIS S.A - BDMG",
+        "uo_sigla": "BDMG",
+        "acao_label": "6004 - MANUTENÇÃO E ADEQUAÇÃO DA INFRA-ESTRUTURA ADMINISTRATIVA E OPERACIONAL DO BDMG",
+        "valor": 38941920
+      },
+      {
+        "uo_label": "5201 - BANCO DE DESENVOLVIMENTO DE MINAS GERAIS S.A - BDMG",
+        "uo_sigla": "BDMG",
+        "acao_label": "8004 - FINANCIAMENTO À SUSTENTABILIDADE E ÀS MICRO E PEQUENAS EMPRESAS DO ESTADO DE MINAS GERAIS ENTRE BDMG E BANCO EUROPEU DE INVESTIMENTO (BDMG SUSTENTABILIDADE E MPE)",
+        "valor": 825000000
+      },
+      {
+        "uo_label": "5251 - COMPANHIA DE GÁS DE MINAS GERAIS - GASMIG",
+        "uo_sigla": "GASMIG",
+        "acao_label": "3018 - GÁS COMPETITIVO- EXPANSÃO DA REDE DE GÁS NATURAL",
+        "valor": 457766318
+      },
+      {
+        "uo_label": "5261 - TREM METROPOLITANO DE BELO HORIZONTE S.A - TREM METROPOLITANO",
+        "uo_sigla": "TREM METROPOLITANO",
+        "acao_label": "8011 - MANUTENÇÃO E ADEQUAÇÃO DA INFRA-ESTRUTURA ADMINISTRATIVA E OPERACIONAL - TRANSPORTES METROPOLITANOS",
+        "valor": 1000
+      },
+      {
+        "uo_label": "5381 - MINAS GERAIS ADMINISTRAÇÃO E SERVIÇOS S.A - MGS",
+        "uo_sigla": "MGS",
+        "acao_label": "8002 - INVESTIMENTOS EM ATIVO FIXO PARA PRESTAÇÃO DE SERVIÇO",
+        "valor": 12650330
+      },
+      {
+        "uo_label": "5381 - MINAS GERAIS ADMINISTRAÇÃO E SERVIÇOS S.A - MGS",
+        "uo_sigla": "MGS",
+        "acao_label": "8002 - INVESTIMENTOS EM ATIVO FIXO PARA PRESTAÇÃO DE SERVIÇO",
+        "valor": 524600
+      },
+      {
+        "uo_label": "5381 - MINAS GERAIS ADMINISTRAÇÃO E SERVIÇOS S.A - MGS",
+        "uo_sigla": "MGS",
+        "acao_label": "8002 - INVESTIMENTOS EM ATIVO FIXO PARA PRESTAÇÃO DE SERVIÇO",
+        "valor": 1000
+      },
+      {
+        "uo_label": "5381 - MINAS GERAIS ADMINISTRAÇÃO E SERVIÇOS S.A - MGS",
+        "uo_sigla": "MGS",
+        "acao_label": "8002 - INVESTIMENTOS EM ATIVO FIXO PARA PRESTAÇÃO DE SERVIÇO",
+        "valor": 4842500
+      },
+      {
+        "uo_label": "5391 - CEMIG GERAÇÃO E TRANSMISSÃO S.A - CEMIG GERAÇÃO E TRANSMISSÃO",
+        "uo_sigla": "CEMIG GERAÇÃO E TRANSMISSÃO",
+        "acao_label": "3004 - EXPANSÃO DO SISTEMA DE TRANSMISSÃO",
+        "valor": 228410975
+      },
+      {
+        "uo_label": "5391 - CEMIG GERAÇÃO E TRANSMISSÃO S.A - CEMIG GERAÇÃO E TRANSMISSÃO",
+        "uo_sigla": "CEMIG GERAÇÃO E TRANSMISSÃO",
+        "acao_label": "3005 - REFORMAS DE SUBESTAÇÕES E LINHAS DE TRANSMISSÃO ",
+        "valor": 426883823
+      },
+      {
+        "uo_label": "5391 - CEMIG GERAÇÃO E TRANSMISSÃO S.A - CEMIG GERAÇÃO E TRANSMISSÃO",
+        "uo_sigla": "CEMIG GERAÇÃO E TRANSMISSÃO",
+        "acao_label": "3006 - MANUTENÇÃO DA INFRAESTRUTURA DA TRANSMISSÃO",
+        "valor": 32235731
+      },
+      {
+        "uo_label": "5391 - CEMIG GERAÇÃO E TRANSMISSÃO S.A - CEMIG GERAÇÃO E TRANSMISSÃO",
+        "uo_sigla": "CEMIG GERAÇÃO E TRANSMISSÃO",
+        "acao_label": "3009 - INVESTIMENTOS PARTICIPAÇÕES SOCIETÁRIAS DA TRANSMISSÃO ",
+        "valor": 56493213
+      },
+      {
+        "uo_label": "5391 - CEMIG GERAÇÃO E TRANSMISSÃO S.A - CEMIG GERAÇÃO E TRANSMISSÃO",
+        "uo_sigla": "CEMIG GERAÇÃO E TRANSMISSÃO",
+        "acao_label": "3001 - EXPANSÃO DO SISTEMA DE GERAÇÃO",
+        "valor": 1000
+      },
+      {
+        "uo_label": "5391 - CEMIG GERAÇÃO E TRANSMISSÃO S.A - CEMIG GERAÇÃO E TRANSMISSÃO",
+        "uo_sigla": "CEMIG GERAÇÃO E TRANSMISSÃO",
+        "acao_label": "3007 -  REFORMAS, MELHORIAS E AMPLIAÇÕES DE USINAS",
+        "valor": 121588957
+      },
+      {
+        "uo_label": "5391 - CEMIG GERAÇÃO E TRANSMISSÃO S.A - CEMIG GERAÇÃO E TRANSMISSÃO",
+        "uo_sigla": "CEMIG GERAÇÃO E TRANSMISSÃO",
+        "acao_label": "3008 - MANUTENÇÃO DA INFRAESTRUTURA DA GERAÇÃO",
+        "valor": 28627843
+      },
+      {
+        "uo_label": "5391 - CEMIG GERAÇÃO E TRANSMISSÃO S.A - CEMIG GERAÇÃO E TRANSMISSÃO",
+        "uo_sigla": "CEMIG GERAÇÃO E TRANSMISSÃO",
+        "acao_label": "3014 - INVESTIMENTOS EM PARTICIPAÇÕES SOCIETÁRIAS DA GERAÇÃO",
+        "valor": 1080197578
+      },
+      {
+        "uo_label": "5401 - CEMIG DISTRIBUIÇÃO S.A - CEMIG DISTRIBUIDORA",
+        "uo_sigla": "CEMIG DISTRIBUIDORA",
+        "acao_label": "3002 - EXECUÇÃO DO PLANO DE DESENVOLVIMENTO DA DISTRIBUIDORA (PDD) ",
+        "valor": 5320034427
+      },
+      {
+        "uo_label": "5401 - CEMIG DISTRIBUIÇÃO S.A - CEMIG DISTRIBUIDORA",
+        "uo_sigla": "CEMIG DISTRIBUIDORA",
+        "acao_label": "3003 - MANUTENÇÃO DA INFRAESTRUTURA DA DISTRIBUIÇÃO ",
+        "valor": 250370467
+      }
+    ]
   }
 }

@@ -49,6 +49,12 @@ fetch("dados.json")
     );
 
     inicializarDespesaOrgao(dados.despesa_orgao.linhas);
+
+    inicializarLoaInvestimentos(
+      dados.loa_investimentos.uo_opcoes,
+      dados.loa_investimentos.linhas_receita,
+      dados.loa_investimentos.linhas_despesa
+    );
   })
   .catch((erro) => {
     document.getElementById("cards").innerHTML =
@@ -375,5 +381,76 @@ function atualizarGraficoDespesaOrgaoGrupo(linhas) {
   Plotly.newPlot("grafico-despesa-orgao-grupo", data, layout, {
     responsive: true,
     displayModeBar: false,
+  });
+}
+
+function inicializarLoaInvestimentos(uoOpcoes, linhasReceita, linhasDespesa) {
+  const select = document.getElementById("filtro-uo-investimentos");
+  popularOpcoes(select, uoOpcoes);
+
+  const atualizar = () => {
+    const uo = select.value;
+    const receitaFiltrada = linhasReceita.filter((l) => !uo || l.uo_label === uo);
+    const despesaFiltrada = linhasDespesa.filter((l) => !uo || l.uo_label === uo);
+
+    document.getElementById("investimentos-receita-valor").textContent = formatarBi(
+      somar(receitaFiltrada)
+    );
+    document.getElementById("investimentos-despesa-valor").textContent = formatarBi(
+      somar(despesaFiltrada)
+    );
+    atualizarTabelaInvestimentos(despesaFiltrada);
+  };
+
+  select.addEventListener("change", atualizar);
+
+  document.getElementById("limpar-filtros-investimentos").addEventListener("click", () => {
+    select.value = "";
+    atualizar();
+  });
+
+  atualizar();
+}
+
+function atualizarTabelaInvestimentos(linhas) {
+  const totais = new Map();
+  linhas.forEach((linha) => {
+    const chave = `${linha.uo_sigla}|${linha.acao_label}`;
+    const atual = totais.get(chave);
+    if (atual) {
+      atual.valor += linha.valor;
+    } else {
+      totais.set(chave, {
+        uo_sigla: linha.uo_sigla,
+        acao_label: linha.acao_label,
+        valor: linha.valor,
+      });
+    }
+  });
+
+  const linhasOrdenadas = [...totais.values()].sort((a, b) => b.valor - a.valor);
+
+  const corpo = document.getElementById("tabela-investimentos-corpo");
+  corpo.replaceChildren();
+
+  if (linhasOrdenadas.length === 0) {
+    const tr = document.createElement("tr");
+    const td = document.createElement("td");
+    td.colSpan = 3;
+    td.className = "carregando";
+    td.textContent = "Nenhum dado para os filtros selecionados.";
+    tr.appendChild(td);
+    corpo.appendChild(tr);
+    return;
+  }
+
+  linhasOrdenadas.forEach((linha) => {
+    const tr = document.createElement("tr");
+    [linha.uo_sigla, linha.acao_label, formatarMoeda(linha.valor)].forEach((valor) => {
+      const td = document.createElement("td");
+      td.textContent = valor;
+      tr.appendChild(td);
+    });
+    corpo.appendChild(tr);
   });
 }
