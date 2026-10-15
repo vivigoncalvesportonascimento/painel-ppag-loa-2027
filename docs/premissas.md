@@ -101,3 +101,12 @@ navegador) são carregados em `dados_regionalizacao.json`, separado do
 site estático) mostra no máximo as 2.000 linhas de maior valor, com
 aviso, para não travar o navegador quando nenhum filtro estiver ativo
 (~40 mil linhas agrupadas sem filtro).
+
+Oito linhas de `localizadores_todos_planejamento.txt` têm a coluna
+`Previsão Orçamentária 2027` em branco (ex.: ação 5638 "INVISTA EM
+MINAS"). Isso virava `NaN` depois do `pd.to_numeric`, e o `json.dumps`
+do Python escreve `NaN` como token literal — que não é JSON válido
+(o `JSON.parse()` do navegador rejeita e quebra a página inteira, por
+isso o site estático parava de carregar a aba inteira, não só essas 8
+linhas). Premissa: valor ausente = zero (`.fillna(0)` em
+`Previsão Física/Orçamentária 2027` logo após a conversão numérica).

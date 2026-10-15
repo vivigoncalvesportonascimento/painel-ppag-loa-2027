@@ -48,8 +48,8 @@ def construir_base_enriquecida() -> pd.DataFrame:
             "municipio_ibge": base["Código do Município IBGE"],
             "produto": base["Produto"].fillna(""),
             "unidade_medida": base["Unidade de Medida do Produto"].fillna(""),
-            COLUNA_FISICA: pd.to_numeric(base[COLUNA_FISICA]),
-            COLUNA_VALOR: pd.to_numeric(base[COLUNA_VALOR]),
+            COLUNA_FISICA: pd.to_numeric(base[COLUNA_FISICA]).fillna(0),
+            COLUNA_VALOR: pd.to_numeric(base[COLUNA_VALOR]).fillna(0),
         }
     )
 
