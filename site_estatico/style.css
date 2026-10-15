@@ -641,3 +641,11 @@ tbody tr:hover {
 .tabela-programa-indicadores th:nth-child(8) {
   width: 10%;
 }
+
+.tabela-qdd th {
+  width: 11.1%;
+}
+
+.tabela-qdd th:last-child {
+  width: 11.3%;
+}

@@ -102,6 +102,21 @@ site estático) mostra no máximo as 2.000 linhas de maior valor, com
 aviso, para não travar o navegador quando nenhum filtro estiver ativo
 (~40 mil linhas agrupadas sem filtro).
 
+## 6. Página QDD: tabela fato + dimensões, sem lacunas
+
+`BASE_QDD_FISCAL.xlsx` (4.528 linhas) é a tabela fato; as 6 bases
+auxiliares (UO, Grupo de Despesa, IAG, Fonte de Recursos, IPU, Elemento
+de Despesa) são dimensões ligadas por código. Ao contrário de outras
+páginas, aqui todos os 6 cruzamentos batem perfeitamente, sem nenhum
+código sem correspondência e sem necessidade de normalizar zero à
+esquerda (todas as colunas de código já são inteiras dos dois lados).
+
+A tabela agrupa pelas 8 dimensões e soma `VALOR FINAL (R$)` (4.528
+linhas brutas → 4.415 combinações distintas). Os dados da página
+(~2,4 MB em nível de linha, para os 8 filtros) ficam em
+`dados_qdd.json`, separado do `dados.json` principal e carregado só
+quando a aba QDD é aberta, mesmo padrão da Regionalização.
+
 Oito linhas de `localizadores_todos_planejamento.txt` têm a coluna
 `Previsão Orçamentária 2027` em branco (ex.: ação 5638 "INVISTA EM
 MINAS"). Isso virava `NaN` depois do `pd.to_numeric`, e o `json.dumps`

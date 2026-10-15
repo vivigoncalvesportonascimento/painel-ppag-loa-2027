@@ -26,6 +26,8 @@ from dados_loa_investimentos import (
 from dados_loa_investimentos import construir_lista_uo as construir_lista_uo_investimentos
 from dados_programa import construir_base_enriquecida as construir_base_programa
 from dados_programa import construir_tabela_indicadores
+from dados_qdd import COLUNA_VALOR as COLUNA_VALOR_QDD
+from dados_qdd import construir_base_enriquecida as construir_base_qdd
 from dados_receita_fiscal import COLUNA_VALOR, construir_base_enriquecida
 from dados_regionalizacao import construir_base_enriquecida as construir_base_regionalizacao
 from dados_visao_geral import (
@@ -38,6 +40,7 @@ from utils import formatar_bilhoes
 PASTA_SAIDA = Path(__file__).resolve().parent / "site_estatico"
 SAIDA = PASTA_SAIDA / "dados.json"
 SAIDA_REGIONALIZACAO = PASTA_SAIDA / "dados_regionalizacao.json"
+SAIDA_QDD = PASTA_SAIDA / "dados_qdd.json"
 
 
 def gerar() -> None:
@@ -118,6 +121,14 @@ def gerar() -> None:
     _validar_json_estrito(texto_regionalizacao, SAIDA_REGIONALIZACAO.name)
     SAIDA_REGIONALIZACAO.write_text(texto_regionalizacao, encoding="utf-8")
     print(f"Gerado: {SAIDA_REGIONALIZACAO}")
+
+    # Arquivo separado (carregado só quando a aba QDD é aberta): ~2,4 MB em
+    # nível de linha, para os 8 filtros funcionarem no navegador.
+    qdd = construir_base_qdd().rename(columns={COLUNA_VALOR_QDD: "valor"})
+    texto_qdd = json.dumps({"linhas": qdd.to_dict(orient="records")}, ensure_ascii=False)
+    _validar_json_estrito(texto_qdd, SAIDA_QDD.name)
+    SAIDA_QDD.write_text(texto_qdd, encoding="utf-8")
+    print(f"Gerado: {SAIDA_QDD}")
 
 
 def _exportar_acao_orcamentaria() -> list[dict]:

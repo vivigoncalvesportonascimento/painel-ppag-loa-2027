@@ -9,6 +9,7 @@ from paginas import (
     loa_investimentos,
     o_painel,
     programa,
+    qdd,
     receita_fiscal,
     regionalizacao,
     visao_geral,
@@ -28,6 +29,7 @@ st.set_page_config(page_title="Painel PPAG-LOA 2027", layout="wide")
     aba_glossario,
     aba_acao_orcamentaria,
     aba_programa,
+    aba_qdd,
 ) = st.tabs(
     [
         "O Painel",
@@ -41,6 +43,7 @@ st.set_page_config(page_title="Painel PPAG-LOA 2027", layout="wide")
         "Glossário",
         "Ação Orçamentária",
         "Programa",
+        "QDD",
     ]
 )
 
@@ -76,3 +79,6 @@ with aba_acao_orcamentaria:
 
 with aba_programa:
     programa.renderizar()
+
+with aba_qdd:
+    qdd.renderizar()

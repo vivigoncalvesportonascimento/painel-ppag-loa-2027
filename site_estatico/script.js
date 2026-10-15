@@ -13,6 +13,9 @@ document.querySelectorAll(".menu-item").forEach((botao) => {
     if (botao.dataset.pagina === "regionalizacao") {
       carregarRegionalizacao();
     }
+    if (botao.dataset.pagina === "qdd") {
+      carregarQdd();
+    }
   });
 });
 
@@ -936,6 +939,114 @@ function atualizarTabelaIndicadores(linhas) {
     colunas.forEach((coluna) => {
       const td = document.createElement("td");
       td.textContent = linha[coluna] ?? "";
+      tr.appendChild(td);
+    });
+    corpo.appendChild(tr);
+  });
+}
+
+let _qddCarregado = false;
+let _qddLinhas = null;
+
+function carregarQdd() {
+  if (_qddCarregado) {
+    return;
+  }
+  _qddCarregado = true;
+
+  fetch("dados_qdd.json")
+    .then((r) => r.json())
+    .then((dadosQdd) => {
+      _qddLinhas = dadosQdd.linhas;
+      inicializarQdd(_qddLinhas);
+    })
+    .catch((erro) => {
+      document.getElementById("tabela-qdd-corpo").innerHTML =
+        '<tr><td colspan="9" class="carregando">Não foi possível carregar os dados.</td></tr>';
+      console.error(erro);
+    });
+}
+
+const QDD_FILTROS = [
+  ["filtro-qdd-uo", "uo_label"],
+  ["filtro-qdd-programa", "programa_label"],
+  ["filtro-qdd-acao", "acao_label"],
+  ["filtro-qdd-grupo", "grupo_label"],
+  ["filtro-qdd-iag", "iag_label"],
+  ["filtro-qdd-fonte", "fonte_label"],
+  ["filtro-qdd-ipu", "ipu_label"],
+  ["filtro-qdd-elemento", "elemento_label"],
+];
+
+function inicializarQdd(linhas) {
+  const selects = QDD_FILTROS.map(([id, coluna]) => {
+    const select = document.getElementById(id);
+    popularOpcoes(select, [...new Set(linhas.map((l) => l[coluna]))].sort());
+    return select;
+  });
+
+  const atualizar = () => {
+    let filtradas = linhas;
+    QDD_FILTROS.forEach(([id, coluna], indice) => {
+      const valor = selects[indice].value;
+      if (valor) {
+        filtradas = filtradas.filter((l) => l[coluna] === valor);
+      }
+    });
+    atualizarTabelaQdd(filtradas);
+  };
+
+  selects.forEach((select) => select.addEventListener("change", atualizar));
+
+  document.getElementById("limpar-filtros-qdd").addEventListener("click", () => {
+    selects.forEach((select) => {
+      select.value = "";
+    });
+    atualizar();
+  });
+
+  atualizar();
+}
+
+function atualizarTabelaQdd(linhas) {
+  const totais = new Map();
+  linhas.forEach((l) => {
+    const chave = QDD_FILTROS.map(([, coluna]) => l[coluna]).join("|");
+    const atual = totais.get(chave);
+    if (atual) {
+      atual.valor += l.valor;
+    } else {
+      const registro = { valor: l.valor };
+      QDD_FILTROS.forEach(([, coluna]) => {
+        registro[coluna] = l[coluna];
+      });
+      totais.set(chave, registro);
+    }
+  });
+
+  const ordenadas = [...totais.values()].sort((a, b) => b.valor - a.valor);
+
+  const corpo = document.getElementById("tabela-qdd-corpo");
+  corpo.replaceChildren();
+
+  if (ordenadas.length === 0) {
+    const tr = document.createElement("tr");
+    const td = document.createElement("td");
+    td.colSpan = 9;
+    td.className = "carregando";
+    td.textContent = "Nenhum dado para os filtros selecionados.";
+    tr.appendChild(td);
+    corpo.appendChild(tr);
+    return;
+  }
+
+  ordenadas.forEach((linha) => {
+    const tr = document.createElement("tr");
+    const celulas = QDD_FILTROS.map(([, coluna]) => linha[coluna]);
+    celulas.push(formatarMoeda(linha.valor));
+    celulas.forEach((valor) => {
+      const td = document.createElement("td");
+      td.textContent = valor;
       tr.appendChild(td);
     });
     corpo.appendChild(tr);
