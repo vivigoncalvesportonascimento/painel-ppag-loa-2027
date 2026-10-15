@@ -98,7 +98,7 @@ def _construir_grafico_ano(linha: pd.Series, prefixo_coluna: str, titulo: str, f
         paper_bgcolor="rgba(0,0,0,0)",
         plot_bgcolor="rgba(0,0,0,0)",
         margin=dict(l=10, r=10, t=50, b=40),
-        xaxis=dict(tickfont=dict(size=12)),
+        xaxis=dict(type="category", tickfont=dict(size=12)),
         yaxis=dict(gridcolor="#eef1f4", range=[0, valor_max * 1.2 if valor_max else 1]),
     )
     return fig
