@@ -308,5 +308,80 @@ Aqui está uma amostra no formato JSON de como os dados estão estruturados no m
 ]
 
 
+10) Pagina 10
+Titulo: Ação Orçamentária
+
+
+Filtros da pagina
+1) Unidade Orçamentária - O filtro deverá trazer como dados para a seleção os valores da combinação dos campos Código da Unidade Orçamentária Responsável pela Ação + "-" + Unidade Orçamentária Responsável pela Ação da base data\acoes_planejamento.txt. Assim, devera aparecer por exemplo 1261 - SECRETARIA DE ESTADO DE EDUCAÇÃO
+2) Ação Orçamentária - O filtro deverá trazer como dados para a seleção os valores da combinação dos campos Código da Ação + "-" + Título da Ação da base data\acoes_planejamento.txt. Assim, devera aparecer por exemplo 4547 - PROGRAMA ESTADUAL DO TRANSPORTE ESCOLAR - PTE/MG
+
+
+
+Card 1 de Texto - colocar centralizado ocupando horizontalmente toda a pagina
+
+Ação Orçamentária - Retorna como dados os valores da combinação dos campos Código da Ação + "-" + Título da Ação da base data\acoes_planejamento.txt. Assim, devera aparecer por exemplo 4547 - PROGRAMA ESTADUAL DO TRANSPORTE ESCOLAR - PTE/MG
+
+Card 2 de Texto - colocar abaixo ao card 1 ocupando 30% horizontalmente
+
+Unidade Orçamentária - Retorna como dados os valores da combinação dos campos Código da Unidade Orçamentária Responsável pela Ação + "-" + Unidade Orçamentária Responsável pela Ação da base data\acoes_planejamento.txt. Assim, devera aparecer por exemplo 1261 - SECRETARIA DE ESTADO DE EDUCAÇÃO
+
+
+Card 3 de Texto - colocar abaixo ao card 1 ocupando 70% horizontalmente, ao lado do card 2
+
+Programa - Retorna como dados os valores da combinação dos campos Código do Programa + "-" + Nome do Programa da base data\acoes_planejamento.txt. Assim, devera aparecer por exemplo 60 - ATENÇÃO PRIMÁRIA À SAÚDE
+
+
+Card 4 de Texto - colocar abaixo ao card 2 e 3 ocupando 70% horizontalmente, ao lado do card 5
+
+Finalidade da Ação - Retorna como dados os valores do campo Finalidade da Ação da base data\acoes_planejamento.txt
+
+
+Card 5 de Texto - colocar abaixo ao card 2 e 3 ocupando 30% horizontalmente, ao lado do card 4
+
+Público-alvo - Retorna como dados os valores do campo Público-Alvo da base data\acoes_planejamento.txt
+
+
+Card 6 de Texto - colocar abaixo ao card 4 e 5 ocupando 33,33% horizontalmente, ao lado do card 7 e 8
+
+Identificador da Ação Governamental - IAG - Retorna como dados os valores do campo Identificador de Ação Governamental (IAG) da base data\acoes_planejamento.txt
+
+
+Card 7 de Texto - colocar abaixo ao card 4 e 5 ocupando 33,33% horizontalmente, ao lado do card 6 e 8
+
+Produto - Retorna como dados os valores do campo Produto da base data\acoes_planejamento.txt
+
+
+Card 8 de Texto - colocar abaixo ao card 4 e 5 ocupando 33,33% horizontalmente, ao lado do card 6 e 7
+
+Unidade de medida (Produto) - Retorna como dados os valores do campo Unidade de Medida do Produto da base data\acoes_planejamento.txt
+
+
+Gráfico 1 - ocupa 50% horizontalmente ao lado do Gráfico 2
+Título: Previsão Física 
+
+Tipo de gráfico: colunas verticais
+Fonte: base data\acoes_planejamento.txt
+
+Eixo de categorias - Ano extraído das colunas Previsão Física 2027, Previsão Física 2028, Previsão Física 2029, Previsão Física 2030, ou seja 2027, 2028, 2029 e 2030
+Eixo de dados - Valores dos campos das colunas Previsão Física 2027, Previsão Física 2028, Previsão Física 2029, Previsão Física 2030, mas os dados correspondentes a cada um dos 04 anos (2027, 2028, 2029 e 2030)
+
+
+obs: se for necessário trabalhar os dados fazendo um pivot para separar os dados por ano pode fazer via transformação de dados
+
+
+
+Gráfico 2 - ocupa 50% horizontalmente ao lado do Gráfico 1
+Título: Previsão Orçamentária 
+
+Tipo de gráfico: colunas verticais
+Fonte: base data\acoes_planejamento.txt
+
+Eixo de categorias - Ano extraído das colunas Previsão Orçamentária 2027, Previsão Orçamentária 2028, Previsão Orçamentária 2029, Previsão Orçamentária 2030, ou seja 2027, 2028, 2029 e 2030
+Eixo de dados - Valores dos campos das colunas Previsão Orçamentária 2027, Previsão Orçamentária 2028, Previsão Orçamentária 2029, Previsão Orçamentária 2030, mas os dados correspondentes a cada um dos 04 anos (2027, 2028, 2029 e 2030)
+
+obs: se for necessário trabalhar os dados fazendo um pivot para separar os dados por ano pode fazer via transformação de dados
+
+
 
 
