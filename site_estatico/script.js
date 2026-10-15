@@ -63,6 +63,8 @@ fetch("dados.json")
     inicializarGlossario(dados.glossario);
 
     inicializarAcaoOrcamentaria(dados.acao_orcamentaria.linhas);
+
+    inicializarPrograma(dados.programa.programas, dados.programa.indicadores);
   })
   .catch((erro) => {
     document.getElementById("cards").innerHTML =
@@ -843,4 +845,99 @@ function atualizarGraficoAcaoAno(elementId, linha, prefixo, titulo, formatar) {
   };
 
   Plotly.newPlot(elementId, data, layout, { responsive: true, displayModeBar: false });
+}
+
+function inicializarPrograma(programas, indicadoresPorCodigo) {
+  const selectUo = document.getElementById("filtro-programa-uo");
+  const selectPrograma = document.getElementById("filtro-programa-programa");
+
+  popularOpcoes(selectUo, [...new Set(programas.map((p) => p.uo))].sort());
+  popularOpcoes(selectPrograma, [...new Set(programas.map((p) => p.programa))].sort());
+
+  const atualizar = () => {
+    const uo = selectUo.value;
+    const nomePrograma = selectPrograma.value;
+
+    let filtrados = programas;
+    if (uo) {
+      filtrados = filtrados.filter((p) => p.uo === uo);
+    }
+    if (nomePrograma) {
+      filtrados = filtrados.filter((p) => p.programa === nomePrograma);
+    }
+    if (filtrados.length === 0) {
+      filtrados = programas;
+    }
+
+    const ordenados = [...filtrados].sort(
+      (a, b) => a.uo.localeCompare(b.uo) || a.programa.localeCompare(b.programa)
+    );
+    const programaSelecionado = ordenados[0];
+
+    atualizarCardsPrograma(programaSelecionado);
+    atualizarTabelaIndicadores(indicadoresPorCodigo[programaSelecionado.codigo] || []);
+  };
+
+  selectUo.addEventListener("change", atualizar);
+  selectPrograma.addEventListener("change", atualizar);
+
+  document.getElementById("limpar-filtros-programa").addEventListener("click", () => {
+    selectUo.value = "";
+    selectPrograma.value = "";
+    atualizar();
+  });
+
+  atualizar();
+}
+
+function atualizarCardsPrograma(programa) {
+  document.getElementById("programa-valor-programa").textContent = programa.programa;
+  document.getElementById("programa-valor-uo").textContent = programa.uo;
+  document.getElementById("programa-valor-area-tematica").textContent = programa.area_tematica;
+  document.getElementById("programa-valor-objetivo").textContent = programa.objetivo;
+
+  const listaOds = document.getElementById("programa-valor-ods");
+  listaOds.replaceChildren();
+  programa.ods.forEach((item) => {
+    const li = document.createElement("li");
+    li.textContent = item;
+    listaOds.appendChild(li);
+  });
+}
+
+function atualizarTabelaIndicadores(linhas) {
+  const corpo = document.getElementById("tabela-programa-indicadores-corpo");
+  corpo.replaceChildren();
+
+  if (linhas.length === 0) {
+    const tr = document.createElement("tr");
+    const td = document.createElement("td");
+    td.colSpan = 8;
+    td.className = "carregando";
+    td.textContent = "Nenhum indicador para este programa.";
+    tr.appendChild(td);
+    corpo.appendChild(tr);
+    return;
+  }
+
+  const colunas = [
+    "Indicador",
+    "Periodicidade",
+    "Unidade de Medida",
+    "Índice de Referência",
+    "2027",
+    "2028",
+    "2029",
+    "2030",
+  ];
+
+  linhas.forEach((linha) => {
+    const tr = document.createElement("tr");
+    colunas.forEach((coluna) => {
+      const td = document.createElement("td");
+      td.textContent = linha[coluna] ?? "";
+      tr.appendChild(td);
+    });
+    corpo.appendChild(tr);
+  });
 }

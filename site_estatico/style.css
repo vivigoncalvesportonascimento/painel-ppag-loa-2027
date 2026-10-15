@@ -608,3 +608,36 @@ tbody tr:hover {
     grid-template-columns: 1fr;
   }
 }
+
+.acao-card ul.lista-simples {
+  margin: 0;
+  padding-left: 1.1rem;
+  max-height: 160px;
+  overflow-y: auto;
+  font-size: 0.92rem;
+  color: var(--cor-texto);
+  line-height: 1.6;
+}
+
+.subtitulo-secao {
+  font-size: 1rem;
+  margin: 0.5rem 0 0.75rem;
+  color: var(--cor-texto);
+}
+
+.tabela-programa-indicadores th:nth-child(1) {
+  width: 26%;
+}
+
+.tabela-programa-indicadores th:nth-child(2),
+.tabela-programa-indicadores th:nth-child(3) {
+  width: 12%;
+}
+
+.tabela-programa-indicadores th:nth-child(4),
+.tabela-programa-indicadores th:nth-child(5),
+.tabela-programa-indicadores th:nth-child(6),
+.tabela-programa-indicadores th:nth-child(7),
+.tabela-programa-indicadores th:nth-child(8) {
+  width: 10%;
+}

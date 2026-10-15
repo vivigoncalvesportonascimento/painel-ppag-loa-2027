@@ -24,6 +24,8 @@ from dados_loa_investimentos import (
     construir_base_receita as construir_base_investimentos_receita,
 )
 from dados_loa_investimentos import construir_lista_uo as construir_lista_uo_investimentos
+from dados_programa import construir_base_enriquecida as construir_base_programa
+from dados_programa import construir_tabela_indicadores
 from dados_receita_fiscal import COLUNA_VALOR, construir_base_enriquecida
 from dados_regionalizacao import construir_base_enriquecida as construir_base_regionalizacao
 from dados_visao_geral import (
@@ -91,6 +93,7 @@ def gerar() -> None:
         "acao_orcamentaria": {
             "linhas": _exportar_acao_orcamentaria(),
         },
+        "programa": _exportar_programa(),
     }
 
     texto_dados = json.dumps(dados, ensure_ascii=False, indent=2)
@@ -134,6 +137,34 @@ def _exportar_acao_orcamentaria() -> list[dict]:
         exportado[f"fisica_{ano}"] = base[f"Previsão Física {ano}"].astype(float)
         exportado[f"orcamentaria_{ano}"] = base[f"Previsão Orçamentária {ano}"].astype(float)
     return exportado.to_dict(orient="records")
+
+
+def _exportar_programa() -> dict:
+    base = construir_base_programa()
+
+    programas = []
+    for codigo, grupo in base.groupby("Código do Programa"):
+        primeira = grupo.iloc[0]
+        ods = sorted(
+            t for t in grupo["Título do Objetivo de Desenvolvimento Sustentável"].dropna().unique() if t
+        )
+        programas.append(
+            {
+                "codigo": codigo,
+                "programa": primeira["programa_label"],
+                "uo": primeira["uo_label"],
+                "area_tematica": primeira["Área Temática"],
+                "objetivo": primeira["Objetivo"],
+                "ods": ods,
+            }
+        )
+
+    indicadores = {}
+    for programa in programas:
+        tabela = construir_tabela_indicadores(programa["codigo"])
+        indicadores[programa["codigo"]] = tabela.to_dict(orient="records")
+
+    return {"programas": programas, "indicadores": indicadores}
 
 
 def _validar_json_estrito(texto: str, nome_arquivo: str) -> None:
