@@ -840,7 +840,7 @@ function atualizarGraficoAcaoAno(elementId, linha, prefixo, titulo, formatar) {
     paper_bgcolor: "rgba(0,0,0,0)",
     plot_bgcolor: "rgba(0,0,0,0)",
     margin: { l: 10, r: 10, t: 50, b: 40 },
-    xaxis: { tickfont: { size: 12 } },
+    xaxis: { type: "category", tickfont: { size: 12 } },
     yaxis: { gridcolor: "#eef1f4", range: [0, valorMax ? valorMax * 1.2 : 1] },
   };
 
