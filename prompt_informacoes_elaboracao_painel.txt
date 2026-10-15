@@ -316,6 +316,8 @@ Filtros da pagina
 1) Unidade Orçamentária - O filtro deverá trazer como dados para a seleção os valores da combinação dos campos Código da Unidade Orçamentária Responsável pela Ação + "-" + Unidade Orçamentária Responsável pela Ação da base data\acoes_planejamento.txt. Assim, devera aparecer por exemplo 1261 - SECRETARIA DE ESTADO DE EDUCAÇÃO
 2) Ação Orçamentária - O filtro deverá trazer como dados para a seleção os valores da combinação dos campos Código da Ação + "-" + Título da Ação da base data\acoes_planejamento.txt. Assim, devera aparecer por exemplo 4547 - PROGRAMA ESTADUAL DO TRANSPORTE ESCOLAR - PTE/MG
 
+Incluir um botão de limpar filtros assim como foi feito na aba Receita Fiscal, mantendo sempre o padrão estético tanto dos filtros quanto dos botões.
+
 
 
 Card 1 de Texto - colocar centralizado ocupando horizontalmente toda a pagina
@@ -383,5 +385,54 @@ Eixo de dados - Valores dos campos das colunas Previsão Orçamentária 2027, Pr
 obs: se for necessário trabalhar os dados fazendo um pivot para separar os dados por ano pode fazer via transformação de dados
 
 
+
+11) Pagina 11
+Titulo: Programa
+
+
+Filtros da pagina
+1) Unidade Orçamentária - O filtro deverá trazer como dados para a seleção os valores da combinação dos campos Código da Unidade Orçamentária Responsável pelo Programa + "-" + Unidade Orçamentária Responsável pelo Programa da base data\programas_planejamento.txt. Assim, devera aparecer por exemplo 2071 - FUNDAÇÃO DE AMPARO À PESQUISA DO ESTADO DE MINAS GERAIS
+2) Programa - O filtro deverá trazer como dados para a seleção os valores da combinação dos campos Código do Programa + "-" + Nome do Programa da base data\programas_planejamento.txt. Assim, devera aparecer por exemplo 22 - CONSTRUINDO O FUTURO POR MEIO DA CIÊNCIA, DA TECNOLOGIA E DA INOVAÇÃO
+
+Incluir um botão de limpar filtros assim como foi feito na aba Receita Fiscal, mantendo sempre o padrão estético tanto dos filtros quanto dos botões.
+
+
+Card 1 de Texto - colocar centralizado ocupando horizontalmente toda a pagina
+
+Programa - Retorna como dados os valores da combinação dos campos Código do Programa + "-" + Nome do Programa da base data\programas_planejamento.txt. Assim, devera aparecer por exemplo 22 - CONSTRUINDO O FUTURO POR MEIO DA CIÊNCIA, DA TECNOLOGIA E DA INOVAÇÃO
+
+
+Card 2 de Texto - colocar abaixo ao card 1 ocupando 30% horizontalmente, ao lado do cartão 3
+
+Unidade Orçamentária - Retorna como dados os valores da combinação dos campos Código da Unidade Orçamentária Responsável pelo Programa + "-" + Unidade Orçamentária Responsável pelo Programa da base data\programas_planejamento.txt. Assim, devera aparecer por exemplo 2071 - FUNDAÇÃO DE AMPARO À PESQUISA DO ESTADO DE MINAS GERAIS
+
+
+Card 3 de Texto - colocar abaixo ao card 1 ocupando 70% horizontalmente, ao lado dos cards 2
+
+Área Temática - Retorna como dados do campo Área Temática da base data\programas_planejamento.txt
+
+
+Card 4 de Texto - colocar abaixo ao card 2 e 3 ocupando 70% horizontalmente, ao lado do cartão 5
+
+Objetivo - Retorna como dados do campo Objetivo da base data\programas_planejamento.txt
+
+
+Card 5 de Texto - colocar abaixo ao card 2 e 3 ocupando 30% horizontalmente, ao lado do card 4
+
+Objetivo Desenvolvimento Sustentável - ODS  - Retorna como dados os valores do campo Título do Objetivo de Desenvolvimento Sustentável da base base data\programas_planejamento.txt
+
+Obs: neste aqui vai ter mais de uma opção pode ser em formato de lista no mesmo card, como no caso do card de Despesa por Fonte de Recursos da aba Despesa por órgão
+
+
+Tabela 1
+Colunas: 
+1 - Indicador - Retorna os dados da coluna Indicador da base data\indicadores_planejamento.txt
+2 - Periodicidade - Retorna os dados da coluna Periodicidade da base data\indicadores_planejamento.txt
+3 - Unidade de Medida - Retorna os dados da coluna Unidade de Medida da base data\indicadores_planejamento.txt
+4 - Índice de Referência - Retorna os dados da coluna Índice de Referência da base data\indicadores_planejamento.txt
+5 - 2027 - Retorna os dados da coluna Previsão para 2027 da base data\indicadores_planejamento.txt
+6 - 2028 - Retorna os dados da coluna Previsão para 2028 da base data\indicadores_planejamento.txt
+7 - 2029 - Retorna os dados da coluna Previsão para 2029 da base data\indicadores_planejamento.txt
+8 - 2030 - Retorna os dados da coluna Previsão para 2030 da base data\indicadores_planejamento.txt
 
 
