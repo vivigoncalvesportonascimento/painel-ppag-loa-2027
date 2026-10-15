@@ -46,6 +46,9 @@
           <button class="menu-item" data-pagina="acao-orcamentaria" role="tab" aria-selected="false">
             Ação Orçamentária
           </button>
+          <button class="menu-item" data-pagina="programa" role="tab" aria-selected="false">
+            Programa
+          </button>
         </nav>
       </div>
     </header>
@@ -551,6 +554,76 @@
           </div>
           <div class="grafico-card">
             <div id="grafico-acao-orcamentaria" class="grafico"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="programa" class="pagina">
+        <h1>Programa</h1>
+
+        <div class="filtros">
+          <div class="filtro-campo">
+            <label for="filtro-programa-uo">Unidade Orçamentária</label>
+            <select id="filtro-programa-uo">
+              <option value="">Selecione...</option>
+            </select>
+          </div>
+          <div class="filtro-campo">
+            <label for="filtro-programa-programa">Programa</label>
+            <select id="filtro-programa-programa">
+              <option value="">Selecione...</option>
+            </select>
+          </div>
+          <button id="limpar-filtros-programa" class="botao-secundario" type="button">
+            Limpar filtros
+          </button>
+        </div>
+
+        <div class="acao-card acao-card--destaque">
+          <div class="rotulo">Programa</div>
+          <div class="valor" id="programa-valor-programa">—</div>
+        </div>
+
+        <div class="grade-acao grade-acao--30-70">
+          <div class="acao-card">
+            <div class="rotulo">Unidade Orçamentária</div>
+            <div class="valor" id="programa-valor-uo">—</div>
+          </div>
+          <div class="acao-card">
+            <div class="rotulo">Área Temática</div>
+            <div class="valor" id="programa-valor-area-tematica">—</div>
+          </div>
+        </div>
+
+        <div class="grade-acao grade-acao--70-30">
+          <div class="acao-card">
+            <div class="rotulo">Objetivo</div>
+            <div class="valor" id="programa-valor-objetivo">—</div>
+          </div>
+          <div class="acao-card">
+            <div class="rotulo">Objetivo de Desenvolvimento Sustentável - ODS</div>
+            <ul class="lista-simples" id="programa-valor-ods"></ul>
+          </div>
+        </div>
+
+        <h2 class="subtitulo-secao">Indicadores</h2>
+        <div class="tabela-card">
+          <div class="tabela-scroll">
+            <table class="tabela-redimensionavel tabela-programa-indicadores">
+              <thead>
+                <tr>
+                  <th>Indicador</th>
+                  <th>Periodicidade</th>
+                  <th>Unidade de Medida</th>
+                  <th>Índice de Referência</th>
+                  <th>2027</th>
+                  <th>2028</th>
+                  <th>2029</th>
+                  <th>2030</th>
+                </tr>
+              </thead>
+              <tbody id="tabela-programa-indicadores-corpo"></tbody>
+            </table>
           </div>
         </div>
       </section>
