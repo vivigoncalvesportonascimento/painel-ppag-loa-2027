@@ -279,5 +279,32 @@ Colunas:
 7 - Previsão Orçamentária 2027 - Traz o somatório dos dados da coluna Previsão Orçamentária 2027 da base data\localizadores_todos_planejamento.txt
 
 
+9) Pagina 9
+Título: Glossário
+
+
+A página deve ser baseada em uma tabela de dados com três colunas exatas: `Termo`, `Definição Técnica` e `Linguagem Simples`.
+
+O comportamento e visual desejados devem simular o funcionamento de um dashboard em Power BI:
+1. O usuário verá uma "nuvem" ou "grade" de botões, onde cada botão contém apenas o nome do `Termo`.
+2. O usuário clica no botão de um termo específico.
+3. Imediatamente abaixo da área dos botões, surgem dois painéis (ou blocos de texto) exibindo a `Definição Técnica` e, logo abaixo dela, a `Linguagem Simples` referentes ao termo clicado.
+
+Aqui está uma amostra no formato JSON de como os dados estão estruturados no meu arquivo (o arquivo original é um `.xlsx` lido via pandas):
+
+[
+  {
+    "Termo": "Ação",
+    "Definição Técnica": "Instrumento de programação que organiza as operações necessárias ao alcance do objetivo de um programa. Cada ação deve gerar um único produto, expresso como bem, serviço ou transferência financeira, destinado à sociedade, à própria Administração Pública ou a outras entidades. No PPAG, constitui a unidade básica de gestão, execução e acompanhamento das metas físicas e orçamentárias.",
+    "Linguagem Simples": "É a parte do programa que mostra o que o governo fará na prática e qual entrega pretende realizar, como prestar um serviço, executar uma obra ou transferir recursos."
+  },
+  {
+    "Termo": "Área Temática",
+    "Definição Técnica": "Classificação que reúne políticas, programas e iniciativas governamentais de acordo com temas e resultados comuns. Pode compreender áreas finalísticas, voltadas à entrega direta de resultados à sociedade, e áreas de apoio e suporte, responsáveis por fornecer as condições necessárias à atuação governamental.",
+    "Linguagem Simples": "Organiza as políticas públicas por grandes assuntos relacionados, como saúde, educação, segurança, infraestrutura ou gestão pública."
+  }
+]
+
+
 
 
