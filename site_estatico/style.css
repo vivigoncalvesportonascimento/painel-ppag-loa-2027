@@ -497,3 +497,56 @@ tbody tr:hover {
     grid-template-columns: 1fr;
   }
 }
+
+.glossario-nuvem {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.termo-botao {
+  appearance: none;
+  border: 1px solid var(--cor-borda);
+  border-radius: 999px;
+  background: var(--cor-fundo-card);
+  color: var(--cor-texto);
+  padding: 0.5rem 1.1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.termo-botao:hover {
+  border-color: var(--cor-accent);
+}
+
+.termo-botao.ativo {
+  background: #0047ab;
+  border-color: #0047ab;
+  color: #ffffff;
+}
+
+.glossario-painel {
+  background: var(--cor-fundo-card);
+  border-radius: 8px;
+  box-shadow: var(--sombra-card);
+  padding: 1.1rem 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.glossario-painel h4 {
+  margin: 0 0 0.5rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--cor-texto-suave);
+}
+
+.glossario-painel p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--cor-texto);
+  line-height: 1.5;
+}

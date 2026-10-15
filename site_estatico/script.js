@@ -59,6 +59,8 @@ fetch("dados.json")
       dados.loa_investimentos.linhas_receita,
       dados.loa_investimentos.linhas_despesa
     );
+
+    inicializarGlossario(dados.glossario);
   })
   .catch((erro) => {
     document.getElementById("cards").innerHTML =
@@ -713,4 +715,33 @@ function atualizarTabelaRegionalizacao(linhas) {
     tr.appendChild(td);
     corpo.appendChild(tr);
   }
+}
+
+function inicializarGlossario(termos) {
+  const container = document.getElementById("glossario-nuvem");
+  container.replaceChildren();
+
+  termos.forEach((item, indice) => {
+    const botao = document.createElement("button");
+    botao.type = "button";
+    botao.className = "termo-botao";
+    botao.textContent = item.termo;
+    botao.addEventListener("click", () => selecionarTermoGlossario(termos, indice));
+    container.appendChild(botao);
+  });
+
+  if (termos.length > 0) {
+    selecionarTermoGlossario(termos, 0);
+  }
+}
+
+function selecionarTermoGlossario(termos, indiceSelecionado) {
+  const container = document.getElementById("glossario-nuvem");
+  [...container.children].forEach((botao, indice) => {
+    botao.classList.toggle("ativo", indice === indiceSelecionado);
+  });
+
+  const item = termos[indiceSelecionado];
+  document.getElementById("glossario-definicao-tecnica").textContent = item.definicao_tecnica;
+  document.getElementById("glossario-linguagem-simples").textContent = item.linguagem_simples;
 }

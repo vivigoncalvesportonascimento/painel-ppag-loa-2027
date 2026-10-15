@@ -15,6 +15,7 @@ from dados_despesa_fiscal import (
 )
 from dados_despesa_orgao import COLUNA_VALOR as COLUNA_VALOR_DESPESA
 from dados_despesa_orgao import construir_base_enriquecida as construir_base_despesa_orgao
+from dados_glossario import construir_lista_termos
 from dados_loa_investimentos import (
     construir_base_despesa as construir_base_investimentos_despesa,
 )
@@ -85,6 +86,7 @@ def gerar() -> None:
             "linhas_receita": construir_base_investimentos_receita().to_dict(orient="records"),
             "linhas_despesa": construir_base_investimentos_despesa().to_dict(orient="records"),
         },
+        "glossario": construir_lista_termos(),
     }
 
     SAIDA.write_text(json.dumps(dados, ensure_ascii=False, indent=2), encoding="utf-8")
