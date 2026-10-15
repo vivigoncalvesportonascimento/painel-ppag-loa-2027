@@ -282,6 +282,8 @@ Colunas:
 9) Pagina 9
 Título: Glossário
 
+Fonte de dados a ser usada para esta pagina: auxiliares\auxiliar_glossario.csv
+a base contem o termo, definição técnica e linguagem simples em formato tabular.
 
 A página deve ser baseada em uma tabela de dados com três colunas exatas: `Termo`, `Definição Técnica` e `Linguagem Simples`.
 
