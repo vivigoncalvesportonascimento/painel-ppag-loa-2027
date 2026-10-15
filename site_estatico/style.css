@@ -550,3 +550,61 @@ tbody tr:hover {
   color: var(--cor-texto);
   line-height: 1.5;
 }
+
+.acao-card {
+  min-width: 0;
+  background: var(--cor-fundo-card);
+  border-radius: 8px;
+  box-shadow: var(--sombra-card);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.acao-card .rotulo {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--cor-texto-suave);
+  margin-bottom: 0.4rem;
+}
+
+.acao-card .valor {
+  font-size: 0.92rem;
+  color: var(--cor-texto);
+  line-height: 1.5;
+}
+
+.acao-card--destaque {
+  text-align: center;
+}
+
+.acao-card--destaque .valor {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #0047ab;
+}
+
+.grade-acao {
+  display: grid;
+  gap: 1rem;
+}
+
+.grade-acao--30-70 {
+  grid-template-columns: 3fr 7fr;
+}
+
+.grade-acao--70-30 {
+  grid-template-columns: 7fr 3fr;
+}
+
+.grade-acao--3col {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 900px) {
+  .grade-acao--30-70,
+  .grade-acao--70-30,
+  .grade-acao--3col {
+    grid-template-columns: 1fr;
+  }
+}

@@ -43,6 +43,9 @@
           <button class="menu-item" data-pagina="glossario" role="tab" aria-selected="false">
             Glossário
           </button>
+          <button class="menu-item" data-pagina="acao-orcamentaria" role="tab" aria-selected="false">
+            Ação Orçamentária
+          </button>
         </nav>
       </div>
     </header>
@@ -476,6 +479,79 @@
         <div class="glossario-painel">
           <h4>Linguagem Simples</h4>
           <p id="glossario-linguagem-simples"></p>
+        </div>
+      </section>
+
+      <section id="acao-orcamentaria" class="pagina">
+        <h1>Ação Orçamentária</h1>
+
+        <div class="filtros">
+          <div class="filtro-campo">
+            <label for="filtro-acao-uo">Unidade Orçamentária</label>
+            <select id="filtro-acao-uo">
+              <option value="">Selecione...</option>
+            </select>
+          </div>
+          <div class="filtro-campo">
+            <label for="filtro-acao-acao">Ação Orçamentária</label>
+            <select id="filtro-acao-acao">
+              <option value="">Selecione...</option>
+            </select>
+          </div>
+          <button id="limpar-filtros-acao" class="botao-secundario" type="button">
+            Limpar filtros
+          </button>
+        </div>
+
+        <div class="acao-card acao-card--destaque">
+          <div class="rotulo">Ação Orçamentária</div>
+          <div class="valor" id="acao-valor-acao">—</div>
+        </div>
+
+        <div class="grade-acao grade-acao--30-70">
+          <div class="acao-card">
+            <div class="rotulo">Unidade Orçamentária</div>
+            <div class="valor" id="acao-valor-uo">—</div>
+          </div>
+          <div class="acao-card">
+            <div class="rotulo">Programa</div>
+            <div class="valor" id="acao-valor-programa">—</div>
+          </div>
+        </div>
+
+        <div class="grade-acao grade-acao--70-30">
+          <div class="acao-card">
+            <div class="rotulo">Finalidade da Ação</div>
+            <div class="valor" id="acao-valor-finalidade">—</div>
+          </div>
+          <div class="acao-card">
+            <div class="rotulo">Público-Alvo</div>
+            <div class="valor" id="acao-valor-publico-alvo">—</div>
+          </div>
+        </div>
+
+        <div class="grade-acao grade-acao--3col">
+          <div class="acao-card">
+            <div class="rotulo">Identificador de Ação Governamental (IAG)</div>
+            <div class="valor" id="acao-valor-iag">—</div>
+          </div>
+          <div class="acao-card">
+            <div class="rotulo">Produto</div>
+            <div class="valor" id="acao-valor-produto">—</div>
+          </div>
+          <div class="acao-card">
+            <div class="rotulo">Unidade de Medida (Produto)</div>
+            <div class="valor" id="acao-valor-unidade-medida">—</div>
+          </div>
+        </div>
+
+        <div class="linha-cartoes">
+          <div class="grafico-card">
+            <div id="grafico-acao-fisica" class="grafico"></div>
+          </div>
+          <div class="grafico-card">
+            <div id="grafico-acao-orcamentaria" class="grafico"></div>
+          </div>
         </div>
       </section>
     </main>

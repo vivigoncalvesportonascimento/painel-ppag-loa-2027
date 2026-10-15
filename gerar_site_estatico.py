@@ -13,6 +13,7 @@ from dados_despesa_fiscal import (
     construir_grafico_despesa_por_grupo,
     construir_grafico_despesa_por_poder,
 )
+from dados_acao_orcamentaria import ANOS, construir_base_enriquecida as construir_base_acao
 from dados_despesa_orgao import COLUNA_VALOR as COLUNA_VALOR_DESPESA
 from dados_despesa_orgao import construir_base_enriquecida as construir_base_despesa_orgao
 from dados_glossario import construir_lista_termos
@@ -87,9 +88,14 @@ def gerar() -> None:
             "linhas_despesa": construir_base_investimentos_despesa().to_dict(orient="records"),
         },
         "glossario": construir_lista_termos(),
+        "acao_orcamentaria": {
+            "linhas": _exportar_acao_orcamentaria(),
+        },
     }
 
-    SAIDA.write_text(json.dumps(dados, ensure_ascii=False, indent=2), encoding="utf-8")
+    texto_dados = json.dumps(dados, ensure_ascii=False, indent=2)
+    _validar_json_estrito(texto_dados, SAIDA.name)
+    SAIDA.write_text(texto_dados, encoding="utf-8")
     print(f"Gerado: {SAIDA}")
 
     # Arquivo separado (carregado só quando a aba Regionalização é aberta):
@@ -105,11 +111,44 @@ def gerar() -> None:
             "Previsão Orçamentária 2027": "valor",
         }
     )
-    SAIDA_REGIONALIZACAO.write_text(
-        json.dumps(_codificar_regionalizacao(regionalizacao), ensure_ascii=False),
-        encoding="utf-8",
-    )
+    texto_regionalizacao = json.dumps(_codificar_regionalizacao(regionalizacao), ensure_ascii=False)
+    _validar_json_estrito(texto_regionalizacao, SAIDA_REGIONALIZACAO.name)
+    SAIDA_REGIONALIZACAO.write_text(texto_regionalizacao, encoding="utf-8")
     print(f"Gerado: {SAIDA_REGIONALIZACAO}")
+
+
+def _exportar_acao_orcamentaria() -> list[dict]:
+    base = construir_base_acao()
+    colunas = {
+        "uo_label": "uo",
+        "acao_label": "acao",
+        "programa_label": "programa",
+        "Finalidade da Ação": "finalidade",
+        "Público-Alvo": "publico_alvo",
+        "Identificador de Ação Governamental (IAG)": "iag",
+        "Produto": "produto",
+        "Unidade de Medida do Produto": "unidade_medida",
+    }
+    exportado = base.rename(columns=colunas)[list(colunas.values())].copy()
+    for ano in ANOS:
+        exportado[f"fisica_{ano}"] = base[f"Previsão Física {ano}"].astype(float)
+        exportado[f"orcamentaria_{ano}"] = base[f"Previsão Orçamentária {ano}"].astype(float)
+    return exportado.to_dict(orient="records")
+
+
+def _validar_json_estrito(texto: str, nome_arquivo: str) -> None:
+    """Garante que o texto não tem NaN/Infinity (extensão do Python que o
+    JSON.parse() dos navegadores rejeita — ver docs/premissas.md item 5).
+    """
+
+    def rejeitar_constante(constante: str) -> None:
+        raise ValueError(
+            f"{nome_arquivo} contém a constante não padrão '{constante}', que não é "
+            "JSON válido e quebraria o JSON.parse() no navegador. Verifique se há "
+            "colunas numéricas com valores ausentes sem .fillna()."
+        )
+
+    json.loads(texto, parse_constant=rejeitar_constante)
 
 
 def _codificar_regionalizacao(df) -> dict:

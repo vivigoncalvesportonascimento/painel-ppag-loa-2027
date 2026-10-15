@@ -61,6 +61,8 @@ fetch("dados.json")
     );
 
     inicializarGlossario(dados.glossario);
+
+    inicializarAcaoOrcamentaria(dados.acao_orcamentaria.linhas);
   })
   .catch((erro) => {
     document.getElementById("cards").innerHTML =
@@ -744,4 +746,101 @@ function selecionarTermoGlossario(termos, indiceSelecionado) {
   const item = termos[indiceSelecionado];
   document.getElementById("glossario-definicao-tecnica").textContent = item.definicao_tecnica;
   document.getElementById("glossario-linguagem-simples").textContent = item.linguagem_simples;
+}
+
+const ANOS_ACAO = [2027, 2028, 2029, 2030];
+
+function inicializarAcaoOrcamentaria(linhas) {
+  const selectUo = document.getElementById("filtro-acao-uo");
+  const selectAcao = document.getElementById("filtro-acao-acao");
+
+  popularOpcoes(selectUo, [...new Set(linhas.map((l) => l.uo))].sort());
+  popularOpcoes(selectAcao, [...new Set(linhas.map((l) => l.acao))].sort());
+
+  const atualizar = () => {
+    const uo = selectUo.value;
+    const acao = selectAcao.value;
+
+    let filtradas = linhas;
+    if (uo) {
+      filtradas = filtradas.filter((l) => l.uo === uo);
+    }
+    if (acao) {
+      filtradas = filtradas.filter((l) => l.acao === acao);
+    }
+    if (filtradas.length === 0) {
+      filtradas = linhas;
+    }
+
+    const ordenadas = [...filtradas].sort(
+      (a, b) => a.uo.localeCompare(b.uo) || a.acao.localeCompare(b.acao)
+    );
+    const linha = ordenadas[0];
+
+    atualizarCardsAcaoOrcamentaria(linha);
+    atualizarGraficoAcaoAno("grafico-acao-fisica", linha, "fisica", "Previsão Física", (v) =>
+      Math.round(v).toLocaleString("pt-BR")
+    );
+    atualizarGraficoAcaoAno(
+      "grafico-acao-orcamentaria",
+      linha,
+      "orcamentaria",
+      "Previsão Orçamentária",
+      formatarMoeda
+    );
+  };
+
+  selectUo.addEventListener("change", atualizar);
+  selectAcao.addEventListener("change", atualizar);
+
+  document.getElementById("limpar-filtros-acao").addEventListener("click", () => {
+    selectUo.value = "";
+    selectAcao.value = "";
+    atualizar();
+  });
+
+  atualizar();
+}
+
+function atualizarCardsAcaoOrcamentaria(linha) {
+  document.getElementById("acao-valor-acao").textContent = linha.acao;
+  document.getElementById("acao-valor-uo").textContent = linha.uo;
+  document.getElementById("acao-valor-programa").textContent = linha.programa;
+  document.getElementById("acao-valor-finalidade").textContent = linha.finalidade;
+  document.getElementById("acao-valor-publico-alvo").textContent = linha.publico_alvo;
+  document.getElementById("acao-valor-iag").textContent = linha.iag;
+  document.getElementById("acao-valor-produto").textContent = linha.produto;
+  document.getElementById("acao-valor-unidade-medida").textContent = linha.unidade_medida;
+}
+
+function atualizarGraficoAcaoAno(elementId, linha, prefixo, titulo, formatar) {
+  const valores = ANOS_ACAO.map((ano) => linha[`${prefixo}_${ano}`]);
+  const valorMax = Math.max(...valores, 0);
+
+  const data = [
+    {
+      type: "bar",
+      x: ANOS_ACAO.map((ano) => String(ano)),
+      y: valores,
+      text: valores.map((v) => formatar(v)),
+      textposition: "outside",
+      textfont: { size: 12 },
+      cliponaxis: false,
+      marker: { color: "#0047AB" },
+    },
+  ];
+
+  const layout = {
+    title: { text: `<b>${titulo}</b>`, font: { size: 16, color: "#1f2933" } },
+    showlegend: false,
+    height: 340,
+    font: { family: "system-ui, -apple-system, Segoe UI, Arial, sans-serif", color: "#1f2933" },
+    paper_bgcolor: "rgba(0,0,0,0)",
+    plot_bgcolor: "rgba(0,0,0,0)",
+    margin: { l: 10, r: 10, t: 50, b: 40 },
+    xaxis: { tickfont: { size: 12 } },
+    yaxis: { gridcolor: "#eef1f4", range: [0, valorMax ? valorMax * 1.2 : 1] },
+  };
+
+  Plotly.newPlot(elementId, data, layout, { responsive: true, displayModeBar: false });
 }
