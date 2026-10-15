@@ -49,6 +49,9 @@
           <button class="menu-item" data-pagina="programa" role="tab" aria-selected="false">
             Programa
           </button>
+          <button class="menu-item" data-pagina="qdd" role="tab" aria-selected="false">
+            QDD
+          </button>
         </nav>
       </div>
     </header>
@@ -623,6 +626,74 @@
                 </tr>
               </thead>
               <tbody id="tabela-programa-indicadores-corpo"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section id="qdd" class="pagina">
+        <h1>QDD</h1>
+        <p class="subtitulo">Quadro de Detalhamento da Despesa</p>
+
+        <div class="filtros">
+          <div class="filtro-campo">
+            <label for="filtro-qdd-uo">Unidade Orçamentária</label>
+            <select id="filtro-qdd-uo"><option value="">Todas</option></select>
+          </div>
+          <div class="filtro-campo">
+            <label for="filtro-qdd-programa">Programa</label>
+            <select id="filtro-qdd-programa"><option value="">Todas</option></select>
+          </div>
+          <div class="filtro-campo">
+            <label for="filtro-qdd-acao">Ação Orçamentária</label>
+            <select id="filtro-qdd-acao"><option value="">Todas</option></select>
+          </div>
+          <div class="filtro-campo">
+            <label for="filtro-qdd-grupo">Grupo de Despesa</label>
+            <select id="filtro-qdd-grupo"><option value="">Todas</option></select>
+          </div>
+          <div class="filtro-campo">
+            <label for="filtro-qdd-iag">IAG</label>
+            <select id="filtro-qdd-iag"><option value="">Todas</option></select>
+          </div>
+          <div class="filtro-campo">
+            <label for="filtro-qdd-fonte">Fonte de Recursos</label>
+            <select id="filtro-qdd-fonte"><option value="">Todas</option></select>
+          </div>
+          <div class="filtro-campo">
+            <label for="filtro-qdd-ipu">IPU</label>
+            <select id="filtro-qdd-ipu"><option value="">Todas</option></select>
+          </div>
+          <div class="filtro-campo">
+            <label for="filtro-qdd-elemento">Elemento de Despesa</label>
+            <select id="filtro-qdd-elemento"><option value="">Todas</option></select>
+          </div>
+          <button id="limpar-filtros-qdd" class="botao-secundario" type="button">
+            Limpar filtros
+          </button>
+        </div>
+
+        <div class="tabela-card">
+          <div class="tabela-scroll">
+            <table class="tabela-redimensionavel tabela-qdd">
+              <thead>
+                <tr>
+                  <th>Unidade Orçamentária</th>
+                  <th>Programa</th>
+                  <th>Ação Orçamentária</th>
+                  <th>Grupo de Despesa</th>
+                  <th>IAG</th>
+                  <th>Fonte de Recursos</th>
+                  <th>IPU</th>
+                  <th>Elemento de Despesa</th>
+                  <th>LOA 2027 (R$)</th>
+                </tr>
+              </thead>
+              <tbody id="tabela-qdd-corpo">
+                <tr>
+                  <td colspan="9" class="carregando">Carregando dados...</td>
+                </tr>
+              </tbody>
             </table>
           </div>
         </div>
