@@ -436,3 +436,42 @@ Colunas:
 8 - 2030 - Retorna os dados da coluna Previsão para 2030 da base data\indicadores_planejamento.txt
 
 
+12) Pagina 12
+Titulo: QDD
+
+Filtros da pagina
+1 -  Unidade Orçamentária - O filtro deverá trazer como dados para a seleção os valores da combinação dos campos das colunas COD_UO da  data\BASE_QDD_FISCAL.xlsx + '-' + uo_sigla da base auxiliares\auxiliar_uo.csv. A ligação das tabelas deve se dar por meio da coluna COD_UO da base  data\BASE_QDD_FISCAL.xlsx com a coluna uo_cod   da base base auxiliares\auxiliar_uo.csv
+2 - Programa - O filtro deverá trazer como dados para a seleção os valores da combinação dos campos das colunas  PROGRAMA + '-' + NOME_PROGRAMA da data\BASE_QDD_FISCAL.xlsx . 
+3 - Ação Orçamentária - O filtro deverá trazer como dados para a seleção os valores da combinação dos campos das colunas  AÇÃO + '-' + NOME_ACAO da data\BASE_QDD_FISCAL.xlsx .
+com a coluna    da base 
+4 - Grupo de Despesa - O filtro deverá trazer como dados para a seleção os valores da combinação dos campos das colunas GRUPO_DESPESA da base  data\BASE_QDD_FISCAL.xlsx + '-' + grupo_despesa_descricao da base auxiliares\auxiliar_grupo_despesa.csv . A ligação das tabelas deve se dar por meio da coluna GRUPO_DESPESA da base  data\BASE_QDD_FISCAL.xlsx com a coluna grupo_despesa_cod   da base auxiliares\auxiliar_grupo_despesa.csv
+5 - IAG - O filtro deverá trazer como dados para a seleção os valores da combinação dos campos das colunas IAG da data\BASE_QDD_FISCAL.xlsx + '-' + iag_descricao da base  auxiliares\auxiliar_iag.csv . A ligação das tabelas deve se dar por meio da coluna IAG da base  data\BASE_QDD_FISCAL.xlsx com a coluna iag_cod  da base auxiliares\auxiliar_iag.csv
+6 - Fonte de Recursos - O filtro deverá trazer como dados para a seleção os valores da combinação dos campos das colunas  FONTE da  data\BASE_QDD_FISCAL.xlsx + '-' + fonte_descricao da base auxiliares\auxiliar_fonte.csv . A ligação das tabelas deve se dar por meio da coluna FONTE da base  data\BASE_QDD_FISCAL.xlsx e fonte_cod da base auxiliares\auxiliar_fonte.csv
+7 - IPU - O filtro deverá trazer como dados para a seleção os valores da combinação dos campos das colunas IPU da  data\BASE_QDD_FISCAL.xlsx  + '-' + ipu_descricao da base auxiliares\auxiliar_ipu.csv . A ligação das tabelas deve se dar por meio da coluna IPU da base  data\BASE_QDD_FISCAL.xlsx com a coluna ipu_cod   da base  auxiliares\auxiliar_ipu.csv
+8 - Elemento de despesa - O filtro deverá trazer como dados para a seleção os valores da combinação dos campos das colunas ELEMENTO_DESPESA da data\BASE_QDD_FISCAL.xlsx + '-' + elemento_despesa_descricao da base auxiliares\auxiliar_elemento_despesa.csv . A ligação das tabelas deve se dar por meio da coluna ELEMENTO_DESPESA da base  data\BASE_QDD_FISCAL.xlsx com a coluna elemento_despesa_cod da base auxiliares\auxiliar_elemento_despesa.csv
+
+Incluir um botão de limpar filtros assim como foi feito na aba Receita Fiscal, mantendo sempre o padrão estético tanto dos filtros quanto dos botões.
+
+A logica tanto dos filtros quanto dos dados da tabela é tratar a base data\BASE_QDD_FISCAL.xlsx como tabela fato e as tabelas auxiliares como tabela dimensão.
+
+
+
+Tabela 1
+1 - Unidade Orçamentária - Retorna os dados da combinação das colunas COD_UO da  data\BASE_QDD_FISCAL.xlsx + '-' + uo_sigla da base auxiliares\auxiliar_uo.csv. A ligação das tabelas deve se dar por meio da coluna COD_UO da base  data\BASE_QDD_FISCAL.xlsx com a coluna uo_cod   da base base auxiliares\auxiliar_uo.csv
+2 - Programa - Retorna os dados da combinação das colunas  PROGRAMA + '-' + NOME_PROGRAMA da data\BASE_QDD_FISCAL.xlsx 
+3 - Ação Orçamentária - Retorna os dados da combinação das colunas  AÇÃO + '-' + NOME_ACAO da data\BASE_QDD_FISCAL.xlsx 
+4 - Grupo de Despesa - Retorna os dados da combinação das colunas GRUPO_DESPESA da base  data\BASE_QDD_FISCAL.xlsx + '-' + grupo_despesa_descricao da base auxiliares\auxiliar_grupo_despesa.csv . A ligação das tabelas deve se dar por meio da coluna GRUPO_DESPESA da base  data\BASE_QDD_FISCAL.xlsx com a coluna grupo_despesa_cod   da base auxiliares\auxiliar_grupo_despesa.csv
+5 - IAG - Retorna os dados da combinação das colunas IAG da data\BASE_QDD_FISCAL.xlsx + '-' + iag_descricao da base  auxiliares\auxiliar_iag.csv . A ligação das tabelas deve se dar por meio da coluna IAG da base  data\BASE_QDD_FISCAL.xlsx com a coluna iag_cod  da base auxiliares\auxiliar_iag.csv
+6 - Fonte de Recursos - Retorna os dados da combinação das colunas  FONTE da  data\BASE_QDD_FISCAL.xlsx + '-' + fonte_descricao da base auxiliares\auxiliar_fonte.csv . A ligação das tabelas deve se dar por meio da coluna FONTE da base  data\BASE_QDD_FISCAL.xlsx e fonte_cod da base auxiliares\auxiliar_fonte.csv
+7 - IPU - Retorna os dados da combinação das colunas IPU da  data\BASE_QDD_FISCAL.xlsx  + '-' + ipu_descricao da base auxiliares\auxiliar_ipu.csv . A ligação das tabelas deve se dar por meio da coluna IPU da base  data\BASE_QDD_FISCAL.xlsx com a coluna ipu_cod   da base  auxiliares\auxiliar_ipu.csv
+8 - Elemento de despesa - Retorna os dados da combinação das colunas ELEMENTO_DESPESA da data\BASE_QDD_FISCAL.xlsx + '-' + elemento_despesa_descricao da base auxiliares\auxiliar_elemento_despesa.csv .  ligação das tabelas deve se dar por meio da coluna ELEMENTO_DESPESA da base  data\BASE_QDD_FISCAL.xlsx com a coluna elemento_despesa_cod da base auxiliares\auxiliar_elemento_despesa.csv
+9 - LOA 2027 (R$) - Retorna o somatório dos valores da coluna VALOR FINAL (R$) da base data\BASE_QDD_FISCAL.xlsx
+
+
+
+
+
+
+Tabela 1
+Colunas:
+
