@@ -10,6 +10,11 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
   </head>
   <body>
     <header class="topo">
@@ -157,8 +162,12 @@
         </div>
 
         <div class="tabela-card">
+          <div class="tabela-exportar">
+            <button type="button" class="botao-exportar" data-tabela="tabela-uo-fonte" data-formato="csv">Exportar CSV</button>
+            <button type="button" class="botao-exportar" data-tabela="tabela-uo-fonte" data-formato="xlsx">Exportar Excel</button>
+          </div>
           <div class="tabela-scroll">
-            <table>
+            <table id="tabela-uo-fonte">
               <thead>
                 <tr>
                   <th>UO</th>
@@ -263,8 +272,12 @@
         </div>
 
         <div class="tabela-card">
+          <div class="tabela-exportar">
+            <button type="button" class="botao-exportar" data-tabela="tabela-investimentos" data-formato="csv">Exportar CSV</button>
+            <button type="button" class="botao-exportar" data-tabela="tabela-investimentos" data-formato="xlsx">Exportar Excel</button>
+          </div>
           <div class="tabela-scroll">
-            <table class="tabela-redimensionavel tabela-investimentos">
+            <table id="tabela-investimentos" class="tabela-redimensionavel tabela-investimentos">
               <thead>
                 <tr>
                   <th>Unidade Orçamentária</th>
@@ -448,8 +461,12 @@
         </div>
 
         <div class="tabela-card">
+          <div class="tabela-exportar">
+            <button type="button" class="botao-exportar" data-tabela="tabela-regionalizacao" data-formato="csv">Exportar CSV</button>
+            <button type="button" class="botao-exportar" data-tabela="tabela-regionalizacao" data-formato="xlsx">Exportar Excel</button>
+          </div>
           <div class="tabela-scroll">
-            <table class="tabela-redimensionavel tabela-regionalizacao">
+            <table id="tabela-regionalizacao" class="tabela-redimensionavel tabela-regionalizacao">
               <thead>
                 <tr>
                   <th>Ação Orçamentária</th>
@@ -611,8 +628,12 @@
 
         <h2 class="subtitulo-secao">Indicadores</h2>
         <div class="tabela-card">
+          <div class="tabela-exportar">
+            <button type="button" class="botao-exportar" data-tabela="tabela-programa-indicadores" data-formato="csv">Exportar CSV</button>
+            <button type="button" class="botao-exportar" data-tabela="tabela-programa-indicadores" data-formato="xlsx">Exportar Excel</button>
+          </div>
           <div class="tabela-scroll">
-            <table class="tabela-redimensionavel tabela-programa-indicadores">
+            <table id="tabela-programa-indicadores" class="tabela-redimensionavel tabela-programa-indicadores">
               <thead>
                 <tr>
                   <th>Indicador</th>
@@ -674,8 +695,12 @@
         </div>
 
         <div class="tabela-card">
+          <div class="tabela-exportar">
+            <button type="button" class="botao-exportar" data-tabela="tabela-qdd" data-formato="csv">Exportar CSV</button>
+            <button type="button" class="botao-exportar" data-tabela="tabela-qdd" data-formato="xlsx">Exportar Excel</button>
+          </div>
           <div class="tabela-scroll">
-            <table class="tabela-redimensionavel tabela-qdd">
+            <table id="tabela-qdd" class="tabela-redimensionavel tabela-qdd">
               <thead>
                 <tr>
                   <th>Unidade Orçamentária</th>

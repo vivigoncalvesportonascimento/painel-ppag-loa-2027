@@ -1166,3 +1166,44 @@ function atualizarTabelaQdd(linhas) {
     corpo.appendChild(tr);
   });
 }
+
+document.querySelectorAll(".botao-exportar").forEach((botao) => {
+  botao.addEventListener("click", () => {
+    const tabela = document.getElementById(botao.dataset.tabela);
+    if (!tabela) {
+      return;
+    }
+    if (tabela.querySelector("tbody .carregando")) {
+      window.alert("Aguarde o carregamento dos dados antes de exportar.");
+      return;
+    }
+    if (botao.dataset.formato === "csv") {
+      exportarTabelaComoCsv(tabela, botao.dataset.tabela);
+    } else {
+      exportarTabelaComoXlsx(tabela, botao.dataset.tabela);
+    }
+  });
+});
+
+function exportarTabelaComoCsv(tabela, nomeArquivo) {
+  const planilha = XLSX.utils.table_to_sheet(tabela);
+  const csv = XLSX.utils.sheet_to_csv(planilha, { FS: ";" });
+  const blob = new Blob(["﻿" + csv], { type: "text/csv;charset=utf-8;" });
+  baixarBlob(blob, `${nomeArquivo}.csv`);
+}
+
+function exportarTabelaComoXlsx(tabela, nomeArquivo) {
+  const livro = XLSX.utils.table_to_book(tabela);
+  XLSX.writeFile(livro, `${nomeArquivo}.xlsx`);
+}
+
+function baixarBlob(blob, nomeArquivo) {
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = nomeArquivo;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  URL.revokeObjectURL(url);
+}
