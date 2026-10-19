@@ -46,10 +46,10 @@ body {
 }
 
 .marca {
-  font-weight: 700;
-  font-size: 1rem;
+  font-weight: 800;
+  font-size: 2rem;
   padding: 12px 0;
-  color: var(--cor-texto);
+  color: #0047ab;
 }
 
 .menu {
