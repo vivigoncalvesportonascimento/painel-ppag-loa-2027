@@ -16,7 +16,7 @@ visualização**. O primeiro tratamento aplicado a cada base, implementado em
 |---|---|
 | `programas_planejamento.txt` | `Exclusão Lógica do Programa` == `Não` |
 | `acoes_planejamento.txt` | `Exclusão Lógica do Programa` == `Não` **e** `Exclusão Lógica da Ação` == `Não` |
-| `localizadores_todos_planejamento.txt` | `Exclusão Lógica do Programa` == `False` |
+| `localizadores_todos_planejamento.txt` | `Exclusão Lógica do Programa` == `False` **e** `Exclusão Lógica da Ação` == `False` |
 | `indicadores_planejamento.txt` | `Exclusão Lógica do Indicador` == `False` **e** `Exclusão Lógica do Programa` == `False` |
 
 Observação: o formato do indicador de exclusão varia entre bases (texto
@@ -81,9 +81,12 @@ combinação `Código da Unidade Orçamentária Responsável pela Ação` +
 `Código da Ação`. Direto, esse cruzamento não casava nenhuma linha: em
 `localizadores` o código da UO vem com zero à esquerda (`"01261"`), e em
 `acoes_planejamento` sem (`"1261"`). Normalizando ambos para inteiro antes
-de montar a chave, o cruzamento passa a casar ~98,7% das linhas (as
-~1,3% restantes são ações excluídas no nível de ação, presentes em
-`localizadores` mas fora do `carregar_acoes()` já filtrado).
+de montar a chave, o cruzamento casa 100% das linhas — depois que
+`carregar_localizadores()` (item 1) passou a aplicar também a condição
+`Exclusão Lógica da Ação` == `False` (e não só `Exclusão Lógica do
+Programa`), as mesmas ações excluídas que antes ficavam sem par em
+`carregar_acoes()` (~1,3% das linhas, com produto/unidade de medida em
+branco) deixaram de entrar na base de `localizadores` também.
 
 Catorze códigos de "Município" em `localizadores` (`3199901`...`3199913`,
 `3199999`) são agregados "DIVERSOS MUNICÍPIOS" (por região ou estadual),

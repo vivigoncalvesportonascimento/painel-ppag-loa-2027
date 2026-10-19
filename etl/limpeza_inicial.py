@@ -29,7 +29,10 @@ def carregar_acoes() -> pd.DataFrame:
 
 def carregar_localizadores() -> pd.DataFrame:
     df = _ler_base("localizadores_todos_planejamento.txt")
-    return df[df["Exclusão Lógica do Programa"] == "False"]
+    excluido = (df["Exclusão Lógica do Programa"] == "False") & (
+        df["Exclusão Lógica da Ação"] == "False"
+    )
+    return df[excluido]
 
 
 def carregar_indicadores() -> pd.DataFrame:
