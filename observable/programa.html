@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="generator" content="Observable Framework v1.13.4">
+<title>Programa | Painel PPAG-LOA 2027</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="preload" as="style" href="./_observablehq/theme-air,wide.67f4c7af.css">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="stylesheet" type="text/css" href="./_observablehq/theme-air,wide.67f4c7af.css">
+<link rel="modulepreload" href="./_observablehq/client.097df403.js">
+<link rel="modulepreload" href="./_observablehq/runtime.fa9f71c0.js">
+<link rel="modulepreload" href="./_observablehq/stdlib.60afab10.js">
+<link rel="modulepreload" href="./_import/components/filtroPesquisavel.4bc15319.js">
+<link rel="modulepreload" href="./_import/components/detalhe.44e2f62f.js">
+<link rel="modulepreload" href="./_import/components/tabela.d2f8b0c0.js">
+<link rel="modulepreload" href="./_import/components/exportar.950c18a3.js">
+<link rel="modulepreload" href="./_node/xlsx@0.18.5/index.949dda68.js">
+<link rel="stylesheet" href="./_file/custom-style.fb1733e2.css">
+<script type="module">
+
+import {define} from "./_observablehq/client.097df403.js";
+import {registerFile} from "./_observablehq/stdlib.60afab10.js";
+
+registerFile("./data/dados.json", {"name":"./data/dados.json","mimeType":"application/json","path":"./_file/data/dados.7539ee07.json","lastModified":1792430977067,"size":3684269});
+
+define({id: "f1e3d39f", inputs: ["FileAttachment"], outputs: ["filtroPesquisavel","linhaFiltros","acaoCard","gradeAcao","tabela","dados","programas","indicadores","uos","nomesProgramas","selectUo","selectPrograma","filtros"], body: async (FileAttachment) => {
+const [{filtroPesquisavel, linhaFiltros}, {acaoCard, gradeAcao}, {tabela}] = await Promise.all([import("./_import/components/filtroPesquisavel.4bc15319.js"), import("./_import/components/detalhe.44e2f62f.js"), import("./_import/components/tabela.d2f8b0c0.js")]);
+
+const dados = await FileAttachment("./data/dados.json").json();
+const { programas, indicadores } = dados.programa;
+
+const uos = [...new Set(programas.map((p) => p.uo))].sort();
+const nomesProgramas = [...new Set(programas.map((p) => p.programa))].sort();
+
+const selectUo = filtroPesquisavel(uos, { label: "Unidade Orçamentária", placeholder: "Selecione..." });
+const selectPrograma = filtroPesquisavel(nomesProgramas, { label: "Programa", placeholder: "Selecione..." });
+const filtros = linhaFiltros([selectUo, selectPrograma]);
+return {filtroPesquisavel,linhaFiltros,acaoCard,gradeAcao,tabela,dados,programas,indicadores,uos,nomesProgramas,selectUo,selectPrograma,filtros};
+}});
+
+define({id: "8a0de980", mode: "inline", inputs: ["filtros","display"], body: async (filtros,display) => {
+display(await(
+filtros
+))
+}});
+
+define({id: "cc34c5a0", inputs: ["Generators","filtros"], outputs: ["valoresFiltro"], body: (Generators,filtros) => {
+const valoresFiltro = Generators.input(filtros);
+return {valoresFiltro};
+}});
+
+define({id: "899bbe0f", inputs: ["valoresFiltro"], outputs: ["uoSelecionada","programaSelecionado"], body: (valoresFiltro) => {
+const uoSelecionada = valoresFiltro[0];
+const programaSelecionado = valoresFiltro[1];
+return {uoSelecionada,programaSelecionado};
+}});
+
+define({id: "1f309afc", inputs: ["programas","uoSelecionada","programaSelecionado","indicadores"], outputs: ["filtrados","ordenados","programa","tabelaIndicadores"], body: (programas,uoSelecionada,programaSelecionado,indicadores) => {
+let filtrados = programas;
+if (uoSelecionada) filtrados = filtrados.filter((p) => p.uo === uoSelecionada);
+if (programaSelecionado) filtrados = filtrados.filter((p) => p.programa === programaSelecionado);
+if (filtrados.length === 0) filtrados = programas;
+
+const ordenados = [...filtrados].sort((a, b) => a.uo.localeCompare(b.uo) || a.programa.localeCompare(b.programa));
+const programa = ordenados[0];
+const tabelaIndicadores = indicadores[programa.codigo] || [];
+return {filtrados,ordenados,programa,tabelaIndicadores};
+}});
+
+define({id: "30710be2", mode: "inline", inputs: ["acaoCard","programa","display"], body: async (acaoCard,programa,display) => {
+display(await(
+acaoCard("Programa", programa.programa, { destaque: true })
+))
+}});
+
+define({id: "81af5a1d", mode: "inline", inputs: ["gradeAcao","acaoCard","programa","display"], body: async (gradeAcao,acaoCard,programa,display) => {
+display(await(
+gradeAcao([acaoCard("Unidade Orçamentária", programa.uo), acaoCard("Área Temática", programa.area_tematica)], "30-70")
+))
+}});
+
+define({id: "97a1daef", mode: "inline", inputs: ["gradeAcao","acaoCard","programa","display"], body: async (gradeAcao,acaoCard,programa,display) => {
+display(await(
+gradeAcao([
+  acaoCard("Objetivo", programa.objetivo),
+  acaoCard("Objetivo de Desenvolvimento Sustentável - ODS", programa.ods)
+], "70-30")
+))
+}});
+
+define({id: "7fa45e8c", mode: "inline", inputs: ["tabela","tabelaIndicadores","display"], body: async (tabela,tabelaIndicadores,display) => {
+display(await(
+tabela(tabelaIndicadores, [
+  {chave: "Indicador", rotulo: "Indicador"},
+  {chave: "Periodicidade", rotulo: "Periodicidade"},
+  {chave: "Unidade de Medida", rotulo: "Unidade de Medida"},
+  {chave: "Índice de Referência", rotulo: "Índice de Referência"},
+  {chave: "2027", rotulo: "2027"},
+  {chave: "2028", rotulo: "2028"},
+  {chave: "2029", rotulo: "2029"},
+  {chave: "2030", rotulo: "2030"}
+], {nomeArquivo: "indicadores_programa", classeExtra: "tabela-programa-indicadores", semResultadoTexto: "Nenhum indicador para este programa."})
+))
+}});
+
+</script>
+</head>
+<body>
+<input id="observablehq-sidebar-toggle" type="checkbox" title="Toggle sidebar">
+<label id="observablehq-sidebar-backdrop" for="observablehq-sidebar-toggle"></label>
+<nav id="observablehq-sidebar">
+  <ol>
+    <label id="observablehq-sidebar-close" for="observablehq-sidebar-toggle"></label>
+    <li class="observablehq-link"><a href="./">Painel PPAG-LOA 2027</a></li>
+  </ol>
+  <ol>
+    <li class="observablehq-link"><a href="./">Sobre o Painel</a></li>
+    <li class="observablehq-link"><a href="./visao-geral">Visão Geral</a></li>
+    <li class="observablehq-link"><a href="./acao-orcamentaria">Ação Orçamentária</a></li>
+    <li class="observablehq-link observablehq-link-active"><a href="./programa">Programa</a></li>
+    <li class="observablehq-link"><a href="./regionalizacao">Regionalização</a></li>
+    <li class="observablehq-link"><a href="./receita-fiscal">Receita Fiscal</a></li>
+    <li class="observablehq-link"><a href="./despesa-fiscal">Despesa Fiscal</a></li>
+    <li class="observablehq-link"><a href="./despesa-por-orgao">Despesa por Órgão</a></li>
+    <li class="observablehq-link"><a href="./qdd">QDD</a></li>
+    <li class="observablehq-link"><a href="./loa-investimentos">LOA Investimentos</a></li>
+    <li class="observablehq-link"><a href="./glossario">Glossário</a></li>
+    <li class="observablehq-link"><a href="./links-uteis">Links Úteis</a></li>
+  </ol>
+</nav>
+<script>{const e=document.querySelector("#observablehq-sidebar"),o=document.querySelector("#observablehq-sidebar-toggle"),r=sessionStorage.getItem("observablehq-sidebar");r?o.checked=r==="true":o.indeterminate=!0;for(const t of document.querySelectorAll("#observablehq-sidebar summary")){const s=t.parentElement;switch(sessionStorage.getItem(`observablehq-sidebar:${t.textContent}`)){case"true":s.open=!0;break;case"false":s.classList.contains("observablehq-section-active")||(s.open=!1);break}}addEventListener("beforeunload",()=>sessionStorage.setItem("observablehq-sidebar-scrolly",`${e.scrollTop}`));const a=sessionStorage.getItem("observablehq-sidebar-scrolly");a!=null&&(e.style.cssText="overflow: hidden;",e.scrollTop=+a,e.style.cssText="");}</script>
+<div id="observablehq-center">
+<header id="observablehq-header">
+<div class="marca-painel">Painel PPAG-LOA 2027</div>
+</header>
+<main id="observablehq-main" class="observablehq">
+<h1 id="programa" tabindex="-1"><a class="observablehq-header-anchor" href="#programa">Programa</a></h1>
+<div class="observablehq observablehq--block"><!--:f1e3d39f:--></div>
+<p><observablehq-loading></observablehq-loading><!--:8a0de980:--></p>
+<div class="observablehq observablehq--block"><!--:cc34c5a0:--></div>
+<div class="observablehq observablehq--block"><!--:899bbe0f:--></div>
+<div class="observablehq observablehq--block"><!--:1f309afc:--></div>
+<p><observablehq-loading></observablehq-loading><!--:30710be2:--></p>
+<p><observablehq-loading></observablehq-loading><!--:81af5a1d:--></p>
+<p><observablehq-loading></observablehq-loading><!--:97a1daef:--></p>
+<h2 id="indicadores" tabindex="-1"><a class="observablehq-header-anchor" href="#indicadores">Indicadores</a></h2>
+<p><observablehq-loading></observablehq-loading><!--:7fa45e8c:--></p>
+</main>
+<footer id="observablehq-footer">
+<div>Construído com <a href="https://observablehq.com/framework/" target="_blank" rel="noopener noreferrer">Observable Framework</a> — versão de comparação do <a href="https://vivigoncalvesportonascimento.github.io/painel-ppag-loa-2027/" target="_blank" rel="noopener noreferrer">painel publicado no GitHub Pages</a>.</div>
+</footer>
+</div>
+</body>
+</html>
