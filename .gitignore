@@ -21,3 +21,9 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Observable Framework (node_modules/dist sao gerados por npm install/build;
+# so o codigo-fonte em observable/src e observable/*.config.js sao versionados)
+observable/node_modules/
+observable/dist/
+observable/src/.observablehq/
