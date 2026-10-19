@@ -1185,15 +1185,37 @@ document.querySelectorAll(".botao-exportar").forEach((botao) => {
   });
 });
 
+const CARACTERES_FORMULA = ["=", "+", "-", "@", "\t", "\r"];
+
+function sanitizarPlanilhaContraFormula(planilha) {
+  Object.keys(planilha).forEach((endereco) => {
+    if (endereco.startsWith("!")) {
+      return;
+    }
+    const celula = planilha[endereco];
+    if (celula && celula.t === "s" && typeof celula.v === "string" && celula.v.length) {
+      if (CARACTERES_FORMULA.includes(celula.v[0])) {
+        celula.v = `'${celula.v}`;
+        if (typeof celula.w === "string") {
+          celula.w = `'${celula.w}`;
+        }
+      }
+    }
+  });
+  return planilha;
+}
+
 function exportarTabelaComoCsv(tabela, nomeArquivo) {
-  const planilha = XLSX.utils.table_to_sheet(tabela);
+  const planilha = sanitizarPlanilhaContraFormula(XLSX.utils.table_to_sheet(tabela));
   const csv = XLSX.utils.sheet_to_csv(planilha, { FS: ";" });
   const blob = new Blob(["﻿" + csv], { type: "text/csv;charset=utf-8;" });
   baixarBlob(blob, `${nomeArquivo}.csv`);
 }
 
 function exportarTabelaComoXlsx(tabela, nomeArquivo) {
-  const livro = XLSX.utils.table_to_book(tabela);
+  const planilha = sanitizarPlanilhaContraFormula(XLSX.utils.table_to_sheet(tabela));
+  const livro = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(livro, planilha, "Dados");
   XLSX.writeFile(livro, `${nomeArquivo}.xlsx`);
 }
 
