@@ -4,7 +4,7 @@ import streamlit as st
 
 
 def renderizar() -> None:
-    st.title("O Painel")
+    st.title("Sobre o Painel")
 
     st.markdown(
         """

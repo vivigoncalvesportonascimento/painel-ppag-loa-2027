@@ -20,30 +20,30 @@ st.set_page_config(page_title="Painel PPAG-LOA 2027", layout="wide")
 (
     aba_painel,
     aba_visao_geral,
+    aba_acao_orcamentaria,
+    aba_programa,
+    aba_regionalizacao,
     aba_receita_fiscal,
     aba_despesa_fiscal,
     aba_despesa_orgao,
-    aba_loa_investimentos,
-    aba_links_uteis,
-    aba_regionalizacao,
-    aba_glossario,
-    aba_acao_orcamentaria,
-    aba_programa,
     aba_qdd,
+    aba_loa_investimentos,
+    aba_glossario,
+    aba_links_uteis,
 ) = st.tabs(
     [
-        "O Painel",
+        "Sobre o Painel",
         "Visão Geral",
+        "Ação Orçamentária",
+        "Programa",
+        "Regionalização",
         "Receita Fiscal",
         "Despesa Fiscal",
         "Despesa por Órgão",
-        "LOA Investimentos",
-        "Links Úteis",
-        "Regionalização",
-        "Glossário",
-        "Ação Orçamentária",
-        "Programa",
         "QDD",
+        "LOA Investimentos",
+        "Glossário",
+        "Links Úteis",
     ]
 )
 
@@ -52,6 +52,15 @@ with aba_painel:
 
 with aba_visao_geral:
     visao_geral.renderizar()
+
+with aba_acao_orcamentaria:
+    acao_orcamentaria.renderizar()
+
+with aba_programa:
+    programa.renderizar()
+
+with aba_regionalizacao:
+    regionalizacao.renderizar()
 
 with aba_receita_fiscal:
     receita_fiscal.renderizar()
@@ -62,23 +71,14 @@ with aba_despesa_fiscal:
 with aba_despesa_orgao:
     despesa_orgao.renderizar()
 
+with aba_qdd:
+    qdd.renderizar()
+
 with aba_loa_investimentos:
     loa_investimentos.renderizar()
-
-with aba_links_uteis:
-    links_uteis.renderizar()
-
-with aba_regionalizacao:
-    regionalizacao.renderizar()
 
 with aba_glossario:
     glossario.renderizar()
 
-with aba_acao_orcamentaria:
-    acao_orcamentaria.renderizar()
-
-with aba_programa:
-    programa.renderizar()
-
-with aba_qdd:
-    qdd.renderizar()
+with aba_links_uteis:
+    links_uteis.renderizar()
