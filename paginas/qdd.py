@@ -6,6 +6,7 @@ import pandas as pd
 import streamlit as st
 
 from dados_qdd import construir_base_enriquecida, construir_listas_filtro, construir_tabela
+from exportacao import botoes_exportar_tabela
 
 _CSS_PAGINA = """
 <style>
@@ -91,7 +92,9 @@ def renderizar() -> None:
         if filtros[chave]:
             base_filtrada = base_filtrada[base_filtrada[coluna] == filtros[chave]]
 
-    _renderizar_tabela(construir_tabela(base_filtrada))
+    tabela = construir_tabela(base_filtrada)
+    _renderizar_tabela(tabela)
+    botoes_exportar_tabela(tabela, "qdd")
 
 
 def _renderizar_filtros(base: pd.DataFrame) -> dict:

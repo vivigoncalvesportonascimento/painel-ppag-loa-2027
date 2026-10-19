@@ -11,6 +11,7 @@ from dados_regionalizacao import (
     construir_mapa,
     construir_tabela,
 )
+from exportacao import botoes_exportar_tabela
 
 _CSS_PAGINA = """
 <style>
@@ -92,7 +93,9 @@ def renderizar() -> None:
     )
 
     st.divider()
-    _renderizar_tabela(construir_tabela(base_tabela))
+    tabela = construir_tabela(base_tabela)
+    _renderizar_tabela(tabela)
+    botoes_exportar_tabela(tabela, "regionalizacao")
 
 
 def _renderizar_filtros(base: pd.DataFrame) -> dict:

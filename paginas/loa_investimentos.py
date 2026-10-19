@@ -13,6 +13,7 @@ from dados_loa_investimentos import (
     construir_lista_uo,
     construir_tabela,
 )
+from exportacao import botoes_exportar_tabela
 from utils import formatar_bilhoes
 
 _CSS_PAGINA = """
@@ -103,7 +104,9 @@ def renderizar() -> None:
         )
 
     st.divider()
-    _renderizar_tabela(construir_tabela(base_despesa))
+    tabela = construir_tabela(base_despesa)
+    _renderizar_tabela(tabela)
+    botoes_exportar_tabela(tabela, "loa_investimentos")
 
 
 def _renderizar_filtro() -> list[str]:

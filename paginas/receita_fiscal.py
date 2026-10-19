@@ -8,6 +8,7 @@ from dados_receita_fiscal import (
     construir_grafico_receita_por_categoria,
     construir_tabela_uo_fonte,
 )
+from exportacao import botoes_exportar_tabela
 from utils import formatar_bilhoes
 
 _CSS_CARD_CENTRALIZADO = """
@@ -47,7 +48,9 @@ def renderizar() -> None:
         )
 
     st.divider()
-    st.dataframe(construir_tabela_uo_fonte(base_filtrada), width="stretch", hide_index=True)
+    tabela_uo_fonte = construir_tabela_uo_fonte(base_filtrada)
+    st.dataframe(tabela_uo_fonte, width="stretch", hide_index=True)
+    botoes_exportar_tabela(tabela_uo_fonte, "receita_fiscal_uo_fonte")
 
 
 def _renderizar_filtros(base):

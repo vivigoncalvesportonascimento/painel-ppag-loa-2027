@@ -11,6 +11,7 @@ from dados_programa import (
     construir_tabela_indicadores,
     selecionar_programa,
 )
+from exportacao import botoes_exportar_tabela
 
 _CSS_PAGINA = """
 <style>
@@ -122,7 +123,9 @@ def renderizar() -> None:
 
     st.divider()
     st.subheader("Indicadores")
-    _renderizar_tabela(construir_tabela_indicadores(cards["codigo_programa"]))
+    tabela_indicadores = construir_tabela_indicadores(cards["codigo_programa"])
+    _renderizar_tabela(tabela_indicadores)
+    botoes_exportar_tabela(tabela_indicadores, "indicadores_programa")
 
 
 def _renderizar_filtros(base) -> tuple[str, str]:

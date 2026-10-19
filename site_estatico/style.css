@@ -362,6 +362,32 @@ h1 {
   overflow-y: auto;
 }
 
+.tabela-exportar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid var(--cor-divisor-suave);
+}
+
+.botao-exportar {
+  appearance: none;
+  border: 1px solid var(--cor-borda);
+  border-radius: 6px;
+  background: var(--cor-fundo-card);
+  color: var(--cor-texto);
+  padding: 0.35rem 0.7rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.botao-exportar:hover {
+  background: var(--cor-divisor-suave);
+  border-color: var(--cor-accent);
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
