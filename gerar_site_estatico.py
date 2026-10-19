@@ -1,7 +1,7 @@
-"""Gera site_estatico/dados.json a partir dos mesmos cálculos do app Streamlit.
+"""Gera site_estatico/dados.json a partir dos módulos dados_*.py.
 
-Rodar sempre que os dados ou a lógica de visao_geral mudarem, antes de
-publicar a branch gh-pages.
+Rodar sempre que os dados ou a lógica de algum dados_*.py mudarem, antes
+de publicar a branch gh-pages.
 """
 
 import json

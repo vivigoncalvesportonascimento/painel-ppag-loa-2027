@@ -1,5 +1,5 @@
-"""Cálculos da página "Receita Fiscal", compartilhados entre o app
-Streamlit e o gerador do site estático (GitHub Pages).
+"""Cálculos da página "Receita Fiscal", usados pelo gerador do site
+estático (GitHub Pages).
 
 `construir_base_enriquecida` é a fonte única de dados em nível de linha
 (UO, Fonte de Recursos já combinada, categoria já combinada e valor).

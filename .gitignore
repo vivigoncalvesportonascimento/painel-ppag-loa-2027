@@ -11,9 +11,6 @@ venv/
 # Poetry
 poetry.lock.bak
 
-# Streamlit
-.streamlit/secrets.toml
-
 # IDE
 .vscode/
 .idea/

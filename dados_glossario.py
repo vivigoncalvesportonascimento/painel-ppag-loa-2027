@@ -1,5 +1,5 @@
-"""Cálculos da página "Glossário", compartilhados entre o app Streamlit e
-o gerador do site estático (GitHub Pages).
+"""Cálculos da página "Glossário", usados pelo gerador do site estático
+(GitHub Pages).
 """
 
 from etl.glossario import carregar_glossario

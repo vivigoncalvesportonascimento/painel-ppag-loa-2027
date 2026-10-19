@@ -1,5 +1,5 @@
-"""Cálculos da página "Visão Geral", compartilhados entre o app Streamlit
-e o gerador do site estático (GitHub Pages).
+"""Cálculos da página "Visão Geral", usados pelo gerador do site estático
+(GitHub Pages).
 """
 
 import pandas as pd

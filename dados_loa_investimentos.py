@@ -1,5 +1,5 @@
-"""Cálculos da página "LOA Investimentos", compartilhados entre o app
-Streamlit e o gerador do site estático (GitHub Pages).
+"""Cálculos da página "LOA Investimentos", usados pelo gerador do site
+estático (GitHub Pages).
 
 A tabela auxiliar_uo.csv funciona como dimensão: só as UOs com
 tipo_loa == "loa_investimentos" entram no filtro e nas duas bases de

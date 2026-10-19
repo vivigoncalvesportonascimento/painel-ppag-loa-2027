@@ -1,5 +1,5 @@
-"""Cálculos da página "Ação Orçamentária", compartilhados entre o app
-Streamlit e o gerador do site estático (GitHub Pages).
+"""Cálculos da página "Ação Orçamentária", usados pelo gerador do site
+estático (GitHub Pages).
 
 Página de detalhe: os dois filtros (UO, Ação) selecionam uma única linha
 de `acoes_planejamento.txt`, cujos campos de texto alimentam os cards e

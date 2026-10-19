@@ -1,5 +1,5 @@
-"""Cálculos da página "QDD" (Quadro de Detalhamento da Despesa),
-compartilhados entre o app Streamlit e o gerador do site estático.
+"""Cálculos da página "QDD" (Quadro de Detalhamento da Despesa), usados
+pelo gerador do site estático (GitHub Pages).
 
 BASE_QDD_FISCAL.xlsx é a tabela fato; as 6 bases auxiliares (UO, Grupo
 de Despesa, IAG, Fonte de Recursos, IPU, Elemento de Despesa) são

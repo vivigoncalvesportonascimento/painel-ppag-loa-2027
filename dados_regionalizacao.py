@@ -1,5 +1,5 @@
-"""Cálculos da página "Regionalização", compartilhados entre o app
-Streamlit e o gerador do site estático (GitHub Pages).
+"""Cálculos da página "Regionalização", usados pelo gerador do site
+estático (GitHub Pages).
 
 `construir_base_enriquecida` junta localizadores_todos_planejamento.txt
 com acoes_planejamento.txt (para trazer Produto / Unidade de Medida) pela

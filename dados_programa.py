@@ -1,5 +1,5 @@
-"""Cálculos da página "Programa", compartilhados entre o app Streamlit e
-o gerador do site estático (GitHub Pages).
+"""Cálculos da página "Programa", usados pelo gerador do site estático
+(GitHub Pages).
 
 Página de detalhe: os dois filtros (UO, Programa) selecionam um único
 programa. A maioria dos campos é invariante dentro do programa (um

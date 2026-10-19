@@ -1,5 +1,5 @@
-"""Cálculos da página "Despesa por Órgão", compartilhados entre o app
-Streamlit e o gerador do site estático (GitHub Pages).
+"""Cálculos da página "Despesa por Órgão", usados pelo gerador do site
+estático (GitHub Pages).
 
 `construir_base_enriquecida` é a fonte única em nível de linha. O
 filtro por Unidade Orçamentária opera sobre essa base ANTES de

@@ -1,5 +1,5 @@
-"""Cálculos da página "Despesa Fiscal", compartilhados entre o app
-Streamlit e o gerador do site estático (GitHub Pages).
+"""Cálculos da página "Despesa Fiscal", usados pelo gerador do site
+estático (GitHub Pages).
 
 Premissa (ver docs/premissas.md): o cruzamento com auxiliar_poder.csv é
 feito por COD_UO (não COD_ORGAO) — é a chave que realmente corresponde

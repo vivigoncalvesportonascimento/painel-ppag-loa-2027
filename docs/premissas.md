@@ -100,10 +100,10 @@ público/IBGE). No site estático, esse arquivo (3,4 MB) e os dados da
 página (~14 MB, base em nível de linha para permitir os 5 filtros no
 navegador) são carregados em `dados_regionalizacao.json`, separado do
 `dados.json` principal e buscado só quando a aba Regionalização é aberta
-— para não pesar o carregamento inicial do site. A tabela (Streamlit e
-site estático) mostra no máximo as 2.000 linhas de maior valor, com
-aviso, para não travar o navegador quando nenhum filtro estiver ativo
-(~40 mil linhas agrupadas sem filtro).
+— para não pesar o carregamento inicial do site. A tabela mostra no
+máximo as 2.000 linhas de maior valor, com aviso, para não travar o
+navegador quando nenhum filtro estiver ativo (~40 mil linhas agrupadas
+sem filtro).
 
 ## 6. Página QDD: tabela fato + dimensões, sem lacunas
 
