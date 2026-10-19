@@ -117,8 +117,8 @@ function inicializarReceitaFiscal(linhas) {
   selectFonte.addEventListener("change", atualizar);
 
   document.getElementById("limpar-filtros").addEventListener("click", () => {
-    selectUo.value = "";
-    selectFonte.value = "";
+    limparFiltroPesquisavel(selectUo);
+    limparFiltroPesquisavel(selectFonte);
     atualizar();
   });
 
@@ -132,6 +132,124 @@ function popularOpcoes(select, valores) {
     option.textContent = valor;
     select.appendChild(option);
   });
+  tornarFiltroPesquisavel(select);
+}
+
+function normalizarTexto(texto) {
+  return texto
+    .toString()
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .toLowerCase();
+}
+
+function limparFiltroPesquisavel(select) {
+  select.value = "";
+  if (select.filtroPesquisavelAtualizar) {
+    select.filtroPesquisavelAtualizar();
+  }
+}
+
+function tornarFiltroPesquisavel(select) {
+  if (select.dataset.pesquisavel === "1") {
+    return;
+  }
+  select.dataset.pesquisavel = "1";
+
+  const wrapper = document.createElement("div");
+  wrapper.className = "filtro-pesquisavel";
+
+  const botao = document.createElement("button");
+  botao.type = "button";
+  botao.className = "filtro-pesquisavel-botao";
+
+  const painel = document.createElement("div");
+  painel.className = "filtro-pesquisavel-painel";
+
+  const busca = document.createElement("input");
+  busca.type = "text";
+  busca.placeholder = "Pesquisar";
+  busca.className = "filtro-pesquisavel-busca";
+
+  const lista = document.createElement("div");
+  lista.className = "filtro-pesquisavel-lista";
+
+  painel.append(busca, lista);
+  wrapper.append(botao, painel);
+
+  select.insertAdjacentElement("afterend", wrapper);
+  select.classList.add("filtro-select-oculto");
+
+  function construirLista(filtro) {
+    lista.replaceChildren();
+    const termo = normalizarTexto(filtro || "");
+    [...select.options].forEach((opcao) => {
+      if (termo && !normalizarTexto(opcao.textContent).includes(termo)) {
+        return;
+      }
+      const item = document.createElement("div");
+      item.className = "filtro-pesquisavel-opcao";
+      item.textContent = opcao.textContent;
+      if (opcao.value === select.value) {
+        item.classList.add("selecionada");
+      }
+      item.addEventListener("click", () => {
+        select.value = opcao.value;
+        select.dispatchEvent(new Event("change"));
+        atualizarBotao();
+        fechar();
+      });
+      lista.appendChild(item);
+    });
+    if (!lista.children.length) {
+      const vazio = document.createElement("div");
+      vazio.className = "filtro-pesquisavel-vazio";
+      vazio.textContent = "Nenhum resultado";
+      lista.appendChild(vazio);
+    }
+  }
+
+  function atualizarBotao() {
+    const selecionada = select.options[select.selectedIndex];
+    botao.textContent = selecionada ? selecionada.textContent : "Todas";
+  }
+
+  function aoClicarFora(evento) {
+    if (!wrapper.contains(evento.target)) {
+      fechar();
+    }
+  }
+
+  function abrir() {
+    painel.classList.add("aberto");
+    busca.value = "";
+    construirLista("");
+    busca.focus();
+    document.addEventListener("click", aoClicarFora, true);
+  }
+
+  function fechar() {
+    painel.classList.remove("aberto");
+    document.removeEventListener("click", aoClicarFora, true);
+  }
+
+  botao.addEventListener("click", () => {
+    if (painel.classList.contains("aberto")) {
+      fechar();
+    } else {
+      abrir();
+    }
+  });
+
+  busca.addEventListener("input", () => construirLista(busca.value));
+  busca.addEventListener("keydown", (evento) => {
+    if (evento.key === "Escape") {
+      fechar();
+    }
+  });
+
+  select.filtroPesquisavelAtualizar = atualizarBotao;
+  atualizarBotao();
 }
 
 function somar(linhas) {
@@ -293,7 +411,7 @@ function inicializarDespesaOrgao(linhas) {
   selectUo.addEventListener("change", atualizar);
 
   document.getElementById("limpar-filtros-orgao").addEventListener("click", () => {
-    selectUo.value = "";
+    limparFiltroPesquisavel(selectUo);
     atualizar();
   });
 
@@ -418,7 +536,7 @@ function inicializarLoaInvestimentos(uoOpcoes, linhasReceita, linhasDespesa) {
   select.addEventListener("change", atualizar);
 
   document.getElementById("limpar-filtros-investimentos").addEventListener("click", () => {
-    select.value = "";
+    limparFiltroPesquisavel(select);
     atualizar();
   });
 
@@ -579,9 +697,7 @@ function inicializarFiltrosRegionalizacao() {
   selects.forEach((select) => select.addEventListener("change", atualizar));
 
   document.getElementById("limpar-filtros-regionalizacao").addEventListener("click", () => {
-    selects.forEach((select) => {
-      select.value = "";
-    });
+    selects.forEach((select) => limparFiltroPesquisavel(select));
     atualizar();
   });
 
@@ -799,8 +915,8 @@ function inicializarAcaoOrcamentaria(linhas) {
   selectAcao.addEventListener("change", atualizar);
 
   document.getElementById("limpar-filtros-acao").addEventListener("click", () => {
-    selectUo.value = "";
-    selectAcao.value = "";
+    limparFiltroPesquisavel(selectUo);
+    limparFiltroPesquisavel(selectAcao);
     atualizar();
   });
 
@@ -885,8 +1001,8 @@ function inicializarPrograma(programas, indicadoresPorCodigo) {
   selectPrograma.addEventListener("change", atualizar);
 
   document.getElementById("limpar-filtros-programa").addEventListener("click", () => {
-    selectUo.value = "";
-    selectPrograma.value = "";
+    limparFiltroPesquisavel(selectUo);
+    limparFiltroPesquisavel(selectPrograma);
     atualizar();
   });
 
@@ -999,9 +1115,7 @@ function inicializarQdd(linhas) {
   selects.forEach((select) => select.addEventListener("change", atualizar));
 
   document.getElementById("limpar-filtros-qdd").addEventListener("click", () => {
-    selects.forEach((select) => {
-      select.value = "";
-    });
+    selects.forEach((select) => limparFiltroPesquisavel(select));
     atualizar();
   });
 
