@@ -332,6 +332,19 @@ body {
   margin-bottom: 1.25rem;
 }
 
+.termo-botao.ativo {
+  background-color: #0047ab;
+  border-color: #0047ab;
+  color: #ffffff;
+}
+
+.termo-botao.ativo:hover,
+.termo-botao.ativo:focus {
+  background-color: #003580;
+  border-color: #003580;
+  color: #ffffff;
+}
+
 /* Glossário */
 .glossario-painel {
   background: var(--cor-fundo-card);
