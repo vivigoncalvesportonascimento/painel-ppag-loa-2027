@@ -1,0 +1,367 @@
+/* Identidade visual do painel PPAG-LOA 2027, por cima do tema bslib
+"shiny" (ver app.py: ui.Theme(preset="shiny").add_defaults(primary=...)) —
+mesma linguagem visual dos outros dois painéis (site estático e Observable
+Framework): fundo cinza-claro, cards brancos com sombra leve, azul #0047AB
+como cor de marca. */
+
+:root {
+  --cor-fundo-card: #ffffff;
+  --cor-borda: #cbd2d9;
+  --cor-divisor-suave: #eef1f4;
+  --cor-marca: #0047ab;
+  --cor-texto-suave: #616e7c;
+  --sombra-card: 0 1px 3px rgba(0, 0, 0, 0.08);
+
+  /* Sobrepõe a cor de marca do tema Bootstrap (sem precisar recompilar o
+  SASS, que não está disponível no Pyodide/Shinylive). */
+  --bs-primary: #0047ab;
+  --bs-primary-rgb: 0, 71, 171;
+  --bs-link-color: #0047ab;
+  --bs-link-color-rgb: 0, 71, 171;
+  --bs-link-hover-color: #003580;
+}
+
+.btn-primary {
+  --bs-btn-bg: #0047ab;
+  --bs-btn-border-color: #0047ab;
+  --bs-btn-hover-bg: #003580;
+  --bs-btn-hover-border-color: #003580;
+  --bs-btn-active-bg: #003580;
+  --bs-btn-active-border-color: #003580;
+}
+
+.nav-underline .nav-link.active {
+  color: #0047ab !important;
+  border-bottom-color: #0047ab !important;
+}
+
+a {
+  color: #0047ab;
+}
+
+body {
+  background: #f5f6f8;
+}
+
+.navbar-brand {
+  font-weight: 800 !important;
+  font-size: 1.7rem !important;
+  color: var(--cor-marca) !important;
+}
+
+.tab-content {
+  padding-top: 1rem;
+}
+
+/* Cards de KPI */
+.grade-cards {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.card,
+.card-kpi {
+  min-width: 0;
+  border-radius: 8px;
+  box-shadow: var(--sombra-card);
+  margin-bottom: 0 !important;
+}
+
+.card-kpi .fa {
+  height: 1.6em;
+  width: 1.6em;
+  opacity: 0.85;
+}
+
+.card .valor,
+.card-kpi .valor {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.card .titulo,
+.card-kpi .titulo {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  opacity: 0.9;
+}
+
+.linha-card-grafico {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  align-items: stretch;
+}
+
+.linha-cartoes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.grade-graficos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.grafico-card,
+.mapa-card {
+  min-width: 0;
+  background: var(--cor-fundo-card);
+  border-radius: 8px;
+  box-shadow: var(--sombra-card);
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.mapa-card {
+  padding: 0.5rem;
+}
+
+/* Filtros */
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-end;
+  background: var(--cor-fundo-card);
+  border-radius: 8px;
+  box-shadow: var(--sombra-card);
+  padding: 0.9rem 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.filtros .form-group,
+.filtros .shiny-input-container {
+  margin-bottom: 0 !important;
+  min-width: 220px;
+}
+
+/* Tabelas + exportação */
+.tabela-card {
+  background: var(--cor-fundo-card);
+  border-radius: 8px;
+  box-shadow: var(--sombra-card);
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.tabela-exportar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid var(--cor-divisor-suave);
+}
+
+.botao-exportar {
+  appearance: none;
+  border: 1px solid var(--cor-borda) !important;
+  border-radius: 6px;
+  background: var(--cor-fundo-card) !important;
+  color: #1f2933 !important;
+  padding: 0.35rem 0.7rem !important;
+  font-size: 0.78rem !important;
+  font-weight: 600;
+}
+
+.botao-exportar:hover {
+  background: var(--cor-divisor-suave) !important;
+  border-color: var(--cor-marca) !important;
+}
+
+/* Ação Orçamentária / Programa (páginas de detalhe) */
+.acao-card {
+  min-width: 0;
+  background: var(--cor-fundo-card);
+  border-radius: 8px;
+  box-shadow: var(--sombra-card);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.acao-card .rotulo {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--cor-texto-suave);
+  margin-bottom: 0.4rem;
+}
+
+.acao-card .valor {
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.acao-card--destaque {
+  text-align: center;
+}
+
+.acao-card--destaque .valor {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--cor-marca);
+}
+
+.acao-card ul.lista-simples {
+  margin: 0;
+  padding-left: 1.1rem;
+  max-height: 160px;
+  overflow-y: auto;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+/* Despesa por Órgão: listas-cartão */
+.lista-cartao {
+  min-width: 0;
+  background: var(--cor-fundo-card);
+  border-radius: 8px;
+  box-shadow: var(--sombra-card);
+  padding: 0.9rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.lista-cartao-titulo {
+  margin: 0 0 0.5rem;
+  font-size: 0.95rem;
+}
+
+.lista-cartao-corpo {
+  overflow-y: auto;
+  max-height: 320px;
+}
+
+.lista-cartao-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  border-top: 1px solid var(--cor-divisor-suave);
+}
+
+.lista-cartao-item:first-child {
+  border-top: none;
+}
+
+.lista-cartao-item .valor {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--cor-marca);
+  white-space: nowrap;
+}
+
+/* Sobre o Painel */
+.grade-blocos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.bloco {
+  min-width: 0;
+  background: var(--cor-fundo-card);
+  border-radius: 8px;
+  box-shadow: var(--sombra-card);
+  padding: 1.1rem 1.25rem;
+}
+
+.bloco h5 {
+  margin: 0 0 8px;
+  color: var(--cor-marca);
+}
+
+.bloco p {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--cor-texto-suave);
+}
+
+/* Links Úteis */
+.grade-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.link-card {
+  min-width: 0;
+  background: var(--cor-fundo-card);
+  border-radius: 8px;
+  box-shadow: var(--sombra-card);
+  padding: 1.1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.link-card h5 {
+  margin: 0;
+}
+
+.link-card p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--cor-texto-suave);
+  flex-grow: 1;
+}
+
+.link-card a {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--cor-marca);
+  text-decoration: none;
+}
+
+.glossario-nuvem {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Glossário */
+.glossario-painel {
+  background: var(--cor-fundo-card);
+  border-radius: 8px;
+  box-shadow: var(--sombra-card);
+  padding: 1.1rem 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.glossario-painel h6 {
+  margin: 0 0 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--cor-texto-suave);
+  font-size: 0.75rem;
+}
+
+.glossario-painel p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .grade-blocos,
+  .grade-cards,
+  .grade-links,
+  .grade-graficos,
+  .linha-card-grafico,
+  .linha-cartoes {
+    grid-template-columns: 1fr;
+  }
+}
