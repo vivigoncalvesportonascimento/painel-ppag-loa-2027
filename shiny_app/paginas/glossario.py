@@ -8,6 +8,7 @@ _TERMOS = dados.glossario
 def panel_ui():
     return ui.nav_panel(
         "Glossário",
+        ui.div("Glossário", class_="titulo-pagina"),
         ui.output_ui("gl_nuvem"),
         ui.div(ui.h6("Termo"), ui.output_ui("gl_termo_selecionado"), class_="glossario-painel"),
         ui.div(ui.h6("Definição Técnica"), ui.output_ui("gl_tecnica"), class_="glossario-painel"),

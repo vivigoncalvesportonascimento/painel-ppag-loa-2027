@@ -43,14 +43,71 @@ body {
   background: #f5f6f8;
 }
 
+/* Navbar: titulo numa linha propria, em cima; menu de paginas numa linha
+cheia logo abaixo, sem quebrar para uma segunda linha (rola na horizontal
+se nao couber) -- mesma estrutura do site estatico/Observable. */
+.navbar .container-fluid {
+  flex-direction: column;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
 .navbar-brand {
   font-weight: 800 !important;
   font-size: 1.7rem !important;
   color: var(--cor-marca) !important;
+  margin-bottom: 0.4rem;
+}
+
+.navbar-toggler {
+  align-self: flex-start;
+}
+
+.navbar-nav {
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  overflow-x: auto;
+  width: 100%;
+}
+
+.navbar-nav .nav-link {
+  white-space: nowrap;
+  padding-left: 0.5rem !important;
+  padding-right: 0.5rem !important;
+  font-size: 0.85rem;
 }
 
 .tab-content {
   padding-top: 1rem;
+}
+
+/* Titulo da pagina (logo abaixo do menu, acima dos filtros/conteudo) */
+.titulo-pagina {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0 0 0.75rem;
+}
+
+/* Rotulo dos filtros: cinza claro mas legivel, maiusculo, como nos
+outros dois paineis. */
+.control-label {
+  color: var(--cor-texto-suave);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+/* Caixa dos filtros (segmentadores) com bordas mais arredondadas. */
+.selectize-input {
+  border-radius: 10px !important;
+}
+
+.selectize-dropdown {
+  border-radius: 10px !important;
+  overflow: hidden;
 }
 
 /* Cards de KPI */

@@ -2,7 +2,7 @@ import pandas as pd
 from shiny import reactive, render, ui
 
 import dados_app as dados
-from componentes import botoes_exportar
+from componentes import botoes_exportar, filtro_selectize
 from exportar import csv_bytes, xlsx_bytes
 
 _NOME_ARQUIVO = "indicadores_programa"
@@ -23,9 +23,10 @@ def panel_ui():
     nomes = sorted(dados.programa_programas["programa"].unique())
     return ui.nav_panel(
         "Programa",
+        ui.div("Programa", class_="titulo-pagina"),
         ui.div(
-            ui.input_selectize("pr_uo", "Unidade Orçamentária", choices=[""] + uos, selected=""),
-            ui.input_selectize("pr_programa", "Programa", choices=[""] + nomes, selected=""),
+            filtro_selectize("pr_uo", "Unidade Orçamentária", uos, "Selecione..."),
+            filtro_selectize("pr_programa", "Programa", nomes, "Selecione..."),
             ui.input_action_button("pr_limpar", "Limpar filtros", class_="btn btn-outline-secondary"),
             class_="filtros",
         ),

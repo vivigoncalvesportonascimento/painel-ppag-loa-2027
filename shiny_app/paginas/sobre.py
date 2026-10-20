@@ -4,6 +4,7 @@ from shiny import ui
 def panel_ui():
     return ui.nav_panel(
         "Sobre o Painel",
+        ui.div("Sobre o Painel", class_="titulo-pagina"),
         ui.markdown(
             "**O que é a ferramenta:** Consiste num painel criado pela Subsecretaria de "
             "Planeamento e Orçamento (SPLOR) que agrega informações relativas ao PPAG "

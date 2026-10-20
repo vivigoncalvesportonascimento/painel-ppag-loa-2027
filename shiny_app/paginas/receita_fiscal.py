@@ -2,7 +2,7 @@ import pandas as pd
 from shiny import reactive, render, ui
 
 import dados_app as dados
-from componentes import botoes_exportar, card_kpi, plotly_html
+from componentes import botoes_exportar, card_kpi, filtro_selectize, plotly_html
 from exportar import csv_bytes, xlsx_bytes
 from graficos import grafico_absoluto_horizontal
 from utils import formatar_bilhoes, formatar_moeda
@@ -15,11 +15,10 @@ def panel_ui():
     fontes = sorted(dados.receita_fiscal["fonte_de_recursos"].unique())
     return ui.nav_panel(
         "Receita Fiscal",
+        ui.div("Receita Fiscal", class_="titulo-pagina"),
         ui.div(
-            ui.input_selectize("rf_uo", "UO", choices=[""] + uos, selected=""),
-            ui.input_selectize(
-                "rf_fonte", "Fonte de Recursos", choices=[""] + fontes, selected=""
-            ),
+            filtro_selectize("rf_uo", "UO", uos),
+            filtro_selectize("rf_fonte", "Fonte de Recursos", fontes),
             ui.input_action_button("rf_limpar", "Limpar filtros", class_="btn btn-outline-secondary"),
             class_="filtros",
         ),

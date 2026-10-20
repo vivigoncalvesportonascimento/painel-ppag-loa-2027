@@ -9,6 +9,7 @@ from utils import formatar_bilhoes
 def panel_ui():
     return ui.nav_panel(
         "Despesa Fiscal",
+        ui.div("Despesa Fiscal", class_="titulo-pagina"),
         ui.div(
             ui.output_ui("df_card"),
             ui.div(ui.output_ui("df_grafico_poder"), class_="grafico-card"),

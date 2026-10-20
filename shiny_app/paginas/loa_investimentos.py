@@ -2,7 +2,7 @@ import pandas as pd
 from shiny import reactive, render, ui
 
 import dados_app as dados
-from componentes import botoes_exportar, card_kpi
+from componentes import botoes_exportar, card_kpi, filtro_selectize
 from exportar import csv_bytes, xlsx_bytes
 from utils import formatar_bilhoes, formatar_moeda
 
@@ -12,10 +12,9 @@ _NOME_ARQUIVO = "loa_investimentos"
 def panel_ui():
     return ui.nav_panel(
         "LOA Investimentos",
+        ui.div("LOA Investimentos", class_="titulo-pagina"),
         ui.div(
-            ui.input_selectize(
-                "li_uo", "Unidade Orçamentária", choices=[""] + dados.loa_investimentos_uo, selected=""
-            ),
+            filtro_selectize("li_uo", "Unidade Orçamentária", dados.loa_investimentos_uo),
             ui.input_action_button("li_limpar", "Limpar filtros", class_="btn btn-outline-secondary"),
             class_="filtros",
         ),

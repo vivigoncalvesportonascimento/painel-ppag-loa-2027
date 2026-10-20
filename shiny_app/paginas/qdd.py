@@ -2,7 +2,7 @@ import pandas as pd
 from shiny import reactive, render, ui
 
 import dados_app as dados
-from componentes import botoes_exportar
+from componentes import botoes_exportar, filtro_selectize
 from exportar import csv_bytes, xlsx_bytes
 from utils import formatar_moeda
 
@@ -33,11 +33,12 @@ def panel_ui():
     campos = []
     for id_input, coluna, rotulo in _FILTROS:
         opcoes = sorted(dados.qdd[coluna].unique())
-        campos.append(ui.input_selectize(id_input, rotulo, choices=[""] + opcoes, selected=""))
+        campos.append(filtro_selectize(id_input, rotulo, opcoes))
     campos.append(ui.input_action_button("qdd_limpar", "Limpar filtros", class_="btn btn-outline-secondary"))
 
     return ui.nav_panel(
         "QDD",
+        ui.div("QDD", class_="titulo-pagina"),
         ui.p("Quadro de Detalhamento da Despesa", class_="text-muted"),
         ui.div(*campos, class_="filtros"),
         ui.div(

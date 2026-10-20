@@ -9,6 +9,7 @@ from utils import formatar_bilhoes
 def panel_ui():
     return ui.nav_panel(
         "Visão Geral",
+        ui.div("Visão Geral", class_="titulo-pagina"),
         ui.p("Dados gerais do orçamento 2027", class_="text-muted"),
         ui.output_ui("vg_cards"),
         ui.div(

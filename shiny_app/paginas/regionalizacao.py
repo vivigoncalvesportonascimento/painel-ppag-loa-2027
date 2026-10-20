@@ -3,7 +3,7 @@ import plotly.graph_objects as go
 from shiny import reactive, render, ui
 
 import dados_app as dados
-from componentes import botoes_exportar, plotly_html
+from componentes import botoes_exportar, filtro_selectize, plotly_html
 from exportar import csv_bytes, xlsx_bytes
 from utils import formatar_moeda
 
@@ -23,14 +23,13 @@ def panel_ui():
 
     return ui.nav_panel(
         "Regionalização",
+        ui.div("Regionalização", class_="titulo-pagina"),
         ui.div(
-            ui.input_selectize("rg_uo", "Unidade Orçamentária", choices=[""] + uos, selected=""),
-            ui.input_selectize("rg_acao", "Ação Orçamentária", choices=[""] + acoes, selected=""),
-            ui.input_selectize(
-                "rg_regiao", "Região Geográfica Intermediária", choices=[""] + regioes, selected=""
-            ),
-            ui.input_selectize("rg_municipio", "Município", choices=[""] + municipios, selected=""),
-            ui.input_selectize("rg_produto", "Produto", choices=[""] + produtos, selected=""),
+            filtro_selectize("rg_uo", "Unidade Orçamentária", uos),
+            filtro_selectize("rg_acao", "Ação Orçamentária", acoes),
+            filtro_selectize("rg_regiao", "Região Geográfica Intermediária", regioes),
+            filtro_selectize("rg_municipio", "Município", municipios, "Todos"),
+            filtro_selectize("rg_produto", "Produto", produtos, "Todos"),
             ui.input_action_button("rg_limpar", "Limpar filtros", class_="btn btn-outline-secondary"),
             class_="filtros",
         ),

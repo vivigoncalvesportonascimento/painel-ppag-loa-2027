@@ -2,7 +2,7 @@ import pandas as pd
 from shiny import reactive, render, ui
 
 import dados_app as dados
-from componentes import plotly_html
+from componentes import filtro_selectize, plotly_html
 from graficos import grafico_por_ano
 from utils import formatar_moeda
 
@@ -14,9 +14,10 @@ def panel_ui():
     acoes = sorted(dados.acao_orcamentaria["acao"].unique())
     return ui.nav_panel(
         "Ação Orçamentária",
+        ui.div("Ação Orçamentária", class_="titulo-pagina"),
         ui.div(
-            ui.input_selectize("ac_uo", "Unidade Orçamentária", choices=[""] + uos, selected=""),
-            ui.input_selectize("ac_acao", "Ação Orçamentária", choices=[""] + acoes, selected=""),
+            filtro_selectize("ac_uo", "Unidade Orçamentária", uos, "Selecione..."),
+            filtro_selectize("ac_acao", "Ação Orçamentária", acoes, "Selecione..."),
             ui.input_action_button("ac_limpar", "Limpar filtros", class_="btn btn-outline-secondary"),
             class_="filtros",
         ),

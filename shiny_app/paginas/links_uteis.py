@@ -69,7 +69,12 @@ def panel_ui():
         )
         for titulo, descricao, link in _LINKS
     ]
-    return ui.nav_panel("Links Úteis", ui.div(*cards, class_="grade-links"), value="links_uteis")
+    return ui.nav_panel(
+        "Links Úteis",
+        ui.div("Links Úteis", class_="titulo-pagina"),
+        ui.div(*cards, class_="grade-links"),
+        value="links_uteis",
+    )
 
 
 def register_server(input, output, session):

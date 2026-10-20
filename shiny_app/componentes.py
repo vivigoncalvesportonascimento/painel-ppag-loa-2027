@@ -25,6 +25,20 @@ def plotly_head() -> ui.Tag:
     return ui.tags.script(src="https://cdn.plot.ly/plotly-2.35.2.min.js")
 
 
+def filtro_selectize(
+    id: str, label: str, opcoes: list[str], placeholder_vazio: str = "Todas"
+) -> ui.Tag:
+    """Select com busca (`input_selectize` já busca nativamente, mas precisa
+    de 1) um rótulo de texto para a opção em branco — senão ela não aparece
+    na lista de opções — e 2) `placeholder` explícito para mostrar
+    "Pesquisar" na caixa, como no site estático/Observable).
+    """
+    escolhas = {"": placeholder_vazio, **{o: o for o in opcoes}}
+    return ui.input_selectize(
+        id, label, choices=escolhas, selected="", options={"placeholder": "Pesquisar"}
+    )
+
+
 def botoes_exportar(id_csv: str, id_xlsx: str) -> ui.Tag:
     return ui.div(
         ui.download_button(id_csv, "Exportar CSV", class_="botao-exportar"),
