@@ -2,7 +2,15 @@ import pandas as pd
 from shiny import reactive, render, ui
 
 import dados_app as dados
-from componentes import botao_limpar_filtros, botoes_exportar, card_kpi, filtro_selectize, plotly_html
+from componentes import (
+    botao_limpar_filtros,
+    botoes_exportar,
+    card_kpi,
+    estilo_moeda,
+    filtro_selectize,
+    plotly_html,
+    selecao_grafico,
+)
 from exportar import csv_bytes, xlsx_bytes
 from graficos import grafico_absoluto_horizontal
 from utils import formatar_bilhoes, formatar_moeda
@@ -47,8 +55,19 @@ def register_server(input, output, session):
         return df
 
     @reactive.calc
+    def linhas_com_selecao() -> pd.DataFrame:
+        # Clique numa barra do gráfico de categoria econômica filtra o card
+        # e a tabela, mas não o próprio gráfico (que continua mostrando
+        # todas as categorias, para o usuário poder trocar de seleção).
+        df = linhas_filtradas()
+        categoria = selecao_grafico(input, "rf_grafico")
+        if categoria:
+            df = df[df["categoria_receita_desc"] == categoria]
+        return df
+
+    @reactive.calc
     def tabela_uo_fonte() -> pd.DataFrame:
-        agrupado = linhas_filtradas().groupby(["UO", "fonte_de_recursos"])["valor"].sum().reset_index()
+        agrupado = linhas_com_selecao().groupby(["UO", "fonte_de_recursos"])["valor"].sum().reset_index()
         agrupado = agrupado.sort_values("valor", ascending=False)
         return pd.DataFrame(
             {
@@ -66,7 +85,7 @@ def register_server(input, output, session):
 
     @render.ui
     def rf_card():
-        total = linhas_filtradas()["valor"].sum()
+        total = linhas_com_selecao()["valor"].sum()
         return card_kpi("Receita Total (R$) - 2027", formatar_bilhoes(total))
 
     @render.ui
@@ -74,11 +93,14 @@ def register_server(input, output, session):
         fig = grafico_absoluto_horizontal(
             linhas_filtradas(), "categoria_receita_desc", "valor", "Receitas por Categoria Econômica"
         )
-        return plotly_html(fig)
+        return plotly_html(fig, id="rf_grafico", selecionavel=True)
 
     @render.data_frame
     def rf_tabela():
-        return render.DataGrid(tabela_uo_fonte(), width="100%", height="420px", summary=False)
+        df = tabela_uo_fonte()
+        return render.DataGrid(
+            df, width="100%", height="420px", summary=False, styles=estilo_moeda(df, "LOA 2027 (R$)")
+        )
 
     @render.download_button(filename=f"{_NOME_ARQUIVO}.csv", label="Exportar CSV")
     def rf_csv():

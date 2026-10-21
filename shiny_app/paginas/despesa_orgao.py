@@ -2,7 +2,7 @@ import pandas as pd
 from shiny import reactive, render, ui
 
 import dados_app as dados
-from componentes import botao_limpar_filtros, card_kpi, filtro_selectize, plotly_html
+from componentes import botao_limpar_filtros, card_kpi, filtro_selectize, plotly_html, selecao_grafico
 from graficos import grafico_absoluto_vertical
 from utils import formatar_bilhoes, formatar_moeda
 
@@ -55,6 +55,17 @@ def register_server(input, output, session):
             df = df[df["uo_label"] == input.do_uo()]
         return df
 
+    @reactive.calc
+    def base_com_selecao() -> pd.DataFrame:
+        # Clique numa barra do gráfico "Despesa por Grupo" filtra o card e as
+        # listas, mas não o próprio gráfico (que continua mostrando todos os
+        # grupos, para o usuário poder trocar de seleção).
+        df = base_filtrada()
+        grupo = selecao_grafico(input, "do_grafico")
+        if grupo:
+            df = df[df["grupo_despesa_descricao"] == grupo]
+        return df
+
     @reactive.effect
     @reactive.event(input.do_limpar)
     def _limpar():
@@ -62,23 +73,23 @@ def register_server(input, output, session):
 
     @render.ui
     def do_card():
-        total = base_filtrada()["valor"].sum()
+        total = base_com_selecao()["valor"].sum()
         return card_kpi("Despesa Total (R$) - 2027", formatar_bilhoes(total))
 
     @render.ui
     def do_grafico():
         fig = grafico_absoluto_vertical(base_filtrada(), "grupo_despesa_descricao", "valor", "Despesa por Grupo")
-        return plotly_html(fig)
+        return plotly_html(fig, id="do_grafico", selecionavel=True)
 
     @render.ui
     def do_lista_acao():
-        agrupado = base_filtrada().groupby("acao_label")["valor"].sum().sort_values(ascending=False)
+        agrupado = base_com_selecao().groupby("acao_label")["valor"].sum().sort_values(ascending=False)
         itens = [(label, formatar_moeda(valor)) for label, valor in agrupado.items()]
         return _lista_cartao(itens)
 
     @render.ui
     def do_lista_fonte():
-        agrupado = base_filtrada().groupby("fonte_label")["valor"].sum()
+        agrupado = base_com_selecao().groupby("fonte_label")["valor"].sum()
         total = agrupado.sum()
         percentuais = (agrupado / total * 100).sort_values(ascending=False)
         itens = [(label, f"{valor:.1f}%") for label, valor in percentuais.items()]

@@ -17,10 +17,7 @@ def _ler(nome: str) -> pd.DataFrame:
 cards = _ler("cards.csv").iloc[0].to_dict()
 visao_geral = _ler("visao_geral.csv")
 
-despesa_fiscal_poder = _ler("despesa_fiscal_poder.csv")
-despesa_fiscal_grupo = _ler("despesa_fiscal_grupo.csv")
-despesa_fiscal_funcao = _ler("despesa_fiscal_funcao.csv")
-despesa_fiscal_card_total = float(_ler("despesa_fiscal_card.csv").iloc[0]["card_total"])
+despesa_fiscal_detalhe = _ler("despesa_fiscal_detalhe.csv")
 
 acao_orcamentaria = _ler("acao_orcamentaria.csv")
 

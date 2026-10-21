@@ -110,31 +110,22 @@ def _gerar_visao_geral() -> None:
 
 def _gerar_despesa_fiscal() -> None:
     despesa = carregar_qdd_fiscal()
-    poder = despesa.merge(carregar_auxiliar_poder(), left_on="COD_UO", right_on="uo_cod")
-    grupo = despesa.merge(
-        carregar_auxiliar_grupo_despesa(), left_on="GRUPO_DESPESA", right_on="grupo_despesa_cod"
-    )
-    funcao = despesa.merge(carregar_auxiliar_funcao(), left_on="FUNCAO", right_on="funcao_cod")
 
-    _salvar(
-        poder.rename(columns={COLUNA_VALOR_DESPESA_FISCAL: "valor"})[["uo_poder", "valor"]],
-        "despesa_fiscal_poder.csv",
+    # Base com as 3 dimensões (poder, grupo, função) na mesma linha -- usada
+    # pelo painel Shiny tanto para montar os 3 gráficos quanto para o
+    # crossfilter entre eles (clicar numa barra de uma dimensão filtra as
+    # outras duas, recalculadas a partir do mesmo subconjunto de linhas).
+    detalhe = (
+        despesa.merge(carregar_auxiliar_poder(), left_on="COD_UO", right_on="uo_cod")
+        .merge(carregar_auxiliar_grupo_despesa(), left_on="GRUPO_DESPESA", right_on="grupo_despesa_cod")
+        .merge(carregar_auxiliar_funcao(), left_on="FUNCAO", right_on="funcao_cod")
     )
     _salvar(
-        grupo.rename(columns={COLUNA_VALOR_DESPESA_FISCAL: "valor"})[
-            ["grupo_despesa_descricao", "valor"]
+        detalhe.rename(columns={COLUNA_VALOR_DESPESA_FISCAL: "valor"})[
+            ["uo_poder", "grupo_despesa_descricao", "funcao_descricao", "valor"]
         ],
-        "despesa_fiscal_grupo.csv",
+        "despesa_fiscal_detalhe.csv",
     )
-    _salvar(
-        funcao.rename(columns={COLUNA_VALOR_DESPESA_FISCAL: "valor"})[
-            ["funcao_descricao", "valor"]
-        ],
-        "despesa_fiscal_funcao.csv",
-    )
-
-    df_total = pd.DataFrame([{"card_total": float(despesa[COLUNA_VALOR_DESPESA_FISCAL].sum())}])
-    _salvar(df_total, "despesa_fiscal_card.csv")
 
 
 def _gerar_acao_orcamentaria() -> None:

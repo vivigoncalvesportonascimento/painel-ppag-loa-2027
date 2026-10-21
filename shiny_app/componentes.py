@@ -2,20 +2,72 @@
 
 import faicons
 from shiny import reactive, ui
+from shiny.types import SilentException
 
 _TEMA_CARD = ui.value_box_theme(fg="#ffffff", bg="#0047ab")
 
 
-def plotly_html(fig) -> ui.HTML:
+def selecao_grafico(input, id: str):
+    """Lê o valor de um input de seleção de gráfico (`<id>_selecionado`,
+    criado por `plotly_html(..., id=id, selecionavel=True)`).
+
+    Antes do primeiro clique, esse input nunca foi definido pelo cliente —
+    chamar `input.<id>_selecionado()` direto levanta `SilentException` (API
+    do Shiny para "ainda não tem valor"), o que faria QUALQUER saída que
+    dependesse dele ficar em branco silenciosamente, mesmo sem nenhum
+    clique ter acontecido. Aqui isso é tratado como "nada selecionado"
+    (`None`), que é o comportamento desejado.
+    """
+    try:
+        return getattr(input, f"{id}_selecionado")()
+    except SilentException:
+        return None
+
+
+def plotly_html(fig, id: str | None = None, selecionavel: bool = False) -> ui.HTML:
     """Converte uma figura Plotly em HTML embutível via `@render.ui`.
 
     Plotly.js é carregado uma única vez (CDN, incluído no <head> do app via
     `plotly_head()`); aqui só o HTML/JS específico da figura é gerado.
+
+    `selecionavel=True` (exige `id`) liga um clique numa barra a um input
+    reativo `<id>_selecionado` (lido via `input.<id>_selecionado()`),
+    usado para o crossfilter entre visuais da mesma página -- clicar de
+    novo na mesma barra desseleciona (`None`). Depende de `custom_data`
+    com a categoria "crua" ter sido passado ao `px.bar(...)` em
+    `graficos.py` (necessário pois `grafico_absoluto_vertical` quebra o
+    rótulo do eixo em várias linhas, então o texto do eixo clicado não
+    bate com o valor original da coluna).
+
+    O `<div>` do próprio Plotly usa um id distinto de `id` (sufixo
+    `__plot`), já que `id` é o id do `<div>` de saída do `@render.ui` que
+    o envolve (`ui.output_ui(id)`) -- usar o mesmo id nos dois quebra o
+    `document.getElementById` (pega o elemento errado).
     """
+    post_script = None
+    div_id = f"{id}__plot" if id else None
+    if selecionavel and id:
+        post_script = f"""
+var el = document.getElementById("{div_id}");
+var ultimoClique = null;
+el.on("plotly_click", function(dados) {{
+    var ponto = dados.points[0];
+    var valor = (ponto.customdata && ponto.customdata.length) ? ponto.customdata[0] : ponto.label;
+    if (valor === ultimoClique) {{
+        ultimoClique = null;
+        Shiny.setInputValue("{id}_selecionado", null, {{priority: "event"}});
+    }} else {{
+        ultimoClique = valor;
+        Shiny.setInputValue("{id}_selecionado", valor, {{priority: "event"}});
+    }}
+}});
+"""
     return ui.HTML(
         fig.to_html(
             include_plotlyjs=False,
             full_html=False,
+            div_id=div_id,
+            post_script=post_script,
             config={"displayModeBar": False, "responsive": True},
         )
     )

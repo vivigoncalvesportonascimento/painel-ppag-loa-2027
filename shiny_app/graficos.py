@@ -36,6 +36,7 @@ def grafico_percentual_horizontal(
         text=percentual_df["percentual"].map(lambda v: f"{v:.1f}%"),
         labels={"percentual": "% do total", coluna_categoria: ""},
         color_discrete_sequence=["#0047AB"],
+        custom_data=[coluna_categoria],
     )
     maior_percentual = percentual_df["percentual"].max()
 
@@ -63,6 +64,7 @@ def grafico_absoluto_vertical(
     """
     agrupado = df.groupby(coluna_categoria)[coluna_valor].sum().reset_index()
     agrupado = agrupado.sort_values(coluna_valor, ascending=False)
+    agrupado["_rotulo_original"] = agrupado[coluna_categoria]
     agrupado[coluna_categoria] = agrupado[coluna_categoria].map(quebrar_rotulo)
 
     fig = px.bar(
@@ -73,6 +75,7 @@ def grafico_absoluto_vertical(
         text=agrupado[coluna_valor].map(formatar_bi_arredondado),
         labels={coluna_valor: "Valor (R$)", coluna_categoria: ""},
         color_discrete_sequence=["#0047AB"],
+        custom_data=["_rotulo_original"],
     )
     valor_max = agrupado[coluna_valor].max()
 
@@ -107,6 +110,7 @@ def grafico_absoluto_horizontal(
         text=agrupado[coluna_valor].map(formatar_bi_arredondado),
         labels={coluna_valor: "Valor (R$)", coluna_categoria: ""},
         color_discrete_sequence=[_COR_MARCA],
+        custom_data=[coluna_categoria],
     )
     valor_min = min(0, agrupado[coluna_valor].min())
     valor_max = agrupado[coluna_valor].max()
