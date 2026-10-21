@@ -24,6 +24,43 @@ def selecao_grafico(input, id: str):
         return None
 
 
+def script_limpar_selecao_grafico() -> ui.Tag:
+    """Registra (uma única vez, no <head> do app) o handler que permite ao
+    servidor desmarcar a seleção de um gráfico clicável a partir de um
+    botão "Limpar filtros" (ver `limpar_selecao_graficos()`).
+
+    `<id>_selecionado` é um input "ad-hoc" (só existe por causa do
+    `Shiny.setInputValue` feito no clique, sem elemento de UI próprio),
+    então não existe um `ui.update_*` pronto para ele -- a única forma de
+    zerá-lo a partir do servidor é mandar o cliente fazer isso, daí a
+    mensagem customizada.
+    """
+    return ui.tags.script(
+        """
+(function registrar() {
+  if (window.Shiny && Shiny.addCustomMessageHandler) {
+    Shiny.addCustomMessageHandler("limpar_selecao_grafico", function(msg) {
+      (msg.ids || []).forEach(function(id) {
+        Shiny.setInputValue(id + "_selecionado", null, {priority: "event"});
+      });
+    });
+  } else {
+    setTimeout(registrar, 50);
+  }
+})();
+"""
+    )
+
+
+async def limpar_selecao_graficos(session, *ids: str) -> None:
+    """Desmarca a seleção de um ou mais gráficos clicáveis (`plotly_html(...,
+    id=id, selecionavel=True)`) a partir do servidor -- chamar no efeito do
+    botão "Limpar filtros" da página, junto com os `ui.update_selectize(...)`
+    dos demais filtros.
+    """
+    await session.send_custom_message("limpar_selecao_grafico", {"ids": list(ids)})
+
+
 def plotly_html(fig, id: str | None = None, selecionavel: bool = False) -> ui.HTML:
     """Converte uma figura Plotly em HTML embutível via `@render.ui`.
 

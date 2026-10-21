@@ -8,6 +8,7 @@ from componentes import (
     card_kpi,
     estilo_moeda,
     filtro_selectize,
+    limpar_selecao_graficos,
     plotly_html,
     selecao_grafico,
 )
@@ -79,9 +80,10 @@ def register_server(input, output, session):
 
     @reactive.effect
     @reactive.event(input.rf_limpar)
-    def _limpar():
+    async def _limpar():
         ui.update_selectize("rf_uo", selected="")
         ui.update_selectize("rf_fonte", selected="")
+        await limpar_selecao_graficos(session, "rf_grafico")
 
     @render.ui
     def rf_card():

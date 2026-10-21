@@ -1,7 +1,7 @@
 from shiny import reactive, render, ui
 
 import dados_app as dados
-from componentes import card_kpi, plotly_html, selecao_grafico
+from componentes import botao_limpar_filtros, card_kpi, limpar_selecao_graficos, plotly_html, selecao_grafico
 from graficos import grafico_percentual_horizontal
 from utils import formatar_bilhoes
 
@@ -11,6 +11,7 @@ def panel_ui():
         "Visão Geral",
         ui.div("Visão Geral", class_="titulo-pagina"),
         ui.p("Dados gerais do orçamento 2027", class_="text-muted"),
+        ui.div(botao_limpar_filtros("vg_limpar"), class_="filtros"),
         ui.output_ui("vg_cards"),
         ui.div(
             ui.div(ui.output_ui("vg_grafico_area"), class_="grafico-card"),
@@ -22,6 +23,11 @@ def panel_ui():
 
 
 def register_server(input, output, session):
+    @reactive.effect
+    @reactive.event(input.vg_limpar)
+    async def _limpar():
+        await limpar_selecao_graficos(session, "vg_grafico_area", "vg_grafico_setor")
+
     @render.ui
     def vg_cards():
         c = dados.cards

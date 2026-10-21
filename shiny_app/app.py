@@ -9,7 +9,7 @@ from pathlib import Path
 
 from shiny import App, ui
 
-from componentes import plotly_head
+from componentes import plotly_head, script_limpar_selecao_grafico
 from paginas import (
     acao_orcamentaria,
     despesa_fiscal,
@@ -51,6 +51,7 @@ app_ui = ui.page_navbar(
     title="Painel PPAG-LOA 2027",
     header=ui.tags.head(
         plotly_head(),
+        script_limpar_selecao_grafico(),
         ui.tags.link(rel="stylesheet", href="estilo.css"),
     ),
     footer=ui.div(
