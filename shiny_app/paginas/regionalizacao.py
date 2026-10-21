@@ -3,7 +3,7 @@ import plotly.graph_objects as go
 from shiny import reactive, render, ui
 
 import dados_app as dados
-from componentes import botoes_exportar, filtro_selectize, plotly_html
+from componentes import botao_limpar_filtros, botoes_exportar, filtro_selectize, plotly_html
 from exportar import csv_bytes, xlsx_bytes
 from utils import formatar_moeda
 
@@ -30,7 +30,7 @@ def panel_ui():
             filtro_selectize("rg_regiao", "Região Geográfica Intermediária", regioes),
             filtro_selectize("rg_municipio", "Município", municipios, "Todos"),
             filtro_selectize("rg_produto", "Produto", produtos, "Todos"),
-            ui.input_action_button("rg_limpar", "Limpar filtros", class_="btn btn-outline-secondary"),
+            botao_limpar_filtros("rg_limpar"),
             class_="filtros",
         ),
         ui.div(ui.output_ui("rg_mapa"), class_="mapa-card"),
@@ -162,7 +162,7 @@ def register_server(input, output, session):
 
     @render.data_frame
     def rg_tabela():
-        return render.DataGrid(tabela_formatada(), height="440px", summary=False)
+        return render.DataGrid(tabela_formatada(), width="100%", height="440px", summary=False)
 
     @render.download_button(filename=f"{_NOME_ARQUIVO}.csv")
     def rg_csv():

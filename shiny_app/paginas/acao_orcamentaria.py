@@ -2,7 +2,7 @@ import pandas as pd
 from shiny import reactive, render, ui
 
 import dados_app as dados
-from componentes import filtro_selectize, plotly_html
+from componentes import botao_limpar_filtros, filtro_selectize, plotly_html
 from graficos import grafico_por_ano
 from utils import formatar_moeda
 
@@ -18,78 +18,26 @@ def panel_ui():
         ui.div(
             filtro_selectize("ac_uo", "Unidade Orçamentária", uos, "Selecione..."),
             filtro_selectize("ac_acao", "Ação Orçamentária", acoes, "Selecione..."),
-            ui.input_action_button("ac_limpar", "Limpar filtros", class_="btn btn-outline-secondary"),
+            botao_limpar_filtros("ac_limpar"),
             class_="filtros",
         ),
-        ui.div(
-            ui.div("Ação Orçamentária", class_="rotulo"),
-            ui.div(ui.output_ui("ac_valor_acao"), class_="valor"),
-            class_="acao-card acao-card--destaque",
-        ),
-        ui.div(
-            ui.div(
-                ui.div("Unidade Orçamentária", class_="rotulo"),
-                ui.div(ui.output_ui("ac_valor_uo"), class_="valor"),
-                class_="acao-card",
-            ),
-            ui.div(
-                ui.div("Programa", class_="rotulo"),
-                ui.div(ui.output_ui("ac_valor_programa"), class_="valor"),
-                class_="acao-card",
-            ),
-            style="display:grid;grid-template-columns:3fr 7fr;gap:1rem;",
-        ),
-        ui.div(
-            ui.div(
-                ui.div("Finalidade da Ação", class_="rotulo"),
-                ui.div(ui.output_ui("ac_valor_finalidade"), class_="valor"),
-                class_="acao-card",
-            ),
-            ui.div(
-                ui.div("Público-Alvo", class_="rotulo"),
-                ui.div(ui.output_ui("ac_valor_publico"), class_="valor"),
-                class_="acao-card",
-            ),
-            style="display:grid;grid-template-columns:7fr 3fr;gap:1rem;",
-        ),
-        ui.div(
-            ui.div(
-                ui.div("Identificador de Ação Governamental (IAG)", class_="rotulo"),
-                ui.div(ui.output_ui("ac_valor_iag"), class_="valor"),
-                class_="acao-card",
-            ),
-            ui.div(
-                ui.div("Produto", class_="rotulo"),
-                ui.div(ui.output_ui("ac_valor_produto"), class_="valor"),
-                class_="acao-card",
-            ),
-            ui.div(
-                ui.div("Unidade de Medida (Produto)", class_="rotulo"),
-                ui.div(ui.output_ui("ac_valor_unidade"), class_="valor"),
-                class_="acao-card",
-            ),
-            style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;",
-        ),
-        ui.div(
-            ui.div(ui.output_ui("ac_grafico_fisica"), class_="grafico-card"),
-            ui.div(ui.output_ui("ac_grafico_orcamentaria"), class_="grafico-card"),
-            class_="grade-graficos",
-        ),
+        ui.output_ui("ac_conteudo"),
         value="acao_orcamentaria",
     )
 
 
 def register_server(input, output, session):
     @reactive.calc
-    def linha_selecionada() -> pd.Series:
+    def linha_selecionada() -> pd.Series | None:
+        if not input.ac_acao():
+            return None
         df = dados.acao_orcamentaria
         filtrado = df
         if input.ac_uo():
             filtrado = filtrado[filtrado["uo"] == input.ac_uo()]
-        if input.ac_acao():
-            filtrado = filtrado[filtrado["acao"] == input.ac_acao()]
+        filtrado = filtrado[filtrado["acao"] == input.ac_acao()]
         if filtrado.empty:
-            filtrado = df
+            return None
         return filtrado.sort_values(["uo", "acao"]).iloc[0]
 
     @reactive.effect
@@ -99,47 +47,74 @@ def register_server(input, output, session):
         ui.update_selectize("ac_acao", selected="")
 
     @render.ui
-    def ac_valor_acao():
-        return linha_selecionada()["acao"]
-
-    @render.ui
-    def ac_valor_uo():
-        return linha_selecionada()["uo"]
-
-    @render.ui
-    def ac_valor_programa():
-        return linha_selecionada()["programa"]
-
-    @render.ui
-    def ac_valor_finalidade():
-        return linha_selecionada()["finalidade"]
-
-    @render.ui
-    def ac_valor_publico():
-        return linha_selecionada()["publico_alvo"]
-
-    @render.ui
-    def ac_valor_iag():
-        return linha_selecionada()["iag"]
-
-    @render.ui
-    def ac_valor_produto():
-        return linha_selecionada()["produto"]
-
-    @render.ui
-    def ac_valor_unidade():
-        return linha_selecionada()["unidade_medida"]
-
-    @render.ui
-    def ac_grafico_fisica():
+    def ac_conteudo():
         linha = linha_selecionada()
-        valores = [float(linha[f"fisica_{ano}"]) for ano in _ANOS]
-        fig = grafico_por_ano(_ANOS, valores, "Previsão Física", lambda v: f"{v:,.0f}".replace(",", "."))
-        return plotly_html(fig)
+        if linha is None:
+            return ui.div(
+                "Selecione uma ação orçamentária no filtro",
+                class_="mensagem-selecao",
+            )
 
-    @render.ui
-    def ac_grafico_orcamentaria():
-        linha = linha_selecionada()
-        valores = [float(linha[f"orcamentaria_{ano}"]) for ano in _ANOS]
-        fig = grafico_por_ano(_ANOS, valores, "Previsão Orçamentária", formatar_moeda)
-        return plotly_html(fig)
+        valores_fisica = [float(linha[f"fisica_{ano}"]) for ano in _ANOS]
+        fig_fisica = grafico_por_ano(
+            _ANOS, valores_fisica, "Previsão Física", lambda v: f"{v:,.0f}".replace(",", ".")
+        )
+        valores_orcamentaria = [float(linha[f"orcamentaria_{ano}"]) for ano in _ANOS]
+        fig_orcamentaria = grafico_por_ano(_ANOS, valores_orcamentaria, "Previsão Orçamentária", formatar_moeda)
+
+        return ui.TagList(
+            ui.div(
+                ui.div("Ação Orçamentária", class_="rotulo"),
+                ui.div(linha["acao"], class_="valor"),
+                class_="acao-card acao-card--destaque",
+            ),
+            ui.div(
+                ui.div(
+                    ui.div("Unidade Orçamentária", class_="rotulo"),
+                    ui.div(linha["uo"], class_="valor"),
+                    class_="acao-card",
+                ),
+                ui.div(
+                    ui.div("Programa", class_="rotulo"),
+                    ui.div(linha["programa"], class_="valor"),
+                    class_="acao-card",
+                ),
+                style="display:grid;grid-template-columns:3fr 7fr;gap:1rem;",
+            ),
+            ui.div(
+                ui.div(
+                    ui.div("Finalidade da Ação", class_="rotulo"),
+                    ui.div(linha["finalidade"], class_="valor"),
+                    class_="acao-card",
+                ),
+                ui.div(
+                    ui.div("Público-Alvo", class_="rotulo"),
+                    ui.div(linha["publico_alvo"], class_="valor"),
+                    class_="acao-card",
+                ),
+                style="display:grid;grid-template-columns:7fr 3fr;gap:1rem;",
+            ),
+            ui.div(
+                ui.div(
+                    ui.div("Identificador de Ação Governamental (IAG)", class_="rotulo"),
+                    ui.div(linha["iag"], class_="valor"),
+                    class_="acao-card",
+                ),
+                ui.div(
+                    ui.div("Produto", class_="rotulo"),
+                    ui.div(linha["produto"], class_="valor"),
+                    class_="acao-card",
+                ),
+                ui.div(
+                    ui.div("Unidade de Medida (Produto)", class_="rotulo"),
+                    ui.div(linha["unidade_medida"], class_="valor"),
+                    class_="acao-card",
+                ),
+                style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;",
+            ),
+            ui.div(
+                ui.div(plotly_html(fig_fisica), class_="grafico-card"),
+                ui.div(plotly_html(fig_orcamentaria), class_="grafico-card"),
+                class_="grade-graficos",
+            ),
+        )

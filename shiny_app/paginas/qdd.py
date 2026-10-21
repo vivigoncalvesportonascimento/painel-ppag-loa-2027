@@ -2,7 +2,7 @@ import pandas as pd
 from shiny import reactive, render, ui
 
 import dados_app as dados
-from componentes import botoes_exportar, filtro_selectize
+from componentes import botao_limpar_filtros, botoes_exportar, filtro_selectize
 from exportar import csv_bytes, xlsx_bytes
 from utils import formatar_moeda
 
@@ -34,7 +34,7 @@ def panel_ui():
     for id_input, coluna, rotulo in _FILTROS:
         opcoes = sorted(dados.qdd[coluna].unique())
         campos.append(filtro_selectize(id_input, rotulo, opcoes))
-    campos.append(ui.input_action_button("qdd_limpar", "Limpar filtros", class_="btn btn-outline-secondary"))
+    campos.append(botao_limpar_filtros("qdd_limpar"))
 
     return ui.nav_panel(
         "QDD",
@@ -77,7 +77,7 @@ def register_server(input, output, session):
 
     @render.data_frame
     def qdd_tabela():
-        return render.DataGrid(tabela(), height="520px", summary=False)
+        return render.DataGrid(tabela(), width="100%", height="520px", summary=False)
 
     @render.download_button(filename=f"{_NOME_ARQUIVO}.csv")
     def qdd_csv():

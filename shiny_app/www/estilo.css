@@ -148,6 +148,17 @@ outros dois paineis. */
   opacity: 0.9;
 }
 
+/* Variante compacta (Visão Geral): cards mais baixos, sem ícone, para
+sobrar mais espaço vertical para os gráficos abaixo. */
+.card-kpi--compacto {
+  padding: 0.5rem 0.75rem !important;
+  min-height: 0 !important;
+}
+
+.card-kpi--compacto .valor {
+  font-size: 1.2rem;
+}
+
 .linha-card-grafico {
   display: grid;
   grid-template-columns: 1fr 3fr;
@@ -233,6 +244,37 @@ outros dois paineis. */
 .botao-exportar:hover {
   background: var(--cor-divisor-suave) !important;
   border-color: var(--cor-marca) !important;
+}
+
+/* Botão "Limpar filtros" (mesmo visual do site estático/Observable:
+.botao-secundario). */
+.botao-limpar-filtros {
+  appearance: none;
+  border: 1px solid var(--cor-borda) !important;
+  border-radius: 6px !important;
+  background: var(--cor-fundo-card) !important;
+  color: #1f2933 !important;
+  padding: 0.5rem 0.9rem !important;
+  font-size: 0.85rem !important;
+  font-weight: 600;
+}
+
+.botao-limpar-filtros:hover {
+  background: var(--cor-divisor-suave) !important;
+  border-color: var(--cor-marca) !important;
+}
+
+/* Mensagem exibida nas páginas de detalhe (Ação Orçamentária, Programa)
+antes de uma seleção ser feita no filtro correspondente. */
+.mensagem-selecao {
+  background: var(--cor-fundo-card);
+  border-radius: 8px;
+  box-shadow: var(--sombra-card);
+  padding: 2.5rem 1.25rem;
+  text-align: center;
+  color: var(--cor-texto-suave);
+  font-size: 0.95rem;
+  font-weight: 600;
 }
 
 /* Ação Orçamentária / Programa (páginas de detalhe) */

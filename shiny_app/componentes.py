@@ -47,17 +47,29 @@ def botoes_exportar(id_csv: str, id_xlsx: str) -> ui.Tag:
     )
 
 
-def card_kpi(titulo: str, valor: str, icone: str = "coins") -> ui.Tag:
-    """Card de KPI usando o value_box nativo do Shiny (sombra, cor de marca e
-    ícone — mais polido que uma div plana), ainda com as classes `valor`/
-    `titulo` para os testes e para quem quiser reaproveitar o CSS.
+def botao_limpar_filtros(id: str) -> ui.Tag:
+    """Botão "Limpar filtros" com o mesmo visual do site estático/Observable
+    (`.botao-secundario`): borda sutil, fundo branco, texto em negrito.
     """
+    return ui.input_action_button(id, "Limpar filtros", class_="botao-limpar-filtros")
+
+
+def card_kpi(
+    titulo: str, valor: str, icone: str | None = "coins", compacto: bool = False
+) -> ui.Tag:
+    """Card de KPI usando o value_box nativo do Shiny (sombra, cor de marca e
+    ícone opcional — mais polido que uma div plana), ainda com as classes
+    `valor`/`titulo` para os testes e para quem quiser reaproveitar o CSS.
+
+    `compacto=True` reduz a altura vertical do card (usado na Visão Geral).
+    """
+    classes = "card-kpi" + (" card-kpi--compacto" if compacto else "")
     return ui.value_box(
         ui.span(titulo, class_="titulo"),
         ui.span(valor, class_="valor"),
-        showcase=faicons.icon_svg(icone),
+        showcase=faicons.icon_svg(icone) if icone else None,
         showcase_layout="left center",
         theme=_TEMA_CARD,
-        class_="card-kpi",
+        class_=classes,
         full_screen=False,
     )

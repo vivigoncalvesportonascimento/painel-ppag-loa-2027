@@ -2,7 +2,7 @@ import pandas as pd
 from shiny import reactive, render, ui
 
 import dados_app as dados
-from componentes import botoes_exportar, card_kpi, filtro_selectize
+from componentes import botao_limpar_filtros, botoes_exportar, card_kpi, filtro_selectize
 from exportar import csv_bytes, xlsx_bytes
 from utils import formatar_bilhoes, formatar_moeda
 
@@ -15,7 +15,7 @@ def panel_ui():
         ui.div("LOA Investimentos", class_="titulo-pagina"),
         ui.div(
             filtro_selectize("li_uo", "Unidade Orçamentária", dados.loa_investimentos_uo),
-            ui.input_action_button("li_limpar", "Limpar filtros", class_="btn btn-outline-secondary"),
+            botao_limpar_filtros("li_limpar"),
             class_="filtros",
         ),
         ui.div(
@@ -76,7 +76,7 @@ def register_server(input, output, session):
 
     @render.data_frame
     def li_tabela():
-        return render.DataGrid(tabela(), height="420px", summary=False)
+        return render.DataGrid(tabela(), width="100%", height="420px", summary=False)
 
     @render.download_button(filename=f"{_NOME_ARQUIVO}.csv")
     def li_csv():

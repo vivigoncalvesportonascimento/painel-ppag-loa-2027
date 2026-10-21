@@ -2,7 +2,7 @@ import pandas as pd
 from shiny import reactive, render, ui
 
 import dados_app as dados
-from componentes import card_kpi, filtro_selectize, plotly_html
+from componentes import botao_limpar_filtros, card_kpi, filtro_selectize, plotly_html
 from graficos import grafico_absoluto_vertical
 from utils import formatar_bilhoes, formatar_moeda
 
@@ -14,7 +14,7 @@ def panel_ui():
         ui.div("Despesa por Órgão", class_="titulo-pagina"),
         ui.div(
             filtro_selectize("do_uo", "Unidade Orçamentária", uos),
-            ui.input_action_button("do_limpar", "Limpar filtros", class_="btn btn-outline-secondary"),
+            botao_limpar_filtros("do_limpar"),
             class_="filtros",
         ),
         ui.div(

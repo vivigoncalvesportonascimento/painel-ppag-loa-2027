@@ -26,14 +26,15 @@ def register_server(input, output, session):
     def vg_cards():
         c = dados.cards
         itens = [
-            ("Previsão 2027 - Orçamento Fiscal", formatar_bilhoes(c["total_fiscal"]), "sack-dollar"),
-            ("Previsão 2027 - Orçamento de Investimentos", formatar_bilhoes(c["total_investimento"]), "chart-line"),
-            ("Quantidade de Programas", f"{int(c['qtd_programas']):,}".replace(",", "."), "diagram-project"),
-            ("Quantidade de Ações", f"{int(c['qtd_acoes']):,}".replace(",", "."), "bolt"),
-            ("Projetos Estratégicos", f"{int(c['qtd_projetos_estrategicos']):,}".replace(",", "."), "flag"),
+            ("Previsão 2027 - Orçamento Fiscal", formatar_bilhoes(c["total_fiscal"])),
+            ("Previsão 2027 - Orçamento de Investimentos", formatar_bilhoes(c["total_investimento"])),
+            ("Quantidade de Programas", f"{int(c['qtd_programas']):,}".replace(",", ".")),
+            ("Quantidade de Ações", f"{int(c['qtd_acoes']):,}".replace(",", ".")),
+            ("Projetos Estratégicos", f"{int(c['qtd_projetos_estrategicos']):,}".replace(",", ".")),
         ]
         return ui.div(
-            *[card_kpi(titulo, valor, icone) for titulo, valor, icone in itens], class_="grade-cards"
+            *[card_kpi(titulo, valor, icone=None, compacto=True) for titulo, valor in itens],
+            class_="grade-cards",
         )
 
     @render.ui
