@@ -126,7 +126,7 @@ def filtro_selectize(
 ) -> ui.Tag:
     """Select com busca (`input_selectize` já busca nativamente, mas precisa
     de `placeholder` explícito para mostrar "Pesquisar" na caixa, como no
-    site estático/Observable).
+    site estático).
     """
     return ui.input_selectize(
         id,
@@ -190,7 +190,7 @@ def botoes_exportar(id_csv: str, id_xlsx: str) -> ui.Tag:
 
 
 def botao_limpar_filtros(id: str) -> ui.Tag:
-    """Botão "Limpar filtros" com o mesmo visual do site estático/Observable
+    """Botão "Limpar filtros" com o mesmo visual do site estático
     (`.botao-secundario`): borda sutil, fundo branco, texto em negrito.
     """
     return ui.input_action_button(id, "Limpar filtros", class_="botao-limpar-filtros")

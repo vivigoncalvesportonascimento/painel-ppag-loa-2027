@@ -1,8 +1,8 @@
 """Painel PPAG-LOA 2027 — versão Shiny for Python / Shinylive.
 
 Mesmos dados, mesmas regras de negócio e mesmas funcionalidades (filtros,
-gráficos, mapa, tabelas com exportação CSV/Excel) das versões em site
-estático e Observable Framework — ver ../docs/premissas.md.
+gráficos, mapa, tabelas com exportação CSV/Excel) da versão em site
+estático — ver ../docs/premissas.md.
 """
 
 from pathlib import Path
@@ -61,13 +61,6 @@ app_ui = ui.page_navbar(
             ui.a(
                 "painel publicado no GitHub Pages",
                 href="https://vivigoncalvesportonascimento.github.io/painel-ppag-loa-2027/",
-                target="_blank",
-                rel="noopener noreferrer",
-            ),
-            " e da ",
-            ui.a(
-                "versão Observable Framework",
-                href="https://vivigoncalvesportonascimento.github.io/painel-ppag-loa-2027/observable/",
                 target="_blank",
                 rel="noopener noreferrer",
             ),

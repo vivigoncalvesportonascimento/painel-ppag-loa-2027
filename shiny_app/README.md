@@ -1,9 +1,9 @@
 # Painel PPAG-LOA 2027 — versão Shiny for Python + Shinylive
 
-Mesmo painel do site estático (`../site_estatico/`) e da versão Observable
-Framework (`../observable/`), reconstruído com [Shiny for
-Python](https://shiny.posit.co/py/) + [Shinylive](https://shiny.posit.co/py/docs/shinylive.html)
-para comparação entre ferramentas. Mesmos dados, mesmas regras de negócio
+Mesmo painel do site estático (`../site_estatico/`), reconstruído com
+[Shiny for Python](https://shiny.posit.co/py/) +
+[Shinylive](https://shiny.posit.co/py/docs/shinylive.html) para comparação
+entre ferramentas. Mesmos dados, mesmas regras de negócio
 (ver `../docs/premissas.md`), mesmos filtros/exportações — só muda a
 ferramenta. Roda inteiramente no navegador (Python compilado para
 WebAssembly via Pyodide), sem servidor — por isso pode ser publicado como
@@ -19,7 +19,7 @@ site estático comum.
 - `componentes.py`, `graficos.py`, `utils.py`, `exportar.py`: helpers
   reaproveitados entre páginas (cards `value_box`, gráficos Plotly,
   formatação, exportação CSV/Excel com a mesma sanitização contra injeção
-  de fórmula usada nos outros dois painéis).
+  de fórmula usada no site estático).
 - `data/*.csv` + `mg_municipios.geojson`: gerados por
   `../gerar_dados_shiny.py`, que importa diretamente os módulos
   `dados_*.py`/`etl/*.py` da raiz do repositório (mesma lógica e premissas,
@@ -54,7 +54,7 @@ execução).
 ## Publicar
 
 O `dist_shiny/` gerado é copiado para a branch `gh-pages`, na pasta
-`shiny/` (sem mexer na raiz nem em `/observable/`):
+`shiny/` (sem mexer na raiz do site):
 
 ```sh
 poetry run shinylive export shiny_app dist_shiny

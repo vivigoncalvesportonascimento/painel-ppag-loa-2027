@@ -1,6 +1,5 @@
 """Exportação de tabelas (CSV/Excel), com a mesma sanitização contra
-injeção de fórmula usada nos outros dois painéis (site estático e
-Observable Framework) — ver docs/premissas.md.
+injeção de fórmula usada no site estático — ver docs/premissas.md.
 """
 
 import io

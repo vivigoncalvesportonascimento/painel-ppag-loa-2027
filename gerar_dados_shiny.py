@@ -1,10 +1,10 @@
 """Gera shiny_app/data/*.csv a partir dos módulos dados_*.py / etl/*.py.
 
-Mesma lógica e premissas do site estático e da versão Observable Framework
-(ver docs/premissas.md) — só muda o formato de saída (CSV, lido pelo app
-Shiny via pandas) e o fato de rodar como pré-processamento (o app Shinylive
-roda no navegador via Pyodide; ler as bases .xlsx/.txt brutas ali seria
-lento e exigiria bundlar arquivos grandes, então o build prepara tudo антes).
+Mesma lógica e premissas do site estático (ver docs/premissas.md) — só
+muda o formato de saída (CSV, lido pelo app Shiny via pandas) e o fato de
+rodar como pré-processamento (o app Shinylive roda no navegador via
+Pyodide; ler as bases .xlsx/.txt brutas ali seria lento e exigiria
+bundlar arquivos grandes, então o build prepara tudo antes).
 
 Rodar sempre que os dados ou a lógica de algum dados_*.py mudarem, antes de
 publicar a branch gh-pages (pasta /shiny).

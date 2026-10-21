@@ -1,8 +1,7 @@
 /* Identidade visual do painel PPAG-LOA 2027, por cima do tema bslib
 "shiny" (ver app.py: ui.Theme(preset="shiny").add_defaults(primary=...)) —
-mesma linguagem visual dos outros dois painéis (site estático e Observable
-Framework): fundo cinza-claro, cards brancos com sombra leve, azul #0047AB
-como cor de marca. */
+mesma linguagem visual do site estático: fundo cinza-claro, cards
+brancos com sombra leve, azul #0047AB como cor de marca. */
 
 :root {
   --cor-fundo-card: #ffffff;
@@ -45,7 +44,7 @@ body {
 
 /* Navbar: titulo numa linha propria, em cima; menu de paginas numa linha
 cheia logo abaixo, sem quebrar para uma segunda linha (rola na horizontal
-se nao couber) -- mesma estrutura do site estatico/Observable. */
+se nao couber) -- mesma estrutura do site estatico. */
 .navbar .container-fluid {
   flex-direction: column;
   align-items: stretch;
@@ -279,8 +278,7 @@ CSS puro funciona aqui. */
   border-color: var(--cor-marca) !important;
 }
 
-/* Botão "Limpar filtros" (mesmo visual do site estático/Observable:
-.botao-secundario). */
+/* Botão "Limpar filtros" (mesmo visual do site estático: .botao-secundario). */
 .botao-limpar-filtros {
   appearance: none;
   border: 1px solid var(--cor-borda) !important;

@@ -22,12 +22,6 @@ Thumbs.db
 # Logs
 *.log
 
-# Observable Framework (node_modules/dist sao gerados por npm install/build;
-# so o codigo-fonte em observable/src e observable/*.config.js sao versionados)
-observable/node_modules/
-observable/dist/
-observable/src/.observablehq/
-
 # Shiny for Python / Shinylive (dist_shiny/ e gerado por `shinylive export`;
 # os CSVs pre-processados em shiny_app/data sao versionados, como o
 # dados.json do site estatico, pois sao o que o app em si consome)

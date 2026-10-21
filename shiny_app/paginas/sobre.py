@@ -57,10 +57,9 @@ def panel_ui():
         ui.hr(),
         ui.markdown(
             "Esta é a versão **Shiny for Python + Shinylive** do painel, construída para "
-            "comparar com as versões em "
+            "comparar com a versão em "
             "[GitHub Pages](https://vivigoncalvesportonascimento.github.io/painel-ppag-loa-2027/) "
-            "(site estático) e "
-            "[Observable Framework](https://vivigoncalvesportonascimento.github.io/painel-ppag-loa-2027/observable/). "
+            "(site estático). "
             "Mesmos dados, mesmas regras de negócio, mesmos filtros e exportações — a "
             "diferença é só a ferramenta por trás de cada gráfico, tabela e mapa."
         ),
