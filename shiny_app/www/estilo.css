@@ -148,15 +148,27 @@ outros dois paineis. */
   opacity: 0.9;
 }
 
-/* Variante compacta (Visão Geral): cards mais baixos, sem ícone, para
-sobrar mais espaço vertical para os gráficos abaixo. */
-.card-kpi--compacto {
-  padding: 0.5rem 0.75rem !important;
-  min-height: 0 !important;
+/* Variante compacta (Visão Geral): cards tão baixos quanto os da pagina
+LOA Investimentos, sem ícone, para sobrar mais espaço vertical para os
+gráficos abaixo. O padding "de verdade" vem de .card-body/.value-box-area
+(bslib), não do .card-kpi em si -- por isso a sobrescrita é nesses
+elementos internos. */
+.card-kpi--compacto .card-body {
+  padding: 0.65rem 0.9rem !important;
+}
+
+.card-kpi--compacto .value-box-area {
+  padding: 0.55rem 0 !important;
+}
+
+.card-kpi--compacto .titulo {
+  font-size: 0.7rem;
+  line-height: 1.2;
 }
 
 .card-kpi--compacto .valor {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+  line-height: 1.2;
 }
 
 .linha-card-grafico {
@@ -228,6 +240,27 @@ sobrar mais espaço vertical para os gráficos abaixo. */
   gap: 0.5rem;
   padding: 0.6rem 0.75rem;
   border-bottom: 1px solid var(--cor-divisor-suave);
+}
+
+/* Colunas redimensionáveis pelo usuário (arrastando o canto inferior
+direito do cabeçalho), igual ao site estático -- o shiny-data-grid já usa
+uma <table> de verdade com <th style="width:Npx">, então o mesmo truque de
+CSS puro funciona aqui. */
+.shiny-data-grid table {
+  table-layout: fixed;
+}
+
+.shiny-data-grid th {
+  overflow: auto;
+  resize: horizontal;
+  white-space: normal;
+  min-width: 70px;
+}
+
+.shiny-data-grid td {
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .botao-exportar {

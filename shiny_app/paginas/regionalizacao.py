@@ -3,7 +3,14 @@ import plotly.graph_objects as go
 from shiny import reactive, render, ui
 
 import dados_app as dados
-from componentes import botao_limpar_filtros, botoes_exportar, filtro_selectize, plotly_html
+from componentes import (
+    botao_limpar_filtros,
+    botoes_exportar,
+    estilo_moeda,
+    filtro_selectize,
+    plotly_html,
+    registrar_filtros_cruzados,
+)
 from exportar import csv_bytes, xlsx_bytes
 from utils import formatar_moeda
 
@@ -60,6 +67,18 @@ def _aplicar_filtros(input, ignorar_municipio: bool) -> pd.DataFrame:
 
 
 def register_server(input, output, session):
+    registrar_filtros_cruzados(
+        input,
+        dados.regionalizacao,
+        [
+            ("rg_uo", "uo_label", "Todas"),
+            ("rg_acao", "acao_label", "Todas"),
+            ("rg_regiao", "regiao", "Todas"),
+            ("rg_municipio", "municipio", "Todos"),
+            ("rg_produto", "produto", "Todos"),
+        ],
+    )
+
     @reactive.effect
     @reactive.event(input.rg_limpar)
     def _limpar():
@@ -162,7 +181,14 @@ def register_server(input, output, session):
 
     @render.data_frame
     def rg_tabela():
-        return render.DataGrid(tabela_formatada(), width="100%", height="440px", summary=False)
+        df = tabela_formatada()
+        return render.DataGrid(
+            df,
+            width="100%",
+            height="440px",
+            summary=False,
+            styles=estilo_moeda(df, "Previsão Física 2027", "Previsão Orçamentária 2027"),
+        )
 
     @render.download_button(filename=f"{_NOME_ARQUIVO}.csv")
     def rg_csv():

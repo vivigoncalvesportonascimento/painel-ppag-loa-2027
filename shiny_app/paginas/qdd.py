@@ -2,7 +2,13 @@ import pandas as pd
 from shiny import reactive, render, ui
 
 import dados_app as dados
-from componentes import botao_limpar_filtros, botoes_exportar, filtro_selectize
+from componentes import (
+    botao_limpar_filtros,
+    botoes_exportar,
+    estilo_moeda,
+    filtro_selectize,
+    registrar_filtros_cruzados,
+)
 from exportar import csv_bytes, xlsx_bytes
 from utils import formatar_moeda
 
@@ -51,6 +57,10 @@ def panel_ui():
 
 
 def register_server(input, output, session):
+    registrar_filtros_cruzados(
+        input, dados.qdd, [(id_input, coluna, "Todas") for id_input, coluna, _ in _FILTROS]
+    )
+
     @reactive.calc
     def base_filtrada() -> pd.DataFrame:
         df = dados.qdd
@@ -77,7 +87,10 @@ def register_server(input, output, session):
 
     @render.data_frame
     def qdd_tabela():
-        return render.DataGrid(tabela(), width="100%", height="520px", summary=False)
+        df = tabela()
+        return render.DataGrid(
+            df, width="100%", height="520px", summary=False, styles=estilo_moeda(df, "LOA 2027 (R$)")
+        )
 
     @render.download_button(filename=f"{_NOME_ARQUIVO}.csv")
     def qdd_csv():

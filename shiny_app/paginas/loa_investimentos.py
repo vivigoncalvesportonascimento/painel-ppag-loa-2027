@@ -2,7 +2,7 @@ import pandas as pd
 from shiny import reactive, render, ui
 
 import dados_app as dados
-from componentes import botao_limpar_filtros, botoes_exportar, card_kpi, filtro_selectize
+from componentes import botao_limpar_filtros, botoes_exportar, card_kpi, estilo_moeda, filtro_selectize
 from exportar import csv_bytes, xlsx_bytes
 from utils import formatar_bilhoes, formatar_moeda
 
@@ -76,7 +76,10 @@ def register_server(input, output, session):
 
     @render.data_frame
     def li_tabela():
-        return render.DataGrid(tabela(), width="100%", height="420px", summary=False)
+        df = tabela()
+        return render.DataGrid(
+            df, width="100%", height="420px", summary=False, styles=estilo_moeda(df, "LOA 2027 (R$)")
+        )
 
     @render.download_button(filename=f"{_NOME_ARQUIVO}.csv")
     def li_csv():

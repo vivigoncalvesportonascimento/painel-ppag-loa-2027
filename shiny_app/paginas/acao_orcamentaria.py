@@ -2,7 +2,7 @@ import pandas as pd
 from shiny import reactive, render, ui
 
 import dados_app as dados
-from componentes import botao_limpar_filtros, filtro_selectize, plotly_html
+from componentes import botao_limpar_filtros, filtro_selectize, plotly_html, registrar_filtros_cruzados
 from graficos import grafico_por_ano
 from utils import formatar_moeda
 
@@ -27,6 +27,15 @@ def panel_ui():
 
 
 def register_server(input, output, session):
+    registrar_filtros_cruzados(
+        input,
+        dados.acao_orcamentaria,
+        [
+            ("ac_uo", "uo", "Selecione..."),
+            ("ac_acao", "acao", "Selecione..."),
+        ],
+    )
+
     @reactive.calc
     def linha_selecionada() -> pd.Series | None:
         if not input.ac_acao():

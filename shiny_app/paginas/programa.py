@@ -2,7 +2,7 @@ import pandas as pd
 from shiny import reactive, render, ui
 
 import dados_app as dados
-from componentes import botao_limpar_filtros, botoes_exportar, filtro_selectize
+from componentes import botao_limpar_filtros, botoes_exportar, filtro_selectize, registrar_filtros_cruzados
 from exportar import csv_bytes, xlsx_bytes
 
 _NOME_ARQUIVO = "indicadores_programa"
@@ -36,6 +36,15 @@ def panel_ui():
 
 
 def register_server(input, output, session):
+    registrar_filtros_cruzados(
+        input,
+        dados.programa_programas,
+        [
+            ("pr_uo", "uo", "Selecione..."),
+            ("pr_programa", "programa", "Selecione..."),
+        ],
+    )
+
     @reactive.calc
     def programa_selecionado() -> pd.Series | None:
         if not input.pr_programa():
