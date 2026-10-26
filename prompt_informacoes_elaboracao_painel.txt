@@ -468,5 +468,24 @@ Tabela 1
 9 - LOA 2027 (R$) - Retorna o somatório dos valores da coluna VALOR FINAL (R$) da base data\BASE_QDD_FISCAL.xlsx
 
 
+13) Melhorias no Painel
 
+- Inclua uma opção de pesquisar dentro de cada filtro/segmentador de dados em todos os filtros/segmentadores de dados de todas as paginas. Assim como tem no Power BI.
+- Inclua opção em cada uma das tabelas de exportar a tabela como csv e/ou .xlsx
+- Conferencia do filtro principal de todas as paginas: que o filtro principal de todas as paginas que esta descrito nas docs\premissas.md (conferir se esta redigido corretamente), esta sendo de fato aplicado em todas as paginas do painel. Lembrando que esta premissa funciona como um filtro dos dados que devem ser exibidos, ou seja, eu tenho bases de dados na pasta data que são completas mas não devo exibir todas as informações de todas as bases. Tem bases que preciso deixar de exibir algumas informações sem alterar de fato a base bruta excluindo linhas. 
+Dito isso seguem os filtros a serem conferidos no arquivo de premissa e também se de fato estão sendo aplicados em todo o painel:
+
+- Base: data\acoes_planejamento.txt
+Apenas exibir os dados das linhas nos quais a coluna  Exclusão Lógica do Programa == Não & Exclusão Lógica da Ação == Não. São duas condições que devem ser atendidas simultaneamente por isso o & e não OU. Ou seja, só devo considerar no painel as linhas que tanto os dados da coluna Exclusão Lógica do Programa e Exclusão Lógica da Ação sejam iguais a Nâo. Se for Sim não devem ser consideradas as linhas pois significa que o programa ou a ação foram excluídos apesar de se manter na base de dados para histórico.
+
+- Base: data\programas_planejamento.txt
+Apenas exibir os dados das linhas nos quais a coluna  Exclusão Lógica do Programa == Não. Se for Sim não devem ser consideradas as linhas pois significa que o programa foi excluído apesar de se manter na base de dados para histórico.
+
+- Base: data\indicadores_planejamento.txt
+Apenas exibir os dados das linhas nos quais a coluna  Exclusão Lógica do Programa == False & Exclusão Lógica do Indicador == False. São duas condições que devem ser atendidas simultaneamente por isso o & e não OU. Ou seja, só devo considerar no painel as linhas que tanto os dados da coluna Exclusão Lógica do Programa e Exclusão Lógica do Indicador sejam iguais a False. Se for True não devem ser consideradas as linhas pois significa que o programa ou o indicador foram excluídos apesar de se manter na base de dados para histórico.
+
+- Base: data\localizadores_todos_planejamento.txt
+Apenas exibir os dados das linhas nos quais a coluna  Exclusão Lógica do Programa == False & Exclusão Lógica da Ação == False. São duas condições que devem ser atendidas simultaneamente por isso o & e não OU. Ou seja, só devo considerar no painel as linhas que tanto os dados da coluna Exclusão Lógica do Programa e Exclusão Lógica da Ação sejam iguais a False. Se for True não devem ser consideradas as linhas pois significa que o programa ou a ação foram excluídos apesar de se manter na base de dados para histórico.
+
+Confira se estas regras estão corretamente descritas no arquivo docs\premissas.md senão estiver corrija o arquivo e se certifique que o painel está considerando estas regras de filtro principal de dados para exibição das informações.
 
