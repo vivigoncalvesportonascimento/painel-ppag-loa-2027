@@ -1,8 +1,11 @@
-"""Painel PPAG-LOA 2027 — versão Shiny for Python / Shinylive.
+"""Painel PPAG-LOA 2027 — versão Shiny for Python / Shinylive (acessível).
 
-Mesmos dados, mesmas regras de negócio e mesmas funcionalidades (filtros,
-gráficos, mapa, tabelas com exportação CSV/Excel) da versão em site
-estático — ver ../docs/premissas.md.
+Mesmos dados, mesmas regras de negócio e mesma lógica reativa de
+`../shiny_app/` — ver ../docs/premissas.md e
+../docs/superpowers/specs/2026-10-26-painel-shiny-acessivel-design.md.
+Só a camada de apresentação muda: menu lateral em vez de navbar
+horizontal, paleta/tipografia novas, toggle "Ver como tabela" em cada
+gráfico, foco visível e skip link.
 """
 
 from pathlib import Path
@@ -40,27 +43,51 @@ _PAGINAS = [
     links_uteis,
 ]
 
-# Sem `theme=` explícito: o Shiny usa o preset "shiny" (CSS pré-compilado,
-# servido como arquivo estático) por padrão. Qualquer `ui.Theme(...)`
-# dispara compilação SASS via libsass, indisponível no Pyodide/Shinylive —
-# a cor de marca é sobreposta via variáveis CSS do Bootstrap em
-# www/estilo.css em vez disso.
-
-app_ui = ui.page_navbar(
-    *[pagina.panel_ui() for pagina in _PAGINAS],
-    title="Painel PPAG-LOA 2027",
-    header=ui.tags.head(
+app_ui = ui.page_bootstrap(
+    ui.tags.head(
         plotly_head(),
         script_limpar_selecao_grafico(),
+        ui.tags.link(rel="preconnect", href="https://fonts.googleapis.com"),
+        ui.tags.link(
+            rel="stylesheet",
+            href=(
+                "https://fonts.googleapis.com/css2?"
+                "family=Lexend:wght@500;600;700&family=Public+Sans:wght@400;500;600;700&display=swap"
+            ),
+        ),
         ui.tags.link(rel="stylesheet", href="estilo.css"),
     ),
-    footer=ui.div(
+    ui.tags.a("Pular para o conteúdo", href="#conteudo-principal", class_="skip-link"),
+    ui.tags.header(
+        ui.span("Painel PPAG-LOA 2027", class_="app-titulo"),
+        ui.span("Versão acessível", class_="app-subtitulo"),
+        class_="app-cabecalho",
+    ),
+    ui.div(
+        ui.navset_pill_list(
+            *[pagina.panel_ui() for pagina in _PAGINAS],
+            id="pagina_ativa",
+            well=False,
+            widths=(2, 10),
+        ),
+        id="conteudo-principal",
+        tabindex="-1",
+        class_="app-conteudo",
+    ),
+    ui.tags.footer(
         ui.hr(),
         ui.p(
-            "Construído com Shiny for Python + Shinylive — versão de comparação do ",
+            "Construído com Shiny for Python + Shinylive — versão acessível, comparada com o ",
             ui.a(
                 "painel publicado no GitHub Pages",
                 href="https://vivigoncalvesportonascimento.github.io/painel-ppag-loa-2027/",
+                target="_blank",
+                rel="noopener noreferrer",
+            ),
+            " e com a ",
+            ui.a(
+                "versão Shiny original",
+                href="https://vivigoncalvesportonascimento.github.io/painel-ppag-loa-2027/shiny/",
                 target="_blank",
                 rel="noopener noreferrer",
             ),
@@ -68,6 +95,7 @@ app_ui = ui.page_navbar(
             class_="text-muted small text-center mb-3",
         ),
     ),
+    title="Painel PPAG-LOA 2027 — Acessível",
 )
 
 
