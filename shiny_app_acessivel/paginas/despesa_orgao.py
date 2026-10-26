@@ -2,7 +2,7 @@ import pandas as pd
 from shiny import reactive, render, ui
 
 import dados_app as dados
-from componentes import botao_limpar_filtros, card_kpi, filtro_selectize, plotly_html, selecao_grafico
+from componentes import botao_limpar_filtros, card_kpi, filtro_selectize, grafico_acessivel, selecao_grafico
 from graficos import grafico_absoluto_vertical
 from utils import formatar_bilhoes, formatar_moeda
 
@@ -78,8 +78,13 @@ def register_server(input, output, session):
 
     @render.ui
     def do_grafico():
-        fig = grafico_absoluto_vertical(base_filtrada(), "grupo_despesa_descricao", "valor", "Despesa por Grupo")
-        return plotly_html(fig, id="do_grafico", selecionavel=True)
+        df = base_filtrada()
+        fig = grafico_absoluto_vertical(df, "grupo_despesa_descricao", "valor", "Despesa por Grupo")
+        agrupado = df.groupby("grupo_despesa_descricao", as_index=False)["valor"].sum()
+        tabela = agrupado.rename(columns={"grupo_despesa_descricao": "Grupo de Despesa"})
+        tabela["Valor (R$)"] = agrupado["valor"].map(formatar_moeda)
+        tabela = tabela[["Grupo de Despesa", "Valor (R$)"]]
+        return grafico_acessivel(fig, tabela, id="do_grafico", titulo="Despesa por Grupo", selecionavel=True)
 
     @render.ui
     def do_lista_acao():
