@@ -102,6 +102,8 @@ da navegação como menu lateral fixo, verde institucional. */
 ficar espremido ao lado (largura total, nao mais em coluna estreita). */
 @media (max-width: 760px) {
   .app-conteudo > .row > div:first-child {
+    flex: 0 0 100%;
+    max-width: 100%;
     margin-bottom: 14px;
   }
   .app-conteudo .nav-pills {
