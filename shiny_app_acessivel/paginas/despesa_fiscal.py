@@ -1,9 +1,9 @@
 from shiny import reactive, render, ui
 
 import dados_app as dados
-from componentes import card_kpi, plotly_html, selecao_grafico
+from componentes import card_kpi, grafico_acessivel, selecao_grafico
 from graficos import grafico_absoluto_vertical, grafico_percentual_horizontal
-from utils import formatar_bilhoes
+from utils import formatar_bilhoes, formatar_moeda
 
 
 def panel_ui():
@@ -64,21 +64,34 @@ def register_server(input, output, session):
 
     @render.ui
     def df_grafico_poder():
+        df = base_para_poder()
         fig = grafico_absoluto_vertical(
-            base_para_poder(), "uo_poder", "valor", "Despesa por Poder e Reserva de Contingência"
+            df, "uo_poder", "valor", "Despesa por Poder e Reserva de Contingência"
         )
-        return plotly_html(fig, id="df_grafico_poder", selecionavel=True)
+        agrupado = df.groupby("uo_poder", as_index=False)["valor"].sum()
+        tabela = agrupado.rename(columns={"uo_poder": "Poder"})
+        tabela["Valor (R$)"] = agrupado["valor"].map(formatar_moeda)
+        tabela = tabela[["Poder", "Valor (R$)"]]
+        return grafico_acessivel(
+            fig, tabela, id="df_grafico_poder", titulo="Despesa por Poder e Reserva de Contingência", selecionavel=True
+        )
 
     @render.ui
     def df_grafico_grupo():
-        fig = grafico_percentual_horizontal(
-            base_para_grupo(), "grupo_despesa_descricao", "valor", "Despesa por Grupo"
-        )
-        return plotly_html(fig, id="df_grafico_grupo", selecionavel=True)
+        df = base_para_grupo()
+        fig = grafico_percentual_horizontal(df, "grupo_despesa_descricao", "valor", "Despesa por Grupo")
+        agrupado = df.groupby("grupo_despesa_descricao", as_index=False)["valor"].sum()
+        tabela = agrupado.rename(columns={"grupo_despesa_descricao": "Grupo de Despesa"})
+        tabela["Valor (R$)"] = agrupado["valor"].map(formatar_moeda)
+        tabela = tabela[["Grupo de Despesa", "Valor (R$)"]]
+        return grafico_acessivel(fig, tabela, id="df_grafico_grupo", titulo="Despesa por Grupo", selecionavel=True)
 
     @render.ui
     def df_grafico_funcao():
-        fig = grafico_percentual_horizontal(
-            base_para_funcao(), "funcao_descricao", "valor", "Despesa por Função"
-        )
-        return plotly_html(fig, id="df_grafico_funcao", selecionavel=True)
+        df = base_para_funcao()
+        fig = grafico_percentual_horizontal(df, "funcao_descricao", "valor", "Despesa por Função")
+        agrupado = df.groupby("funcao_descricao", as_index=False)["valor"].sum()
+        tabela = agrupado.rename(columns={"funcao_descricao": "Função"})
+        tabela["Valor (R$)"] = agrupado["valor"].map(formatar_moeda)
+        tabela = tabela[["Função", "Valor (R$)"]]
+        return grafico_acessivel(fig, tabela, id="df_grafico_funcao", titulo="Despesa por Função", selecionavel=True)
