@@ -1,7 +1,7 @@
 from shiny import reactive, render, ui
 
 import dados_app as dados
-from componentes import botao_limpar_filtros, card_kpi, limpar_selecao_graficos, plotly_html, selecao_grafico
+from componentes import botao_limpar_filtros, card_kpi, grafico_acessivel, limpar_selecao_graficos, selecao_grafico
 from graficos import grafico_percentual_horizontal
 from utils import formatar_bilhoes
 
@@ -64,14 +64,26 @@ def register_server(input, output, session):
 
     @render.ui
     def vg_grafico_area():
+        df = _base_para_area()
         fig = grafico_percentual_horizontal(
-            _base_para_area(), "area_tematica", "valor", "Previsão 2027 por Área Temática"
+            df, "area_tematica", "valor", "Previsão 2027 por Área Temática"
         )
-        return plotly_html(fig, id="vg_grafico_area", selecionavel=True)
+        tabela = df.groupby("area_tematica", as_index=False)["valor"].sum().rename(
+            columns={"area_tematica": "Área Temática", "valor": "Valor (R$)"}
+        )
+        return grafico_acessivel(
+            fig, tabela, id="vg_grafico_area", titulo="Previsão 2027 por Área Temática", selecionavel=True
+        )
 
     @render.ui
     def vg_grafico_setor():
+        df = _base_para_setor()
         fig = grafico_percentual_horizontal(
-            _base_para_setor(), "setor_governo", "valor", "Previsão 2027 por Setor de Governo"
+            df, "setor_governo", "valor", "Previsão 2027 por Setor de Governo"
         )
-        return plotly_html(fig, id="vg_grafico_setor", selecionavel=True)
+        tabela = df.groupby("setor_governo", as_index=False)["valor"].sum().rename(
+            columns={"setor_governo": "Setor de Governo", "valor": "Valor (R$)"}
+        )
+        return grafico_acessivel(
+            fig, tabela, id="vg_grafico_setor", titulo="Previsão 2027 por Setor de Governo", selecionavel=True
+        )

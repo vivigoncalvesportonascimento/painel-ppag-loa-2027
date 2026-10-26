@@ -1,6 +1,7 @@
 """Componentes de UI reaproveitados pelas páginas do painel Shiny."""
 
 import faicons
+import html
 from shiny import reactive, ui
 from shiny.types import SilentException
 
@@ -110,6 +111,51 @@ el.on("plotly_click", function(dados) {{
     )
 
 
+def grafico_acessivel(fig, df, id: str, titulo: str, selecionavel: bool = False) -> ui.Tag:
+    """Como `plotly_html()`, mas com um botão "Ver como tabela" ao lado
+    que alterna a visibilidade entre o gráfico e uma <table> semântica
+    com os mesmos dados de `df` -- para quem usa leitor de tela/teclado,
+    ou só quer os números exatos sem passar o mouse sobre as barras.
+
+    A tabela é reconstruída a cada render (como o gráfico), então
+    reflete sempre os dados atuais -- incluindo depois de um filtro ou
+    de uma seleção de crossfilter.
+    """
+    id_tabela = f"{id}__tabela"
+    linhas_html = "".join(
+        "<tr>" + "".join(f"<td>{html.escape(str(valor))}</td>" for valor in linha) + "</tr>"
+        for linha in df.itertuples(index=False)
+    )
+    cabecalho_html = "".join(f'<th scope="col">{html.escape(str(coluna))}</th>' for coluna in df.columns)
+    titulo_escapado = html.escape(titulo)
+
+    return ui.div(
+        ui.tags.button(
+            "Ver como tabela",
+            type="button",
+            class_="botao-ver-tabela",
+            **{
+                "aria-expanded": "false",
+                "aria-controls": id_tabela,
+                "onclick": (
+                    f"var t=document.getElementById('{id_tabela}');"
+                    f"var oculto=t.hidden; t.hidden=!oculto;"
+                    f"this.setAttribute('aria-expanded', String(oculto));"
+                    f"this.textContent = oculto ? 'Ver como gráfico' : 'Ver como tabela';"
+                ),
+            },
+        ),
+        plotly_html(fig, id=id, selecionavel=selecionavel),
+        ui.HTML(
+            f'<table id="{id_tabela}" hidden class="tabela-acessivel" aria-label="{titulo_escapado}">'
+            f"<thead><tr>{cabecalho_html}</tr></thead>"
+            f"<tbody>{linhas_html}</tbody>"
+            f"</table>"
+        ),
+        class_="grafico-acessivel",
+    )
+
+
 def plotly_head() -> ui.Tag:
     return ui.tags.script(src="https://cdn.plot.ly/plotly-2.35.2.min.js")
 
@@ -199,19 +245,14 @@ def botao_limpar_filtros(id: str) -> ui.Tag:
 def card_kpi(
     titulo: str, valor: str, icone: str | None = "coins", compacto: bool = False
 ) -> ui.Tag:
-    """Card de KPI usando o value_box nativo do Shiny (sombra, cor de marca e
-    ícone opcional — mais polido que uma div plana), ainda com as classes
-    `valor`/`titulo` para os testes e para quem quiser reaproveitar o CSS.
-
-    `compacto=True` reduz a altura vertical do card (usado na Visão Geral).
+    """Card de KPI com borda de destaque à esquerda (verde institucional)
+    e número grande, no padrão aprovado na maquete "Painel Lateral" --
+    sem o fundo azul sólido da versão original, para melhor contraste em
+    qualquer combinação de cores dentro do card.
     """
     classes = "card-kpi" + (" card-kpi--compacto" if compacto else "")
-    return ui.value_box(
-        ui.span(titulo, class_="titulo"),
+    return ui.div(
         ui.span(valor, class_="valor"),
-        showcase=faicons.icon_svg(icone) if icone else None,
-        showcase_layout="left center",
-        theme=_TEMA_CARD,
+        ui.span(titulo, class_="titulo"),
         class_=classes,
-        full_screen=False,
     )

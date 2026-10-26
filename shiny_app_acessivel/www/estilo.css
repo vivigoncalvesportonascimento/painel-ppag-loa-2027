@@ -622,3 +622,82 @@ antes de uma seleção ser feita no filtro correspondente. */
     grid-template-columns: 1fr;
   }
 }
+
+/* Card de KPI: borda verde a esquerda, numero grande (maquete B). */
+.card-kpi {
+  background: #ffffff;
+  border: 1px solid var(--cor-borda);
+  border-left: 4px solid var(--cor-apoio);
+  border-radius: 8px;
+  padding: 12px 14px;
+  box-shadow: var(--sombra-card);
+}
+
+.card-kpi .valor {
+  display: block;
+  font-family: var(--fonte-titulo);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--cor-apoio-escuro);
+  line-height: 1.2;
+}
+
+.card-kpi .titulo {
+  display: block;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--cor-texto-suave);
+  margin-top: 2px;
+}
+
+.card-kpi--compacto {
+  padding: 10px 12px;
+}
+
+.card-kpi--compacto .valor {
+  font-size: 1.05rem;
+}
+
+/* Grafico + toggle "Ver como tabela" */
+.grafico-acessivel {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.botao-ver-tabela {
+  align-self: flex-end;
+  appearance: none;
+  border: 1px solid var(--cor-borda);
+  border-radius: 6px;
+  background: #ffffff;
+  color: var(--cor-apoio-escuro);
+  padding: 5px 10px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.botao-ver-tabela:hover {
+  background: #eef6f3;
+  border-color: var(--cor-apoio);
+}
+
+.tabela-acessivel {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.tabela-acessivel th,
+.tabela-acessivel td {
+  border: 1px solid var(--cor-borda);
+  padding: 6px 10px;
+  text-align: left;
+}
+
+.tabela-acessivel th {
+  background: #f3f7f5;
+  font-weight: 600;
+}
