@@ -70,9 +70,11 @@ def register_server(input, output, session):
         )
         valores_orcamentaria = [float(linha[f"orcamentaria_{ano}"]) for ano in _ANOS]
         fig_orcamentaria = grafico_por_ano(_ANOS, valores_orcamentaria, "Previsão Orçamentária", formatar_moeda)
-        tabela_fisica = pd.DataFrame({"Ano": _ANOS, "Previsão Física": valores_fisica})
+        tabela_fisica = pd.DataFrame(
+            {"Ano": _ANOS, "Previsão Física": [f"{v:,.0f}".replace(",", ".") for v in valores_fisica]}
+        )
         tabela_orcamentaria = pd.DataFrame(
-            {"Ano": _ANOS, "Previsão Orçamentária (R$)": [formatar_moeda(v) for v in valores_orcamentaria]}
+            {"Ano": _ANOS, "Previsão Orçamentária": [formatar_moeda(v) for v in valores_orcamentaria]}
         )
 
         return ui.TagList(
