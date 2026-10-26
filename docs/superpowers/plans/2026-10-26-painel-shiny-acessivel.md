@@ -21,6 +21,7 @@
 - Every chart wrapped by the new `grafico_acessivel()` helper must give its embedded Plotly `<div>` an id distinct from the `@render.ui` output wrapper's id (the `__plot` suffix convention `plotly_html()` already uses) — an id collision breaks rendering silently, no console error.
 - Before every push to `gh-pages`, confirm with `git diff --cached --stat` that only `/shiny-acessivel/` is touched.
 - This project's shell (Windows + git-bash) does not reliably keep a `shiny run ... &` background process alive across separate tool calls. Every task's steps below show `shiny run app.py --port 8124 &` for readability, but start it with whatever backgrounding mechanism your own tools actually persist across calls (e.g. a `run_in_background` Bash option, or PowerShell's `Start-Process -RedirectStandardOutput ... -WindowStyle Hidden`) — confirmed working in this exact repo earlier in this project. Always `curl` or `Invoke-WebRequest` the port after starting it and before running a Playwright script against it, and always stop the process at the end of the task (port 8124 for native dev, port 8009 in Task 10 for the WASM build) so the next task's `shiny run` doesn't collide with a leftover process on the same port.
+- This git worktree has no `.venv` of its own (gitignored, not copied by `git worktree add`). Use the original checkout's shared venv by absolute path for every `python`/`shiny`/`shinylive` invocation — confirmed to work from inside the worktree without any fresh `pip install`: `C:/projects/painel-ppag-loa-2027/.venv/Scripts/python.exe`, `C:/projects/painel-ppag-loa-2027/.venv/Scripts/shiny.exe`, `C:/projects/painel-ppag-loa-2027/.venv/Scripts/shinylive.exe`. Every `shiny run`, `shinylive export`, and `python scratchpad/_check_*.py` command below needs this absolute path prepended (e.g. `C:/projects/painel-ppag-loa-2027/.venv/Scripts/shiny.exe run app.py --port 8124` instead of bare `shiny run app.py --port 8124`).
 
 ## Review Focus
 
@@ -43,7 +44,7 @@
 - [ ] **Step 1: Copy the directory tree**
 
 ```bash
-cd /c/projects/painel-ppag-loa-2027
+cd /c/projects/painel-ppag-loa-2027/.claude/worktrees/painel-shiny-acessivel
 cp -r shiny_app shiny_app_acessivel
 find shiny_app_acessivel -name "__pycache__" -type d -exec rm -rf {} + 2>/dev/null
 rm -f shiny_app_acessivel/shiny_out.log shiny_app_acessivel/shiny_err.log
@@ -52,7 +53,7 @@ rm -f shiny_app_acessivel/shiny_out.log shiny_app_acessivel/shiny_err.log
 - [ ] **Step 2: Run the copy natively and confirm it serves**
 
 ```bash
-cd /c/projects/painel-ppag-loa-2027/shiny_app_acessivel
+cd /c/projects/painel-ppag-loa-2027/.claude/worktrees/painel-shiny-acessivel/shiny_app_acessivel
 shiny run app.py --port 8124 &
 sleep 7
 curl -s -o /dev/null -w "%{http_code}\n" http://127.0.0.1:8124/
@@ -85,7 +86,7 @@ Expected: prints the same 12 tab names as `shiny_app/`, no assertion error (this
 
 ```bash
 kill %1 2>/dev/null || true
-cd /c/projects/painel-ppag-loa-2027
+cd /c/projects/painel-ppag-loa-2027/.claude/worktrees/painel-shiny-acessivel
 git add shiny_app_acessivel
 git commit -m "Scaffold shiny_app_acessivel/ as a verified copy of shiny_app/"
 ```
@@ -337,7 +338,7 @@ ficar espremido ao lado (largura total, nao mais em coluna estreita). */
 - [ ] **Step 3: Run the app and verify the shell renders**
 
 ```bash
-cd /c/projects/painel-ppag-loa-2027/shiny_app_acessivel
+cd /c/projects/painel-ppag-loa-2027/.claude/worktrees/painel-shiny-acessivel/shiny_app_acessivel
 shiny run app.py --port 8124 &
 sleep 7
 ```
@@ -430,7 +431,7 @@ Expected: prints the OK line.
 ```bash
 kill %1 2>/dev/null || true
 rm -f scratchpad/_check_shell.py scratchpad/_check_skiplink.py scratchpad/_check_mobile_nav.py
-cd /c/projects/painel-ppag-loa-2027
+cd /c/projects/painel-ppag-loa-2027/.claude/worktrees/painel-shiny-acessivel
 git add shiny_app_acessivel/app.py shiny_app_acessivel/www/estilo.css
 git commit -m "Add sidebar nav, skip link and typography foundation to shiny_app_acessivel"
 ```
@@ -672,7 +673,7 @@ from componentes import botao_limpar_filtros, card_kpi, grafico_acessivel, limpa
 - [ ] **Step 5: Verify Visão Geral's charts, toggle, and crossfilter**
 
 ```bash
-cd /c/projects/painel-ppag-loa-2027/shiny_app_acessivel
+cd /c/projects/painel-ppag-loa-2027/.claude/worktrees/painel-shiny-acessivel/shiny_app_acessivel
 shiny run app.py --port 8124 &
 sleep 7
 ```
@@ -731,7 +732,7 @@ Expected: prints the OK line. (If the `aria-expanded` xpath lookup is brittle in
 ```bash
 kill %1 2>/dev/null || true
 rm -f scratchpad/_check_baseline.py scratchpad/_check_visao_geral.py
-cd /c/projects/painel-ppag-loa-2027
+cd /c/projects/painel-ppag-loa-2027/.claude/worktrees/painel-shiny-acessivel
 git add shiny_app_acessivel/componentes.py shiny_app_acessivel/paginas/visao_geral.py shiny_app_acessivel/www/estilo.css
 git commit -m "Add grafico_acessivel() and redesigned card_kpi(), wired into Visao Geral"
 ```
@@ -801,7 +802,7 @@ Then replace the two `plotly_html(...)` calls:
 - [ ] **Step 2: Verify the gating rule, both charts, and both toggles**
 
 ```bash
-cd /c/projects/painel-ppag-loa-2027/shiny_app_acessivel
+cd /c/projects/painel-ppag-loa-2027/.claude/worktrees/painel-shiny-acessivel/shiny_app_acessivel
 shiny run app.py --port 8124 &
 sleep 7
 ```
@@ -848,7 +849,7 @@ Expected: prints the OK line.
 ```bash
 kill %1 2>/dev/null || true
 rm -f scratchpad/_check_acao.py
-cd /c/projects/painel-ppag-loa-2027
+cd /c/projects/painel-ppag-loa-2027/.claude/worktrees/painel-shiny-acessivel
 git add shiny_app_acessivel/paginas/acao_orcamentaria.py
 git commit -m "Retrofit Acao Orcamentaria charts with grafico_acessivel"
 ```
@@ -907,7 +908,7 @@ from componentes import card_kpi, grafico_acessivel, selecao_grafico
 - [ ] **Step 2: Verify all 3 charts and the 3-way crossfilter**
 
 ```bash
-cd /c/projects/painel-ppag-loa-2027/shiny_app_acessivel
+cd /c/projects/painel-ppag-loa-2027/.claude/worktrees/painel-shiny-acessivel/shiny_app_acessivel
 shiny run app.py --port 8124 &
 sleep 7
 ```
@@ -948,7 +949,7 @@ Expected: prints the OK line.
 ```bash
 kill %1 2>/dev/null || true
 rm -f scratchpad/_check_despesa_fiscal.py
-cd /c/projects/painel-ppag-loa-2027
+cd /c/projects/painel-ppag-loa-2027/.claude/worktrees/painel-shiny-acessivel
 git add shiny_app_acessivel/paginas/despesa_fiscal.py
 git commit -m "Retrofit Despesa Fiscal charts with grafico_acessivel"
 ```
@@ -982,7 +983,7 @@ from componentes import botao_limpar_filtros, card_kpi, filtro_selectize, grafic
 - [ ] **Step 2: Verify the dropdown filter, the chart-click crossfilter, and the toggle**
 
 ```bash
-cd /c/projects/painel-ppag-loa-2027/shiny_app_acessivel
+cd /c/projects/painel-ppag-loa-2027/.claude/worktrees/painel-shiny-acessivel/shiny_app_acessivel
 shiny run app.py --port 8124 &
 sleep 7
 ```
@@ -1022,7 +1023,7 @@ Expected: prints the OK line.
 ```bash
 kill %1 2>/dev/null || true
 rm -f scratchpad/_check_despesa_orgao.py
-cd /c/projects/painel-ppag-loa-2027
+cd /c/projects/painel-ppag-loa-2027/.claude/worktrees/painel-shiny-acessivel
 git add shiny_app_acessivel/paginas/despesa_orgao.py
 git commit -m "Retrofit Despesa por Orgao chart with grafico_acessivel"
 ```
@@ -1069,7 +1070,7 @@ from componentes import (
 - [ ] **Step 2: Verify the chart, crossfilter, and that "Limpar filtros" still clears the chart selection**
 
 ```bash
-cd /c/projects/painel-ppag-loa-2027/shiny_app_acessivel
+cd /c/projects/painel-ppag-loa-2027/.claude/worktrees/painel-shiny-acessivel/shiny_app_acessivel
 shiny run app.py --port 8124 &
 sleep 7
 ```
@@ -1112,7 +1113,7 @@ Expected: prints the OK line.
 ```bash
 kill %1 2>/dev/null || true
 rm -f scratchpad/_check_receita_fiscal.py
-cd /c/projects/painel-ppag-loa-2027
+cd /c/projects/painel-ppag-loa-2027/.claude/worktrees/painel-shiny-acessivel
 git add shiny_app_acessivel/paginas/receita_fiscal.py
 git commit -m "Retrofit Receita Fiscal chart with grafico_acessivel"
 ```
@@ -1130,7 +1131,7 @@ git commit -m "Retrofit Receita Fiscal chart with grafico_acessivel"
 - [ ] **Step 1: Verify the map, crossfilter, and table inherit the new look correctly**
 
 ```bash
-cd /c/projects/painel-ppag-loa-2027/shiny_app_acessivel
+cd /c/projects/painel-ppag-loa-2027/.claude/worktrees/painel-shiny-acessivel/shiny_app_acessivel
 shiny run app.py --port 8124 &
 sleep 7
 ```
@@ -1182,7 +1183,7 @@ Expected: prints the OK line. If the map or table look visually broken under the
 ```bash
 kill %1 2>/dev/null || true
 rm -f scratchpad/_check_regionalizacao.py
-cd /c/projects/painel-ppag-loa-2027
+cd /c/projects/painel-ppag-loa-2027/.claude/worktrees/painel-shiny-acessivel
 git add shiny_app_acessivel/www/estilo.css
 git status --short  # only commit if something actually changed
 git commit -m "Verify Regionalizacao under the new visual layer" \
@@ -1203,19 +1204,19 @@ git commit -m "Verify Regionalizacao under the new visual layer" \
 - [ ] **Step 1: Confirm the chart-free pages were never touched**
 
 ```bash
-cd /c/projects/painel-ppag-loa-2027
+cd /c/projects/painel-ppag-loa-2027/.claude/worktrees/painel-shiny-acessivel
 for f in programa.py qdd.py loa_investimentos.py glossario.py links_uteis.py sobre.py; do
   diff "shiny_app/paginas/$f" "shiny_app_acessivel/paginas/$f" > /dev/null \
     && echo "$f: identico (OK)" \
     || echo "$f: DIFERENTE -- investigar, nao deveria ter mudado"
 done
 ```
-Expected: `identico (OK)` for all 6 files. (`sobre.py` legitimately may need one edit — see Step 3 below — in which case this diff is expected to show a difference for that one file only.)
+Expected: `identico (OK)` for all 6 files — no task in this plan edits any of them (the approved scope is visual-only, no content changes, so `sobre.py`'s existing text about comparing with the GitHub Pages site needs no update either).
 
 - [ ] **Step 2: Full 12-page smoke test, native**
 
 ```bash
-cd /c/projects/painel-ppag-loa-2027/shiny_app_acessivel
+cd /c/projects/painel-ppag-loa-2027/.claude/worktrees/painel-shiny-acessivel/shiny_app_acessivel
 shiny run app.py --port 8124 &
 sleep 7
 ```
@@ -1285,7 +1286,7 @@ Expected: prints the OK line. If it fails, add `aria-label` to whichever control
 ```bash
 kill %1 2>/dev/null || true
 rm -f scratchpad/_check_full_site.py scratchpad/_check_aria_labels.py
-cd /c/projects/painel-ppag-loa-2027
+cd /c/projects/painel-ppag-loa-2027/.claude/worktrees/painel-shiny-acessivel
 git add -A shiny_app_acessivel
 git status --short
 git commit -m "Full-site native verification pass for shiny_app_acessivel" --allow-empty
@@ -1301,7 +1302,7 @@ git commit -m "Full-site native verification pass for shiny_app_acessivel" --all
 - [ ] **Step 1: Export**
 
 ```bash
-cd /c/projects/painel-ppag-loa-2027
+cd /c/projects/painel-ppag-loa-2027/.claude/worktrees/painel-shiny-acessivel
 rm -rf dist_shiny_acessivel
 shinylive export shiny_app_acessivel dist_shiny_acessivel
 ```
@@ -1310,7 +1311,7 @@ Expected: `Writing dist_shiny_acessivel\app.json: <N> bytes` with no errors.
 - [ ] **Step 2: Serve and re-run the Task 9 full-site check against the WASM build**
 
 ```bash
-cd /c/projects/painel-ppag-loa-2027
+cd /c/projects/painel-ppag-loa-2027/.claude/worktrees/painel-shiny-acessivel
 python -m http.server --directory dist_shiny_acessivel --bind 127.0.0.1 8009 &
 sleep 3
 ```

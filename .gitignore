@@ -26,3 +26,8 @@ Thumbs.db
 # os CSVs pre-processados em shiny_app/data sao versionados, como o
 # dados.json do site estatico, pois sao o que o app em si consome)
 dist_shiny/
+dist_shiny_acessivel/
+
+# Scripts Playwright descartaveis usados so para verificar uma tarefa
+# (criados e apagados dentro da propria tarefa -- nunca comitados)
+scratchpad/
