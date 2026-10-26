@@ -1,11 +1,8 @@
 """Componentes de UI reaproveitados pelas páginas do painel Shiny."""
 
-import faicons
 import html
 from shiny import reactive, ui
 from shiny.types import SilentException
-
-_TEMA_CARD = ui.value_box_theme(fg="#ffffff", bg="#0047ab")
 
 
 def selecao_grafico(input, id: str):
