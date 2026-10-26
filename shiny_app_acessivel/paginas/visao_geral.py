@@ -3,7 +3,7 @@ from shiny import reactive, render, ui
 import dados_app as dados
 from componentes import botao_limpar_filtros, card_kpi, grafico_acessivel, limpar_selecao_graficos, selecao_grafico
 from graficos import grafico_percentual_horizontal
-from utils import formatar_bilhoes
+from utils import formatar_bilhoes, formatar_moeda
 
 
 def panel_ui():
@@ -71,6 +71,7 @@ def register_server(input, output, session):
         tabela = df.groupby("area_tematica", as_index=False)["valor"].sum().rename(
             columns={"area_tematica": "Área Temática", "valor": "Valor (R$)"}
         )
+        tabela["Valor (R$)"] = tabela["Valor (R$)"].map(formatar_moeda)
         return grafico_acessivel(
             fig, tabela, id="vg_grafico_area", titulo="Previsão 2027 por Área Temática", selecionavel=True
         )
@@ -84,6 +85,7 @@ def register_server(input, output, session):
         tabela = df.groupby("setor_governo", as_index=False)["valor"].sum().rename(
             columns={"setor_governo": "Setor de Governo", "valor": "Valor (R$)"}
         )
+        tabela["Valor (R$)"] = tabela["Valor (R$)"].map(formatar_moeda)
         return grafico_acessivel(
             fig, tabela, id="vg_grafico_setor", titulo="Previsão 2027 por Setor de Governo", selecionavel=True
         )
