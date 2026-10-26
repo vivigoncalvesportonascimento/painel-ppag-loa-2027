@@ -2,7 +2,7 @@ import pandas as pd
 from shiny import reactive, render, ui
 
 import dados_app as dados
-from componentes import botao_limpar_filtros, filtro_selectize, plotly_html, registrar_filtros_cruzados
+from componentes import botao_limpar_filtros, filtro_selectize, grafico_acessivel, registrar_filtros_cruzados
 from graficos import grafico_por_ano
 from utils import formatar_moeda
 
@@ -70,6 +70,10 @@ def register_server(input, output, session):
         )
         valores_orcamentaria = [float(linha[f"orcamentaria_{ano}"]) for ano in _ANOS]
         fig_orcamentaria = grafico_por_ano(_ANOS, valores_orcamentaria, "Previsão Orçamentária", formatar_moeda)
+        tabela_fisica = pd.DataFrame({"Ano": _ANOS, "Previsão Física": valores_fisica})
+        tabela_orcamentaria = pd.DataFrame(
+            {"Ano": _ANOS, "Previsão Orçamentária (R$)": [formatar_moeda(v) for v in valores_orcamentaria]}
+        )
 
         return ui.TagList(
             ui.div(
@@ -122,8 +126,16 @@ def register_server(input, output, session):
                 style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;",
             ),
             ui.div(
-                ui.div(plotly_html(fig_fisica), class_="grafico-card"),
-                ui.div(plotly_html(fig_orcamentaria), class_="grafico-card"),
+                ui.div(
+                    grafico_acessivel(fig_fisica, tabela_fisica, id="ac_grafico_fisica", titulo="Previsão Física"),
+                    class_="grafico-card",
+                ),
+                ui.div(
+                    grafico_acessivel(
+                        fig_orcamentaria, tabela_orcamentaria, id="ac_grafico_orcamentaria", titulo="Previsão Orçamentária"
+                    ),
+                    class_="grafico-card",
+                ),
                 class_="grade-graficos",
             ),
         )
