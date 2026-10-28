@@ -2,7 +2,7 @@
   "cards": [
     {
       "titulo": "Previsão 2027 - Orçamento Fiscal",
-      "valor": "R$ 153,8 bi"
+      "valor": "R$ 155,5 bi"
     },
     {
       "titulo": "Previsão 2027 - Orçamento de Investimentos",
@@ -39,23 +39,23 @@
           "0.0%",
           "0.2%",
           "0.2%",
-          "0.3%",
+          "0.2%",
           "0.3%",
           "0.3%",
           "1.5%",
           "2.0%",
           "2.5%",
-          "6.1%",
-          "7.0%",
-          "10.1%",
-          "10.7%",
-          "13.5%",
-          "45.3%"
+          "6.0%",
+          "6.9%",
+          "10.0%",
+          "11.3%",
+          "13.4%",
+          "45.1%"
         ],
         "textposition": "outside",
         "x": {
           "dtype": "f8",
-          "bdata": "cI8d/XfwlT+rdtLadWrFP5NByoam+sg/h3ECxb4e0D+aY2Qle1DUP5elEa6oWtU/PbNYCQJX+D8LyriGm+D/PzVyA5OOBQRA7X2PnO5EGEDl2MmZzg0cQBT06EONNSRA0nzBvcd9JUA2PA6L6QUrQHK1w++LoEZA"
+          "bdata": "oWtoj8q4lT/iIvGCHDTFP/z9DDxCu8g/IGEA5qvrzz8Hflpo7RzUPwQeAHB3JNU/mPUGCT0Z+D+rB1qatY//P0gRRvq+0gNAJ7yue1cHGECII1mrnMYbQJcYG95DAiRA2VH051ueJkBSqF1SVcEqQJO1nMI7kEZA"
         },
         "xaxis": "x",
         "y": [
@@ -858,7 +858,7 @@
         "gridcolor": "#eef1f4",
         "range": [
           0,
-          53.40003922010602
+          53.24965200928828
         ]
       },
       "yaxis": {
@@ -931,27 +931,27 @@
           "0.7%",
           "0.7%",
           "0.8%",
-          "0.9%",
+          "0.8%",
           "1.0%",
           "1.2%",
           "1.5%",
-          "1.6%",
-          "2.3%",
+          "1.5%",
+          "2.2%",
           "2.6%",
           "3.1%",
-          "3.5%",
-          "6.2%",
-          "7.8%",
-          "10.1%",
-          "10.7%",
-          "13.8%",
-          "14.8%",
-          "15.2%"
+          "3.4%",
+          "6.1%",
+          "7.7%",
+          "10.6%",
+          "11.0%",
+          "13.7%",
+          "14.7%",
+          "15.0%"
         ],
         "textposition": "outside",
         "x": {
           "dtype": "f8",
-          "bdata": "WpIF05LXhD+zJBwF2K6LP3eOoyepXpQ/MOcy64/umj+Ht0nNEQKpP/vvUEeiJrA//2MspHw9vz+Q7nnn4vDCP4IOg+XtXs4/2Q3Acc0z1z99xgXGijHlP25CjfwwLeY/3tc46Hqe5z8O7HKYwITqP7aZEbWqPOs/S0P66kkD8D8AKRogSL/yP9X2CyFg3Pc/VX4JpK8L+T9B9QUJaR8CQGHHIXXQ0QRAFJUl28zZCEANWJORB94LQLktcMnlsRhAEDDSLmsFH0AT1NWIZCgkQFUfdnvKVyVAqp7TrfCyK0AIlJ7NSpstQI2ROPr6Ty5A"
+          "bdata": "FVzOP66ihD9BFN0Vl2iLP8u9ZG73KpQ/L8h59Daqmj9yQpWumsKoPxh8beBK+68/ZlMprzTuvj+U8J5w0cDCP6kUi77aEc4/qrU9duv41j9+goPgwfvkP8cZ4HTp9OU/qgr7Mopi5z8I0bYndEHqP+7qu4eL9+o/uXR2jU217z9HrBqMtI/yP+AW7lfSn/c/vJKyHSDM+D8THXYta/EBQLlejX/6nARAHJhm7ruaCEDI6/LiTpcLQBlZaSA6cxhApiDmg7G2HkDjQ6KEoCElQJObl3nL8CVAO0lNWaVsK0DHAB4jKFAtQD8sLcMNAy5A"
         },
         "xaxis": "x",
         "y": [
@@ -980,8 +980,8 @@
           "JUSTIÇA E SEGURANÇA PÚBLICA",
           "DESENVOLVIMENTO ECONÔMICO",
           "FAZENDA",
-          "TRIBUNAL DE JUSTIÇA",
           "SAÚDE",
+          "TRIBUNAL DE JUSTIÇA",
           "EDUCAÇÃO",
           "POLÍCIA MILITAR DO ESTADO DE MINAS GERAIS",
           "PLANEJAMENTO E GESTÃO"
@@ -1769,7 +1769,7 @@
         "gridcolor": "#eef1f4",
         "range": [
           0,
-          17.88432978334265
+          17.707037961131885
         ]
       },
       "yaxis": {
@@ -9096,7 +9096,7 @@
     ]
   },
   "despesa_fiscal": {
-    "card_despesa_total": "R$ 153,8 bi",
+    "card_despesa_total": "R$ 155,5 bi",
     "grafico_poder": {
       "data": [
         {
@@ -9113,7 +9113,7 @@
           "showlegend": false,
           "text": [
             "125 bi",
-            "17 bi",
+            "18 bi",
             "5 bi",
             "3 bi",
             "2 bi",
@@ -9133,7 +9133,7 @@
           "xaxis": "x",
           "y": [
             125376147094,
-            16643709234,
+            18277338083,
             5068280975,
             2554011879,
             1632898427,
@@ -9985,16 +9985,16 @@
           "text": [
             "0.8%",
             "0.8%",
-            "1.8%",
-            "4.2%",
+            "1.7%",
+            "4.1%",
             "4.5%",
-            "26.8%",
-            "61.2%"
+            "26.6%",
+            "61.6%"
           ],
           "textposition": "outside",
           "x": {
             "dtype": "f8",
-            "bdata": "7gsi6Nyn6D/vjxxpkwvpPzrWot14Hvw/sTTFOlS8EEB9Bocu8wMSQJn6Fyqb1jpALWqY9eeUTkA="
+            "bdata": "Hbadq41l6D+KRikBOMjoP9gTsirZ0vs/6XL/4FGPEEAYc7m4f9MRQLBE8TttjjpAV5THTiHJTkA="
           },
           "xaxis": "x",
           "y": [
@@ -10789,7 +10789,7 @@
           "gridcolor": "#eef1f4",
           "range": [
             0,
-            72.17272802859982
+            72.65416818618017
           ]
         },
         "yaxis": {
@@ -10867,19 +10867,19 @@
             "0.8%",
             "1.5%",
             "1.9%",
-            "3.8%",
+            "3.7%",
             "4.5%",
-            "7.8%",
-            "8.7%",
-            "14.0%",
-            "15.1%",
-            "18.9%",
-            "20.1%"
+            "7.7%",
+            "9.4%",
+            "13.8%",
+            "14.9%",
+            "19.0%",
+            "19.9%"
           ],
           "textposition": "outside",
           "x": {
             "dtype": "f8",
-            "bdata": "sYXdu73XOz/c1idRYlFzPzbEcgy0L3g/H6FTSUyBjz+EFHYQXiCQPwGU0gE235Q/1LdEVOJ1sj8yJod/ehW6P93N45AoRrw/wvzjDRyEwz/BRvH7wwvGP9GGioc1CdI/3YqlH1U41T80ovvHbXXbP20qS600buM/r9zcIVLE5j/vjxxpkwvpP2O7ng12ufc/7dLEXBQJ/j/VOp84Fz0OQJBvGtuwBRJAYYA9vHYzH0CTsxc0l3chQAAmzvJF8ytA+5o41t8bLkD6UlBhk9syQKLW57s2HjRA"
+            "bdata": "OEeRQtyMOz+t2fkcbh1zP5z6uvin7nc/1USfVJEsjz/c0qdR/umPP8pMaeETp5Q/fgHSczxEsj+O5Pv3U8+5P6JcRSIe+rs/6WGjbZ9Pwz/04WiKedDFP5W72Oyz2NE/gPTaT0P/1D/0HNO1lCvbPysgn/XyOeM/oOeyVxeH5j+KRikBOMjoPyvzkPqnefc/3N4QN024/T90crMxxOsNQN9BsrY41RFAe9OqG43fHkBQkSrfO7QiQLTo6W0aqCtAKwp0JObKLUBH6iHJ/f8yQFcgS6gb6DNA"
           },
           "xaxis": "x",
           "y": [
@@ -11694,7 +11694,7 @@
           "gridcolor": "#eef1f4",
           "range": [
             0,
-            23.739266756095297
+            23.48987298168453
           ]
         },
         "yaxis": {
@@ -12488,7 +12488,7 @@
         "grupo_despesa_descricao": "PESSOAL E ENCARGOS SOCIAIS",
         "acao_label": "2053 - REMUNERAÇÃO DE MAGISTRADOS DA ATIVA E ENCARGOS SOCIAIS",
         "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
-        "valor": 410155720
+        "valor": 911020506
       },
       {
         "uo_label": "1031 - TRIBUNAL DE JUSTIÇA DO ESTADO DE MINAS GERAIS - TJMG",
@@ -12558,7 +12558,7 @@
         "grupo_despesa_descricao": "PESSOAL E ENCARGOS SOCIAIS",
         "acao_label": "2054 - REMUNERAÇÃO DE SERVIDORES DA ATIVA E ENCARGOS SOCIAIS",
         "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
-        "valor": 494203157
+        "valor": 1097703111
       },
       {
         "uo_label": "1031 - TRIBUNAL DE JUSTIÇA DO ESTADO DE MINAS GERAIS - TJMG",
@@ -12677,14 +12677,14 @@
         "grupo_despesa_descricao": "PESSOAL E ENCARGOS SOCIAIS",
         "acao_label": "7006 - PROVENTOS DE INATIVOS CIVIS E PENSIONISTAS",
         "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
-        "valor": 39121896
+        "valor": 86895897
       },
       {
         "uo_label": "1031 - TRIBUNAL DE JUSTIÇA DO ESTADO DE MINAS GERAIS - TJMG",
         "grupo_despesa_descricao": "PESSOAL E ENCARGOS SOCIAIS",
         "acao_label": "7006 - PROVENTOS DE INATIVOS CIVIS E PENSIONISTAS",
         "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
-        "valor": 394289892
+        "valor": 875780000
       },
       {
         "uo_label": "1031 - TRIBUNAL DE JUSTIÇA DO ESTADO DE MINAS GERAIS - TJMG",
@@ -18892,7 +18892,7 @@
         "uo_label": "1251 - POLÍCIA MILITAR DO ESTADO DE MINAS GERAIS - PMMG",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "2063 - MODERNIZAÇÃO, EXPANSÃO E MANUTENÇÃO DA RADIOCOMUNICAÇÃO OPERACIONAL",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 7936022
       },
       {
@@ -18941,15 +18941,8 @@
         "uo_label": "1251 - POLÍCIA MILITAR DO ESTADO DE MINAS GERAIS - PMMG",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4365 - POLICIAMENTO OSTENSIVO GERAL",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 130453
-      },
-      {
-        "uo_label": "1251 - POLÍCIA MILITAR DO ESTADO DE MINAS GERAIS - PMMG",
-        "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
-        "acao_label": "4365 - POLICIAMENTO OSTENSIVO GERAL",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
-        "valor": 8897235
       },
       {
         "uo_label": "1251 - POLÍCIA MILITAR DO ESTADO DE MINAS GERAIS - PMMG",
@@ -18957,6 +18950,13 @@
         "acao_label": "4365 - POLICIAMENTO OSTENSIVO GERAL",
         "fonte_label": "24 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EXCETO EMENDAS INDIVIDUAIS E DE BANCADA",
         "valor": 1500000
+      },
+      {
+        "uo_label": "1251 - POLÍCIA MILITAR DO ESTADO DE MINAS GERAIS - PMMG",
+        "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
+        "acao_label": "4365 - POLICIAMENTO OSTENSIVO GERAL",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "valor": 8897235
       },
       {
         "uo_label": "1251 - POLÍCIA MILITAR DO ESTADO DE MINAS GERAIS - PMMG",
@@ -18971,13 +18971,6 @@
         "acao_label": "4365 - POLICIAMENTO OSTENSIVO GERAL",
         "fonte_label": "1 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EMENDAS INDIVIDUAIS",
         "valor": 232252
-      },
-      {
-        "uo_label": "1251 - POLÍCIA MILITAR DO ESTADO DE MINAS GERAIS - PMMG",
-        "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
-        "acao_label": "4365 - POLICIAMENTO OSTENSIVO GERAL",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
-        "valor": 75167595
       },
       {
         "uo_label": "1251 - POLÍCIA MILITAR DO ESTADO DE MINAS GERAIS - PMMG",
@@ -18999,6 +18992,13 @@
         "acao_label": "4365 - POLICIAMENTO OSTENSIVO GERAL",
         "fonte_label": "45 - DOAÇÕES DE PESSOAS FÍSICAS OU JURÍDICAS, DE INSTITUIÇÕES PRIVADAS OU DO EXTERIOR A ÓRGÃO E ENTIDADES DO ESTADO",
         "valor": 34433
+      },
+      {
+        "uo_label": "1251 - POLÍCIA MILITAR DO ESTADO DE MINAS GERAIS - PMMG",
+        "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
+        "acao_label": "4365 - POLICIAMENTO OSTENSIVO GERAL",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "valor": 75167595
       },
       {
         "uo_label": "1251 - POLÍCIA MILITAR DO ESTADO DE MINAS GERAIS - PMMG",
@@ -19039,29 +19039,22 @@
         "uo_label": "1251 - POLÍCIA MILITAR DO ESTADO DE MINAS GERAIS - PMMG",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4365 - POLICIAMENTO OSTENSIVO GERAL",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 740711
       },
       {
         "uo_label": "1251 - POLÍCIA MILITAR DO ESTADO DE MINAS GERAIS - PMMG",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4365 - POLICIAMENTO OSTENSIVO GERAL",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 201809
       },
       {
         "uo_label": "1251 - POLÍCIA MILITAR DO ESTADO DE MINAS GERAIS - PMMG",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4365 - POLICIAMENTO OSTENSIVO GERAL",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 7661010
-      },
-      {
-        "uo_label": "1251 - POLÍCIA MILITAR DO ESTADO DE MINAS GERAIS - PMMG",
-        "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
-        "acao_label": "4365 - POLICIAMENTO OSTENSIVO GERAL",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
-        "valor": 111961253
       },
       {
         "uo_label": "1251 - POLÍCIA MILITAR DO ESTADO DE MINAS GERAIS - PMMG",
@@ -19069,6 +19062,13 @@
         "acao_label": "4365 - POLICIAMENTO OSTENSIVO GERAL",
         "fonte_label": "24 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EXCETO EMENDAS INDIVIDUAIS E DE BANCADA",
         "valor": 3365753
+      },
+      {
+        "uo_label": "1251 - POLÍCIA MILITAR DO ESTADO DE MINAS GERAIS - PMMG",
+        "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
+        "acao_label": "4365 - POLICIAMENTO OSTENSIVO GERAL",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "valor": 111961253
       },
       {
         "uo_label": "1251 - POLÍCIA MILITAR DO ESTADO DE MINAS GERAIS - PMMG",
@@ -19095,7 +19095,7 @@
         "uo_label": "1251 - POLÍCIA MILITAR DO ESTADO DE MINAS GERAIS - PMMG",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4365 - POLICIAMENTO OSTENSIVO GERAL",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 15830812
       },
       {
@@ -19109,7 +19109,7 @@
         "uo_label": "1251 - POLÍCIA MILITAR DO ESTADO DE MINAS GERAIS - PMMG",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4365 - POLICIAMENTO OSTENSIVO GERAL",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 54463
       },
       {
@@ -19123,15 +19123,8 @@
         "uo_label": "1251 - POLÍCIA MILITAR DO ESTADO DE MINAS GERAIS - PMMG",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4365 - POLICIAMENTO OSTENSIVO GERAL",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 29969724
-      },
-      {
-        "uo_label": "1251 - POLÍCIA MILITAR DO ESTADO DE MINAS GERAIS - PMMG",
-        "grupo_despesa_descricao": "INVESTIMENTOS",
-        "acao_label": "4365 - POLICIAMENTO OSTENSIVO GERAL",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
-        "valor": 5349658
       },
       {
         "uo_label": "1251 - POLÍCIA MILITAR DO ESTADO DE MINAS GERAIS - PMMG",
@@ -19144,15 +19137,15 @@
         "uo_label": "1251 - POLÍCIA MILITAR DO ESTADO DE MINAS GERAIS - PMMG",
         "grupo_despesa_descricao": "INVESTIMENTOS",
         "acao_label": "4365 - POLICIAMENTO OSTENSIVO GERAL",
-        "fonte_label": "1 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EMENDAS INDIVIDUAIS",
-        "valor": 2000000
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "valor": 5349658
       },
       {
         "uo_label": "1251 - POLÍCIA MILITAR DO ESTADO DE MINAS GERAIS - PMMG",
         "grupo_despesa_descricao": "INVESTIMENTOS",
         "acao_label": "4365 - POLICIAMENTO OSTENSIVO GERAL",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
-        "valor": 8764
+        "fonte_label": "1 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EMENDAS INDIVIDUAIS",
+        "valor": 2000000
       },
       {
         "uo_label": "1251 - POLÍCIA MILITAR DO ESTADO DE MINAS GERAIS - PMMG",
@@ -19174,6 +19167,13 @@
         "acao_label": "4365 - POLICIAMENTO OSTENSIVO GERAL",
         "fonte_label": "45 - DOAÇÕES DE PESSOAS FÍSICAS OU JURÍDICAS, DE INSTITUIÇÕES PRIVADAS OU DO EXTERIOR A ÓRGÃO E ENTIDADES DO ESTADO",
         "valor": 245000
+      },
+      {
+        "uo_label": "1251 - POLÍCIA MILITAR DO ESTADO DE MINAS GERAIS - PMMG",
+        "grupo_despesa_descricao": "INVESTIMENTOS",
+        "acao_label": "4365 - POLICIAMENTO OSTENSIVO GERAL",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "valor": 8764
       },
       {
         "uo_label": "1251 - POLÍCIA MILITAR DO ESTADO DE MINAS GERAIS - PMMG",
@@ -19277,7 +19277,7 @@
         "uo_label": "1251 - POLÍCIA MILITAR DO ESTADO DE MINAS GERAIS - PMMG",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4374 - POLICIAMENTO ESPECIALIZADO",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 1722879
       },
       {
@@ -19305,15 +19305,15 @@
         "uo_label": "1251 - POLÍCIA MILITAR DO ESTADO DE MINAS GERAIS - PMMG",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4374 - POLICIAMENTO ESPECIALIZADO",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
-        "valor": 1542943
+        "fonte_label": "24 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EXCETO EMENDAS INDIVIDUAIS E DE BANCADA",
+        "valor": 150000
       },
       {
         "uo_label": "1251 - POLÍCIA MILITAR DO ESTADO DE MINAS GERAIS - PMMG",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4374 - POLICIAMENTO ESPECIALIZADO",
-        "fonte_label": "24 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EXCETO EMENDAS INDIVIDUAIS E DE BANCADA",
-        "valor": 150000
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "valor": 1542943
       },
       {
         "uo_label": "1251 - POLÍCIA MILITAR DO ESTADO DE MINAS GERAIS - PMMG",
@@ -19340,7 +19340,7 @@
         "uo_label": "1251 - POLÍCIA MILITAR DO ESTADO DE MINAS GERAIS - PMMG",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4374 - POLICIAMENTO ESPECIALIZADO",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 18000
       },
       {
@@ -19354,7 +19354,7 @@
         "uo_label": "1251 - POLÍCIA MILITAR DO ESTADO DE MINAS GERAIS - PMMG",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4374 - POLICIAMENTO ESPECIALIZADO",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 868833
       },
       {
@@ -19368,15 +19368,15 @@
         "uo_label": "1251 - POLÍCIA MILITAR DO ESTADO DE MINAS GERAIS - PMMG",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4374 - POLICIAMENTO ESPECIALIZADO",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
-        "valor": 1011564
+        "fonte_label": "24 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EXCETO EMENDAS INDIVIDUAIS E DE BANCADA",
+        "valor": 150000
       },
       {
         "uo_label": "1251 - POLÍCIA MILITAR DO ESTADO DE MINAS GERAIS - PMMG",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4374 - POLICIAMENTO ESPECIALIZADO",
-        "fonte_label": "24 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EXCETO EMENDAS INDIVIDUAIS E DE BANCADA",
-        "valor": 150000
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "valor": 1011564
       },
       {
         "uo_label": "1251 - POLÍCIA MILITAR DO ESTADO DE MINAS GERAIS - PMMG",
@@ -33109,49 +33109,49 @@
         "uo_label": "1451 - SECRETARIA DE ESTADO DE JUSTIÇA E SEGURANÇA PÚBLICA - SEJUSP",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4378 - OPERACIONALIZAÇÃO DA POLÍTICA DE INTEGRAÇÃO DA SEGURANÇA PÚBLICA DE MINAS GERAIS",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 151090
       },
       {
         "uo_label": "1451 - SECRETARIA DE ESTADO DE JUSTIÇA E SEGURANÇA PÚBLICA - SEJUSP",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4378 - OPERACIONALIZAÇÃO DA POLÍTICA DE INTEGRAÇÃO DA SEGURANÇA PÚBLICA DE MINAS GERAIS",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 59712
       },
       {
         "uo_label": "1451 - SECRETARIA DE ESTADO DE JUSTIÇA E SEGURANÇA PÚBLICA - SEJUSP",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4378 - OPERACIONALIZAÇÃO DA POLÍTICA DE INTEGRAÇÃO DA SEGURANÇA PÚBLICA DE MINAS GERAIS",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 19800
       },
       {
         "uo_label": "1451 - SECRETARIA DE ESTADO DE JUSTIÇA E SEGURANÇA PÚBLICA - SEJUSP",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4378 - OPERACIONALIZAÇÃO DA POLÍTICA DE INTEGRAÇÃO DA SEGURANÇA PÚBLICA DE MINAS GERAIS",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 192000
       },
       {
         "uo_label": "1451 - SECRETARIA DE ESTADO DE JUSTIÇA E SEGURANÇA PÚBLICA - SEJUSP",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4378 - OPERACIONALIZAÇÃO DA POLÍTICA DE INTEGRAÇÃO DA SEGURANÇA PÚBLICA DE MINAS GERAIS",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 3489788
       },
       {
         "uo_label": "1451 - SECRETARIA DE ESTADO DE JUSTIÇA E SEGURANÇA PÚBLICA - SEJUSP",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4378 - OPERACIONALIZAÇÃO DA POLÍTICA DE INTEGRAÇÃO DA SEGURANÇA PÚBLICA DE MINAS GERAIS",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 12107958
       },
       {
         "uo_label": "1451 - SECRETARIA DE ESTADO DE JUSTIÇA E SEGURANÇA PÚBLICA - SEJUSP",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4378 - OPERACIONALIZAÇÃO DA POLÍTICA DE INTEGRAÇÃO DA SEGURANÇA PÚBLICA DE MINAS GERAIS",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 20042
       },
       {
@@ -33214,56 +33214,56 @@
         "uo_label": "1451 - SECRETARIA DE ESTADO DE JUSTIÇA E SEGURANÇA PÚBLICA - SEJUSP",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4441 - ADEQUAÇÃO, MANUTENÇÃO E DESENVOLVIMENTO DO ATENDIMENTO SOCIOEDUCATIVO",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 3303400
       },
       {
         "uo_label": "1451 - SECRETARIA DE ESTADO DE JUSTIÇA E SEGURANÇA PÚBLICA - SEJUSP",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4441 - ADEQUAÇÃO, MANUTENÇÃO E DESENVOLVIMENTO DO ATENDIMENTO SOCIOEDUCATIVO",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 535952
       },
       {
         "uo_label": "1451 - SECRETARIA DE ESTADO DE JUSTIÇA E SEGURANÇA PÚBLICA - SEJUSP",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4441 - ADEQUAÇÃO, MANUTENÇÃO E DESENVOLVIMENTO DO ATENDIMENTO SOCIOEDUCATIVO",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 723669
       },
       {
         "uo_label": "1451 - SECRETARIA DE ESTADO DE JUSTIÇA E SEGURANÇA PÚBLICA - SEJUSP",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4441 - ADEQUAÇÃO, MANUTENÇÃO E DESENVOLVIMENTO DO ATENDIMENTO SOCIOEDUCATIVO",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 112300
       },
       {
         "uo_label": "1451 - SECRETARIA DE ESTADO DE JUSTIÇA E SEGURANÇA PÚBLICA - SEJUSP",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4441 - ADEQUAÇÃO, MANUTENÇÃO E DESENVOLVIMENTO DO ATENDIMENTO SOCIOEDUCATIVO",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 6421813
       },
       {
         "uo_label": "1451 - SECRETARIA DE ESTADO DE JUSTIÇA E SEGURANÇA PÚBLICA - SEJUSP",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4441 - ADEQUAÇÃO, MANUTENÇÃO E DESENVOLVIMENTO DO ATENDIMENTO SOCIOEDUCATIVO",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 13448039
       },
       {
         "uo_label": "1451 - SECRETARIA DE ESTADO DE JUSTIÇA E SEGURANÇA PÚBLICA - SEJUSP",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4441 - ADEQUAÇÃO, MANUTENÇÃO E DESENVOLVIMENTO DO ATENDIMENTO SOCIOEDUCATIVO",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 352732
       },
       {
         "uo_label": "1451 - SECRETARIA DE ESTADO DE JUSTIÇA E SEGURANÇA PÚBLICA - SEJUSP",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4441 - ADEQUAÇÃO, MANUTENÇÃO E DESENVOLVIMENTO DO ATENDIMENTO SOCIOEDUCATIVO",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 82673
       },
       {
@@ -33326,63 +33326,63 @@
         "uo_label": "1451 - SECRETARIA DE ESTADO DE JUSTIÇA E SEGURANÇA PÚBLICA - SEJUSP",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4344 - PREVENÇÃO SOCIAL ÀS VIOLÊNCIAS E CRIMINALIDADES",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 51069000
       },
       {
         "uo_label": "1451 - SECRETARIA DE ESTADO DE JUSTIÇA E SEGURANÇA PÚBLICA - SEJUSP",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4344 - PREVENÇÃO SOCIAL ÀS VIOLÊNCIAS E CRIMINALIDADES",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 80000
       },
       {
         "uo_label": "1451 - SECRETARIA DE ESTADO DE JUSTIÇA E SEGURANÇA PÚBLICA - SEJUSP",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4344 - PREVENÇÃO SOCIAL ÀS VIOLÊNCIAS E CRIMINALIDADES",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 91655
       },
       {
         "uo_label": "1451 - SECRETARIA DE ESTADO DE JUSTIÇA E SEGURANÇA PÚBLICA - SEJUSP",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4344 - PREVENÇÃO SOCIAL ÀS VIOLÊNCIAS E CRIMINALIDADES",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 23400
       },
       {
         "uo_label": "1451 - SECRETARIA DE ESTADO DE JUSTIÇA E SEGURANÇA PÚBLICA - SEJUSP",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4344 - PREVENÇÃO SOCIAL ÀS VIOLÊNCIAS E CRIMINALIDADES",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 2400
       },
       {
         "uo_label": "1451 - SECRETARIA DE ESTADO DE JUSTIÇA E SEGURANÇA PÚBLICA - SEJUSP",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4344 - PREVENÇÃO SOCIAL ÀS VIOLÊNCIAS E CRIMINALIDADES",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 1018566
       },
       {
         "uo_label": "1451 - SECRETARIA DE ESTADO DE JUSTIÇA E SEGURANÇA PÚBLICA - SEJUSP",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4344 - PREVENÇÃO SOCIAL ÀS VIOLÊNCIAS E CRIMINALIDADES",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 448988
       },
       {
         "uo_label": "1451 - SECRETARIA DE ESTADO DE JUSTIÇA E SEGURANÇA PÚBLICA - SEJUSP",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4344 - PREVENÇÃO SOCIAL ÀS VIOLÊNCIAS E CRIMINALIDADES",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 947306
       },
       {
         "uo_label": "1451 - SECRETARIA DE ESTADO DE JUSTIÇA E SEGURANÇA PÚBLICA - SEJUSP",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4344 - PREVENÇÃO SOCIAL ÀS VIOLÊNCIAS E CRIMINALIDADES",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 4843
       },
       {
@@ -33417,7 +33417,7 @@
         "uo_label": "1451 - SECRETARIA DE ESTADO DE JUSTIÇA E SEGURANÇA PÚBLICA - SEJUSP",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "1048 - MODERNIZAÇÃO E EXPANSÃO DO SISTEMA PRISIONAL",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 400610
       },
       {
@@ -33431,15 +33431,15 @@
         "uo_label": "1451 - SECRETARIA DE ESTADO DE JUSTIÇA E SEGURANÇA PÚBLICA - SEJUSP",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "1048 - MODERNIZAÇÃO E EXPANSÃO DO SISTEMA PRISIONAL",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
-        "valor": 4843572
+        "fonte_label": "2 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EMENDAS DE BANCADA",
+        "valor": 1000
       },
       {
         "uo_label": "1451 - SECRETARIA DE ESTADO DE JUSTIÇA E SEGURANÇA PÚBLICA - SEJUSP",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "1048 - MODERNIZAÇÃO E EXPANSÃO DO SISTEMA PRISIONAL",
-        "fonte_label": "2 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EMENDAS DE BANCADA",
-        "valor": 1000
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "valor": 4843572
       },
       {
         "uo_label": "1451 - SECRETARIA DE ESTADO DE JUSTIÇA E SEGURANÇA PÚBLICA - SEJUSP",
@@ -33452,7 +33452,7 @@
         "uo_label": "1451 - SECRETARIA DE ESTADO DE JUSTIÇA E SEGURANÇA PÚBLICA - SEJUSP",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "1048 - MODERNIZAÇÃO E EXPANSÃO DO SISTEMA PRISIONAL",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 561253
       },
       {
@@ -33508,22 +33508,15 @@
         "uo_label": "1451 - SECRETARIA DE ESTADO DE JUSTIÇA E SEGURANÇA PÚBLICA - SEJUSP",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4348 - CUSTÓDIA E RESSOCIALIZAÇÃO DE PRESOS",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 12780000
       },
       {
         "uo_label": "1451 - SECRETARIA DE ESTADO DE JUSTIÇA E SEGURANÇA PÚBLICA - SEJUSP",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4348 - CUSTÓDIA E RESSOCIALIZAÇÃO DE PRESOS",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 20801481
-      },
-      {
-        "uo_label": "1451 - SECRETARIA DE ESTADO DE JUSTIÇA E SEGURANÇA PÚBLICA - SEJUSP",
-        "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
-        "acao_label": "4348 - CUSTÓDIA E RESSOCIALIZAÇÃO DE PRESOS",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
-        "valor": 34516735
       },
       {
         "uo_label": "1451 - SECRETARIA DE ESTADO DE JUSTIÇA E SEGURANÇA PÚBLICA - SEJUSP",
@@ -33536,6 +33529,13 @@
         "uo_label": "1451 - SECRETARIA DE ESTADO DE JUSTIÇA E SEGURANÇA PÚBLICA - SEJUSP",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4348 - CUSTÓDIA E RESSOCIALIZAÇÃO DE PRESOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "valor": 34516735
+      },
+      {
+        "uo_label": "1451 - SECRETARIA DE ESTADO DE JUSTIÇA E SEGURANÇA PÚBLICA - SEJUSP",
+        "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
+        "acao_label": "4348 - CUSTÓDIA E RESSOCIALIZAÇÃO DE PRESOS",
         "fonte_label": "61 - RECURSOS DIRETAMENTE ARRECADADOS COM VINCULAÇÃO ESPECÍFICA",
         "valor": 61000
       },
@@ -33543,56 +33543,56 @@
         "uo_label": "1451 - SECRETARIA DE ESTADO DE JUSTIÇA E SEGURANÇA PÚBLICA - SEJUSP",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4348 - CUSTÓDIA E RESSOCIALIZAÇÃO DE PRESOS",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 8393473
       },
       {
         "uo_label": "1451 - SECRETARIA DE ESTADO DE JUSTIÇA E SEGURANÇA PÚBLICA - SEJUSP",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4348 - CUSTÓDIA E RESSOCIALIZAÇÃO DE PRESOS",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 3612000
       },
       {
         "uo_label": "1451 - SECRETARIA DE ESTADO DE JUSTIÇA E SEGURANÇA PÚBLICA - SEJUSP",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4348 - CUSTÓDIA E RESSOCIALIZAÇÃO DE PRESOS",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 1891622
       },
       {
         "uo_label": "1451 - SECRETARIA DE ESTADO DE JUSTIÇA E SEGURANÇA PÚBLICA - SEJUSP",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4348 - CUSTÓDIA E RESSOCIALIZAÇÃO DE PRESOS",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 734862694
       },
       {
         "uo_label": "1451 - SECRETARIA DE ESTADO DE JUSTIÇA E SEGURANÇA PÚBLICA - SEJUSP",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4348 - CUSTÓDIA E RESSOCIALIZAÇÃO DE PRESOS",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 35640680
       },
       {
         "uo_label": "1451 - SECRETARIA DE ESTADO DE JUSTIÇA E SEGURANÇA PÚBLICA - SEJUSP",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4348 - CUSTÓDIA E RESSOCIALIZAÇÃO DE PRESOS",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 200418
       },
       {
         "uo_label": "1451 - SECRETARIA DE ESTADO DE JUSTIÇA E SEGURANÇA PÚBLICA - SEJUSP",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4348 - CUSTÓDIA E RESSOCIALIZAÇÃO DE PRESOS",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 112746
       },
       {
         "uo_label": "1451 - SECRETARIA DE ESTADO DE JUSTIÇA E SEGURANÇA PÚBLICA - SEJUSP",
         "grupo_despesa_descricao": "INVESTIMENTOS",
         "acao_label": "4348 - CUSTÓDIA E RESSOCIALIZAÇÃO DE PRESOS",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 910719
       },
       {
@@ -33606,14 +33606,14 @@
         "uo_label": "1451 - SECRETARIA DE ESTADO DE JUSTIÇA E SEGURANÇA PÚBLICA - SEJUSP",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4350 - MANUTENÇÃO E AMPLIAÇÃO DO MONITORAMENTO ELETRÔNICO",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 32811127
       },
       {
         "uo_label": "1451 - SECRETARIA DE ESTADO DE JUSTIÇA E SEGURANÇA PÚBLICA - SEJUSP",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4351 - MANUTENÇÃO E IMPLANTAÇÃO DE METODOLOGIA DE CUSTÓDIAS ALTERNATIVAS",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 133612904
       },
       {
@@ -40467,7 +40467,14 @@
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "1006 - ENFRENTAMENTO À VIOLÊNCIA CONTRA A MULHER",
         "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
-        "valor": 1177120
+        "valor": 751509
+      },
+      {
+        "uo_label": "1511 - POLÍCIA CIVIL DO ESTADO DE MINAS GERAIS - PCMG",
+        "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
+        "acao_label": "1006 - ENFRENTAMENTO À VIOLÊNCIA CONTRA A MULHER",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "valor": 425611
       },
       {
         "uo_label": "1511 - POLÍCIA CIVIL DO ESTADO DE MINAS GERAIS - PCMG",
@@ -40501,21 +40508,21 @@
         "uo_label": "1511 - POLÍCIA CIVIL DO ESTADO DE MINAS GERAIS - PCMG",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "1051 - IMPLEMENTAÇÃO DA CADEIA DE CUSTÓDIA DA PROVA EM MINAS GERAIS",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 215044
       },
       {
         "uo_label": "1511 - POLÍCIA CIVIL DO ESTADO DE MINAS GERAIS - PCMG",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "1051 - IMPLEMENTAÇÃO DA CADEIA DE CUSTÓDIA DA PROVA EM MINAS GERAIS",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 2077518
       },
       {
         "uo_label": "1511 - POLÍCIA CIVIL DO ESTADO DE MINAS GERAIS - PCMG",
         "grupo_despesa_descricao": "INVESTIMENTOS",
         "acao_label": "1051 - IMPLEMENTAÇÃO DA CADEIA DE CUSTÓDIA DA PROVA EM MINAS GERAIS",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 653265
       },
       {
@@ -40529,70 +40536,70 @@
         "uo_label": "1511 - POLÍCIA CIVIL DO ESTADO DE MINAS GERAIS - PCMG",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4060 - GESTÃO DAS UNIDADES POLICIAIS",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 5501284
       },
       {
         "uo_label": "1511 - POLÍCIA CIVIL DO ESTADO DE MINAS GERAIS - PCMG",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4060 - GESTÃO DAS UNIDADES POLICIAIS",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 13079550
       },
       {
         "uo_label": "1511 - POLÍCIA CIVIL DO ESTADO DE MINAS GERAIS - PCMG",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4060 - GESTÃO DAS UNIDADES POLICIAIS",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 11123
       },
       {
         "uo_label": "1511 - POLÍCIA CIVIL DO ESTADO DE MINAS GERAIS - PCMG",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4060 - GESTÃO DAS UNIDADES POLICIAIS",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 4449586
       },
       {
         "uo_label": "1511 - POLÍCIA CIVIL DO ESTADO DE MINAS GERAIS - PCMG",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4060 - GESTÃO DAS UNIDADES POLICIAIS",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 19818677
       },
       {
         "uo_label": "1511 - POLÍCIA CIVIL DO ESTADO DE MINAS GERAIS - PCMG",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4060 - GESTÃO DAS UNIDADES POLICIAIS",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 49777635
       },
       {
         "uo_label": "1511 - POLÍCIA CIVIL DO ESTADO DE MINAS GERAIS - PCMG",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4060 - GESTÃO DAS UNIDADES POLICIAIS",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 10625596
       },
       {
         "uo_label": "1511 - POLÍCIA CIVIL DO ESTADO DE MINAS GERAIS - PCMG",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4060 - GESTÃO DAS UNIDADES POLICIAIS",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 50000
       },
       {
         "uo_label": "1511 - POLÍCIA CIVIL DO ESTADO DE MINAS GERAIS - PCMG",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4060 - GESTÃO DAS UNIDADES POLICIAIS",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 116738
       },
       {
         "uo_label": "1511 - POLÍCIA CIVIL DO ESTADO DE MINAS GERAIS - PCMG",
         "grupo_despesa_descricao": "INVESTIMENTOS",
         "acao_label": "4060 - GESTÃO DAS UNIDADES POLICIAIS",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 25288050
       },
       {
@@ -40601,13 +40608,6 @@
         "acao_label": "4060 - GESTÃO DAS UNIDADES POLICIAIS",
         "fonte_label": "1 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EMENDAS INDIVIDUAIS",
         "valor": 26707
-      },
-      {
-        "uo_label": "1511 - POLÍCIA CIVIL DO ESTADO DE MINAS GERAIS - PCMG",
-        "grupo_despesa_descricao": "INVESTIMENTOS",
-        "acao_label": "4060 - GESTÃO DAS UNIDADES POLICIAIS",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
-        "valor": 432129
       },
       {
         "uo_label": "1511 - POLÍCIA CIVIL DO ESTADO DE MINAS GERAIS - PCMG",
@@ -40622,6 +40622,13 @@
         "acao_label": "4060 - GESTÃO DAS UNIDADES POLICIAIS",
         "fonte_label": "24 - CONVÊNIOS COM A UNIÃO E SUAS ENTIDADES - EXCETO EMENDAS INDIVIDUAIS E DE BANCADA",
         "valor": 15341768
+      },
+      {
+        "uo_label": "1511 - POLÍCIA CIVIL DO ESTADO DE MINAS GERAIS - PCMG",
+        "grupo_despesa_descricao": "INVESTIMENTOS",
+        "acao_label": "4060 - GESTÃO DAS UNIDADES POLICIAIS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "valor": 432129
       },
       {
         "uo_label": "1511 - POLÍCIA CIVIL DO ESTADO DE MINAS GERAIS - PCMG",
@@ -40718,36 +40725,29 @@
         "uo_label": "1511 - POLÍCIA CIVIL DO ESTADO DE MINAS GERAIS - PCMG",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "1004 - MODERNIZAÇÃO DA IDENTIFICAÇÃO CIVIL E CRIMINAL",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 48000000
       },
       {
         "uo_label": "1511 - POLÍCIA CIVIL DO ESTADO DE MINAS GERAIS - PCMG",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4065 - IDENTIFICAÇÃO CIVIL E CRIMINAL",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 494376
       },
       {
         "uo_label": "1511 - POLÍCIA CIVIL DO ESTADO DE MINAS GERAIS - PCMG",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4065 - IDENTIFICAÇÃO CIVIL E CRIMINAL",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 280567
       },
       {
         "uo_label": "1511 - POLÍCIA CIVIL DO ESTADO DE MINAS GERAIS - PCMG",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4065 - IDENTIFICAÇÃO CIVIL E CRIMINAL",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 1815354
-      },
-      {
-        "uo_label": "1511 - POLÍCIA CIVIL DO ESTADO DE MINAS GERAIS - PCMG",
-        "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
-        "acao_label": "4065 - IDENTIFICAÇÃO CIVIL E CRIMINAL",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
-        "valor": 60074259
       },
       {
         "uo_label": "1511 - POLÍCIA CIVIL DO ESTADO DE MINAS GERAIS - PCMG",
@@ -40760,21 +40760,28 @@
         "uo_label": "1511 - POLÍCIA CIVIL DO ESTADO DE MINAS GERAIS - PCMG",
         "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
         "acao_label": "4065 - IDENTIFICAÇÃO CIVIL E CRIMINAL",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
+        "valor": 60074259
+      },
+      {
+        "uo_label": "1511 - POLÍCIA CIVIL DO ESTADO DE MINAS GERAIS - PCMG",
+        "grupo_despesa_descricao": "OUTRAS DESPESAS CORRENTES",
+        "acao_label": "4065 - IDENTIFICAÇÃO CIVIL E CRIMINAL",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 254522
       },
       {
         "uo_label": "1511 - POLÍCIA CIVIL DO ESTADO DE MINAS GERAIS - PCMG",
         "grupo_despesa_descricao": "INVESTIMENTOS",
         "acao_label": "4065 - IDENTIFICAÇÃO CIVIL E CRIMINAL",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 302011
       },
       {
         "uo_label": "1511 - POLÍCIA CIVIL DO ESTADO DE MINAS GERAIS - PCMG",
         "grupo_despesa_descricao": "INVESTIMENTOS",
         "acao_label": "4065 - IDENTIFICAÇÃO CIVIL E CRIMINAL",
-        "fonte_label": "10 - RECURSOS ORDINÁRIOS - RECURSOS NÃO VINCULADOS DE IMPOSTOS",
+        "fonte_label": "60 - RECURSOS DIRETAMENTE ARRECADADOS",
         "valor": 153066
       },
       {
@@ -44093,13 +44100,13 @@
         "produto": "PESSOA REMUNERADA",
         "unidade_medida": "UNIDADE",
         "fisica_2027": 13549.0,
-        "orcamentaria_2027": 6984555129.0,
+        "orcamentaria_2027": 7588055083.0,
         "fisica_2028": 13549.0,
-        "orcamentaria_2028": 7344259719.0,
+        "orcamentaria_2028": 7876401176.0,
         "fisica_2029": 13549.0,
-        "orcamentaria_2029": 7722489099.0,
+        "orcamentaria_2029": 8152075217.0,
         "fisica_2030": 13549.0,
-        "orcamentaria_2030": 8120197291.0
+        "orcamentaria_2030": 8437397850.0
       },
       {
         "uo": "1051 - TRIBUNAL DE JUSTIÇA MILITAR DO ESTADO DE MINAS GERAIS",
@@ -55109,13 +55116,13 @@
         "produto": "PESSOA REMUNERADA",
         "unidade_medida": "UNIDADE",
         "fisica_2027": 1085.0,
-        "orcamentaria_2027": 1539151920.0,
+        "orcamentaria_2027": 2040016706.0,
         "fisica_2028": 1085.0,
-        "orcamentaria_2028": 1618418241.0,
+        "orcamentaria_2028": 2117537341.0,
         "fisica_2029": 1085.0,
-        "orcamentaria_2029": 1701766783.0,
+        "orcamentaria_2029": 2191651148.0,
         "fisica_2030": 1085.0,
-        "orcamentaria_2030": 1789407775.0
+        "orcamentaria_2030": 2268358938.0
       },
       {
         "uo": "1441 - DEFENSORIA PUBLICA DO ESTADO DE MINAS GERAIS",
@@ -60203,13 +60210,13 @@
         "produto": "PROVENTO PAGO",
         "unidade_medida": "PROVENTO",
         "fisica_2027": 6558.0,
-        "orcamentaria_2027": 3157377479.0,
+        "orcamentaria_2027": 3686641588.0,
         "fisica_2028": 6558.0,
-        "orcamentaria_2028": 3319982434.0,
+        "orcamentaria_2028": 3826733966.0,
         "fisica_2029": 6558.0,
-        "orcamentaria_2029": 3490961537.0,
+        "orcamentaria_2029": 3960669655.0,
         "fisica_2030": 6558.0,
-        "orcamentaria_2030": 3670746058.0
+        "orcamentaria_2030": 4099293093.0
       },
       {
         "uo": "1915 - PARTICIPAÇÃO NO AUMENTO DO CAPITAL SOCIAL DE EMPRESAS",
