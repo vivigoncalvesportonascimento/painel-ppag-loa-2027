@@ -8,8 +8,8 @@ from componentes import (
     card_kpi,
     estilo_moeda,
     filtro_selectize,
+    grafico_acessivel,
     limpar_selecao_graficos,
-    plotly_html,
     selecao_grafico,
 )
 from exportar import csv_bytes, xlsx_bytes
@@ -92,10 +92,17 @@ def register_server(input, output, session):
 
     @render.ui
     def rf_grafico():
+        df = linhas_filtradas()
         fig = grafico_absoluto_horizontal(
-            linhas_filtradas(), "categoria_receita_desc", "valor", "Receitas por Categoria Econômica"
+            df, "categoria_receita_desc", "valor", "Receitas por Categoria Econômica"
         )
-        return plotly_html(fig, id="rf_grafico", selecionavel=True)
+        agrupado = df.groupby("categoria_receita_desc", as_index=False)["valor"].sum()
+        tabela = agrupado.rename(columns={"categoria_receita_desc": "Categoria Econômica"})
+        tabela["Valor (R$)"] = agrupado["valor"].map(formatar_moeda)
+        tabela = tabela[["Categoria Econômica", "Valor (R$)"]]
+        return grafico_acessivel(
+            fig, tabela, id="rf_grafico", titulo="Receitas por Categoria Econômica", selecionavel=True
+        )
 
     @render.data_frame
     def rf_tabela():
