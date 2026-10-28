@@ -376,7 +376,7 @@ def botao_limpar_filtros(id: str) -> ui.Tag:
 def card_kpi(
     titulo: str, valor: str, icone: str | None = "coins", compacto: bool = False
 ) -> ui.Tag:
-    """Card de KPI com borda de destaque à esquerda (verde institucional)
+    """Card de KPI com borda de destaque à esquerda (azul institucional)
     e número grande, no padrão aprovado na maquete "Painel Lateral" --
     sem o fundo azul sólido da versão original, para melhor contraste em
     qualquer combinação de cores dentro do card.

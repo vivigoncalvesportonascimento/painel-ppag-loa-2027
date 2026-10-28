@@ -4,8 +4,8 @@ link e foco visível. As variáveis de cor/sombra já existentes no
 :root {
   --fonte-titulo: "Lexend", system-ui, sans-serif;
   --fonte-corpo: "Public Sans", system-ui, sans-serif;
-  --cor-apoio: #0e7a5c;
-  --cor-apoio-escuro: #0b2e26;
+  --cor-apoio: #0047ab;
+  --cor-apoio-escuro: #0a2540;
 }
 
 body {
@@ -72,7 +72,8 @@ select:focus-visible,
 
 /* navset_pill_list gera uma .row com duas colunas Bootstrap: a 1a
 (largura "widths[0]") e a 2a (largura "widths[1]"). Estiliza a coluna
-da navegação como menu lateral fixo, verde institucional. */
+da navegação como menu lateral fixo, azul institucional (padronizado
+com a cor de marca usada no site estático e no painel Shiny original). */
 .app-conteudo > .row > div:first-child {
   background: var(--cor-apoio-escuro);
   border-radius: 10px;
@@ -85,7 +86,7 @@ da navegação como menu lateral fixo, verde institucional. */
 }
 
 .app-conteudo .nav-pills .nav-link {
-  color: #cfe3dc;
+  color: #cfe0f0;
   font-weight: 600;
   font-size: 0.85rem;
   border-radius: 7px;
@@ -94,14 +95,16 @@ da navegação como menu lateral fixo, verde institucional. */
 }
 
 .app-conteudo .nav-pills .nav-link.active {
-  background: #143d33;
+  background: var(--cor-apoio);
   color: #ffffff;
 }
 
-/* O anel de foco padrão (--cor-apoio, #0e7a5c) não tem contraste
-suficiente (~2.3-2.8:1, abaixo do mínimo de 3:1 do WCAG 1.4.11) contra o
-fundo verde escuro do menu lateral (#0b2e26 normal, #143d33 no item
-ativo). Branco tem >8:1 contra os dois. */
+/* O anel de foco padrão (--cor-apoio) tem ótimo contraste contra o novo
+fundo azul-marinho do menu lateral (branco: 15.5:1 contra o fundo normal,
+8.4:1 contra o item ativo), mas a regra abaixo é mantida porque o anel
+precisa se destacar tanto do item ativo (azul) quanto do fundo (azul-
+marinho) ao mesmo tempo -- usar a própria --cor-apoio no anel se perderia
+contra o item ativo, que tem essa mesma cor de fundo. */
 .app-conteudo .nav-pills .nav-link:focus-visible {
   outline-color: #ffffff;
 }
