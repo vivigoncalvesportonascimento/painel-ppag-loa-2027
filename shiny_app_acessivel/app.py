@@ -12,7 +12,12 @@ from pathlib import Path
 
 from shiny import App, ui
 
-from componentes import plotly_head, script_limpar_selecao_grafico
+from componentes import (
+    plotly_head,
+    script_limpar_selecao_grafico,
+    script_preservar_estado_tabela,
+    script_skip_link,
+)
 from paginas import (
     acao_orcamentaria,
     despesa_fiscal,
@@ -47,6 +52,8 @@ app_ui = ui.page_bootstrap(
     ui.tags.head(
         plotly_head(),
         script_limpar_selecao_grafico(),
+        script_skip_link(),
+        script_preservar_estado_tabela(),
         ui.tags.link(rel="preconnect", href="https://fonts.googleapis.com"),
         ui.tags.link(
             rel="stylesheet",
@@ -70,8 +77,7 @@ app_ui = ui.page_bootstrap(
             well=False,
             widths=(2, 10),
         ),
-        id="conteudo-principal",
-        tabindex="-1",
+        id="area-navegacao",
         class_="app-conteudo",
     ),
     ui.tags.footer(

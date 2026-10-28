@@ -50,6 +50,119 @@ def script_limpar_selecao_grafico() -> ui.Tag:
     )
 
 
+def script_skip_link() -> ui.Tag:
+    """Registra (uma única vez, no <head> do app) o ajuste do link "Pular
+    para o conteúdo" -- ver `app.py`.
+
+    O wrapper `#area-navegacao` (antigo `#conteudo-principal`) engloba o
+    `navset_pill_list(...)` inteiro, menu lateral (12 links) incluído, então
+    mandar o foco pra ele não pula nada: o primeiro elemento focável lá
+    dentro continua sendo o 1o link do menu. O conteúdo real da aba ativa
+    fica em `.tab-content` (gerado pelo JS do próprio Shiny/bslib, por
+    isso o polling -- não existe ainda quando este script é parseado), daí
+    o id/tabindex de destino do skip link serem transferidos pra lá em vez
+    de ficarem no wrapper.
+    """
+    return ui.tags.script(
+        """
+(function registrar() {
+  var destino = document.querySelector('#area-navegacao .tab-content');
+  if (destino) {
+    destino.id = 'conteudo-principal';
+    destino.tabIndex = -1;
+  } else {
+    setTimeout(registrar, 50);
+  }
+})();
+"""
+    )
+
+
+def script_preservar_estado_tabela() -> ui.Tag:
+    """Registra (uma única vez, no <head> do app) a preservação do estado
+    do toggle "Ver como tabela"/"Ocultar tabela" (ver `grafico_acessivel()`)
+    entre re-renderizações.
+
+    Cada gráfico acessível vive dentro de um `@render.ui` -- qualquer
+    invalidação reativa (filtro, crossfilter) substitui o HTML inteiro do
+    bloco gráfico+botão+tabela, o que por padrão: (a) fecha de novo a
+    tabela se o usuário tinha aberto, e (b) solta o foco do teclado pra
+    `<body>` se ele estava no botão.
+
+    Em vez de precisar de plumbing nova em `grafico_acessivel()` ou de
+    mapear ids de saída -> id de tabela, isso é resolvido só observando o
+    DOM: o botão sempre aponta pra sua tabela via `aria-controls`, então
+    basta guardar quais ids de tabela estão abertos (clique no botão) e
+    qual botão tinha o foco, e reaplicar isso depois de cada evento
+    `shiny:value` (disparado pelo Shiny quando uma saída é re-renderizada)
+    -- com um duplo `requestAnimationFrame` de margem pra garantir que o
+    HTML novo já foi inserido no DOM antes de tentar achar os elementos.
+
+    `shiny:value` é disparado via `jQuery(el).trigger(evt)` (não
+    `el.dispatchEvent`) -- o jQuery simula o bubbling só entre handlers
+    registrados por `$(...).on(...)`, então um `document.addEventListener`
+    nativo nunca vê esse evento (confirmado empiricamente: zero disparos).
+    Por isso o listener do evento usa `jQuery(document).on(...)`, exposto
+    globalmente pelo próprio bundle do Shiny -- os listeners de `click` e
+    `focusin` continuam nativos, pois esses são eventos reais do
+    navegador e bubblam normalmente.
+    """
+    return ui.tags.script(
+        """
+(function registrar() {
+  if (window.Shiny && Shiny.addCustomMessageHandler && window.jQuery) {
+    var tabelasAbertas = new Set();
+    var botaoComFoco = null;
+
+    function aplicarEstado(idTabela) {
+      var tabela = document.getElementById(idTabela);
+      if (!tabela) return;
+      tabela.hidden = false;
+      var botao = document.querySelector('[aria-controls="' + idTabela + '"]');
+      if (botao) {
+        botao.setAttribute('aria-expanded', 'true');
+        botao.textContent = 'Ocultar tabela';
+      }
+    }
+
+    document.addEventListener('click', function(ev) {
+      var botao = ev.target.closest('.botao-ver-tabela');
+      if (!botao) return;
+      var idTabela = botao.getAttribute('aria-controls');
+      if (!idTabela) return;
+      var tabela = document.getElementById(idTabela);
+      if (tabela && !tabela.hidden) {
+        tabelasAbertas.add(idTabela);
+      } else {
+        tabelasAbertas.delete(idTabela);
+      }
+    });
+
+    document.addEventListener('focusin', function(ev) {
+      var botao = ev.target.closest && ev.target.closest('.botao-ver-tabela');
+      botaoComFoco = botao ? botao.getAttribute('aria-controls') : botaoComFoco;
+    });
+
+    window.jQuery(document).on('shiny:value', function() {
+      if (tabelasAbertas.size === 0 && !botaoComFoco) return;
+      requestAnimationFrame(function() {
+        requestAnimationFrame(function() {
+          tabelasAbertas.forEach(aplicarEstado);
+          if (botaoComFoco && document.activeElement === document.body) {
+            var botao = document.querySelector('[aria-controls="' + botaoComFoco + '"]');
+            if (botao) botao.focus();
+          }
+        });
+      });
+    });
+  } else {
+    setTimeout(registrar, 50);
+  }
+})();
+"""
+    )
+
+
 async def limpar_selecao_graficos(session, *ids: str) -> None:
     """Desmarca a seleção de um ou mais gráficos clicáveis (`plotly_html(...,
     id=id, selecionavel=True)`) a partir do servidor -- chamar no efeito do
@@ -82,6 +195,11 @@ def plotly_html(fig, id: str | None = None, selecionavel: bool = False) -> ui.HT
     post_script = None
     div_id = f"{id}__plot" if id else None
     if selecionavel and id:
+        # Limitação conhecida (fora do escopo desta leva de correções):
+        # o crossfilter só é acionável por clique/toque -- as barras do
+        # Plotly não são elementos focáveis, então não há caminho por
+        # teclado até esta seleção. Requer uma função própria (barras
+        # focáveis + handler de tecla), não uma correção pontual aqui.
         post_script = f"""
 var el = document.getElementById("{div_id}");
 var ultimoClique = null;
@@ -110,13 +228,29 @@ el.on("plotly_click", function(dados) {{
 
 def grafico_acessivel(fig, df, id: str, titulo: str, selecionavel: bool = False) -> ui.Tag:
     """Como `plotly_html()`, mas com um botão "Ver como tabela" ao lado
-    que alterna a visibilidade entre o gráfico e uma <table> semântica
-    com os mesmos dados de `df` -- para quem usa leitor de tela/teclado,
-    ou só quer os números exatos sem passar o mouse sobre as barras.
+    que alterna a visibilidade de uma <table> semântica com os mesmos
+    dados de `df`, mostrada ao lado do gráfico (não no lugar dele -- daí o
+    rótulo do botão no segundo estado ser "Ocultar tabela", não "Ver como
+    gráfico": o gráfico nunca é escondido) -- para quem usa leitor de
+    tela/teclado, ou só quer os números exatos sem passar o mouse sobre
+    as barras.
 
     A tabela é reconstruída a cada render (como o gráfico), então
     reflete sempre os dados atuais -- incluindo depois de um filtro ou
     de uma seleção de crossfilter.
+
+    Limitação conhecida (mitigada, não eliminada): como todo o retorno
+    desta função vive dentro de um `@render.ui`, qualquer invalidação
+    reativa troca o HTML inteiro do bloco gráfico+botão+tabela. O estado
+    "tabela aberta" e o foco do teclado no botão são restaurados depois
+    do re-render por `script_preservar_estado_tabela()` (registrado uma
+    vez no <head> do app, via observação de DOM/eventos `shiny:value` --
+    não precisa de nenhuma mudança na assinatura desta função nem nos
+    chamadores), mas é um remendo client-side best-effort: cobre o caso
+    comum (filtro/crossfilter muda, o próprio gráfico permanece na tela),
+    não garante nada se o elemento de destino some de vez (ex.: troca de
+    aba) nem se o Shiny atrasar o re-render além de dois
+    `requestAnimationFrame`.
     """
     id_tabela = f"{id}__tabela"
     linhas_html = "".join(
@@ -138,7 +272,7 @@ def grafico_acessivel(fig, df, id: str, titulo: str, selecionavel: bool = False)
                     f"var t=document.getElementById('{id_tabela}');"
                     f"var oculto=t.hidden; t.hidden=!oculto;"
                     f"this.setAttribute('aria-expanded', String(oculto));"
-                    f"this.textContent = oculto ? 'Ver como gráfico' : 'Ver como tabela';"
+                    f"this.textContent = oculto ? 'Ocultar tabela' : 'Ver como tabela';"
                 ),
             },
         ),

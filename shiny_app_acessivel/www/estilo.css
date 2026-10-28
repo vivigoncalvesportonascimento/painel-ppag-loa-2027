@@ -98,6 +98,14 @@ da navegação como menu lateral fixo, verde institucional. */
   color: #ffffff;
 }
 
+/* O anel de foco padrão (--cor-apoio, #0e7a5c) não tem contraste
+suficiente (~2.3-2.8:1, abaixo do mínimo de 3:1 do WCAG 1.4.11) contra o
+fundo verde escuro do menu lateral (#0b2e26 normal, #143d33 no item
+ativo). Branco tem >8:1 contra os dois. */
+.app-conteudo .nav-pills .nav-link:focus-visible {
+  outline-color: #ffffff;
+}
+
 /* Abaixo de ~760px o menu lateral empilha acima do conteudo em vez de
 ficar espremido ao lado (largura total, nao mais em coluna estreita). */
 @media (max-width: 760px) {
